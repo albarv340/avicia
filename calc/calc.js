@@ -8,12 +8,12 @@ let stacksTax = document.getElementById("stacksTax");
 let changed = false;
 calculatorForm.addEventListener("submit", e => {
     e.preventDefault();
-    let emeralds = parseInt(document.getElementById("emeralds").value);
-    let emeraldsTax = parseInt(document.getElementById("emeraldsTax").value);
-    let le = parseInt(document.getElementById("le").value);
-    let leTax = parseInt(document.getElementById("leTax").value);
-    let stacks = parseInt(document.getElementById("stacks").value);
-    let stacksTax = parseInt(document.getElementById("stacksTax").value);
+    let emeralds = document.getElementById("emeralds").value;
+    let emeraldsTax = document.getElementById("emeraldsTax").value;
+    let le = document.getElementById("le").value;
+    let leTax = document.getElementById("leTax").value;
+    let stacks = document.getElementById("stacks").value;
+    let stacksTax = document.getElementById("stacksTax").value;
     if (changed) {
         if (emeralds > 0) {
             document.getElementById("emeraldsTax").value = emeralds * 1.05;
