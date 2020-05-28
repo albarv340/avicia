@@ -59,7 +59,8 @@ calculatorForm.addEventListener("submit", e => {
         }
     }
     changed = false;
-    fancyfy(emeralds);
+    fancyfy(false);
+    fancyfy(true);
 });
 
 emeralds.addEventListener("change", e => {
@@ -117,18 +118,28 @@ stacksTax.addEventListener("change", e => {
 });
 
 
-async function fancyfy(emeralds) {
+async function fancyfy(tax) {
     let stacksValue = document.getElementById("stacks").value;
+    let taxString = "without tax";
+    if (tax) {
+        stacksValue = stacksValue * 1.05;
+        taxString = "with tax";
+    }
     let stacks = stacksValue.toString().split(".")[0] || 0;
     let le1 = "." + stacksValue.toString().split(".")[1];
     let le2 = le1 * 64;
     let le = parseInt(le2) || 0;
-    let eb1 = "." +le2.toString().split(".")[1];
+    let eb1 = "." + le2.toString().split(".")[1];
     let eb2 = eb1 * 64;
     let eb = parseInt(eb2) || 0;
     let em1 = "." + eb2.toString().split(".")[1];
     let em2 = em1 * 64;
     let em = parseInt(em2.toString().split(".")[0]) || 0;
-    let fancy = `${stacks} stacks ${le} le ${eb} eb ${em} emeralds without tax`;
-    document.getElementById("fancy").innerHTML = fancy;
+    let fancy = `${stacks} stacks ${le} le ${eb} eb ${em} emeralds ${taxString}`;
+    let fancyTax = `${stacks} stacks ${le} le ${eb} eb ${em} emeralds ${taxString}`;
+    if (tax) {
+        document.getElementById("fancyTax").innerHTML = fancyTax;
+    } else {
+        document.getElementById("fancy").innerHTML = fancy;
+    }
 }
