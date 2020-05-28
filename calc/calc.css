@@ -1,0 +1,44 @@
+input {
+    background: #c4ab79;
+    border: solid;
+    border-image-slice: 26;
+    border-image-width: 32px;
+    border-image-repeat: repeat;
+    border-image-source: url(https://www.wynndata.tk/assets/images/cb/default.png);
+    padding: 12px 16px;
+    width: 100%;
+}
+
+body {
+    background-image: url(https://www.wynndata.tk/assets/images/bg.png);
+}
+
+.container {
+    border: solid;
+    border-image-slice: 32;
+    border-image-width: 32px;
+    border-image-repeat: repeat;
+    padding: 12px 16px;
+    background: #c4ab79 content-box;
+    border-image-source: url(https://www.wynndata.tk/assets/images/cb/default-big.png);
+}
+
+#calculatorForm {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    width: 100%;
+}
+
+.submit {
+    border-image-source: url(https://www.wynndata.tk/assets/images/cb/primary.png);
+    background: #50aed8 content-box;
+    width: 150%;
+}
+
+.reset {
+    border-image-source: url(https://www.wynndata.tk/assets/images/cb/danger.png);
+    background: #d25c5c content-box;
+    width: 50%;
+    margin-left: auto;
+}

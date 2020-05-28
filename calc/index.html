@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emerald Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="calc.css">
 </head>
+
 <body>
-    <form id="calculatorForm" action="">
-        <label for="emeralds">Emeralds:</label>
-        <input type="text" id="emeralds">
-        <br>
-        <label for="emeraldsTax">Emeralds with Tax:</label>
-        <input type="text" id="emeraldsTax">
-        <br>
-        <label for="le">Le:</label>
-        <input type="text" id="le">
-        <br>
-        <label for="leTax">Le with Tax   :</label>
-        <input type="text" id="leTax">
-        <br>
-        <label for="stacks">Stacks:</label>
-        <input type="text" id="stacks">
-        <br>
-        <label for="stacksTax">Stacks with Tax:</label>
-        <input type="text" id="stacksTax">
-        <br>
-        <input type="submit" value="Calculate">
-    </form>
-    <h1 id="fancy"></h1>
+    <div class="container">
+        <form id="calculatorForm">
+            <div class="emeralds">
+                <label class="emeralds" for="emeralds">Emeralds:</label>
+                <br>
+                <input type="text" id="emeralds" placeholder="Emeralds">
+            </div>
+            <div class="emeraldsTax">
+                <label class="emeraldsTax" for="emeraldsTax">Emeralds with Tax:</label>
+                <br>
+                <input type="text" id="emeraldsTax" placeholder="Emeralds with Tax">
+            </div>
+            <div class="le">
+                <label class="le" for="le">Le:</label>
+                <br>
+                <input type="text" id="le" placeholder="Le">
+            </div>
+            <div class="leTax">
+                <label class="leTax" for="leTax">Le with Tax :</label>
+                <br>
+                <input type="text" id="leTax" placeholder="Le with Tax">
+            </div>
+            <div class="stacks">
+                <label class="stacks" for="stacks">Stacks:</label>
+                <br>
+                <input type="text" id="stacks" placeholder="Stacks">
+            </div>
+            <div class="stacksTax">
+                <label class="stacksTax" for="stacksTax">Stacks with Tax:</label>
+                <br>
+                <input type="text" id="stacksTax" placeholder="Stacks with Tax">
+            </div>
+            <input type="submit" value="Calculate" class="submit">
+            <input type="reset" class="reset">
+        </form>
+        <h1 id="fancy"></h1>
+    </div>
     <script src="calc.js"></script>
 </body>
+
 </html>
