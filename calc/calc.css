@@ -21,6 +21,7 @@ body {
     padding: 12px 16px;
     background: #c4ab79 content-box;
     border-image-source: url(https://www.wynndata.tk/assets/images/cb/default-big.png);
+    margin-top: 10vh;
 }
 
 #calculatorForm {
