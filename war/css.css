@@ -1,0 +1,27 @@
+img,
+video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.content {
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.jumbotron {
+    margin: 0;
+}
+
+#contents {
+    position: fixed;
+    z-index: 10;
+    top: 40px;
+    left: 20px;
+    font-size: 25px;
+}
+
+#filler {
+    border: 1px solid lightblue;
+    padding: 10px;
+}
