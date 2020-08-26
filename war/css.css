@@ -66,6 +66,7 @@ p {
     left: 0;
     width: 100%;
     font-size: 1.5vw;
+    list-style-type: none;
 }
 
 @media only screen and (max-width: 1000px) {
