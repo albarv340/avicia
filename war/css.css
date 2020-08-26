@@ -3,7 +3,20 @@ img {
     height: 100%;
 }
 
-.header,
+body {
+    background-color: aliceblue;
+}
+
+#banner_wide,
+#banner {
+    height: 0px;
+}
+
+.header {
+    width: 100%;
+    background-color: aliceblue;
+}
+
 .footer {
     width: 60%;
     margin-left: auto;
@@ -56,5 +69,11 @@ p {
     }
     .wrapper {
         flex-direction: column;
+    }
+    #banner_wider {
+        height: 0px;
+    }
+    #banner_wide {
+        height: auto;
     }
 }
