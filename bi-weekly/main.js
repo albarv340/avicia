@@ -1,3 +1,5 @@
+let total = {}
+
 async function getDataFromSheet() {
     let url = 'https://spreadsheets.google.com/feeds/list/10OzD-lY4Rhk1nE6n44uM54M-ycCnBb33zFII3sovvhw/od6/public/values?alt=json#gid=251992215';
     let obj = null;
@@ -8,6 +10,9 @@ async function getDataFromSheet() {
         console.log('error');
     }
     const sheetData = obj.feed.entry
+    console.log(sheetData[0].gsx$totalxp.$t)
+    total.xp = sheetData[0].gsx$totalxp.$t
+    total.emeralds = sheetData[0].gsx$totalemeralds.$t
     return sheetDataToReadableArray(sheetData)
 }
 
@@ -37,7 +42,6 @@ function sheetDataToReadableArray(sheetData) {
         }
         users[userEm] = tmpUser
     }
-    console.log(users)
     return users
 }
 
@@ -62,6 +66,7 @@ function leaderboardGenerator(data, area, name) {
                     <th scope="row">${placement}</th>
                     <td>${user}</td>
                     <td>${String(data[user][area]).replace(/(.)(?=(\d{3})+$)/g,'$1,')} ${name}</td>
+                    <td>${Math.round((data[user][area] / total[area]) * 100 * 100) / 100} %</td>
                 </tr>`
         placement++
     }
