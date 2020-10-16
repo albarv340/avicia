@@ -1,0 +1,11 @@
+#content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.leaderboard-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
