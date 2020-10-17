@@ -1,7 +1,7 @@
 let total = {}
 
 async function getDataFromSheet() {
-    let url = 'https://spreadsheets.google.com/feeds/list/10OzD-lY4Rhk1nE6n44uM54M-ycCnBb33zFII3sovvhw/od6/public/values?alt=json#gid=251992215';
+    let url = 'https://spreadsheets.google.com/feeds/list/10OzD-lY4Rhk1nE6n44uM54M-ycCnBb33zFII3sovvhw/od6/public/values?alt=json';
     let obj = null;
 
     try {
@@ -49,6 +49,18 @@ async function showInfo() {
     let users = await getDataFromSheet();
     let XPHTML = document.getElementById("xp-leaderboard")
     let emHTML = document.getElementById("em-leaderboard")
+    XPHTML.innerHTML += `<tr>
+                            <th>0</th>
+                            <td scope="row">Total:</td>
+                            <td>${String(total.xp).replace(/(.)(?=(\d{3})+$)/g,'$1,')} XP</td>
+                            <td>100%</td>
+                        </tr>`
+    emHTML.innerHTML += `<tr>
+                            <th>0</th>
+                            <td scope="row">Total:</td>
+                            <td>${String(total.emeralds).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Emeralds</td>
+                            <td>100%</td>
+                        </tr>`
     XPHTML.innerHTML += leaderboardGenerator(users, "xp", "XP")
     emHTML.innerHTML += leaderboardGenerator(users, "emeralds", "Emeralds")
 }
