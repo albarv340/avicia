@@ -72,10 +72,16 @@ function sheetDataToReadableArray(sheetData) {
     return users
 }
 
-async function showInfo() {
+async function showInfo(order) {
     let users = await getDataFromSheet();
     let leaderboard = document.getElementById("leaderboard")
-    leaderboard.innerHTML += `<tr>
+    let selected = document.getElementById(order)
+    let headers = document.getElementsByTagName("th")
+    for (header of headers) {
+        header.style.backgroundColor = "#454d55"
+    }
+    selected.style.backgroundColor = "#656d75"
+    leaderboard.innerHTML = `<tr>
                             <th>0</th>
                             <td scope="row">Total:</td>
                             <td>${String(total.xp).replace(/(.)(?=(\d{3})+$)/g,'$1,')} XP</td>
@@ -83,9 +89,6 @@ async function showInfo() {
                             <td>${String(total.wars).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Wars</td>
                             <td>100%</td>
                         </tr>`
-    const url_string = window.location.href
-    const url = new URL(url_string);
-    const order = url.searchParams.get("order");
     if (typeof(total[order]) == "undefined") {
         leaderboard.innerHTML += leaderboardGenerator(users, "total")
     } else {
@@ -115,4 +118,4 @@ function leaderboardGenerator(data, area) {
     return res
 }
 
-showInfo()
+showInfo("total")

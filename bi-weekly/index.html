@@ -17,10 +17,14 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col"><a href="?order=xp">XP</a></th>
-                        <th scope="col"><a href="?order=emeralds">Emeralds</a></th>
-                        <th scope="col"><a href="?order=wars">Wars</a></th>
-                        <th scope="col"><a href="?order=total">Total</a></th>
+                        <th id="xp" onclick="showInfo('xp')" scope="col">XP<img class="sort" src="sort.svg"></a>
+                        </th>
+                        <th id="emeralds" onclick="showInfo('emeralds')" scope="col">Emeralds<img class="sort" src="sort.svg"></a>
+                        </th>
+                        <th id="wars" onclick="showInfo('wars')" scope="col">Wars<img class="sort" src="sort.svg"></a>
+                        </th>
+                        <th id="total" onclick="showInfo('total')" scope="col">Total<img class="sort" src="sort.svg"></a>
+                        </th>
                     </tr>
                     <tbody id="leaderboard">
                     </tbody>

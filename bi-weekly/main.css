@@ -9,3 +9,11 @@
     align-items: center;
     width: 100%;
 }
+
+th:hover {
+    cursor: pointer;
+}
+
+.sort {
+    filter: invert(100%);
+}
