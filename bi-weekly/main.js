@@ -13,6 +13,8 @@ async function getDataFromSheet() {
     total.xp = sheetData[0].gsx$totalxp.$t
     total.emeralds = sheetData[0].gsx$totalemeralds.$t
     total.wars = sheetData[0].gsx$totalwars.$t
+    total.playerwars = sheetData[0].gsx$totalplayerwars.$t
+
     return sheetDataToReadableArray(sheetData)
 }
 
@@ -64,7 +66,7 @@ function sheetDataToReadableArray(sheetData) {
         tmpUser.wars = users[user].wars
         portXP = (tmpUser.xp / total.xp) * 100
         portEmeralds = (tmpUser.emeralds / total.emeralds) * 100
-        portWars = (tmpUser.wars / total.wars) * 100
+        portWars = (tmpUser.wars / total.playerwars) * 100
         tmpUser.total = Math.round((portXP - -portEmeralds - -portWars) / 3 * 100) / 100
         users[user] = tmpUser
     }
