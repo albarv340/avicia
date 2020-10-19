@@ -70,7 +70,6 @@ function sheetDataToReadableArray(sheetData) {
         tmpUser.total = Math.round((portXP - -portEmeralds - -portWars) / 3 * 100) / 100
         users[user] = tmpUser
     }
-    console.log(users)
     return users
 }
 

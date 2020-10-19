@@ -1,5 +1,5 @@
 async function getDataFromSheet() {
-    let url = 'https://spreadsheets.google.com/feeds/list/1UALvWkmQjdYaX_xpz4hFc_LO1iXL7_jXm2E-fVMYMMo/od6/public/values?alt=json';
+    let url = 'https://spreadsheets.google.com/feeds/list/1-NkrIfI4RrHkQJ7np1lgfaxUa_RVs2yPcx49LdGc9x0/od6/public/values?alt=json';
     let obj = null;
 
     try {
