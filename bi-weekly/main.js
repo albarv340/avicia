@@ -10,9 +10,9 @@ async function getDataFromSheet() {
         console.log('error');
     }
     const sheetData = obj.feed.entry
-    console.log(sheetData[0].gsx$totalxp.$t)
     total.xp = sheetData[0].gsx$totalxp.$t
     total.emeralds = sheetData[0].gsx$totalemeralds.$t
+    total.wars = sheetData[0].gsx$totalwars.$t
     return sheetDataToReadableArray(sheetData)
 }
 
@@ -20,6 +20,7 @@ function sheetDataToReadableArray(sheetData) {
     let users = []
     let xp = []
     let emeralds = []
+    let wars = []
     for (user in sheetData) {
         let userData = sheetData[user].content.$t.split(/, |: /);
         let tmpXp = {}
@@ -32,40 +33,67 @@ function sheetDataToReadableArray(sheetData) {
         tmpEm[userData[6]] = userData[7]
         emeralds[userData[5]] = tmpEm
     }
+    for (user in sheetData) {
+        let userData = sheetData[user].content.$t.split(/, |: /);
+        let tmpWars = {}
+        tmpWars[userData[10]] = userData[11]
+        wars[userData[9]] = tmpWars
+    }
     for (userEm in emeralds) {
         let tmpUser = {}
         for (userXp in xp) {
             if (userEm == userXp) {
                 tmpUser.emeralds = emeralds[userEm].emerald
                 tmpUser.xp = xp[userXp].xp
+                if (typeof(wars[userXp]) != "undefined") {
+                    tmpUser.wars = wars[userXp].wars
+                } else {
+                    tmpUser.wars = 0
+                }
             }
         }
         users[userEm] = tmpUser
     }
+    for (user in users) {
+        let tmpUser = {}
+        let portXP = 0
+        let portEmeralds = 0
+        let portWars = 0
+        tmpUser.xp = users[user].xp
+        tmpUser.emeralds = users[user].emeralds
+        tmpUser.wars = users[user].wars
+        portXP = (tmpUser.xp / total.xp) * 100
+        portEmeralds = (tmpUser.emeralds / total.emeralds) * 100
+        portWars = (tmpUser.wars / total.wars) * 100
+        tmpUser.total = Math.round((portXP - -portEmeralds - -portWars) / 3 * 100) / 100
+        users[user] = tmpUser
+    }
+    console.log(users)
     return users
 }
 
 async function showInfo() {
     let users = await getDataFromSheet();
-    let XPHTML = document.getElementById("xp-leaderboard")
-    let emHTML = document.getElementById("em-leaderboard")
-    XPHTML.innerHTML += `<tr>
+    let leaderboard = document.getElementById("leaderboard")
+    leaderboard.innerHTML += `<tr>
                             <th>0</th>
                             <td scope="row">Total:</td>
                             <td>${String(total.xp).replace(/(.)(?=(\d{3})+$)/g,'$1,')} XP</td>
-                            <td>100%</td>
-                        </tr>`
-    emHTML.innerHTML += `<tr>
-                            <th>0</th>
-                            <td scope="row">Total:</td>
                             <td>${String(total.emeralds).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Emeralds</td>
+                            <td>${String(total.wars).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Wars</td>
                             <td>100%</td>
                         </tr>`
-    XPHTML.innerHTML += leaderboardGenerator(users, "xp", "XP")
-    emHTML.innerHTML += leaderboardGenerator(users, "emeralds", "Emeralds")
+    const url_string = window.location.href
+    const url = new URL(url_string);
+    const order = url.searchParams.get("order");
+    if (typeof(total[order]) == "undefined") {
+        leaderboard.innerHTML += leaderboardGenerator(users, "total")
+    } else {
+        leaderboard.innerHTML += leaderboardGenerator(users, order)
+    }
 }
 
-function leaderboardGenerator(data, area, name) {
+function leaderboardGenerator(data, area) {
     let areaData = {}
     let res = ""
     for (user in data) {
@@ -77,8 +105,10 @@ function leaderboardGenerator(data, area, name) {
         res += `<tr>
                     <th scope="row">${placement}</th>
                     <td>${user}</td>
-                    <td>${String(data[user][area]).replace(/(.)(?=(\d{3})+$)/g,'$1,')} ${name}</td>
-                    <td>${Math.round((data[user][area] / total[area]) * 100 * 100) / 100} %</td>
+                    <td>${String(data[user].xp).replace(/(.)(?=(\d{3})+$)/g,'$1,')} XP</td>
+                    <td>${String(data[user].emeralds).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Emeralds</td>
+                    <td>${String(data[user].wars).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Wars</td>
+                    <td>${String(data[user].total).replace(/(.)(?=(\d{3})+$)/g,'$1,')}%</td>
                 </tr>`
         placement++
     }
