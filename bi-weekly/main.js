@@ -103,9 +103,9 @@ function leaderboardGenerator(data, area) {
     for (user in data) {
         areaData[user] = data[user][area]
     }
-    areaDataSorted = Object.keys(areaData).sort(function(a, b) { return areaData[a] - areaData[b] })
+    areaDataSorted = Object.keys(areaData).sort(function(a, b) { return areaData[b] - areaData[a] })
     let placement = 1
-    for (user of areaDataSorted.reverse()) {
+    for (user of areaDataSorted) {
         res += `<tr>
                     <th scope="row">${placement}</th>
                     <td>${user}</td>
