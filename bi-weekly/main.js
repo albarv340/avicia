@@ -1,4 +1,5 @@
 let total = {}
+let lastUpdatedEmeralds = "";
 
 async function getDataFromSheet() {
     let url = 'https://spreadsheets.google.com/feeds/list/10OzD-lY4Rhk1nE6n44uM54M-ycCnBb33zFII3sovvhw/od6/public/values?alt=json';
@@ -14,6 +15,7 @@ async function getDataFromSheet() {
     total.emeralds = sheetData[0].gsx$totalemeralds.$t
     total.wars = sheetData[0].gsx$totalwars.$t
     total.playerwars = sheetData[0].gsx$totalplayerwars.$t
+    lastUpdatedEmeralds = sheetData[0].gsx$lastupdatedemeralds.$t
 
     return sheetDataToReadableArray(sheetData)
 }
@@ -68,6 +70,7 @@ function sheetDataToReadableArray(sheetData) {
         portEmeralds = (tmpUser.emeralds / total.emeralds) * 100
         portWars = (tmpUser.wars / total.playerwars) * 100
         tmpUser.total = Math.round((portXP - -portEmeralds - -portWars) / 3 * 100) / 100
+        tmpUser.exacttotal = (portXP - -portEmeralds - -portWars) / 3
         users[user] = tmpUser
     }
     return users
@@ -86,12 +89,12 @@ async function showInfo(order) {
                             <th>0</th>
                             <td scope="row">Total:</td>
                             <td>${String(total.xp).replace(/(.)(?=(\d{3})+$)/g,'$1,')} XP</td>
-                            <td>${String(total.emeralds).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Emeralds</td>
+                            <td title="Last updated: ${String(lastUpdatedEmeralds)} UTC + 0">${String(total.emeralds).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Emeralds</td>
                             <td>${String(total.wars).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Wars</td>
                             <td>100%</td>
                         </tr>`
     if (typeof(total[order]) == "undefined") {
-        leaderboard.innerHTML += leaderboardGenerator(users, "total")
+        leaderboard.innerHTML += leaderboardGenerator(users, "exacttotal")
     } else {
         leaderboard.innerHTML += leaderboardGenerator(users, order)
     }
@@ -110,13 +113,13 @@ function leaderboardGenerator(data, area) {
                     <th scope="row">${placement}</th>
                     <td>${user}</td>
                     <td>${String(data[user].xp).replace(/(.)(?=(\d{3})+$)/g,'$1,')} XP</td>
-                    <td>${String(data[user].emeralds).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Emeralds</td>
+                    <td title="Last updated: ${String(lastUpdatedEmeralds)} UTC + 0">${String(data[user].emeralds).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Emeralds</td>
                     <td>${String(data[user].wars).replace(/(.)(?=(\d{3})+$)/g,'$1,')} Wars</td>
-                    <td>${String(data[user].total).replace(/(.)(?=(\d{3})+$)/g,'$1,')}%</td>
+                    <td title="${String(data[user].exacttotal)}%">${String(data[user].total).replace(/(.)(?=(\d{3})+$)/g,'$1,')}%</td>
                 </tr>`
         placement++
     }
     return res
 }
 
-showInfo("total")
+showInfo("exacttotal")
