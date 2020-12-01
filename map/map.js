@@ -1,8 +1,10 @@
 function toggle() {
   if (document.getElementById("menu").style.display === "block") {
     document.getElementById("menu").style.display = "none";
+    document.getElementById("cooldowns").style.display = "none";
   } else {
     document.getElementById("menu").style.display = "block";
+    document.getElementById("cooldowns").style.display = "block";
   }
 }
 
@@ -20,7 +22,7 @@ var stringToColor = function (str) {
 }
 
 
-function run() {
+async function run() {
 
   // initializing map
   let bounds = [];
@@ -114,7 +116,7 @@ function run() {
   }
 
   //setting up territories
-  fetch("https://raw.githubusercontent.com/DevScyu/Wynn/master/territories.json")
+  fetch("./territories.json")
     .then(response =>
       response.json())
     .then(json => {
@@ -154,8 +156,7 @@ function run() {
   //calling wynn API every refresh seconds to check territory ownership
   function update() {
     counter = refresh;
-
-    fetch("https://api-legacy.wynncraft.com/public_api.php?action=territoryList")
+    fetch("https://api.wynncraft.com/public_api.php?action=territoryList")
       .then(response => response.json())
       .then(json => json["territories"])
       .then(territories => {
@@ -165,48 +166,40 @@ function run() {
       })
   }
 
+
+  async function getGuilds() {
+    let url = 'https://api.wynncraft.com/public_api.php?action=statsLeaderboard&type=guild&timeframe=d';
+    let obj = null;
+
+    try {
+      obj = await (await fetch(url)).json();
+    } catch (e) {
+      console.log('error');
+    }
+    res = []
+    for (guild of obj.data) {
+      res[guild.name] = guild
+    }
+    return res
+  }
+
   //rendering territories based on territory location, ownership, and settings. also updates leaderboard div
-  function render() {
+  async function render() {
+    guilds = await getGuilds()
     Object.keys(guildTerritories).forEach(territory => {
       let guild = guildTerritories[territory]["guild"];
-
+      // console.log(guild)
       if (!(Object.keys(colors).includes(guild))) {
         colors[guild] = stringToColor(guild)
       }
-
-      if (!(Object.keys(guilds).includes(guild))) {
-
-        fetch(`https://api-legacy.wynncraft.com/public_api.php?action=guildStats&command=${guild}`)
-          .then(response => response.json())
-          .then(json => {
-            guilds[guild] = json;
-          })
-          .then(_ => {
-            setContent(guild, territory);
-
-            if (territoryToggle) {
-              rectangles[territory].setStyle({
-                color: colors[guild],
-              })
-            } else {
-              rectangles[territory].setStyle({
-                color: 'rgba(0,0,0,0)'
-              })
-            }
-
-          });
-
+      if (territoryToggle) {
+        rectangles[territory].setStyle({
+          color: colors[guild],
+        })
       } else {
-        if (territoryToggle) {
-          rectangles[territory].setStyle({
-            color: colors[guild],
-          })
-        } else {
-          rectangles[territory].setStyle({
-            color: 'rgba(0,0,0,0)'
-          })
-        }
-
+        rectangles[territory].setStyle({
+          color: 'rgba(0,0,0,0)'
+        })
         setContent(guild, territory);
       }
     });
@@ -216,18 +209,31 @@ function run() {
   tick()
 
   function tick() {
-    console.log(cdRectangles)
     setTimeout(_ => {
       tick()
     }, 1000)
 
-    counter += -1;
+    counter -= 1;
     document.getElementById("countdown").innerHTML = counter;
-
+    tmpHtml = "<h1>Cooldowns</h1>"
+    const now = new Date();
+    let cooldowns = []
     Object.keys(cdRectangles).forEach(territory => {
       let guild = guildTerritories[territory]["guild"];
       setContent(guildTerritories[territory]["guild"], territory)
+      cooldowns.push([181 - Math.round((new Date(now.getTime() + now.getTimezoneOffset() * 60000) - new Date(guildTerritories[territory]["acquired"])) / 1000), territory, colors[guildTerritories[territory]["guild"]], guildTerritories[territory]["guild"]])
     })
+
+    const orderedCds = cooldowns.sort(function (a, b) { return a[0] - b[0] })
+
+    for (cooldown in orderedCds) {
+      tmpHtml += `<p>${orderedCds[cooldown][1]} - ${Math.floor(orderedCds[cooldown][0] / 60)}m ${orderedCds[cooldown][0] % 60}s <span style=color:${orderedCds[cooldown][2]}>${orderedCds[cooldown][3]}</span>`
+    }
+
+    if (tmpHtml == "<h1>Cooldowns</h1>") {
+      tmpHtml = "<h1>Cooldowns</h1><p>None</p>"
+    }
+    document.getElementById("cooldowns").innerHTML = tmpHtml
   }
 
   //on zoom end, update map based on zoom
@@ -244,15 +250,17 @@ function run() {
   //sets tooltip and popup content
   function setContent(guild, territory) {
     let tooltip = "<div>"
-    if (guildNames) tooltip +=
-      `<div style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+    try {
+      if (guildNames) tooltip +=
+        `<div style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
 				0px 0px 1px ${colors[guild]},
 				0px 0px 2px ${colors[guild]},
 				0px 0px 3px ${colors[guild]},
 				0px 0px 4px ${colors[guild]},
 				0px 0px 5px ${colors[guild]},
-				0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
-      guilds[guild]["prefix"] + "</div>";
+        0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
+        guilds[guild]["prefix"] + "</div>";
+    } catch (e) { }
 
     if (territoryNames) tooltip += "<div class='territory'>"
       + territory
@@ -300,25 +308,30 @@ function run() {
         }
       }
     }
+    try {
 
-    rectangles[territory].setPopupContent(`<div id="info-popup">
+      rectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
 			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
+    } catch (e) { }
 
     if (((diff / 1000) < 180) && (!Object.keys(cdRectangles).includes(territory))) {
       let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
         color: "#FF000",
         weight: 5
       })
-      cdRectangle.bindPopup(`<div id="info-popup">
-			<div><b>${territory}</b></div>
-			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
-			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
-			<div>Held for ${str}.</div>
-			</div>`).openPopup();
+      try {
+
+        cdRectangle.bindPopup(`<div id="info-popup">
+        <div><b>${territory}</b></div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
+        <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+        <div>Held for ${str}.</div>
+        </div>`).openPopup();
+      } catch (e) { }
       cdRectangle.setStyle({
         color: "#FF0000",
       })
@@ -331,12 +344,14 @@ function run() {
       cdRectangles[territory].remove();
       delete cdRectangles[territory];
     } else if (Object.keys(cdRectangles).includes(territory)) {
-      cdRectangles[territory].setPopupContent(`<div id="info-popup">
-			<div><b>${territory}</b></div>
-			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
-			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
-			<div>Held for ${str}.</div>
-			</div>`);
+      try {
+        cdRectangles[territory].setPopupContent(`<div id="info-popup">  
+        <div><b>${territory}</b></div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
+        <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+        <div>Held for ${str}.</div>
+        </div>`);
+      } catch (e) { }
     }
   }
 

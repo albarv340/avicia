@@ -3094,5 +3094,133 @@
       "level": 80,
       "spawnLocation": "-1492,69,-2620",
       "xp": 4160
+    },
+    {
+      "name": "The Silent Road",
+      "start": "540,-1088",
+      "end": "704,-961",
+      "level": 100,
+      "xp": -1,
+      "spawnLocation": "442,68,-1612"
+    },
+    {
+      "name": "The Broken Road",
+      "start": "686,-923",
+      "end": "493,-783",
+      "level": 100,
+      "xp": -1,
+      "spawnLocation": "442,68,-1612"
+    },
+    {
+      "name": "Worm Tunnel",
+      "start": "641,-767",
+      "end": "543,-640",
+      "level": 101,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Gray Zone",
+      "start": "683,-619",
+      "end": "477,-515",
+      "level": 101,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Forgotten Town",
+      "start": "480,-493",
+      "end": "734,-355",
+      "level": 101,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Forest of Eyes",
+      "start": "813,-333",
+      "end": "1043,-504",
+      "level": 101,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Sinister Forest",
+      "start": "815,-506",
+      "end": "1059,-629",
+      "level": 101,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Lutho",
+      "start": "936,-654",
+      "end": "1027,-754",
+      "level": 101,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Paths of Sludge",
+      "start": "1040,-767",
+      "end": "892,-870",
+      "level": 102,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Toxic Drip",
+      "start": "893,-876",
+      "end": "1086,-992",
+      "level": 102,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Toxic Caves",
+      "start": "1017,-1146",
+      "end": "844,-993",
+      "level": 102,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Gateway to Nothing",
+      "start": "1120,-882",
+      "end": "1244,-1058",
+      "level": 102,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Void Valley",
+      "start": "1082,-1161",
+      "end": "1301,-1078",
+      "level": 102,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Sacrifice",
+      "start": "1388,-869",
+      "end": "1254,-932",
+      "level": 102,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "Bizarre Passage",
+      "start": "1187,-680",
+      "end": "1388,-530",
+      "level": 103,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
+    },
+    {
+      "name": "The Gate",
+      "start": "1350,-520",
+      "end": "1265,-410",
+      "level": 103,
+      "xp": -1,
+      "spawnLocation": "978,73,-671"
     }
 ]
