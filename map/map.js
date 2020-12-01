@@ -215,25 +215,12 @@ async function run() {
 
     counter -= 1;
     document.getElementById("countdown").innerHTML = counter;
-    tmpHtml = "<h1>Cooldowns</h1>"
-    const now = new Date();
-    let cooldowns = []
     Object.keys(cdRectangles).forEach(territory => {
       let guild = guildTerritories[territory]["guild"];
       setContent(guildTerritories[territory]["guild"], territory)
-      cooldowns.push([181 - Math.round((new Date(now.getTime() + now.getTimezoneOffset() * 60000) - new Date(guildTerritories[territory]["acquired"])) / 1000), territory, colors[guildTerritories[territory]["guild"]], guildTerritories[territory]["guild"]])
     })
 
-    const orderedCds = cooldowns.sort(function (a, b) { return a[0] - b[0] })
 
-    for (cooldown in orderedCds) {
-      tmpHtml += `<p>${orderedCds[cooldown][1]} - ${Math.floor(orderedCds[cooldown][0] / 60)}m ${orderedCds[cooldown][0] % 60}s <span style=color:${orderedCds[cooldown][2]}>${orderedCds[cooldown][3]}</span>`
-    }
-
-    if (tmpHtml == "<h1>Cooldowns</h1>") {
-      tmpHtml = "<h1>Cooldowns</h1><p>None</p>"
-    }
-    document.getElementById("cooldowns").innerHTML = tmpHtml
   }
 
   //on zoom end, update map based on zoom

@@ -90,33 +90,6 @@ body {
   /* Add a pointer on hover */
 }
 
-#cooldowns {
-  position: fixed;
-  /* Sit on top of the page content */
-  display: none;
-  /* Hidden by default */
-  width: 20%;
-  /* Full width (cover the whole page) */
-  height: 100%;
-  /* Full height (cover the whole page) */
-  top: 0;
-  left: 80vw;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(255, 255, 255, 0.1);
-  /* White background with opacity */
-  z-index: 2;
-  cursor: pointer;
-  /* Add a pointer on hover */
-  max-height: 100%;
-  overflow-y: auto;
-  color: white;
-}
-
-#cooldowns p, h1 {
-  padding-left: 10px;
-}
-
 .menu-text, p a {
   text-align: left !important;
   font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
