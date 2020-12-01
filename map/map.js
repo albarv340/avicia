@@ -1,10 +1,8 @@
 function toggle() {
   if (document.getElementById("menu").style.display === "block") {
     document.getElementById("menu").style.display = "none";
-    document.getElementById("cooldowns").style.display = "none";
   } else {
     document.getElementById("menu").style.display = "block";
-    document.getElementById("cooldowns").style.display = "block";
   }
 }
 
