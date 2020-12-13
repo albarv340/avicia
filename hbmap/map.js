@@ -310,8 +310,19 @@ async function run() {
 
       rectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
-			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
-      <div>${guildTerritories[territory].hq ? "HQ" : ""}</div>
+      <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
+      <div>${guildTerritories[territory]['resources'].emeralds > 0 ? "+" + guildTerritories[territory]['resources'].emeralds + " Emeralds" : ""}</div>
+      <div>${guildTerritories[territory]['resources'].ore > 0 ? "+" + guildTerritories[territory]['resources'].ore + " Ore" : ""}</div>
+      <div>${guildTerritories[territory]['resources'].crops > 0 ? "+" + guildTerritories[territory]['resources'].crops + " Crops" : ""}</div>
+      <div>${guildTerritories[territory]['resources'].fish > 0 ? "+" + guildTerritories[territory]['resources'].fish + " Fish" : ""}</div>
+      <div>${guildTerritories[territory]['resources'].wood > 0 ? "+" + guildTerritories[territory]['resources'].wood + " Wood" : ""}</div>
+      <br>
+      <div>${guildTerritories[territory]['stored'].emeralds.length != 1 ? guildTerritories[territory]['stored'].emeralds + " Emeralds" : ""}</div>
+      <div>${guildTerritories[territory]['stored'].ore.length != 1 ? guildTerritories[territory]['stored'].ore + " Ore" : ""}</div>
+      <div>${guildTerritories[territory]['stored'].crops.length != 1 ? guildTerritories[territory]['stored'].crops + " Crops" : ""}</div>
+      <div>${guildTerritories[territory]['stored'].fish.length != 1 ? guildTerritories[territory]['stored'].fish + " Fish" : ""}</div>
+      <div>${guildTerritories[territory]['stored'].wood.length != 1 ? guildTerritories[territory]['stored'].wood + " Wood" : ""}</div>
+      <div>${guildTerritories[territory].hq ? "<br>HQ" : ""}</div>
       </div>`);
     } catch (e) {
       // console.log(e)
