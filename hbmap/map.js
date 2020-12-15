@@ -67,6 +67,7 @@ async function run() {
   let cdRectangles = [];
   let guilds = [];
   let leaderboard = [];
+  let tradingRoutes = []
   let prevZoom = 7;
   let refresh = 60;
   let colors = { "Blacklisted": "#333333", "Titans Valor": "#e6d8e7", "HackForums": "#9d28c8", "Mystica": "#3a1645", "Celestial Tigers": "#FF4500", "Kingdom Foxes": "#FF8200", "Bobs Torturers": "#7300ff", "Restive": "#0F6868", "Caeruleum Order": "#012142", "The Simple Ones": "#0fcad6", "Lunatic": "#fae600", "Nethers Ascent": "#4a0000", "Paladins United": "#9780bf", "BuildCraftia": "#1CE00B", "Holders of LE": "#28FFC5", "House of Sentinels": "#7F0000", "Imperial": "#990033", "The Hive": "#A550F3", "Audux": "#005FE8", "Emorians": "#005FE8", "IceBlue Team": "#99AAB5", "DiamondDeities": "#42A8C7", "Fantasy": "#21C8EC", "Sins of Seedia": "#6B0B0B", "Avicia": "#1010FE", "Project Ultimatum": "#133E7C", "The Nezaract": "#6cf3ff", "Beyond the Scene": "#99ac01" }
@@ -161,11 +162,14 @@ async function run() {
         for (rectangle in rectangles) {
           try {
             for (route of guildTerritories[rectangle]['Trading Routes']) {
-
-              L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'white' }).addTo(map)
+              let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)' })
+              tradingRoutes[rectangle] ? tradingRoutes[rectangle].push(polyline) : tradingRoutes[rectangle] = [polyline]
+              polyline.bindPopup(rectangle + "<->" + route).openPopup();
+              polyline.addTo(map)
             }
           } catch (e) { }
         }
+        // console.log(tradingRoutes)
         render();
         // setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
       })
@@ -246,6 +250,23 @@ async function run() {
         }
       }
     }
+    if (map.getZoom() <= 7) {
+      for (territory in tradingRoutes) {
+        for (route in tradingRoutes[territory]) {
+          tradingRoutes[territory][route].setStyle({
+            color: 'rgba(0,0,0,0)'
+          })
+        }
+      }
+    } else if (map.getZoom() >= 7) {
+      for (territory in tradingRoutes) {
+        for (route in tradingRoutes[territory]) {
+          tradingRoutes[territory][route].setStyle({
+            color: 'white'
+          })
+        }
+      }
+    }
 
     prevZoom = map.getZoom();
   })
@@ -263,7 +284,12 @@ async function run() {
 				0px 0px 4px ${color},
 				0px 0px 5px ${color},
         0px 0px 6px ${color} !important;'><div class='identifier'>` +
-        guildTerritories[territory]['prefix'] + "<br>" + (guildTerritories[territory]['hq'] ? "HQ" : "") + "</div>";
+        guildTerritories[territory]['prefix'] + "<br>" + (guildTerritories[territory]['hq'] ? "HQ" : "") + "</div>"
+        + `
+        <div>${guildTerritories[territory]['resources'].ore > 0 ? "Ore" : ""}</div>
+        <div>${guildTerritories[territory]['resources'].crops > 0 ? "Crops" : ""}</div>
+        <div>${guildTerritories[territory]['resources'].fish > 0 ? "Fish" : ""}</div>
+        <div>${guildTerritories[territory]['resources'].wood > 0 ? "Wood" : ""}</div>`;
     } catch (e) {
       // console.log(e)
     }
