@@ -73,9 +73,9 @@ async function run() {
   let colors = { "Blacklisted": "#333333", "Titans Valor": "#e6d8e7", "HackForums": "#9d28c8", "Mystica": "#3a1645", "Celestial Tigers": "#FF4500", "Kingdom Foxes": "#FF8200", "Bobs Torturers": "#7300ff", "Restive": "#0F6868", "Caeruleum Order": "#012142", "The Simple Ones": "#0fcad6", "Lunatic": "#fae600", "Nethers Ascent": "#4a0000", "Paladins United": "#9780bf", "BuildCraftia": "#1CE00B", "Holders of LE": "#28FFC5", "House of Sentinels": "#7F0000", "Imperial": "#990033", "The Hive": "#A550F3", "Audux": "#005FE8", "Emorians": "#005FE8", "IceBlue Team": "#99AAB5", "DiamondDeities": "#42A8C7", "Fantasy": "#21C8EC", "Sins of Seedia": "#6B0B0B", "Avicia": "#1010FE", "Project Ultimatum": "#133E7C", "The Nezaract": "#6cf3ff", "Beyond the Scene": "#99ac01" }
 
   //grabbing options elements
-  let slider = document.getElementById("rate-option");
-  let output = document.getElementById("rate-display");
-  output.innerHTML = slider.value;
+  // let slider = document.getElementById("rate-option");
+  // let output = document.getElementById("rate-display");
+  // output.innerHTML = slider.value;
 
   let checkboxTerritory = document.getElementById("territory-toggle");
   let checkboxNames = document.getElementById("territory-names");
@@ -85,13 +85,13 @@ async function run() {
   let territoryNames = false;
   let guildNames = true;
 
-  let counter = refresh
-  document.getElementById("countdown").innerHTML = counter;
+  // let counter = refresh
+  // document.getElementById("countdown").innerHTML = counter;
 
-  slider.oninput = function () {
-    refresh = this.value;
-    output.innerHTML = this.value;
-  }
+  // slider.oninput = function () {
+  //   refresh = this.value;
+  //   output.innerHTML = this.value;
+  // }
 
   checkboxTerritory.oninput = function () {
     territoryToggle = this.checked;
@@ -229,8 +229,8 @@ async function run() {
       tick()
     }, 1000)
 
-    counter -= 1;
-    document.getElementById("countdown").innerHTML = counter;
+    // counter -= 1;
+    // document.getElementById("countdown").innerHTML = counter;
     Object.keys(cdRectangles).forEach(territory => {
       let guild = guildTerritories[territory]["guild"];
       setContent(guildTerritories[territory]["guild"], territory)
@@ -286,10 +286,10 @@ async function run() {
         0px 0px 6px ${color} !important;'><div class='identifier'>` +
         guildTerritories[territory]['prefix'] + "<br>" + (guildTerritories[territory]['hq'] ? "HQ" : "") + "</div>"
         + `
-        <div>${guildTerritories[territory]['resources'].ore > 0 ? "Ore" : ""}</div>
-        <div>${guildTerritories[territory]['resources'].crops > 0 ? "Crops" : ""}</div>
-        <div>${guildTerritories[territory]['resources'].fish > 0 ? "Fish" : ""}</div>
-        <div>${guildTerritories[territory]['resources'].wood > 0 ? "Wood" : ""}</div>`;
+        <div>${guildTerritories[territory]['resources'].ore > 0 ? "⛏" : ""}</div>
+        <div>${guildTerritories[territory]['resources'].crops > 0 ? "🌿" : ""}</div>
+        <div>${guildTerritories[territory]['resources'].fish > 0 ? "🐟" : ""}</div>
+        <div>${guildTerritories[territory]['resources'].wood > 0 ? "🪓" : ""}</div>`;
     } catch (e) {
       // console.log(e)
     }
