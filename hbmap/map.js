@@ -158,8 +158,16 @@ async function run() {
       .then(response => response.json())
       .then(territories => {
         guildTerritories = territories;
+        for (rectangle in rectangles) {
+          try {
+            for (route of guildTerritories[rectangle]['Trading Routes']) {
+
+              L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'white' }).addTo(map)
+            }
+          } catch (e) { }
+        }
         render();
-        setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
+        // setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
       })
   }
 
@@ -322,8 +330,12 @@ async function run() {
       <div>${guildTerritories[territory]['stored'].crops.length != 1 ? guildTerritories[territory]['stored'].crops + " Crops" : ""}</div>
       <div>${guildTerritories[territory]['stored'].fish.length != 1 ? guildTerritories[territory]['stored'].fish + " Fish" : ""}</div>
       <div>${guildTerritories[territory]['stored'].wood.length != 1 ? guildTerritories[territory]['stored'].wood + " Wood" : ""}</div>
+      <br>
+      <div><strong>Trading Routes:</strong></div>
+      <div>${guildTerritories[territory]["Trading Routes"].join("</div><div>")}</div>
       <div>${guildTerritories[territory].hq ? "<br>HQ" : ""}</div>
-      </div>`);
+      </div>`
+      );
     } catch (e) {
       // console.log(e)
     }
