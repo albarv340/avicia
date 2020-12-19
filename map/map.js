@@ -245,7 +245,17 @@ async function run() {
 				0px 0px 5px ${colors[guild]},
         0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
         guilds[guild]["prefix"] + "</div>";
-    } catch (e) { }
+    } catch (e) {
+      if (guildNames) tooltip +=
+        `<div style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+				0px 0px 1px ${colors[guild]},
+				0px 0px 2px ${colors[guild]},
+				0px 0px 3px ${colors[guild]},
+				0px 0px 4px ${colors[guild]},
+				0px 0px 5px ${colors[guild]},
+        0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
+        guild + "</div>";
+    }
 
     if (territoryNames) tooltip += "<div class='territory'>"
       + territory
@@ -301,7 +311,14 @@ async function run() {
 			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
-    } catch (e) { }
+    } catch (e) {
+      rectangles[territory].setPopupContent(`<div id="info-popup">
+			<div><b>${territory}</b></div>
+			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
+			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+			<div>Held for ${str}.</div>
+			</div>`);
+    }
 
     if (((diff / 1000) < 180) && (!Object.keys(cdRectangles).includes(territory))) {
       let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
@@ -316,7 +333,14 @@ async function run() {
         <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
         <div>Held for ${str}.</div>
         </div>`).openPopup();
-      } catch (e) { }
+      } catch (e) {
+        cdRectangle.bindPopup(`<div id="info-popup">
+        <div><b>${territory}</b></div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
+        <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+        <div>Held for ${str}.</div>
+        </div>`).openPopup();
+      }
       cdRectangle.setStyle({
         color: "#FF0000",
       })
