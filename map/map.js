@@ -360,7 +360,14 @@ async function run() {
         <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
         <div>Held for ${str}.</div>
         </div>`);
-      } catch (e) { }
+      } catch (e) {
+        cdRectangles[territory].setPopupContent(`<div id="info-popup">  
+        <div><b>${territory}</b></div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
+        <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+        <div>Held for ${str}.</div>
+        </div>`);
+      }
     }
   }
 
