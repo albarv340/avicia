@@ -68,7 +68,7 @@ async function run() {
   let guilds = [];
   let leaderboard = [];
   let prevZoom = 7;
-  let refresh = 60;
+  let refresh = 30;
   let colors = { "Blacklisted": "#333333", "Titans Valor": "#e6d8e7", "HackForums": "#9d28c8", "Mystica": "#3a1645", "Celestial Tigers": "#FF4500", "Kingdom Foxes": "#FF8200", "Bobs Torturers": "#7300ff", "Restive": "#0F6868", "Caeruleum Order": "#012142", "The Simple Ones": "#0fcad6", "Lunatic": "#fae600", "Nethers Ascent": "#4a0000", "Paladins United": "#9780bf", "BuildCraftia": "#1CE00B", "Holders of LE": "#28FFC5", "House of Sentinels": "#7F0000", "Imperial": "#990033", "The Hive": "#A550F3", "Audux": "#005FE8", "Emorians": "#005FE8", "IceBlue Team": "#99AAB5", "DiamondDeities": "#42A8C7", "Fantasy": "#21C8EC", "Sins of Seedia": "#6B0B0B", "Avicia": "#1010FE", "Project Ultimatum": "#133E7C", "The Nezaract": "#6cf3ff", "Beyond the Scene": "#99ac01" }
 
   //grabbing options elements
@@ -89,6 +89,7 @@ async function run() {
 
   slider.oninput = function () {
     refresh = this.value;
+    update()
     output.innerHTML = this.value;
   }
 
@@ -160,12 +161,15 @@ async function run() {
       .then(territories => {
         guildTerritories = territories;
         render();
+        for (let territory of Object.keys(rectangles)) {
+          setContent(guildTerritories[territory]["guild"], territory);
+        }
         setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
       })
   }
 
 
-  async function getGuilds() {
+  async function getGuilds(callback) {
     let url = 'https://api.wynncraft.com/public_api.php?action=statsLeaderboard&type=guild&timeframe=d';
     let obj = null;
 
@@ -178,30 +182,61 @@ async function run() {
     for (guild of obj.data) {
       res[guild.name] = guild
     }
+    callback(res)
     return res
   }
 
   //rendering territories based on territory location, ownership, and settings. also updates leaderboard div
   async function render() {
-    guilds = await getGuilds()
-    Object.keys(guildTerritories).forEach(territory => {
-      let guild = guildTerritories[territory]["guild"];
-      // console.log(guild)
-      if (!(Object.keys(colors).includes(guild))) {
-        colors[guild] = stringToColor(guild)
+    await getGuilds(function (res) {
+      for (g in res) {
+        guilds[g] = res[g]
       }
-      if (territoryToggle) {
-        rectangles[territory].setStyle({
-          color: colors[guild],
-        })
-      } else {
-        rectangles[territory].setStyle({
-          color: 'rgba(0,0,0,0)'
-        })
-        setContent(guild, territory);
-      }
-    });
-    updateLeaderboard();
+      Object.keys(guildTerritories).forEach(territory => {
+        let guild = guildTerritories[territory]["guild"];
+        // console.log(guild)
+        if (!(Object.keys(colors).includes(guild))) {
+          colors[guild] = stringToColor(guild)
+        }
+        if (!(Object.keys(guilds).includes(guild))) {
+          console.log(guild)
+          fetch(`https://api-legacy.wynncraft.com/public_api.php?action=guildStats&command=${guild}`)
+            .then(response => response.json())
+            .then(json => {
+              guilds[guild] = json;
+            })
+            .then(_ => {
+              setContent(guild, territory);
+
+              if (territoryToggle) {
+                rectangles[territory].setStyle({
+                  color: colors[guild],
+                })
+              } else {
+                rectangles[territory].setStyle({
+                  color: 'rgba(0,0,0,0)'
+                })
+              }
+
+            });
+
+        } else {
+          if (territoryToggle) {
+            rectangles[territory].setStyle({
+              color: colors[guild],
+            })
+          } else {
+            rectangles[territory].setStyle({
+              color: 'rgba(0,0,0,0)'
+            })
+            setContent(guild, territory);
+          }
+        }
+
+      });
+      updateLeaderboard();
+    })
+
   }
 
   tick()
@@ -265,9 +300,12 @@ async function run() {
 
     if (map.getZoom() > 7) {
       rectangles[territory].setTooltipContent(tooltip);
+    } else if (Object.keys(cdRectangles).includes(territory)) {
+      rectangles[territory].setTooltipContent(tooltip);
     } else {
       rectangles[territory].setTooltipContent(" ");
     }
+
 
     var now = new Date();
     var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
@@ -323,7 +361,8 @@ async function run() {
     if (((diff / 1000) < 180) && (!Object.keys(cdRectangles).includes(territory))) {
       let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
         color: "#FF000",
-        weight: 5
+        weight: 5,
+        dashArray: 7
       })
       try {
 
@@ -333,6 +372,7 @@ async function run() {
         <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
         <div>Held for ${str}.</div>
         </div>`).openPopup();
+        cdRectangle.bindTooltip(guilds[guild]["prefix"])
       } catch (e) {
         cdRectangle.bindPopup(`<div id="info-popup">
         <div><b>${territory}</b></div>
@@ -350,6 +390,7 @@ async function run() {
       console.log("ADDING " + territory)
     } else if (((diff / 1000) > 180) && Object.keys(cdRectangles).includes(territory)) {
       console.log("REMOVING " + territory)
+      cdRectangles[territory].bindTooltip(" ")
       cdRectangles[territory].remove();
       delete cdRectangles[territory];
     } else if (Object.keys(cdRectangles).includes(territory)) {
