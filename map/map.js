@@ -371,7 +371,9 @@ async function run() {
       console.log("REMOVING " + territory)
       cdRectangles[territory].remove();
       delete cdRectangles[territory];
-      rectangles[territory].bindTooltip(" ")
+      if (map.getZoom() <= 7) {
+        rectangles[territory].bindTooltip(" ")
+      }
     }
   }
 
