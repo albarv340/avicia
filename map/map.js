@@ -6,18 +6,11 @@ function toggle() {
   }
 }
 
-var stringToColor = function (str) {
-  var hash = 0
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  var color = '#'
-  for (var i = 0; i < 3; i++) {
-    var value = (hash >> (i * 8)) & 0xff
-    color += ('00' + value.toString(16)).substr(-2)
-  }
-  return color
+function stringToColor(str) {
+  var crc32 = function (r) { for (var a, o = [], c = 0; c < 256; c++) { a = c; for (var f = 0; f < 8; f++)a = 1 & a ? 3988292384 ^ a >>> 1 : a >>> 1; o[c] = a } for (var n = -1, t = 0; t < r.length; t++)n = n >>> 8 ^ o[255 & (n ^ r.charCodeAt(t))]; return (-1 ^ n) >>> 0 };
+  return "#" + crc32(str).toString(16).substr(2, 8)
 }
+
 
 
 async function run() {
@@ -69,8 +62,40 @@ async function run() {
   let leaderboard = [];
   let prevZoom = 7;
   let refresh = 30;
-  let colors = { "Blacklisted": "#333333", "Titans Valor": "#e6d8e7", "HackForums": "#9d28c8", "Mystica": "#3a1645", "Celestial Tigers": "#FF4500", "Kingdom Foxes": "#FF8200", "Bobs Torturers": "#7300ff", "Restive": "#0F6868", "Caeruleum Order": "#012142", "The Simple Ones": "#0fcad6", "Lunatic": "#fae600", "Nethers Ascent": "#4a0000", "Paladins United": "#9780bf", "BuildCraftia": "#1CE00B", "Holders of LE": "#28FFC5", "House of Sentinels": "#7F0000", "Imperial": "#990033", "The Hive": "#A550F3", "Audux": "#005FE8", "Emorians": "#005FE8", "IceBlue Team": "#99AAB5", "DiamondDeities": "#42A8C7", "Fantasy": "#21C8EC", "Sins of Seedia": "#6B0B0B", "Avicia": "#1010FE", "Project Ultimatum": "#133E7C", "The Nezaract": "#6cf3ff", "Beyond the Scene": "#99ac01" }
-
+  let colors = {
+    "Blacklisted": "#333333",
+    "Titans Valor": "#e6d8e7",
+    "HackForums": "#9d28c8",
+    "Mystica": "#3a1645",
+    "Celestial Tigers": "#FF4500",
+    "Kingdom Foxes": "#FF8200",
+    "Bobs Torturers": "#7300ff",
+    "Restive": "#0F6868",
+    "Caeruleum Order": "#012142",
+    "The Simple Ones": "#0fcad6",
+    "Lunatic": "#fae600",
+    "Nethers Ascent": "#4a0000",
+    "Paladins United": "#9780bf",
+    "BuildCraftia": "#1CE00B",
+    "Holders of LE": "#28FFC5",
+    "House of Sentinels": "#7F0000",
+    "Imperial": "#990033",
+    "The Hive": "#A550F3",
+    "Audux": "#005FE8",
+    "Emorians": "#005FE8",
+    "IceBlue Team": "#99AAB5",
+    "DiamondDeities": "#42A8C7",
+    "Fantasy": "#21C8EC",
+    "Sins of Seedia": "#6B0B0B",
+    "Avicia": "#1010FE",
+    "Project Ultimatum": "#133E7C",
+    "The Nezaract": "#6cf3ff",
+    "Beyond the Scene": "#99ac01",
+    "TheNoLifes": "#133a17",
+    "Eden": "#00ff4a",
+    "Phantom Hearts": "#E74C3C",
+    "ShadowFall": "#db10f6"
+  }
   //grabbing options elements
   let slider = document.getElementById("rate-option");
   let output = document.getElementById("rate-display");
@@ -195,6 +220,7 @@ async function run() {
       Object.keys(guildTerritories).forEach(territory => {
         let guild = guildTerritories[territory]["guild"];
         // console.log(guild)
+        console.log((Object.keys(colors)))
         if (!(Object.keys(colors).includes(guild))) {
           colors[guild] = stringToColor(guild)
         }
