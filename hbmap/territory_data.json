@@ -33,15 +33,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "387/3000",
-      "ore": " 117/5500",
+      "emeralds": "2997/3000",
+      "ore": " 5495/5500",
       "crops": "0",
-      "fish": " 94/5500",
-      "wood": " 16/5500"
+      "fish": " 1/5500",
+      "wood": " 1/5500"
     },
     "Trading Routes": [
-      "Tree Island",
-      "Skiens Island"
+      "Skiens Island",
+      "Tree Island"
     ]
   },
   "Olux": {
@@ -58,15 +58,15 @@
     "stored": {
       "emeralds": "3000/3000",
       "ore": " 500/500",
-      "crops": " 188/500",
+      "crops": " 1/500",
       "fish": " 499/500",
-      "wood": " 189/500"
+      "wood": " 1/500"
     },
     "Trading Routes": [
       "Swamp Dark Forest Transition Upper",
       "Swamp Dark Forest Transition Mid",
-      "Entrance to Olux",
-      "Swamp Mountain Transition Upper"
+      "Swamp Mountain Transition Upper",
+      "Entrance to Olux"
     ]
   },
   "Plains": {
@@ -81,16 +81,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "153/12000",
+      "emeralds": "140/12000",
       "ore": "0",
-      "crops": " 203/1000",
+      "crops": " 185/1000",
       "fish": "0",
-      "wood": " 35/1000"
+      "wood": " 39/1000"
     },
     "Trading Routes": [
-      "North Nivla Woods",
-      "Nivla Woods Entrance",
       "Maltic Plains",
+      "Nivla Woods Entrance",
+      "North Nivla Woods",
       "South Farmers Valley"
     ]
   },
@@ -106,11 +106,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "342/3000",
-      "ore": " 20/1000",
+      "emeralds": "288/3000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 102/1000"
+      "fish": " 3/1000",
+      "wood": " 87/1000"
     },
     "Trading Routes": [
       "Lone Farmstead",
@@ -138,8 +138,8 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Cinfras Thanos Transition",
-      "Thanos"
+      "Thanos",
+      "Cinfras Thanos Transition"
     ]
   },
   "Light Realm East Lower": {
@@ -200,14 +200,38 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "454/3000",
-      "ore": " 131/500",
-      "crops": " 86/500",
-      "fish": " 8/500",
-      "wood": " 8/500"
+      "emeralds": "460/3000",
+      "ore": " 119/500",
+      "crops": " 96/500",
+      "fish": " 9/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Mining Base Upper"
+    ]
+  },
+  "Savannah West Lower": {
+    "guild": "HackForums",
+    "prefix": "Hax",
+    "hq": false,
+    "resources": {
+      "emeralds": "12150",
+      "ore": "0",
+      "crops": "3600",
+      "fish": "0",
+      "wood": "0"
+    },
+    "stored": {
+      "emeralds": "284/3000",
+      "ore": " 22/500",
+      "crops": " 84/500",
+      "fish": "0",
+      "wood": "0"
+    },
+    "Trading Routes": [
+      "Savannah East Lower",
+      "Ternaves Plains Upper",
+      "Savannah West Upper"
     ]
   },
   "Durum Isles Upper": {
@@ -222,41 +246,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
+      "Durum Isles Center",
       "Selchar",
-      "Nodguj Nation",
       "Mage Island",
-      "Durum Isles Center"
-    ]
-  },
-  "Savannah West Lower": {
-    "guild": "HackForums",
-    "prefix": "Hax",
-    "hq": false,
-    "resources": {
-      "emeralds": "9000",
-      "ore": "0",
-      "crops": "3600",
-      "fish": "0",
-      "wood": "0"
-    },
-    "stored": {
-      "emeralds": "250/3000",
-      "ore": "0",
-      "crops": " 100/500",
-      "fish": "0",
-      "wood": "0"
-    },
-    "Trading Routes": [
-      "Savannah West Upper",
-      "Savannah East Lower",
-      "Ternaves Plains Upper"
+      "Nodguj Nation"
     ]
   },
   "Ragni North Entrance": {
@@ -271,42 +271,42 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "9/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 999/1000",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Katoa Ranch",
       "Ragni North Suburbs",
+      "Katoa Ranch",
       "Ragni"
     ]
   },
   "Selchar": {
-    "guild": "Cthulhu",
-    "prefix": "Kth",
+    "guild": "Titans Valor",
+    "prefix": "ANO",
     "hq": true,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
       "crops": "0",
-      "fish": "5400",
+      "fish": "3600",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "2997/3000",
-      "ore": " 15467/15500",
-      "crops": " 1/15500",
-      "fish": " 15496/15500",
-      "wood": " 15488/15500"
+      "emeralds": "32996/33000",
+      "ore": " 16654/45500",
+      "crops": " 577/45500",
+      "fish": " 45498/45500",
+      "wood": " 6851/45500"
     },
     "Trading Routes": [
-      "Skiens Island",
-      "Durum Isles Lower",
       "Durum Isles Upper",
+      "Rooster Island",
       "Durum Isles Center",
-      "Rooster Island"
+      "Skiens Island",
+      "Durum Isles Lower"
     ]
   },
   "Llevigar Plains West Lower": {
@@ -321,41 +321,41 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/3000",
-      "ore": " 74/1000",
+      "emeralds": "418/3000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 2/1000"
+      "fish": " 3/1000",
+      "wood": " 3/1000"
     },
     "Trading Routes": [
-      "Llevigar Gate West",
-      "Llevigar Farm Plains West",
       "Llevigar Plains West Upper",
-      "Llevigar Plains East Lower"
+      "Llevigar Farm Plains West",
+      "Llevigar Plains East Lower",
+      "Llevigar Gate West"
     ]
   },
   "Nesaak Plains South East": {
-    "guild": "HackForums",
-    "prefix": "Hax",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "9600"
+      "wood": "5400"
     },
     "stored": {
-      "emeralds": "425/3000",
+      "emeralds": "275/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 72/500"
+      "wood": " 125/500"
     },
     "Trading Routes": [
-      "Nesaak Village",
+      "Bob's Tomb",
       "Nesaak Plains South West",
-      "Bob's Tomb"
+      "Nesaak Village"
     ]
   },
   "Royal Gate": {
@@ -370,10 +370,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 208/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -392,18 +392,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "4862228/4863000",
-      "ore": " 405350/405500",
-      "crops": " 405382/405500",
-      "fish": " 405345/405500",
-      "wood": " 405129/405500"
+      "emeralds": "4862350/4863000",
+      "ore": " 405374/405500",
+      "crops": " 405397/405500",
+      "fish": " 405370/405500",
+      "wood": " 405189/405500"
     },
     "Trading Routes": [
-      "Mining Base Lower",
-      "The Silent Road",
       "Ternaves Plains Lower",
+      "Mining Base Lower",
       "Mining Base Upper",
-      "Plains Lake"
+      "Plains Lake",
+      "The Silent Road"
     ]
   },
   "Llevigar Plains East Lower": {
@@ -418,17 +418,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 8/500",
-      "wood": " 8/500"
+      "fish": " 9/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Llevigar Plains East Upper",
-      "Llevigar Farm Plains East",
       "Llevigar Plains West Lower",
-      "Orc Lake"
+      "Orc Lake",
+      "Llevigar Farm Plains East"
     ]
   },
   "Kander Mines": {
@@ -443,17 +443,17 @@
       "wood": "7200"
     },
     "stored": {
-      "emeralds": "459/3000",
-      "ore": " 28/1000",
+      "emeralds": "418/3000",
+      "ore": " 31/1000",
       "crops": "0",
-      "fish": " 32/1000",
-      "wood": " 86/1000"
+      "fish": " 35/1000",
+      "wood": " 77/1000"
     },
     "Trading Routes": [
-      "Path to Talor",
-      "Mesquis Tower",
+      "Abandoned Manor",
       "Dark Forest Village",
-      "Abandoned Manor"
+      "Path to Talor",
+      "Mesquis Tower"
     ]
   },
   "Swamp Dark Forest Transition Upper": {
@@ -468,16 +468,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Olux",
-      "Swamp Dark Forest Transition Mid",
-      "Taproot Descent"
+      "Taproot Descent",
+      "Swamp Dark Forest Transition Mid"
     ]
   },
   "Detlas Savannah Transition": {
@@ -492,9 +492,9 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
@@ -503,30 +503,6 @@
       "Mine Base Plains",
       "Ternaves Plains Upper",
       "Savannah West Lower"
-    ]
-  },
-  "Active Volcano": {
-    "guild": "HackForums",
-    "prefix": "Hax",
-    "hq": false,
-    "resources": {
-      "emeralds": "9000",
-      "ore": "3600",
-      "crops": "0",
-      "fish": "0",
-      "wood": "0"
-    },
-    "stored": {
-      "emeralds": "250/3000",
-      "ore": " 100/500",
-      "crops": "0",
-      "fish": "0",
-      "wood": "0"
-    },
-    "Trading Routes": [
-      "Volcanic Slope",
-      "Lava Lake Bridge",
-      "Lava Lake"
     ]
   },
   "Fortress South": {
@@ -541,17 +517,41 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Swamp Dark Forest Transition Lower",
-      "Fortress North",
+      "Orc Battlegrounds",
       "Mansion of Insanity",
-      "Orc Battlegrounds"
+      "Fortress North"
+    ]
+  },
+  "Active Volcano": {
+    "guild": "HackForums",
+    "prefix": "Hax",
+    "hq": false,
+    "resources": {
+      "emeralds": "9000",
+      "ore": "9600",
+      "crops": "0",
+      "fish": "0",
+      "wood": "0"
+    },
+    "stored": {
+      "emeralds": "405/3000",
+      "ore": " 56/500",
+      "crops": "0",
+      "fish": "0",
+      "wood": "0"
+    },
+    "Trading Routes": [
+      "Lava Lake",
+      "Lava Lake Bridge",
+      "Volcanic Slope"
     ]
   },
   "Aldorei Lowlands": {
@@ -566,16 +566,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Aldorei's River",
       "Aldorei's Waterfall",
-      "Cinfras's Small Farm",
-      "Aldorei's River"
+      "Cinfras's Small Farm"
     ]
   },
   "Dernel Jungle Mid": {
@@ -613,16 +613,16 @@
       "wood": "7200"
     },
     "stored": {
-      "emeralds": "367/3000",
+      "emeralds": "341/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 54/500"
+      "wood": " 42/500"
     },
     "Trading Routes": [
+      "Ahmsord Outskirts",
       "Sky Falls",
-      "Central Islands",
-      "Ahmsord Outskirts"
+      "Central Islands"
     ]
   },
   "Llevigar Gate East": {
@@ -637,11 +637,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "462/12000",
-      "ore": " 89/2000",
+      "emeralds": "423/12000",
+      "ore": " 81/2000",
       "crops": "0",
-      "fish": " 32/2000",
-      "wood": " 67/2000"
+      "fish": " 35/2000",
+      "wood": " 74/2000"
     },
     "Trading Routes": [
       "Orc Road",
@@ -662,16 +662,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
-      "crops": " 498/500",
+      "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
+      "Detlas Trail West Plains",
       "Nemract Road",
       "Detlas Trail East Plains",
-      "Detlas Trail West Plains",
       "Nemract Cathedral",
       "Cathedral Harbour"
     ]
@@ -688,17 +688,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Swamp Plains Basin",
       "Swamp East Upper",
-      "Swamp East Mid",
-      "Swamp West Mid-Upper"
+      "Swamp West Mid-Upper",
+      "Swamp Plains Basin",
+      "Swamp East Mid"
     ]
   },
   "Viscera Pits West": {
@@ -721,8 +721,8 @@
     },
     "Trading Routes": [
       "Lexdales Prison",
-      "Viscera Pits East",
       "Twisted Ridge",
+      "Viscera Pits East",
       "Entrance to Kander"
     ]
   },
@@ -768,10 +768,10 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Light Forest West Mid",
       "Hobbit River",
+      "Light Forest East Mid",
       "Mantis Nest",
-      "Light Forest East Mid"
+      "Light Forest West Mid"
     ]
   },
   "Desert West Upper": {
@@ -786,15 +786,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 374/500",
-      "fish": " 12/500",
+      "crops": " 394/500",
+      "fish": " 13/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Almuj City",
-      "Desert Upper"
+      "Desert Upper",
+      "Almuj City"
     ]
   },
   "Swamp West Mid": {
@@ -809,16 +809,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
       "Swamp West Lower",
-      "Swamp East Mid",
-      "Swamp West Mid-Upper"
+      "Swamp West Mid-Upper",
+      "Swamp East Mid"
     ]
   },
   "Maltic Plains": {
@@ -833,17 +833,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "9/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 999/1000",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
+      "Ragni East Suburbs",
+      "Maltic",
       "Emerald Trail",
       "Plains",
-      "Maltic",
-      "Ragni East Suburbs",
       "South Farmers Valley"
     ]
   },
@@ -859,15 +859,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Gylia Lake North East",
-      "Jitak's Farm"
+      "Jitak's Farm",
+      "Gylia Lake North East"
     ]
   },
   "Savannah West Upper": {
@@ -882,17 +882,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Savannah East Upper",
-      "Savannah West Lower",
       "Bremminglar",
-      "Cathedral Harbour"
+      "Savannah East Upper",
+      "Cathedral Harbour",
+      "Savannah West Lower"
     ]
   },
   "Mage Island": {
@@ -914,9 +914,9 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Durum Isles Upper",
       "Durum Isles East",
       "Santa's Hideout",
+      "Durum Isles Upper",
       "Half Moon Island"
     ]
   },
@@ -939,10 +939,10 @@
       "wood": " 4500/500"
     },
     "Trading Routes": [
-      "Path to Ahmsord Lower",
       "Temple Island",
       "Path to Ahmsord Upper",
-      "Sky Island Ascent"
+      "Sky Island Ascent",
+      "Path to Ahmsord Lower"
     ]
   },
   "Swamp Mountain Transition Mid": {
@@ -957,40 +957,40 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 108/500",
-      "wood": " 2/500"
+      "fish": " 93/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Swamp West Upper",
       "Swamp Mountain Transition Lower",
-      "Swamp Mountain Transition Mid-Upper"
+      "Swamp Mountain Transition Mid-Upper",
+      "Swamp West Upper"
     ]
   },
   "Bob's Tomb": {
-    "guild": "HackForums",
-    "prefix": "Hax",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "3600"
+      "wood": "7200"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "341/3000",
       "ore": "0",
       "crops": "0",
-      "fish": "0",
-      "wood": " 100/500"
+      "fish": " 3/500",
+      "wood": " 36/500"
     },
     "Trading Routes": [
-      "Nesaak Plains North East",
+      "Nesaak Village",
       "Nesaak Plains South East",
-      "Nesaak Village"
+      "Nesaak Plains North East"
     ]
   },
   "Fallen Factory": {
@@ -1005,17 +1005,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Factory Entrance",
-      "Corkus City South",
       "Ruined Houses",
-      "Corkus Sea Port"
+      "Corkus City South",
+      "Corkus Sea Port",
+      "Factory Entrance"
     ]
   },
   "Rymek West Upper": {
@@ -1030,17 +1030,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "2997/3000",
+      "emeralds": "2990/3000",
       "ore": " 1/500",
-      "crops": " 500/500",
+      "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
+      "Rymek West Mid",
       "Desert West Lower",
       "Desert Lower",
-      "Rymek East Upper",
-      "Rymek West Mid"
+      "Rymek East Upper"
     ]
   },
   "Canyon Valley South": {
@@ -1056,14 +1056,14 @@
     },
     "stored": {
       "emeralds": "225/3000",
-      "ore": " 76/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "ore": " 66/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Bandit Camp Exit",
       "Bandit Cave Lower",
+      "Bandit Camp Exit",
       "Canyon Mountain East"
     ]
   },
@@ -1080,14 +1080,14 @@
     },
     "stored": {
       "emeralds": "3000/3000",
-      "ore": " 1676/2000",
+      "ore": " 2000/2000",
       "crops": " 2000/2000",
-      "fish": " 1122/2000",
-      "wood": " 811/2000"
+      "fish": " 2000/2000",
+      "wood": " 2000/2000"
     },
     "Trading Routes": [
-      "Paths of Sludge",
-      "Sinister Forest"
+      "Sinister Forest",
+      "Paths of Sludge"
     ]
   },
   "Swamp East Lower": {
@@ -1102,17 +1102,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
-      "Swamp East Mid",
-      "Swamp West Lower",
       "Llevigar Plains East Upper",
-      "Sunspark Camp"
+      "Swamp East Mid",
+      "Sunspark Camp",
+      "Swamp West Lower"
     ]
   },
   "Corkus City": {
@@ -1134,11 +1134,11 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Corkus Countryside",
       "Corkus City South",
-      "Corkus Castle",
       "Corkus Forest South",
-      "Corkus Forest North"
+      "Corkus Countryside",
+      "Corkus Forest North",
+      "Corkus Castle"
     ]
   },
   "Canyon Path North Mid": {
@@ -1154,16 +1154,16 @@
     },
     "stored": {
       "emeralds": "225/3000",
-      "ore": " 76/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "ore": " 66/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Path South West",
       "Bandit Camp Exit",
-      "Canyon Entrance Waterfall",
-      "Canyon Waterfall Mid North"
+      "Canyon Waterfall Mid North",
+      "Canyon Entrance Waterfall"
     ]
   },
   "The Silent Road": {
@@ -1178,15 +1178,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 20/500",
-      "crops": " 54/500",
+      "emeralds": "414/3000",
+      "ore": " 22/500",
+      "crops": " 42/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Mine Base Plains",
-      "The Broken Road"
+      "The Broken Road",
+      "Mine Base Plains"
     ]
   },
   "City of Troms": {
@@ -1208,8 +1208,8 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Temple of Legends",
       "South Pigmen Ravines",
+      "Temple of Legends",
       "Jungle Lake"
     ]
   },
@@ -1225,11 +1225,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "342/6000",
-      "ore": " 20/1000",
+      "emeralds": "288/6000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 100/1000",
-      "wood": " 2/1000"
+      "fish": " 84/1000",
+      "wood": " 3/1000"
     },
     "Trading Routes": [
       "Gylia Lake South East",
@@ -1249,15 +1249,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "1361/3000",
-      "ore": " 767/2000",
-      "crops": " 35/2000",
-      "fish": " 47/2000",
-      "wood": " 94/2000"
+      "emeralds": "1490/3000",
+      "ore": " 662/2000",
+      "crops": " 39/2000",
+      "fish": " 52/2000",
+      "wood": " 104/2000"
     },
     "Trading Routes": [
-      "Canyon Valley South",
-      "Canyon Walk Way"
+      "Canyon Walk Way",
+      "Canyon Valley South"
     ]
   },
   "Plains Lake": {
@@ -1265,24 +1265,24 @@
     "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "12150",
+      "emeralds": "16200",
       "ore": "0",
       "crops": "0",
       "fish": "9600",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "513/3000",
-      "ore": " 20/500",
-      "crops": "0",
-      "fish": " 72/500",
+      "emeralds": "290/3000",
+      "ore": " 22/500",
+      "crops": " 22/500",
+      "fish": " 56/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Nether Gate",
       "Desolate Valley",
-      "Nether Plains Upper",
-      "Mine Base Plains"
+      "Mine Base Plains",
+      "Nether Gate",
+      "Nether Plains Upper"
     ]
   },
   "Cinfras's Small Farm": {
@@ -1297,16 +1297,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Aldorei Valley South Entrance",
-      "Cinfras County Mid-Lower",
       "Cinfras County Lower",
+      "Cinfras County Mid-Lower",
+      "Aldorei Valley South Entrance",
       "Aldorei Lowlands"
     ]
   },
@@ -1322,16 +1322,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "342/6000",
-      "ore": " 20/1000",
+      "emeralds": "288/6000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 104/1000"
+      "fish": " 3/1000",
+      "wood": " 89/1000"
     },
     "Trading Routes": [
-      "Cinfras Outskirts",
+      "Gylia Lake South West",
       "Fallen Village",
-      "Gylia Lake South West"
+      "Cinfras Outskirts"
     ]
   },
   "Nether Plains Lower": {
@@ -1353,10 +1353,10 @@
       "wood": " 1/500"
     },
     "Trading Routes": [
-      "Elkurn",
       "Nesaak Transition",
       "Nether Gate",
-      "Desolate Valley"
+      "Desolate Valley",
+      "Elkurn"
     ]
   },
   "Cliffside Lake": {
@@ -1371,11 +1371,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 102/500",
-      "wood": " 2/500"
+      "fish": " 87/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Cliffside Passage",
@@ -1394,7 +1394,7 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
@@ -1403,8 +1403,8 @@
     "Trading Routes": [
       "Arachnid Route",
       "Nemract Road",
-      "Nivla Woods Edge",
-      "Nemract Quarry"
+      "Nemract Quarry",
+      "Nivla Woods Edge"
     ]
   },
   "Path To Ozoth's Spire Upper": {
@@ -1419,17 +1419,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/3000",
-      "ore": " 74/1000",
+      "emeralds": "418/3000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 2/1000"
+      "fish": " 3/1000",
+      "wood": " 3/1000"
     },
     "Trading Routes": [
-      "Cinfras Thanos Transition",
       "Bandit Cave Lower",
-      "Path To Ozoth's Spire Mid",
-      "Path To Thanos"
+      "Cinfras Thanos Transition",
+      "Path To Thanos",
+      "Path To Ozoth's Spire Mid"
     ]
   },
   "Ranol's Farm": {
@@ -1444,16 +1444,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 8/500",
-      "wood": " 16/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 9/500",
+      "wood": " 18/500"
     },
     "Trading Routes": [
-      "Thesead Suburbs",
       "Eltom",
-      "Cherry Blossom Forest"
+      "Cherry Blossom Forest",
+      "Thesead Suburbs"
     ]
   },
   "Path To The Arch": {
@@ -1468,16 +1468,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
       "Aldorei's Arch",
-      "Aldorei's North Exit",
-      "Ghostly Path"
+      "Ghostly Path",
+      "Aldorei's North Exit"
     ]
   },
   "Twain Mansion": {
@@ -1492,10 +1492,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "425/3000",
+      "emeralds": "2995/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 72/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -1507,16 +1507,16 @@
     "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "9000",
+      "emeralds": "12150",
       "ore": "0",
       "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
-      "ore": "0",
-      "crops": " 100/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
@@ -1531,22 +1531,22 @@
     "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "12150",
+      "emeralds": "16200",
       "ore": "0",
       "crops": "7200",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 20/500",
-      "crops": " 54/500",
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 64/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Grey Ruins",
-      "The Broken Road"
+      "The Broken Road",
+      "Grey Ruins"
     ]
   },
   "Swamp Lower": {
@@ -1561,17 +1561,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
+      "Swamp Mountain Base",
       "Swamp Dark Forest Transition Lower",
-      "Iron Road",
       "Entrance to Olux",
-      "Swamp Mountain Base"
+      "Iron Road"
     ]
   },
   "Bremminglar": {
@@ -1586,15 +1586,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Savannah West Upper",
-      "Lion Lair"
+      "Lion Lair",
+      "Savannah West Upper"
     ]
   },
   "Road To Light Forest": {
@@ -1609,39 +1609,39 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Leadin Fortress",
       "Fleris Trail",
-      "Light Forest Entrance"
+      "Light Forest Entrance",
+      "Leadin Fortress"
     ]
   },
   "Nesaak Bridge Transition": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "3600"
+      "wood": "5400"
     },
     "stored": {
-      "emeralds": "3000/3000",
+      "emeralds": "275/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 500/500"
+      "wood": " 126/500"
     },
     "Trading Routes": [
-      "Nesaak Plains South West",
-      "Great Bridge Nesaak"
+      "Great Bridge Nesaak",
+      "Nesaak Plains South West"
     ]
   },
   "Thanos Valley West": {
@@ -1656,11 +1656,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Military Base Lower"
@@ -1678,11 +1678,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "462/12000",
-      "ore": " 105/2000",
+      "emeralds": "423/12000",
+      "ore": " 99/2000",
       "crops": "0",
-      "fish": " 94/2000",
-      "wood": " 98/2000"
+      "fish": "0",
+      "wood": " 109/2000"
     },
     "Trading Routes": [
       "Llevigar"
@@ -1700,8 +1700,8 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "396/3000",
-      "ore": " 170/500",
+      "emeralds": "349/3000",
+      "ore": " 148/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -1723,16 +1723,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Durum Isles Upper",
-      "Selchar",
       "Durum Isles East",
+      "Selchar",
+      "Durum Isles Upper",
       "Durum Isles Lower"
     ]
   },
@@ -1749,15 +1749,15 @@
     },
     "stored": {
       "emeralds": "225/3000",
-      "ore": " 74/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "ore": " 64/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Mountain South",
-      "Canyon Fortress",
-      "Canyon Path North Mid"
+      "Canyon Path North Mid",
+      "Canyon Fortress"
     ]
   },
   "Canyon Waterfall North": {
@@ -1772,11 +1772,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Upper North West"
@@ -1794,16 +1794,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "342/3000",
-      "ore": " 20/1000",
+      "emeralds": "288/3000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 102/1000"
+      "fish": " 3/1000",
+      "wood": " 87/1000"
     },
     "Trading Routes": [
-      "Gelibord Castle",
-      "Gelibord",
       "Taproot Descent",
+      "Gelibord",
+      "Gelibord Castle",
       "Twisted Housing"
     ]
   },
@@ -1819,16 +1819,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
+      "emeralds": "2999/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 158/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Lost Atoll",
+      "Bloody Beach",
       "Zhight Island",
-      "Bloody Beach"
+      "Lost Atoll"
     ]
   },
   "Aldorei Valley Lower": {
@@ -1843,41 +1843,41 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Aldorei Valley Mid",
-      "Aldorei Valley West Entrance"
+      "Aldorei Valley West Entrance",
+      "Aldorei Valley Mid"
     ]
   },
   "Nesaak Plains North East": {
-    "guild": "HackForums",
-    "prefix": "Hax",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
-      "emeralds": "12150",
+      "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "9600"
+      "wood": "5400"
     },
     "stored": {
-      "emeralds": "513/3000",
-      "ore": " 20/500",
+      "emeralds": "275/3000",
+      "ore": "0",
       "crops": "0",
-      "fish": "0",
-      "wood": " 72/500"
+      "fish": " 9/500",
+      "wood": " 124/500"
     },
     "Trading Routes": [
-      "Nesaak Village",
       "Nesaak Plains Lower North West",
       "Bob's Tomb",
+      "Nesaak Transition",
       "Nesaak Plains Upper North West",
-      "Nesaak Transition"
+      "Nesaak Village"
     ]
   },
   "Rymek West Mid": {
@@ -1892,16 +1892,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "1989/3000",
+      "emeralds": "2990/3000",
       "ore": " 1/500",
-      "crops": " 500/500",
+      "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Rymek West Upper",
       "Rymek West Lower",
-      "Rymek East Mid"
+      "Rymek East Mid",
+      "Rymek West Upper"
     ]
   },
   "Fungal Grove": {
@@ -1916,17 +1916,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Decayed Basin",
       "Fallen Village",
       "Cinfras Outskirts",
       "Old Crossroads North",
-      "Decayed Basin",
       "Old Crossroads South"
     ]
   },
@@ -1942,41 +1942,41 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 100/500",
+      "fish": " 84/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Skiens Island",
-      "Dujgon Nation",
       "Santa's Hideout",
+      "Dujgon Nation",
       "Icy Island",
       "Mage Island"
     ]
   },
   "Icy Descent": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "HackForums",
+    "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "9000",
+      "emeralds": "12150",
       "ore": "0",
       "crops": "0",
       "fish": "0",
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "3000/3000",
-      "ore": "0",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
       "fish": "0",
-      "wood": " 500/500"
+      "wood": " 84/500"
     },
     "Trading Routes": [
-      "Tower of Ascension",
-      "Lusuco"
+      "Lusuco",
+      "Tower of Ascension"
     ]
   },
   "Orc Road": {
@@ -1991,16 +1991,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Loamsprout Camp",
-      "Llevigar Farm Plains East",
-      "Orc Lake"
+      "Orc Lake",
+      "Llevigar Farm Plains East"
     ]
   },
   "Llevigar Farm Plains East": {
@@ -2015,16 +2015,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Orc Road",
-      "Llevigar Farm Plains West",
       "Llevigar Gate East",
+      "Llevigar Farm Plains West",
       "Llevigar Plains East Lower"
     ]
   },
@@ -2040,16 +2040,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Light Forest East Lower",
+      "Light Forest West Lower",
       "Aldorei Valley West Entrance",
-      "Light Forest West Lower"
+      "Light Forest East Lower"
     ]
   },
   "Old Crossroads North": {
@@ -2064,17 +2064,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Fungal Grove",
       "Old Crossroads South",
-      "Lexdale",
-      "Path to Talor"
+      "Fungal Grove",
+      "Path to Talor",
+      "Lexdale"
     ]
   },
   "Corkus Docks": {
@@ -2089,10 +2089,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -2111,15 +2111,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Efilim South Plains",
       "Light Forest Entrance",
+      "Efilim South Plains",
       "Light Forest West Upper"
     ]
   },
@@ -2135,11 +2135,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Canyon Waterfall North",
@@ -2158,16 +2158,16 @@
       "wood": "7200"
     },
     "stored": {
-      "emeralds": "367/3000",
+      "emeralds": "341/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 54/500"
+      "wood": " 42/500"
     },
     "Trading Routes": [
+      "Swamp Island",
       "Angel Refuge",
       "Central Islands",
-      "Swamp Island",
       "Wybel Island"
     ]
   },
@@ -2183,15 +2183,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "216/3000",
       "ore": " 1/500",
-      "crops": " 101/500",
+      "crops": " 85/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Almuj City",
       "Desert Lower",
+      "Almuj City",
       "Desert Mid-Lower"
     ]
   },
@@ -2207,16 +2207,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
-      "Swamp West Upper",
+      "Swamp East Mid-Upper",
       "Swamp West Mid",
-      "Swamp East Mid-Upper"
+      "Swamp West Upper"
     ]
   },
   "Twisted Housing": {
@@ -2231,17 +2231,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Efilim Village",
       "Gelibord",
       "Lone Farmstead",
       "Mansion of Insanity",
+      "Efilim Village",
       "Gelibord Corrupted Farm"
     ]
   },
@@ -2257,17 +2257,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "108/3000",
-      "ore": " 20/500",
-      "crops": " 20/500",
-      "fish": " 102/500",
-      "wood": " 2/500"
+      "emeralds": "95/3000",
+      "ore": " 22/500",
+      "crops": " 22/500",
+      "fish": " 87/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Air Temple Lower",
-      "Temple of the Lost East",
+      "Canyon Mountain South",
       "Wizard Tower North",
-      "Canyon Mountain South"
+      "Air Temple Lower",
+      "Temple of the Lost East"
     ]
   },
   "Desert East Upper": {
@@ -2282,10 +2282,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "357/3000",
+      "emeralds": "330/3000",
       "ore": "0",
-      "crops": " 150/15500",
-      "fish": " 8/15500",
+      "crops": " 126/15500",
+      "fish": " 9/15500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -2304,8 +2304,8 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "367/3000",
-      "ore": " 54/500",
+      "emeralds": "341/3000",
+      "ore": " 42/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -2328,15 +2328,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "357/3000",
-      "ore": " 86/500",
-      "crops": " 140/500",
-      "fish": " 8/500",
-      "wood": " 8/500"
+      "emeralds": "331/3000",
+      "ore": " 96/500",
+      "crops": " 138/500",
+      "fish": " 9/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
-      "Lutho",
-      "Toxic Drip"
+      "Toxic Drip",
+      "Lutho"
     ]
   },
   "Nesaak Plains Lower North West": {
@@ -2351,17 +2351,17 @@
       "wood": "9600"
     },
     "stored": {
-      "emeralds": "513/3000",
-      "ore": " 20/500",
-      "crops": "0",
-      "fish": "0",
-      "wood": " 72/500"
+      "emeralds": "475/3000",
+      "ore": " 57/500",
+      "crops": " 70/500",
+      "fish": " 18/500",
+      "wood": " 74/500"
     },
     "Trading Routes": [
-      "Nesaak Village",
+      "Nesaak Plains Mid North West",
       "Nesaak Plains South West",
       "Nesaak Plains Upper North West",
-      "Nesaak Plains Mid North West"
+      "Nesaak Village"
     ]
   },
   "Spiraling Trees": {
@@ -2383,8 +2383,8 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Light Realm Entrance",
-      "Road to Corruption"
+      "Road to Corruption",
+      "Light Realm Entrance"
     ]
   },
   "Arachnid Route": {
@@ -2406,9 +2406,9 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Plains",
+      "Nemract Plains West",
       "North Nivla Woods",
-      "Nemract Plains West"
+      "Plains"
     ]
   },
   "Lone Farmstead": {
@@ -2423,15 +2423,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Abandoned Manor",
       "Gelibord",
+      "Abandoned Manor",
       "Twisted Housing"
     ]
   },
@@ -2447,16 +2447,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Canyon Fortress",
+      "Canyon Of The Lost",
       "Temple of the Lost East",
-      "Canyon Of The Lost"
+      "Canyon Fortress"
     ]
   },
   "Road to Elkurn": {
@@ -2478,9 +2478,9 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
+      "Elkurn",
       "Elkurn Fields",
-      "South Nivla Woods",
-      "Elkurn"
+      "South Nivla Woods"
     ]
   },
   "Cinfras": {
@@ -2502,10 +2502,10 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Cinfras Outskirts",
-      "Guild Hall",
       "Aldorei's River",
-      "Cinfras Entrance"
+      "Guild Hall",
+      "Cinfras Entrance",
+      "Cinfras Outskirts"
     ]
   },
   "Rooster Island": {
@@ -2520,17 +2520,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "375/3000",
-      "ore": " 32/2000",
+      "emeralds": "2997/3000",
+      "ore": " 1/2000",
       "crops": "0",
-      "fish": " 86/2000",
-      "wood": " 32/2000"
+      "fish": " 1998/2000",
+      "wood": " 1/2000"
     },
     "Trading Routes": [
-      "The Bear Zoo",
-      "Durum Isles Lower",
+      "Nemract Town",
       "Selchar",
-      "Nemract Town"
+      "The Bear Zoo",
+      "Durum Isles Lower"
     ]
   },
   "Swamp Plains Basin": {
@@ -2553,9 +2553,9 @@
     },
     "Trading Routes": [
       "Swamp East Upper",
-      "Swamp East Mid-Upper",
+      "Swamp Mountain Base",
       "Entrance to Olux",
-      "Swamp Mountain Base"
+      "Swamp East Mid-Upper"
     ]
   },
   "Canyon Dropoff": {
@@ -2570,11 +2570,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Mountain Path",
@@ -2582,8 +2582,8 @@
     ]
   },
   "Final Step": {
-    "guild": "Dernic Legion",
-    "prefix": "ShyF",
+    "guild": "HackForums",
+    "prefix": "Hax",
     "hq": false,
     "resources": {
       "emeralds": "9000",
@@ -2593,9 +2593,9 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 163/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
@@ -2616,15 +2616,15 @@
       "wood": "9600"
     },
     "stored": {
-      "emeralds": "425/3000",
-      "ore": " 34/500",
+      "emeralds": "2995/3000",
+      "ore": " 1/500",
       "crops": "0",
-      "fish": " 78/500",
-      "wood": " 74/500"
+      "fish": " 1/500",
+      "wood": " 500/500"
     },
     "Trading Routes": [
-      "Lost Atoll",
-      "Volcano Upper"
+      "Volcano Upper",
+      "Lost Atoll"
     ]
   },
   "Light Realm East Mid-Upper": {
@@ -2647,8 +2647,8 @@
     },
     "Trading Routes": [
       "Light Realm East Mid",
-      "Light Realm East Upper",
-      "Light Realm Entrance Upper"
+      "Light Realm Entrance Upper",
+      "Light Realm East Upper"
     ]
   },
   "Aldorei Valley Mid": {
@@ -2663,15 +2663,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Aldorei Valley Upper",
-      "Aldorei Valley Lower"
+      "Aldorei Valley Lower",
+      "Aldorei Valley Upper"
     ]
   },
   "Cinfras County Upper": {
@@ -2686,16 +2686,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "342/3000",
-      "ore": " 20/1000",
+      "emeralds": "288/3000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 102/1000"
+      "fish": " 3/1000",
+      "wood": " 87/1000"
     },
     "Trading Routes": [
+      "Cinfras County Mid-Upper",
       "Gylia Lake South East",
-      "Path To Thanos",
-      "Cinfras County Mid-Upper"
+      "Path To Thanos"
     ]
   },
   "South Farmers Valley": {
@@ -2710,18 +2710,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "North Farmers Valley",
-      "Plains",
-      "Maltic Coast",
       "Maltic Plains",
-      "Maltic"
+      "Maltic",
+      "Maltic Coast",
+      "Plains",
+      "North Farmers Valley"
     ]
   },
   "Katoa Ranch": {
@@ -2731,20 +2731,20 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "28800",
+      "crops": "7200",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "2/3000",
+      "emeralds": "1/3000",
       "ore": "0",
-      "crops": " 5494/5500",
+      "crops": " 5497/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Ragni North Entrance",
-      "Ragni North Suburbs"
+      "Ragni North Suburbs",
+      "Ragni North Entrance"
     ]
   },
   "Decayed Basin": {
@@ -2759,16 +2759,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 8/500",
-      "wood": " 108/500"
+      "fish": " 9/500",
+      "wood": " 93/500"
     },
     "Trading Routes": [
+      "Fungal Grove",
       "Heart of Decay",
       "Lexdale",
-      "Fungal Grove",
       "Mushroom Hill"
     ]
   },
@@ -2779,21 +2779,21 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "9000",
+      "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "5/3000",
+      "emeralds": "3/3000",
       "ore": "0",
-      "crops": " 999/1000",
+      "crops": " 997/1000",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Ragni North Entrance",
+      "Katoa Ranch",
       "Ragni Plains",
-      "Katoa Ranch"
+      "Ragni North Entrance"
     ]
   },
   "Corkus Sea Cove": {
@@ -2808,17 +2808,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
+      "Fallen Factory",
       "Corkus City Mine",
-      "Road To Mine",
       "Corkus Sea Port",
-      "Fallen Factory"
+      "Road To Mine"
     ]
   },
   "Durum Isles Lower": {
@@ -2833,16 +2833,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Rooster Island",
+      "Durum Isles Center",
       "Selchar",
-      "Durum Isles Center"
+      "Rooster Island"
     ]
   },
   "Wizard Tower North": {
@@ -2858,14 +2858,14 @@
     },
     "stored": {
       "emeralds": "225/3000",
-      "ore": " 76/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "ore": " 66/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Bandits Toll",
-      "Krolton's Cave"
+      "Krolton's Cave",
+      "Bandits Toll"
     ]
   },
   "Orc Battlegrounds": {
@@ -2880,11 +2880,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Leadin Fortress",
@@ -2903,11 +2903,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Mantis Nest",
@@ -2920,23 +2920,23 @@
     "hq": true,
     "resources": {
       "emeralds": "9000",
-      "ore": "36000",
+      "ore": "9000",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "5/3000",
+      "emeralds": "7/3000",
       "ore": " 2/500",
       "crops": " 4/500",
       "fish": " 1/500",
       "wood": " 9/500"
     },
     "Trading Routes": [
-      "Path To Ozoth's Spire Lower",
       "Gylia Lake South East",
-      "Path To Thanos",
-      "Path To Military Base"
+      "Path To Ozoth's Spire Lower",
+      "Path To Military Base",
+      "Path To Thanos"
     ]
   },
   "Path To Ozoth's Spire Lower": {
@@ -2958,8 +2958,8 @@
       "wood": " 69/500"
     },
     "Trading Routes": [
-      "Military Base Lower",
-      "Thanos"
+      "Thanos",
+      "Military Base Lower"
     ]
   },
   "Swamp East Upper": {
@@ -2974,18 +2974,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 8/500"
+      "fish": " 3/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Swamp Plains Basin",
       "Swamp Mountain Transition Mid-Upper",
-      "Swamp East Mid-Upper",
+      "Swamp Mountain Transition Upper",
       "Swamp West Upper",
-      "Swamp Mountain Transition Upper"
+      "Swamp East Mid-Upper"
     ]
   },
   "Cinfras County Mid-Lower": {
@@ -3000,21 +3000,21 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Cinfras's Small Farm",
+      "Cinfras County Mid-Upper",
       "Cinfras County Lower",
-      "Cinfras County Mid-Upper"
+      "Cinfras's Small Farm"
     ]
   },
   "Tower of Ascension": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "HackForums",
+    "prefix": "Hax",
     "hq": false,
     "resources": {
       "emeralds": "9000",
@@ -3024,11 +3024,11 @@
       "wood": "7200"
     },
     "stored": {
-      "emeralds": "2997/3000",
+      "emeralds": "341/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 500/500"
+      "wood": " 42/500"
     },
     "Trading Routes": [
       "Icy Descent"
@@ -3046,17 +3046,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "550/3000",
-      "ore": " 128/2000",
+      "emeralds": "2992/3000",
+      "ore": " 1999/2000",
       "crops": "0",
-      "fish": " 32/2000",
-      "wood": " 2/2000"
+      "fish": " 1/2000",
+      "wood": " 1/2000"
     },
     "Trading Routes": [
-      "Nodguj Nation",
+      "Dead Island South West",
       "Maro Peaks",
       "Selchar",
-      "Dead Island South West"
+      "Nodguj Nation"
     ]
   },
   "Path To Military Base": {
@@ -3078,8 +3078,8 @@
       "wood": " 41/500"
     },
     "Trading Routes": [
-      "Thanos",
-      "Military Base"
+      "Military Base",
+      "Thanos"
     ]
   },
   "Nivla Woods": {
@@ -3098,12 +3098,12 @@
       "ore": "0",
       "crops": " 5500/5500",
       "fish": "0",
-      "wood": " 5499/5500"
+      "wood": " 5495/5500"
     },
     "Trading Routes": [
       "South Nivla Woods",
-      "Nivla Woods Entrance",
       "Road to Time Valley",
+      "Nivla Woods Entrance",
       "Nivla Woods Exit"
     ]
   },
@@ -3119,11 +3119,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon High Path"
@@ -3163,15 +3163,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/6000",
-      "ore": " 22/1000",
+      "emeralds": "285/6000",
+      "ore": " 24/1000",
       "crops": "0",
-      "fish": " 32/1000",
-      "wood": " 134/1000"
+      "fish": " 35/1000",
+      "wood": " 121/1000"
     },
     "Trading Routes": [
-      "Light Forest East Upper",
-      "Cinfras Entrance"
+      "Cinfras Entrance",
+      "Light Forest East Upper"
     ]
   },
   "Light Realm Entrance Upper": {
@@ -3193,9 +3193,9 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Orphion's Seal Upper",
-      "Light Realm East Mid-Upper",
       "Light Realm Entrance",
+      "Light Realm East Mid-Upper",
+      "Orphion's Seal Upper",
       "Road to Corruption"
     ]
   },
@@ -3218,11 +3218,11 @@
       "wood": " 2000/2000"
     },
     "Trading Routes": [
-      "Snail Island",
-      "Central Islands",
       "Swamp Island",
+      "Ahmsord",
+      "Central Islands",
       "Kandon Ridge",
-      "Ahmsord"
+      "Snail Island"
     ]
   },
   "Rymek East Lower": {
@@ -3231,21 +3231,21 @@
     "hq": false,
     "resources": {
       "emeralds": "16200",
-      "ore": "5400",
+      "ore": "7200",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "167/3000",
-      "ore": " 170/500",
-      "crops": " 20/500",
+      "emeralds": "225/3000",
+      "ore": " 64/500",
+      "crops": " 22/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Rymek East Mid",
-      "Rymek West Lower"
+      "Rymek West Lower",
+      "Rymek East Mid"
     ]
   },
   "Legendary Island": {
@@ -3263,7 +3263,7 @@
       "emeralds": "2997/3000",
       "ore": " 1/1000",
       "crops": " 1/1000",
-      "fish": " 999/1000",
+      "fish": " 996/1000",
       "wood": "0"
     },
     "Trading Routes": [
@@ -3305,15 +3305,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "342/3000",
-      "ore": " 20/1000",
+      "emeralds": "288/3000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 102/1000"
+      "fish": " 3/1000",
+      "wood": " 87/1000"
     },
     "Trading Routes": [
-      "Llevigar Plains West Lower",
       "Swamp West Lower",
+      "Llevigar Plains West Lower",
       "Llevigar Plains East Upper"
     ]
   },
@@ -3329,17 +3329,17 @@
       "wood": "5400"
     },
     "stored": {
-      "emeralds": "309/3000",
+      "emeralds": "275/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 197/500"
+      "wood": " 179/500"
     },
     "Trading Routes": [
-      "Nivla Woods",
+      "Road to Time Valley",
       "Elkurn Fields",
       "Road to Elkurn",
-      "Road to Time Valley",
+      "Nivla Woods",
       "Nivla Woods Exit"
     ]
   },
@@ -3355,11 +3355,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Decayed Basin",
@@ -3379,16 +3379,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 100/500",
+      "fish": " 84/500",
       "wood": "0"
     },
     "Trading Routes": [
+      "Jofash Docks",
       "Dujgon Nation",
-      "Icy Island",
-      "Jofash Docks"
+      "Icy Island"
     ]
   },
   "Quartz Mines South West": {
@@ -3403,16 +3403,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Quartz Mines South East",
-      "Quartz Mines North West",
-      "Llevigar"
+      "Llevigar",
+      "Quartz Mines North West"
     ]
   },
   "Pigmen Ravines": {
@@ -3420,7 +3420,7 @@
     "prefix": "Shy",
     "hq": true,
     "resources": {
-      "emeralds": "18000",
+      "emeralds": "9000",
       "ore": "9600",
       "crops": "0",
       "fish": "0",
@@ -3428,7 +3428,7 @@
     },
     "stored": {
       "emeralds": "2995/3000",
-      "ore": " 5/5500",
+      "ore": " 1/5500",
       "crops": " 1/5500",
       "fish": " 4500/5500",
       "wood": " 1/5500"
@@ -3450,16 +3450,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Decayed Basin",
       "Fallen Village",
       "Heart of Decay",
-      "Decayed Basin",
       "Jitak's Farm"
     ]
   },
@@ -3475,10 +3475,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -3486,29 +3486,29 @@
     ]
   },
   "Nesaak Plains Upper North West": {
-    "guild": "HackForums",
-    "prefix": "Hax",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
-      "emeralds": "12150",
+      "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "9600"
+      "wood": "3600"
     },
     "stored": {
-      "emeralds": "513/3000",
-      "ore": " 20/500",
-      "crops": "0",
-      "fish": "0",
-      "wood": " 72/500"
+      "emeralds": "387/3000",
+      "ore": " 7/500",
+      "crops": " 6/500",
+      "fish": " 4/500",
+      "wood": " 115/500"
     },
     "Trading Routes": [
+      "Nesaak Plains Mid North West",
       "Sanctuary Bridge",
-      "Nesaak Plains North East",
       "Elkurn",
-      "Nesaak Plains Lower North West",
-      "Nesaak Plains Mid North West"
+      "Nesaak Plains North East",
+      "Nesaak Plains Lower North West"
     ]
   },
   "Desert Mid-Lower": {
@@ -3524,16 +3524,16 @@
     },
     "stored": {
       "emeralds": "566/3000",
-      "ore": " 13/500",
-      "crops": " 104/500",
-      "fish": " 2/500",
+      "ore": " 7/500",
+      "crops": " 88/500",
+      "fish": " 3/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Almuj City",
-      "Desert West Lower",
       "Desert Lower",
+      "Almuj City",
       "Desert East Lower",
+      "Desert West Lower",
       "Desert Mid-Upper"
     ]
   },
@@ -3549,17 +3549,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Light Forest West Mid",
-      "Light Forest East Mid",
       "Light Forest North Entrance",
-      "Efilim South East Plains"
+      "Light Forest East Mid",
+      "Efilim South East Plains",
+      "Light Forest West Mid"
     ]
   },
   "Swamp Mountain Transition Lower": {
@@ -3574,11 +3574,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 102/500",
-      "wood": " 8/500"
+      "fish": " 87/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Swamp Mountain Transition Mid"
@@ -3603,10 +3603,10 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Old Crossroads North",
+      "Decayed Basin",
       "Viscera Pits East",
-      "Heart of Decay",
-      "Decayed Basin"
+      "Old Crossroads North",
+      "Heart of Decay"
     ]
   },
   "Corkus City Mine": {
@@ -3621,16 +3621,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
-      "ore": " 100/500",
+      "emeralds": "3000/3000",
+      "ore": " 500/500",
       "crops": "0",
-      "fish": " 8/500",
+      "fish": " 1/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Corkus Statue",
+      "Corkus Sea Cove",
       "Road To Mine",
-      "Corkus Sea Cove"
+      "Corkus Statue"
     ]
   },
   "Corkus City South": {
@@ -3645,18 +3645,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
+      "Road To Mine",
+      "Corkus Forest South",
       "Factory Entrance",
       "Corkus City",
-      "Fallen Factory",
-      "Road To Mine",
-      "Corkus Forest South"
+      "Fallen Factory"
     ]
   },
   "Light Forest Entrance": {
@@ -3671,17 +3671,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Light Forest South Entrance",
-      "Light Forest West Mid",
+      "Light Forest North Entrance",
       "Road To Light Forest",
-      "Light Forest North Entrance"
+      "Light Forest South Entrance",
+      "Light Forest West Mid"
     ]
   },
   "Jofash Docks": {
@@ -3696,16 +3696,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 100/500",
+      "fish": " 84/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Jofash Tunnel",
+      "Dead Island North East",
       "Regular Island",
-      "Dead Island North East"
+      "Jofash Tunnel"
     ]
   },
   "Bandit Camp Exit": {
@@ -3720,15 +3720,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "272916/273000",
-      "ore": " 45290/45500",
-      "crops": " 772/45500",
-      "fish": " 19513/45500",
-      "wood": " 45213/45500"
+      "emeralds": "272932/273000",
+      "ore": " 45320/45500",
+      "crops": " 835/45500",
+      "fish": " 2575/45500",
+      "wood": " 45259/45500"
     },
     "Trading Routes": [
-      "Canyon Valley South",
-      "Canyon Path North Mid"
+      "Canyon Path North Mid",
+      "Canyon Valley South"
     ]
   },
   "Coastal Trail": {
@@ -3738,12 +3738,12 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "14400",
-      "fish": "14400",
+      "crops": "3600",
+      "fish": "3600",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "3/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 1999/2000",
       "fish": " 1999/2000",
@@ -3775,9 +3775,9 @@
     "Trading Routes": [
       "Swamp Dark Forest Transition Upper",
       "Olux",
+      "Taproot Descent",
       "Swamp Dark Forest Transition Lower",
-      "Entrance to Olux",
-      "Taproot Descent"
+      "Entrance to Olux"
     ]
   },
   "Thanos Exit Upper": {
@@ -3792,18 +3792,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
+      "Hive South",
+      "Bandits Toll",
       "Hive",
       "Thanos Exit",
-      "Bandits Toll",
-      "Canyon High Path",
-      "Hive South"
+      "Canyon High Path"
     ]
   },
   "Ragni Main Entrance": {
@@ -3825,9 +3825,9 @@
       "wood": "0"
     },
     "Trading Routes": [
+      "Ragni East Suburbs",
       "Emerald Trail",
-      "Ragni",
-      "Ragni East Suburbs"
+      "Ragni"
     ]
   },
   "Ghostly Path": {
@@ -3842,15 +3842,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Burning Farm",
-      "Path To The Arch"
+      "Path To The Arch",
+      "Burning Farm"
     ]
   },
   "Burning Airship": {
@@ -3866,15 +3866,15 @@
     },
     "stored": {
       "emeralds": "229/6000",
-      "ore": " 74/1000",
-      "crops": " 20/1000",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "ore": " 64/1000",
+      "crops": " 22/1000",
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
+      "Burning Farm",
       "Cinfras Thanos Transition",
-      "Bandit Cave Upper",
-      "Burning Farm"
+      "Bandit Cave Upper"
     ]
   },
   "Canyon Fortress": {
@@ -3889,15 +3889,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Valley of the Lost",
-      "Canyon Waterfall Mid North"
+      "Canyon Waterfall Mid North",
+      "Valley of the Lost"
     ]
   },
   "Detlas Suburbs": {
@@ -3912,17 +3912,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
-      "crops": " 496/500",
+      "crops": " 498/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
       "Detlas Trail East Plains",
-      "Nether Plains Upper",
       "Detlas Close Suburbs",
-      "Detlas Far Suburbs"
+      "Detlas Far Suburbs",
+      "Nether Plains Upper"
     ]
   },
   "Llevigar Farm": {
@@ -3939,16 +3939,16 @@
     "stored": {
       "emeralds": "2990/3000",
       "ore": " 500/500",
-      "crops": " 439/500",
-      "fish": " 292/500",
-      "wood": " 387/500"
+      "crops": " 428/500",
+      "fish": " 298/500",
+      "wood": " 393/500"
     },
     "Trading Routes": [
-      "Pre-Light Forest Transition",
       "Quartz Mines North East",
-      "Quartz Mines North West",
       "Loamsprout Camp",
       "Goblin Plains West",
+      "Pre-Light Forest Transition",
+      "Quartz Mines North West",
       "Goblin Plains East"
     ]
   },
@@ -3964,17 +3964,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 10/1000"
+      "fish": " 3/1000",
+      "wood": " 11/1000"
     },
     "Trading Routes": [
       "Chained House",
-      "Cliffside Valley",
       "Thesead",
-      "Entrance to Thesead North"
+      "Entrance to Thesead North",
+      "Cliffside Valley"
     ]
   },
   "Elkurn": {
@@ -3989,16 +3989,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "2997/3000",
+      "emeralds": "2990/3000",
       "ore": " 1/500",
-      "crops": " 500/500",
+      "crops": " 499/500",
       "fish": " 1/500",
-      "wood": " 1/500"
+      "wood": " 499/500"
     },
     "Trading Routes": [
-      "Road to Elkurn",
-      "Elkurn Fields",
       "Corrupted Road",
+      "Elkurn Fields",
+      "Road to Elkurn",
       "Nesaak Plains Upper North West"
     ]
   },
@@ -4014,9 +4014,9 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 200/500",
+      "crops": " 168/500",
       "fish": "0",
       "wood": "0"
     },
@@ -4036,15 +4036,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Canyon Path North West",
-      "Canyon Lower South East"
+      "Canyon Lower South East",
+      "Canyon Path North West"
     ]
   },
   "Iron Road": {
@@ -4059,16 +4059,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Goblin Plains West",
-      "Meteor Crater",
       "Swamp Lower",
+      "Meteor Crater",
+      "Goblin Plains West",
       "Forgotten Path"
     ]
   },
@@ -4084,15 +4084,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Chained House",
       "Ranol's Farm",
+      "Chained House",
       "Entrance to Rodoroc",
       "Thesead"
     ]
@@ -4131,11 +4131,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Burning Airship",
@@ -4154,17 +4154,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "149/3000",
-      "ore": " 2/500",
-      "crops": " 178/500",
+      "emeralds": "135/3000",
+      "ore": " 3/500",
+      "crops": " 157/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Almuj City",
       "Desert East Mid",
+      "Desert Upper",
       "Desert Mid-Lower",
-      "Desert Upper"
+      "Almuj City"
     ]
   },
   "Meteor Crater": {
@@ -4179,16 +4179,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Iron Road",
+      "Sunspark Camp",
       "Sablestone Camp",
-      "Sunspark Camp"
+      "Iron Road"
     ]
   },
   "Forgotten Town": {
@@ -4203,15 +4203,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "90/3000",
+      "emeralds": "70/3000",
       "ore": "0",
-      "crops": " 120/500",
+      "crops": " 106/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Grey Ruins",
-      "Forest of Eyes"
+      "Forest of Eyes",
+      "Grey Ruins"
     ]
   },
   "Light Realm East": {
@@ -4248,16 +4248,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Nemract Road",
+      "Nemract Plains West",
       "Plains Coast",
-      "Nemract Plains West"
+      "Nemract Road"
     ]
   },
   "Nether Plains Upper": {
@@ -4283,8 +4283,8 @@
       "Nether Gate",
       "Corrupted Road",
       "Detlas Suburbs",
-      "Plains Lake",
-      "Detlas Close Suburbs"
+      "Detlas Close Suburbs",
+      "Plains Lake"
     ]
   },
   "Swamp West Upper": {
@@ -4299,16 +4299,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 10/1000"
+      "fish": " 3/1000",
+      "wood": " 11/1000"
     },
     "Trading Routes": [
+      "Swamp East Upper",
       "Swamp West Mid-Upper",
       "Swamp Mountain Transition Mid",
-      "Swamp East Upper",
       "Swamp Mountain Transition Mid-Upper"
     ]
   },
@@ -4324,16 +4324,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Almuj City",
+      "Savannah East Lower",
       "Savannah West Upper",
-      "Savannah East Lower"
+      "Almuj City"
     ]
   },
   "Gylia Lake South East": {
@@ -4355,10 +4355,10 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Gylia Lake North East",
-      "Cinfras County Upper",
       "Gylia Lake South West",
-      "Thanos"
+      "Gylia Lake North East",
+      "Thanos",
+      "Cinfras County Upper"
     ]
   },
   "Sunspark Camp": {
@@ -4373,18 +4373,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Swamp East Lower",
-      "Swamp Mountain Base",
       "Llevigar Plains East Upper",
+      "Swamp East Lower",
       "Meteor Crater",
-      "Orc Lake"
+      "Orc Lake",
+      "Swamp Mountain Base"
     ]
   },
   "Icy Island": {
@@ -4399,17 +4399,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 100/500",
+      "fish": " 84/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Nodguj Nation",
       "Santa's Hideout",
-      "Regular Island",
-      "Dujgon Nation"
+      "Nodguj Nation",
+      "Dujgon Nation",
+      "Regular Island"
     ]
   },
   "Bandit Cave Lower": {
@@ -4425,10 +4425,10 @@
     },
     "stored": {
       "emeralds": "225/3000",
-      "ore": " 76/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "ore": " 66/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Valley South",
@@ -4447,19 +4447,19 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Fortress North",
-      "Fortress South",
-      "Swamp Dark Forest Transition Mid",
       "Swamp Lower",
+      "Swamp Dark Forest Transition Mid",
+      "Fortress North",
       "Entrance to Olux",
-      "Forgotten Path"
+      "Forgotten Path",
+      "Fortress South"
     ]
   },
   "Ragni East Suburbs": {
@@ -4474,16 +4474,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Ragni Main Entrance",
       "Maltic Plains",
-      "Ragni Plains"
+      "Ragni Plains",
+      "Ragni Main Entrance"
     ]
   },
   "Goblin Plains East": {
@@ -4498,11 +4498,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Goblin Plains West",
@@ -4523,16 +4523,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Pre-Light Forest Transition",
       "Quartz Mines South East",
       "Llevigar Farm",
+      "Pre-Light Forest Transition",
       "Quartz Mines North West"
     ]
   },
@@ -4548,11 +4548,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "108/3000",
-      "ore": " 22/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "emeralds": "95/3000",
+      "ore": " 24/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Burning Airship"
@@ -4570,11 +4570,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Entrance to Thesead South",
@@ -4593,11 +4593,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Military Base",
@@ -4616,16 +4616,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
-      "ore": " 150/500",
+      "emeralds": "2999/3000",
+      "ore": " 500/500",
       "crops": "0",
-      "fish": " 8/500",
+      "fish": " 1/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Tree Island",
-      "Volcano Lower",
       "Lost Atoll",
+      "Volcano Lower",
       "Pirate Town"
     ]
   },
@@ -4641,18 +4641,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Swamp Dark Forest Transition Lower",
-      "Swamp Lower",
-      "Olux",
       "Swamp Plains Basin",
-      "Swamp Dark Forest Transition Mid"
+      "Swamp Lower",
+      "Swamp Dark Forest Transition Lower",
+      "Swamp Dark Forest Transition Mid",
+      "Olux"
     ]
   },
   "Lava Lake Bridge": {
@@ -4661,22 +4661,22 @@
     "hq": false,
     "resources": {
       "emeralds": "9000",
-      "ore": "7200",
+      "ore": "9600",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "367/3000",
-      "ore": " 54/500",
+      "emeralds": "405/3000",
+      "ore": " 56/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Molten Heights Portal",
+      "Crater Descent",
       "Active Volcano",
-      "Crater Descent"
+      "Molten Heights Portal"
     ]
   },
   "Aldorei Valley West Entrance": {
@@ -4691,16 +4691,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Hobbit River",
-      "Mantis Nest",
-      "Aldorei Valley Lower"
+      "Aldorei Valley Lower",
+      "Mantis Nest"
     ]
   },
   "Light Forest East Mid": {
@@ -4715,16 +4715,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 102/500",
-      "wood": " 2/500"
+      "fish": " 87/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Light Forest Canyon",
+      "Light Forest East Lower",
       "Light Forest West Upper",
-      "Light Forest East Lower"
+      "Light Forest Canyon"
     ]
   },
   "Raider's Base Upper": {
@@ -4740,14 +4740,14 @@
     },
     "stored": {
       "emeralds": "2997/3000",
-      "ore": " 500/500",
+      "ore": " 499/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Raider's Base Lower",
-      "Sky Island Ascent"
+      "Sky Island Ascent",
+      "Raider's Base Lower"
     ]
   },
   "Jungle Upper": {
@@ -4807,16 +4807,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "367/3000",
+      "emeralds": "2997/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 124/500",
+      "fish": " 499/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Tree Island",
-      "Pirate Town",
-      "Volcano Upper"
+      "Volcano Upper",
+      "Pirate Town"
     ]
   },
   "Detlas Close Suburbs": {
@@ -4839,9 +4839,9 @@
     },
     "Trading Routes": [
       "Detlas Suburbs",
+      "Detlas",
       "Detlas Trail East Plains",
-      "Nether Plains Upper",
-      "Detlas"
+      "Nether Plains Upper"
     ]
   },
   "Dead Island South East": {
@@ -4856,16 +4856,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
+      "emeralds": "2999/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 158/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Dead Island South West",
-      "Regular Island",
       "Dujgon Nation",
+      "Regular Island",
       "Dead Island North East"
     ]
   },
@@ -4874,23 +4874,23 @@
     "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "9000",
+      "emeralds": "12150",
       "ore": "0",
       "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
-      "ore": "0",
-      "crops": " 100/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
       "Rymek East Lower",
-      "Rymek East Upper",
-      "Rymek West Mid"
+      "Rymek West Mid",
+      "Rymek East Upper"
     ]
   },
   "Mesquis Tower": {
@@ -4905,15 +4905,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 35/1000",
+      "emeralds": "285/3000",
+      "ore": " 39/1000",
       "crops": "0",
-      "fish": " 32/1000",
-      "wood": " 147/1000"
+      "fish": " 35/1000",
+      "wood": " 136/1000"
     },
     "Trading Routes": [
-      "Abandoned Manor",
       "Kander Mines",
+      "Abandoned Manor",
       "Path to Cinfras",
       "Cinfras Entrance"
     ]
@@ -4930,18 +4930,18 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Light Forest West Lower",
-      "Light Realm Entrance",
+      "Light Forest East Lower",
       "Light Forest Entrance",
       "Light Forest West Upper",
-      "Light Forest East Lower"
+      "Light Realm Entrance"
     ]
   },
   "Detlas Trail West Plains": {
@@ -4956,16 +4956,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
-      "crops": " 497/500",
+      "crops": " 498/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
       "Detlas Far Suburbs",
-      "Nemract Plains East",
       "Detlas Suburbs",
+      "Nemract Plains East",
       "Ancient Nemract"
     ]
   },
@@ -4981,8 +4981,8 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -5010,10 +5010,10 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "North Nivla Woods",
       "South Nivla Woods",
-      "Nivla Woods",
-      "Nivla Woods Edge"
+      "North Nivla Woods",
+      "Nivla Woods Edge",
+      "Nivla Woods"
     ]
   },
   "Abandoned Pass": {
@@ -5022,17 +5022,17 @@
     "hq": false,
     "resources": {
       "emeralds": "12150",
-      "ore": "9600",
+      "ore": "14400",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "513/3000",
-      "ore": " 100/500",
-      "crops": " 8/500",
-      "fish": " 8/500",
-      "wood": " 8/500"
+      "emeralds": "609/3000",
+      "ore": " 111/500",
+      "crops": " 9/500",
+      "fish": " 9/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Ternaves Plains Lower",
@@ -5051,16 +5051,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Aldorei's North Exit",
       "Aldorei's Waterfall",
-      "Cinfras's Small Farm",
-      "Aldorei's North Exit"
+      "Cinfras's Small Farm"
     ]
   },
   "Corkus Countryside": {
@@ -5075,22 +5075,22 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Corkus City",
       "Corkus Outskirts",
       "Avos Temple",
+      "Corkus City",
       "Corkus Mountain"
     ]
   },
   "Detlas": {
-    "guild": "Nerfuria",
-    "prefix": "Nia",
+    "guild": "Titans Valor",
+    "prefix": "ANO",
     "hq": false,
     "resources": {
       "emeralds": "9000",
@@ -5107,9 +5107,9 @@
       "wood": " 1/500"
     },
     "Trading Routes": [
-      "Detlas Savannah Transition",
       "Detlas Trail East Plains",
-      "Detlas Close Suburbs"
+      "Detlas Close Suburbs",
+      "Detlas Savannah Transition"
     ]
   },
   "Chained House": {
@@ -5124,16 +5124,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
+      "Cherry Blossom Forest",
       "Entrance to Thesead South",
       "Hive South",
-      "Cherry Blossom Forest",
       "Thesead Suburbs"
     ]
   },
@@ -5149,11 +5149,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "1582/3000",
+      "emeralds": "1671/3000",
       "ore": " 499/500",
       "crops": "0",
-      "fish": " 47/500",
-      "wood": " 94/500"
+      "fish": " 52/500",
+      "wood": " 104/500"
     },
     "Trading Routes": [
       "Canyon Dropoff"
@@ -5171,17 +5171,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Mesquis Tower",
+      "Kander Mines",
       "Entrance to Kander",
       "Lone Farmstead",
-      "Kander Mines"
+      "Mesquis Tower"
     ]
   },
   "Zhight Island": {
@@ -5196,16 +5196,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Legendary Island",
       "The Bear Zoo",
-      "Pirate Town"
+      "Pirate Town",
+      "Legendary Island"
     ]
   },
   "Toxic Caves": {
@@ -5220,11 +5220,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "532/3000",
-      "ore": " 94/500",
-      "crops": " 94/500",
-      "fish": " 120/500",
-      "wood": " 16/500"
+      "emeralds": "526/3000",
+      "ore": " 104/500",
+      "crops": " 104/500",
+      "fish": " 98/500",
+      "wood": " 18/500"
     },
     "Trading Routes": [
       "Toxic Drip"
@@ -5266,15 +5266,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Nether Plains Lower",
       "Nesaak Transition",
+      "Nether Plains Lower",
       "Plains Lake"
     ]
   },
@@ -5297,9 +5297,9 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Ragni Main Entrance",
+      "Pigmen Ravines Entrance",
       "Ragni North Entrance",
-      "Pigmen Ravines Entrance"
+      "Ragni Main Entrance"
     ]
   },
   "Jungle Lower": {
@@ -5321,9 +5321,9 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
+      "Great Bridge Jungle",
       "Jungle Mid",
-      "Dernel Jungle Lower",
-      "Great Bridge Jungle"
+      "Dernel Jungle Lower"
     ]
   },
   "Nemract Town": {
@@ -5346,9 +5346,9 @@
     },
     "Trading Routes": [
       "Nemract Road",
+      "Nemract Cathedral",
       "Plains Coast",
-      "Rooster Island",
-      "Nemract Cathedral"
+      "Rooster Island"
     ]
   },
   "Entrance to Thesead North": {
@@ -5363,11 +5363,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Entrance to Thesead South",
@@ -5381,23 +5381,23 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "14400",
+      "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "2/3000",
+      "emeralds": "9/3000",
       "ore": "0",
       "crops": " 999/1000",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Detlas Suburbs",
       "Detlas Trail West Plains",
-      "Nether Plains Upper",
       "Corrupted Road",
-      "Nivla Woods Edge"
+      "Detlas Suburbs",
+      "Nivla Woods Edge",
+      "Nether Plains Upper"
     ]
   },
   "Lighthouse Plateau": {
@@ -5412,16 +5412,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Phinas Farm",
       "Corkus Sea Port",
-      "Southern Outpost"
+      "Southern Outpost",
+      "Phinas Farm"
     ]
   },
   "Dernel Jungle Lower": {
@@ -5459,11 +5459,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 89/500",
+      "emeralds": "414/3000",
+      "ore": " 81/500",
       "crops": "0",
-      "fish": " 16/500",
-      "wood": " 8/500"
+      "fish": " 18/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Cliffside Lake",
@@ -5482,18 +5482,18 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "342/6000",
-      "ore": " 20/1000",
+      "emeralds": "288/6000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 104/1000"
+      "fish": " 3/1000",
+      "wood": " 89/1000"
     },
     "Trading Routes": [
-      "Gelibord Castle",
       "Swamp Dark Forest Transition Upper",
-      "Fortress North",
       "Swamp Dark Forest Transition Mid",
-      "Gelibord Corrupted Farm"
+      "Gelibord Corrupted Farm",
+      "Gelibord Castle",
+      "Fortress North"
     ]
   },
   "Dark Forest Village": {
@@ -5508,16 +5508,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Kander Mines",
       "Path to Talor",
       "Cinfras Outskirts",
-      "Kander Mines",
       "Old Crossroads South"
     ]
   },
@@ -5533,17 +5533,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Swamp East Lower",
-      "Swamp East Mid-Upper",
+      "Swamp West Mid",
       "Swamp Mountain Base",
-      "Swamp West Mid"
+      "Swamp East Lower",
+      "Swamp East Mid-Upper"
     ]
   },
   "Avos Temple": {
@@ -5558,15 +5558,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Avos Workshop",
-      "Bloody Beach"
+      "Bloody Beach",
+      "Avos Workshop"
     ]
   },
   "Great Bridge Nesaak": {
@@ -5604,16 +5604,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "342/3000",
-      "ore": " 20/1000",
+      "emeralds": "288/3000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 102/1000"
+      "fish": " 3/1000",
+      "wood": " 87/1000"
     },
     "Trading Routes": [
+      "Cinfras County Mid-Lower",
       "Cinfras County Upper",
-      "Cinfras Thanos Transition",
-      "Cinfras County Mid-Lower"
+      "Cinfras Thanos Transition"
     ]
   },
   "Military Base Lower": {
@@ -5628,11 +5628,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Military Base Upper",
@@ -5652,42 +5652,42 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Maltic Coast",
-      "Ragni Plains",
-      "Maltic Plains",
       "Coastal Trail",
-      "South Farmers Valley"
+      "Maltic Plains",
+      "Maltic Coast",
+      "South Farmers Valley",
+      "Ragni Plains"
     ]
   },
   "Ternaves Plains Upper": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "HackForums",
+    "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "12000",
+      "emeralds": "9000",
       "ore": "0",
-      "crops": "7200",
+      "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 499/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
+      "Ternaves Plains Lower",
       "Savannah West Lower",
       "Ternaves",
-      "Ternaves Plains Lower",
       "Detlas Savannah Transition"
     ]
   },
@@ -5725,15 +5725,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/3000",
-      "ore": " 74/1000",
+      "emeralds": "418/3000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 2/1000"
+      "fish": " 3/1000",
+      "wood": " 3/1000"
     },
     "Trading Routes": [
-      "Llevigar Farm Plains West",
-      "Llevigar Gate East"
+      "Llevigar Gate East",
+      "Llevigar Farm Plains West"
     ]
   },
   "Cinfras Entrance": {
@@ -5755,10 +5755,10 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Mesquis Tower",
       "Cinfras",
+      "Light Forest North Exit",
       "Path to Cinfras",
-      "Light Forest North Exit"
+      "Mesquis Tower"
     ]
   },
   "Forest of Eyes": {
@@ -5773,15 +5773,15 @@
       "wood": "9600"
     },
     "stored": {
-      "emeralds": "509/3000",
-      "ore": " 35/500",
-      "crops": " 8/500",
-      "fish": " 8/500",
-      "wood": " 80/500"
+      "emeralds": "475/3000",
+      "ore": " 39/500",
+      "crops": " 9/500",
+      "fish": " 9/500",
+      "wood": " 65/500"
     },
     "Trading Routes": [
-      "Forgotten Town",
-      "Sinister Forest"
+      "Sinister Forest",
+      "Forgotten Town"
     ]
   },
   "Corkus Statue": {
@@ -5796,10 +5796,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -5819,11 +5819,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Viscera Pits West",
@@ -5842,17 +5842,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Entrance to Thesead North",
+      "Air Temple Lower",
       "Entrance to Thesead South",
-      "Bandits Toll",
-      "Air Temple Lower"
+      "Bandits Toll"
     ]
   },
   "Canyon Survivor": {
@@ -5867,11 +5867,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Lower South East",
@@ -5890,11 +5890,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 28/500",
-      "crops": " 35/500",
-      "fish": " 8/500",
-      "wood": " 8/500"
+      "emeralds": "225/3000",
+      "ore": " 31/500",
+      "crops": " 26/500",
+      "fish": " 9/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Hive South",
@@ -5920,9 +5920,9 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
+      "Nivla Woods Edge",
       "Plains",
-      "Nivla Woods Exit",
-      "Nivla Woods Edge"
+      "Nivla Woods Exit"
     ]
   },
   "Light Forest West Lower": {
@@ -5937,16 +5937,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Light Forest West Mid",
       "Hobbit River",
-      "Light Forest South Entrance"
+      "Light Forest South Entrance",
+      "Light Forest West Mid"
     ]
   },
   "Dujgon Nation": {
@@ -5961,18 +5961,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 100/500",
+      "fish": " 84/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Nodguj Nation",
-      "Icy Island",
       "Dead Island South West",
-      "Regular Island",
-      "Dead Island South East"
+      "Icy Island",
+      "Nodguj Nation",
+      "Dead Island South East",
+      "Regular Island"
     ]
   },
   "Forgotten Path": {
@@ -5987,11 +5987,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Swamp Dark Forest Transition Lower",
@@ -6000,22 +6000,22 @@
     ]
   },
   "Lusuco": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "HackForums",
+    "prefix": "Hax",
     "hq": false,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "3600"
+      "wood": "7200"
     },
     "stored": {
-      "emeralds": "3000/3000",
+      "emeralds": "341/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 500/500"
+      "wood": " 42/500"
     },
     "Trading Routes": [
       "Icy Descent"
@@ -6040,9 +6040,9 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Ternaves Plains Upper",
+      "Savannah East Lower",
       "Ternaves Plains Lower",
-      "Savannah East Lower"
+      "Ternaves Plains Upper"
     ]
   },
   "Factory Entrance": {
@@ -6057,16 +6057,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Corkus City South",
-      "Fallen Factory",
       "Corkus Forest South",
+      "Fallen Factory",
       "Ruined Houses"
     ]
   },
@@ -6089,9 +6089,9 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Herb Cave",
+      "Great Bridge Nesaak",
       "Jungle Lower",
-      "Great Bridge Nesaak"
+      "Herb Cave"
     ]
   },
   "Swamp Island": {
@@ -6130,17 +6130,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 102/500",
-      "wood": " 2/500"
+      "fish": " 87/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Gylia Lake South East",
+      "Military Base",
       "Gylia Lake North West",
-      "Gert Camp",
-      "Military Base"
+      "Gert Camp"
     ]
   },
   "Temple of the Lost East": {
@@ -6155,15 +6155,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Krolton's Cave",
-      "Valley of the Lost"
+      "Valley of the Lost",
+      "Krolton's Cave"
     ]
   },
   "Canyon Walk Way": {
@@ -6178,16 +6178,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/3000",
-      "ore": " 76/1000",
+      "emeralds": "418/3000",
+      "ore": " 66/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 2/1000"
+      "fish": " 3/1000",
+      "wood": " 3/1000"
     },
     "Trading Routes": [
-      "Path To Ozoth's Spire Mid",
+      "Canyon Mountain East",
       "Bandits Toll",
-      "Canyon Mountain East"
+      "Path To Ozoth's Spire Mid"
     ]
   },
   "Gateway to Nothing": {
@@ -6195,23 +6195,23 @@
     "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "12000",
+      "emeralds": "9000",
       "ore": "0",
-      "crops": "7200",
+      "crops": "9600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "207/3000",
-      "ore": " 32/500",
-      "crops": " 89/500",
-      "fish": " 32/500",
-      "wood": " 32/500"
+      "emeralds": "405/3000",
+      "ore": " 35/500",
+      "crops": " 74/500",
+      "fish": " 35/500",
+      "wood": " 35/500"
     },
     "Trading Routes": [
+      "Void Valley",
       "Toxic Drip",
-      "Final Step",
-      "Void Valley"
+      "Final Step"
     ]
   },
   "Goblin Plains West": {
@@ -6226,16 +6226,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Iron Road",
       "Goblin Plains East",
       "Sablestone Camp",
+      "Iron Road",
       "Llevigar Farm"
     ]
   },
@@ -6273,21 +6273,21 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "367/3000",
-      "ore": " 54/500",
+      "emeralds": "341/3000",
+      "ore": " 42/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Lava Lake Bridge",
       "Lava Lake",
+      "Lava Lake Bridge",
       "Crater Descent"
     ]
   },
   "Jungle Lake": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "Bellum Axioma",
+    "prefix": "BAX",
     "hq": false,
     "resources": {
       "emeralds": "9000",
@@ -6304,9 +6304,9 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
+      "Temple of Legends",
       "Jungle Mid",
-      "City of Troms",
-      "Temple of Legends"
+      "City of Troms"
     ]
   },
   "Canyon Entrance Waterfall": {
@@ -6322,10 +6322,10 @@
     },
     "stored": {
       "emeralds": "225/3000",
-      "ore": " 74/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "ore": " 64/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Path North Mid",
@@ -6344,16 +6344,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Twisted Housing",
-      "Fortress North",
-      "Fortress South"
+      "Fortress South",
+      "Fortress North"
     ]
   },
   "Orc Lake": {
@@ -6368,18 +6368,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 102/500",
-      "wood": " 2/500"
+      "fish": " 87/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
+      "Sablestone Camp",
       "Orc Road",
-      "Llevigar Plains East Lower",
-      "Llevigar Plains East Upper",
       "Sunspark Camp",
-      "Sablestone Camp"
+      "Llevigar Plains East Lower",
+      "Llevigar Plains East Upper"
     ]
   },
   "Corkus Forest South": {
@@ -6394,44 +6394,44 @@
       "wood": "4800"
     },
     "stored": {
-      "emeralds": "209/3000",
+      "emeralds": "2999/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 8/500",
-      "wood": " 36/500"
+      "fish": " 1/500",
+      "wood": " 500/500"
     },
     "Trading Routes": [
-      "Corkus City",
-      "Factory Entrance",
       "Corkus City South",
-      "Corkus Forest North"
+      "Factory Entrance",
+      "Corkus Forest North",
+      "Corkus City"
     ]
   },
   "Nesaak Plains South West": {
-    "guild": "HackForums",
-    "prefix": "Hax",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
-      "emeralds": "12150",
+      "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "9600"
+      "wood": "5400"
     },
     "stored": {
-      "emeralds": "513/3000",
-      "ore": " 20/500",
+      "emeralds": "324/3000",
+      "ore": " 1/500",
       "crops": "0",
       "fish": "0",
-      "wood": " 72/500"
+      "wood": " 135/500"
     },
     "Trading Routes": [
-      "Nesaak Plains Lower North West",
-      "Twain Lake",
-      "Nesaak Bridge Transition",
       "Icy Descent",
+      "Twain Lake",
+      "Nesaak Village",
+      "Nesaak Bridge Transition",
       "Nesaak Plains South East",
-      "Nesaak Village"
+      "Nesaak Plains Lower North West"
     ]
   },
   "Efilim East Plains": {
@@ -6446,11 +6446,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Efilim Village",
@@ -6477,9 +6477,9 @@
     },
     "Trading Routes": [
       "Nether Plains Lower",
-      "Nether Plains Upper",
       "Corrupted Road",
-      "Plains Lake"
+      "Plains Lake",
+      "Nether Plains Upper"
     ]
   },
   "Canyon Lower South East": {
@@ -6494,16 +6494,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Path South East",
-      "Canyon Path South West",
       "Canyon Survivor",
+      "Canyon Path South West",
       "Canyon Upper North West"
     ]
   },
@@ -6529,32 +6529,6 @@
       "Temple Island"
     ]
   },
-  "Cliff Side of the Lost": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
-    "hq": false,
-    "resources": {
-      "emeralds": "12150",
-      "ore": "7200",
-      "crops": "0",
-      "fish": "0",
-      "wood": "0"
-    },
-    "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
-      "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
-    },
-    "Trading Routes": [
-      "Canyon Dropoff",
-      "Mountain Edge",
-      "Canyon Of The Lost",
-      "Canyon Survivor",
-      "Valley of the Lost"
-    ]
-  },
   "Aldorei's Arch": {
     "guild": "Wholesome Keanu Chungus",
     "prefix": "COOM",
@@ -6567,20 +6541,46 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Canyon Upper North West",
-      "Path To The Arch"
+      "Path To The Arch",
+      "Canyon Upper North West"
+    ]
+  },
+  "Cliff Side of the Lost": {
+    "guild": "Wholesome Keanu Chungus",
+    "prefix": "COOM",
+    "hq": false,
+    "resources": {
+      "emeralds": "12150",
+      "ore": "7200",
+      "crops": "0",
+      "fish": "0",
+      "wood": "0"
+    },
+    "stored": {
+      "emeralds": "414/3000",
+      "ore": " 64/500",
+      "crops": "0",
+      "fish": " 3/500",
+      "wood": " 3/500"
+    },
+    "Trading Routes": [
+      "Canyon Dropoff",
+      "Mountain Edge",
+      "Valley of the Lost",
+      "Canyon Survivor",
+      "Canyon Of The Lost"
     ]
   },
   "Light Realm Corruption": {
-    "guild": "No owner",
-    "prefix": "None",
+    "guild": "Titans Valor",
+    "prefix": "ANO",
     "hq": false,
     "resources": {
       "emeralds": "0",
@@ -6597,9 +6597,9 @@
       "wood": "0"
     },
     "Trading Routes": [
+      "Light Realm Mushrooms",
       "Road to Corruption",
-      "Orphion's Seal Upper",
-      "Light Realm Mushrooms"
+      "Orphion's Seal Upper"
     ]
   },
   "Gelibord Castle": {
@@ -6614,15 +6614,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Gelibord Corrupted Farm",
-      "Taproot Descent"
+      "Taproot Descent",
+      "Gelibord Corrupted Farm"
     ]
   },
   "Cathedral Harbour": {
@@ -6630,25 +6630,25 @@
     "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "9000",
+      "emeralds": "12150",
       "ore": "0",
       "crops": "0",
       "fish": "3600",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
-      "ore": "0",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 100/500",
+      "fish": " 84/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Durum Isles East",
-      "Ancient Nemract",
-      "Nemract Cathedral",
+      "Savannah West Upper",
       "Durum Isles Lower",
-      "Savannah West Upper"
+      "Nemract Cathedral",
+      "Ancient Nemract"
     ]
   },
   "Phinas Farm": {
@@ -6663,15 +6663,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
-      "crops": " 100/500",
-      "fish": " 8/500",
+      "crops": " 500/500",
+      "fish": " 1/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Royal Gate",
-      "Lighthouse Plateau"
+      "Lighthouse Plateau",
+      "Royal Gate"
     ]
   },
   "Nemract Plains East": {
@@ -6686,15 +6686,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Detlas Trail West Plains",
-      "Nemract Road"
+      "Nemract Road",
+      "Detlas Trail West Plains"
     ]
   },
   "Jofash Tunnel": {
@@ -6703,14 +6703,14 @@
     "hq": false,
     "resources": {
       "emeralds": "9000",
-      "ore": "5400",
+      "ore": "7200",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
-      "ore": " 150/500",
+      "emeralds": "341/3000",
+      "ore": " 42/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -6732,16 +6732,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Light Forest Canyon",
+      "Cinfras Entrance",
       "Light Forest South Exit",
-      "Cinfras Entrance"
+      "Light Forest Canyon"
     ]
   },
   "Cherry Blossom Forest": {
@@ -6756,16 +6756,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Hive South",
       "Chained House",
-      "Ranol's Farm",
-      "Hive South"
+      "Ranol's Farm"
     ]
   },
   "Road to Time Valley": {
@@ -6780,16 +6780,16 @@
       "wood": "5400"
     },
     "stored": {
-      "emeralds": "313/3000",
+      "emeralds": "280/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 197/1000"
+      "wood": " 179/1000"
     },
     "Trading Routes": [
       "South Nivla Woods",
-      "Nivla Woods",
-      "Nivla Woods Entrance"
+      "Nivla Woods Entrance",
+      "Nivla Woods"
     ]
   },
   "Detlas Trail East Plains": {
@@ -6797,25 +6797,25 @@
     "prefix": "Hax",
     "hq": false,
     "resources": {
-      "emeralds": "9000",
+      "emeralds": "12150",
       "ore": "0",
       "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
-      "ore": "0",
-      "crops": " 100/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
       "Detlas Suburbs",
       "Detlas",
-      "Ancient Nemract",
       "Detlas Close Suburbs",
-      "Cathedral Harbour"
+      "Cathedral Harbour",
+      "Ancient Nemract"
     ]
   },
   "Sablestone Camp": {
@@ -6830,17 +6830,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Loamsprout Camp",
       "Meteor Crater",
-      "Goblin Plains West",
-      "Orc Lake"
+      "Orc Lake",
+      "Goblin Plains West"
     ]
   },
   "Viscera Pits East": {
@@ -6855,11 +6855,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Viscera Pits West",
@@ -6879,15 +6879,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Worm Tunnel",
-      "The Silent Road"
+      "The Silent Road",
+      "Worm Tunnel"
     ]
   },
   "Sky Falls": {
@@ -6903,7 +6903,7 @@
     },
     "stored": {
       "emeralds": "2997/3000",
-      "ore": " 500/500",
+      "ore": " 499/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -6920,22 +6920,22 @@
     "hq": false,
     "resources": {
       "emeralds": "12000",
-      "ore": "5400",
+      "ore": "9600",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "139/3000",
-      "ore": " 150/500",
-      "crops": " 20/500",
+      "emeralds": "265/3000",
+      "ore": " 56/500",
+      "crops": " 22/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Volcanic Slope",
+      "Molten Heights Portal",
       "Active Volcano",
-      "Molten Heights Portal"
+      "Volcanic Slope"
     ]
   },
   "Aldorei's Waterfall": {
@@ -6950,11 +6950,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Aldorei Valley South Entrance",
@@ -6973,17 +6973,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 102/500",
-      "wood": " 2/500"
+      "fish": " 87/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Fallen Village",
       "Gylia Lake North East",
-      "Jitak's Farm",
-      "Gylia Lake South West"
+      "Gylia Lake South West",
+      "Fallen Village",
+      "Jitak's Farm"
     ]
   },
   "Elkurn Fields": {
@@ -6993,22 +6993,22 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "18000",
+      "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "2/3000",
+      "emeralds": "4/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "South Nivla Woods",
       "Elkurn",
-      "Time Valley",
-      "Road to Elkurn"
+      "South Nivla Woods",
+      "Road to Elkurn",
+      "Time Valley"
     ]
   },
   "Jungle Mid": {
@@ -7031,8 +7031,8 @@
     },
     "Trading Routes": [
       "Jungle Lower",
-      "Jungle Upper",
-      "Jungle Lake"
+      "Jungle Lake",
+      "Jungle Upper"
     ]
   },
   "Void Valley": {
@@ -7047,11 +7047,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "357/3000",
-      "ore": " 86/500",
-      "crops": " 148/500",
-      "fish": " 8/500",
-      "wood": " 8/500"
+      "emeralds": "331/3000",
+      "ore": " 96/500",
+      "crops": " 146/500",
+      "fish": " 9/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
       "Gateway to Nothing"
@@ -7063,14 +7063,14 @@
     "hq": false,
     "resources": {
       "emeralds": "9000",
-      "ore": "3600",
+      "ore": "7200",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
-      "ore": " 100/500",
+      "emeralds": "341/3000",
+      "ore": " 42/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -7091,17 +7091,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Quartz Mines South West",
       "Quartz Mines North East",
-      "Llevigar Farm",
-      "Loamsprout Camp"
+      "Quartz Mines South West",
+      "Loamsprout Camp",
+      "Llevigar Farm"
     ]
   },
   "Almuj City": {
@@ -7117,17 +7117,17 @@
     },
     "stored": {
       "emeralds": "3000/3000",
-      "ore": " 1989/2000",
+      "ore": " 1991/2000",
       "crops": " 2000/2000",
       "fish": " 2000/2000",
       "wood": " 1/2000"
     },
     "Trading Routes": [
-      "Desert West Lower",
-      "Savannah East Upper",
-      "Desert Mid-Lower",
       "Desert West Upper",
-      "Desert Mid-Upper"
+      "Desert West Lower",
+      "Desert Mid-Upper",
+      "Desert Mid-Lower",
+      "Savannah East Upper"
     ]
   },
   "Kandon Farm": {
@@ -7142,7 +7142,7 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
@@ -7159,22 +7159,22 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "14400",
-      "fish": "14400",
+      "crops": "3600",
+      "fish": "3600",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "3/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 1999/2000",
       "fish": " 2000/2000",
       "wood": "0"
     },
     "Trading Routes": [
-      "North Farmers Valley",
-      "Maltic",
       "Coastal Trail",
-      "South Farmers Valley"
+      "Maltic",
+      "South Farmers Valley",
+      "North Farmers Valley"
     ]
   },
   "Corkus Sea Port": {
@@ -7189,16 +7189,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Corkus Sea Cove",
-      "Fallen Factory",
       "Lighthouse Plateau",
+      "Fallen Factory",
       "Ruined Houses"
     ]
   },
@@ -7214,11 +7214,11 @@
       "wood": "9600"
     },
     "stored": {
-      "emeralds": "337/3000",
-      "ore": " 35/500",
-      "crops": " 86/500",
-      "fish": " 8/500",
-      "wood": " 80/500"
+      "emeralds": "330/3000",
+      "ore": " 39/500",
+      "crops": " 96/500",
+      "fish": " 9/500",
+      "wood": " 65/500"
     },
     "Trading Routes": [
       "Forest of Eyes",
@@ -7260,15 +7260,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "90/3000",
+      "emeralds": "70/3000",
       "ore": "0",
-      "crops": " 120/500",
+      "crops": " 106/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Forgotten Town",
-      "Worm Tunnel"
+      "Worm Tunnel",
+      "Forgotten Town"
     ]
   },
   "Desert East Mid": {
@@ -7283,21 +7283,21 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 112/500",
+      "fish": " 97/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Desert Mid-Upper",
-      "Desert East Lower",
-      "Desert East Upper"
+      "Desert East Upper",
+      "Desert East Lower"
     ]
   },
   "Bizarre Passage": {
-    "guild": "Dernic Legion",
-    "prefix": "ShyF",
+    "guild": "HackForums",
+    "prefix": "Hax",
     "hq": false,
     "resources": {
       "emeralds": "9000",
@@ -7307,9 +7307,9 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 163/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
@@ -7330,17 +7330,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Light Forest West Upper",
-      "Light Forest East Upper",
       "Efilim South Plains",
-      "Efilim East Plains"
+      "Efilim East Plains",
+      "Light Forest East Upper"
     ]
   },
   "Orphion's Seal Upper": {
@@ -7364,9 +7364,9 @@
     "Trading Routes": [
       "Light Realm East Mid",
       "Light Realm Corruption",
-      "Orphion's Seal",
+      "Road to Corruption",
       "Light Realm Entrance Upper",
-      "Road to Corruption"
+      "Orphion's Seal"
     ]
   },
   "Bandits Toll": {
@@ -7381,17 +7381,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Walk Way",
-      "Cliffside Valley",
+      "Thanos Exit Upper",
       "Wizard Tower North",
-      "Thanos Exit Upper"
+      "Cliffside Valley"
     ]
   },
   "Cinfras County Lower": {
@@ -7406,15 +7406,15 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Cinfras County Mid-Lower",
       "Cinfras's Small Farm",
+      "Cinfras County Mid-Lower",
       "Aldorei's North Exit"
     ]
   },
@@ -7430,16 +7430,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "357/3000",
-      "ore": " 117/500",
-      "crops": " 179/500",
-      "fish": " 32/500",
-      "wood": " 47/500"
+      "emeralds": "331/3000",
+      "ore": " 130/500",
+      "crops": " 181/500",
+      "fish": " 35/500",
+      "wood": " 53/500"
     },
     "Trading Routes": [
-      "Toxic Caves",
       "Paths of Sludge",
-      "Gateway to Nothing"
+      "Gateway to Nothing",
+      "Toxic Caves"
     ]
   },
   "Dead Island North West": {
@@ -7454,10 +7454,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
+      "emeralds": "2999/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 158/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -7477,18 +7477,18 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/6000",
-      "ore": " 35/1000",
+      "emeralds": "285/6000",
+      "ore": " 39/1000",
       "crops": "0",
-      "fish": " 47/1000",
-      "wood": " 134/1000"
+      "fish": " 52/1000",
+      "wood": " 121/1000"
     },
     "Trading Routes": [
       "Dark Forest Village",
-      "Dark Forest Cinfras Transition",
-      "Old Crossroads South",
       "Fungal Grove",
-      "Cinfras"
+      "Dark Forest Cinfras Transition",
+      "Cinfras",
+      "Old Crossroads South"
     ]
   },
   "Plains Coast": {
@@ -7510,8 +7510,8 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "North Farmers Valley",
       "Nemract Quarry",
+      "North Farmers Valley",
       "Nemract Town"
     ]
   },
@@ -7527,9 +7527,9 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "275/3000",
-      "ore": " 13/500",
-      "crops": " 106/500",
+      "emeralds": "241/3000",
+      "ore": " 7/500",
+      "crops": " 90/500",
       "fish": "0",
       "wood": "0"
     },
@@ -7551,10 +7551,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 8/500",
+      "fish": " 9/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -7564,26 +7564,26 @@
     ]
   },
   "Llevigar": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "Titans Valor",
+    "prefix": "ANO",
     "hq": false,
     "resources": {
-      "emeralds": "12150",
-      "ore": "7200",
+      "emeralds": "9000",
+      "ore": "3600",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "462/12000",
-      "ore": " 121/2000",
+      "emeralds": "3000/3000",
+      "ore": " 500/500",
       "crops": "0",
-      "fish": " 32/2000",
-      "wood": " 98/2000"
+      "fish": " 500/500",
+      "wood": " 500/500"
     },
     "Trading Routes": [
-      "Llevigar Gate East",
       "Quartz Mines South West",
+      "Llevigar Gate East",
       "Llevigar Entrance"
     ]
   },
@@ -7599,18 +7599,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
-      "Swamp East Lower",
-      "Llevigar Plains West Upper",
-      "Llevigar Plains East Lower",
       "Orc Lake",
-      "Sunspark Camp"
+      "Llevigar Plains West Upper",
+      "Sunspark Camp",
+      "Swamp East Lower",
+      "Llevigar Plains East Lower"
     ]
   },
   "Rymek East Upper": {
@@ -7625,16 +7625,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "2997/3000",
+      "emeralds": "2990/3000",
       "ore": " 1/500",
-      "crops": " 500/500",
+      "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Rymek West Upper",
+      "Rymek East Mid",
       "Desert East Lower",
-      "Rymek East Mid"
+      "Rymek West Upper"
     ]
   },
   "Llevigar Farm Plains West": {
@@ -7649,16 +7649,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
+      "Llevigar Plains West Lower",
       "Llevigar Farm Plains East",
-      "Llevigar Gate West",
-      "Llevigar Plains West Lower"
+      "Llevigar Gate West"
     ]
   },
   "Time Valley": {
@@ -7680,9 +7680,9 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Little Wood",
+      "Abandoned Farm",
       "Elkurn Fields",
-      "Abandoned Farm"
+      "Little Wood"
     ]
   },
   "Cinfras Thanos Transition": {
@@ -7697,16 +7697,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
+      "Cinfras County Mid-Upper",
       "Burning Airship",
-      "Path To Thanos",
-      "Cinfras County Mid-Upper"
+      "Path To Thanos"
     ]
   },
   "Swamp Mountain Transition Mid-Upper": {
@@ -7721,16 +7721,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "342/6000",
-      "ore": " 20/1000",
+      "emeralds": "288/6000",
+      "ore": " 22/1000",
       "crops": "0",
-      "fish": " 102/1000",
-      "wood": " 10/1000"
+      "fish": " 87/1000",
+      "wood": " 11/1000"
     },
     "Trading Routes": [
-      "Swamp Mountain Transition Mid",
+      "Swamp East Upper",
       "Swamp Mountain Transition Upper",
-      "Swamp East Upper"
+      "Swamp Mountain Transition Mid"
     ]
   },
   "Fortress North": {
@@ -7745,16 +7745,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Mansion of Insanity",
+      "Taproot Descent",
       "Fortress South",
-      "Taproot Descent"
+      "Mansion of Insanity"
     ]
   },
   "Ternaves Plains Lower": {
@@ -7769,18 +7769,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
       "Abandoned Pass",
       "Mine Base Plains",
+      "Mining Base Upper",
       "Ternaves",
-      "Ternaves Plains Upper",
-      "Mining Base Upper"
+      "Ternaves Plains Upper"
     ]
   },
   "Orphion's Seal": {
@@ -7802,9 +7802,9 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Orphion's Seal Upper",
+      "Light Realm Mushrooms",
       "Light Realm East Lower",
-      "Light Realm Mushrooms"
+      "Orphion's Seal Upper"
     ]
   },
   "Volcano Lower": {
@@ -7819,10 +7819,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
-      "ore": " 150/500",
+      "emeralds": "2999/3000",
+      "ore": " 500/500",
       "crops": "0",
-      "fish": " 8/500",
+      "fish": " 1/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -7843,16 +7843,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "630/3000",
-      "ore": " 131/500",
-      "crops": " 8/500",
-      "fish": " 8/500",
-      "wood": " 8/500"
+      "emeralds": "609/3000",
+      "ore": " 119/500",
+      "crops": " 9/500",
+      "fish": " 9/500",
+      "wood": " 9/500"
     },
     "Trading Routes": [
-      "Mining Base Lower",
+      "Ternaves Plains Lower",
       "Abandoned Pass",
-      "Ternaves Plains Lower"
+      "Mining Base Lower"
     ]
   },
   "Hive South": {
@@ -7867,18 +7867,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Hive",
+      "Thanos Exit Upper",
       "Chained House",
       "Canyon High Path",
-      "Thanos Exit Upper",
-      "Cherry Blossom Forest"
+      "Cherry Blossom Forest",
+      "Hive"
     ]
   },
   "Santa's Hideout": {
@@ -7900,8 +7900,8 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Icy Island",
-      "Mage Island"
+      "Mage Island",
+      "Icy Island"
     ]
   },
   "Path To Ozoth's Spire Mid": {
@@ -7916,39 +7916,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "445/3000",
-      "ore": " 74/1000",
+      "emeralds": "405/3000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 2/1000"
+      "fish": " 3/1000",
+      "wood": " 3/1000"
     },
     "Trading Routes": [
-      "Path To Ozoth's Spire Upper",
-      "Canyon Walk Way"
-    ]
-  },
-  "Road To Mine": {
-    "guild": "Cthulhu",
-    "prefix": "Kth",
-    "hq": false,
-    "resources": {
-      "emeralds": "9000",
-      "ore": "0",
-      "crops": "0",
-      "fish": "3600",
-      "wood": "0"
-    },
-    "stored": {
-      "emeralds": "250/3000",
-      "ore": "0",
-      "crops": "0",
-      "fish": " 108/500",
-      "wood": "0"
-    },
-    "Trading Routes": [
-      "Corkus Sea Cove",
-      "Corkus City South",
-      "Corkus City Mine"
+      "Canyon Walk Way",
+      "Path To Ozoth's Spire Upper"
     ]
   },
   "Swamp West Lower": {
@@ -7963,16 +7939,40 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "1764/6000",
-      "ore": " 809/5500",
+      "emeralds": "1829/6000",
+      "ore": " 710/5500",
       "crops": "0",
-      "fish": " 47/5500",
-      "wood": " 96/5500"
+      "fish": " 52/5500",
+      "wood": " 107/5500"
     },
     "Trading Routes": [
-      "Swamp East Lower",
+      "Swamp West Mid",
       "Llevigar Plains West Upper",
-      "Swamp West Mid"
+      "Swamp East Lower"
+    ]
+  },
+  "Road To Mine": {
+    "guild": "Cthulhu",
+    "prefix": "Kth",
+    "hq": false,
+    "resources": {
+      "emeralds": "9000",
+      "ore": "0",
+      "crops": "0",
+      "fish": "3600",
+      "wood": "0"
+    },
+    "stored": {
+      "emeralds": "3000/3000",
+      "ore": "0",
+      "crops": "0",
+      "fish": " 500/500",
+      "wood": "0"
+    },
+    "Trading Routes": [
+      "Corkus City South",
+      "Corkus Sea Cove",
+      "Corkus City Mine"
     ]
   },
   "Nivla Woods Entrance": {
@@ -7987,17 +7987,17 @@
       "wood": "5400"
     },
     "stored": {
-      "emeralds": "313/3000",
+      "emeralds": "280/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 197/1000"
+      "wood": " 179/1000"
     },
     "Trading Routes": [
-      "Plains",
-      "Road to Time Valley",
       "Emerald Trail",
-      "Nivla Woods"
+      "Plains",
+      "Nivla Woods",
+      "Road to Time Valley"
     ]
   },
   "Entrance to Rodoroc": {
@@ -8012,21 +8012,21 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 4/1000"
+      "fish": " 3/1000",
+      "wood": " 5/1000"
     },
     "Trading Routes": [
-      "Thesead Suburbs",
       "Rodoroc",
-      "Eltom"
+      "Eltom",
+      "Thesead Suburbs"
     ]
   },
   "Light Realm Entrance": {
-    "guild": "No owner",
-    "prefix": "None",
+    "guild": "Wholesome Keanu Chungus",
+    "prefix": "COOM",
     "hq": false,
     "resources": {
       "emeralds": "0",
@@ -8043,9 +8043,9 @@
       "wood": "0"
     },
     "Trading Routes": [
+      "Light Realm Entrance Upper",
       "Spiraling Trees",
-      "Light Realm East Upper",
-      "Light Realm Entrance Upper"
+      "Light Realm East Upper"
     ]
   },
   "Light Forest Canyon": {
@@ -8060,16 +8060,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Light Forest North Exit",
-      "Mantis Nest",
-      "Light Forest East Mid"
+      "Light Forest East Mid",
+      "Mantis Nest"
     ]
   },
   "Bloody Beach": {
@@ -8084,18 +8084,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Volcano Lower",
       "Pirate Town",
-      "Corkus Countryside",
       "Corkus Outskirts",
-      "Avos Temple"
+      "Avos Temple",
+      "Corkus Countryside",
+      "Volcano Lower"
     ]
   },
   "Corkus Castle": {
@@ -8139,8 +8139,8 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Sky Castle",
       "Ahmsord",
+      "Sky Castle",
       "Path to Ahmsord Upper"
     ]
   },
@@ -8167,22 +8167,22 @@
     ]
   },
   "The Gate": {
-    "guild": "Dernic Legion",
-    "prefix": "ShyF",
-    "hq": true,
+    "guild": "HackForums",
+    "prefix": "Hax",
+    "hq": false,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
-      "crops": "7200",
+      "crops": "28800",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "3000/3000",
-      "ore": " 2/500",
-      "crops": " 499/500",
-      "fish": " 21/500",
-      "wood": " 21/500"
+      "emeralds": "536/3000",
+      "ore": " 61/500",
+      "crops": " 230/500",
+      "fish": " 35/500",
+      "wood": " 53/500"
     },
     "Trading Routes": [
       "Bizarre Passage"
@@ -8200,11 +8200,11 @@
       "wood": "86400"
     },
     "stored": {
-      "emeralds": "1116/3000",
-      "ore": " 51/1000",
+      "emeralds": "1151/3000",
+      "ore": " 57/1000",
       "crops": "0",
-      "fish": " 32/1000",
-      "wood": " 632/1000"
+      "fish": " 35/1000",
+      "wood": " 539/1000"
     },
     "Trading Routes": [
       "Road To Light Forest"
@@ -8222,17 +8222,17 @@
       "wood": "4800"
     },
     "stored": {
-      "emeralds": "309/3000",
+      "emeralds": "2999/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 8/500",
-      "wood": " 36/500"
+      "fish": " 1/500",
+      "wood": " 500/500"
     },
     "Trading Routes": [
       "Corkus City South",
+      "Corkus Forest South",
       "Corkus City",
-      "Corkus Mountain",
-      "Corkus Forest South"
+      "Corkus Mountain"
     ]
   },
   "Old Coal Mine": {
@@ -8248,7 +8248,7 @@
     },
     "stored": {
       "emeralds": "2997/3000",
-      "ore": " 500/500",
+      "ore": " 499/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -8269,16 +8269,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "5/3000",
+      "emeralds": "4/3000",
       "ore": " 999/1000",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Pigmen Ravines",
       "South Pigmen Ravines",
-      "Ragni"
+      "Ragni",
+      "Pigmen Ravines"
     ]
   },
   "Path to Talor": {
@@ -8293,18 +8293,18 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/3000",
-      "ore": " 76/1000",
+      "emeralds": "418/3000",
+      "ore": " 66/1000",
       "crops": "0",
-      "fish": " 8/1000",
-      "wood": " 32/1000"
+      "fish": " 9/1000",
+      "wood": " 35/1000"
     },
     "Trading Routes": [
-      "Kander Mines",
-      "Old Crossroads North",
-      "Viscera Pits East",
       "Old Crossroads South",
       "Dark Forest Village",
+      "Kander Mines",
+      "Viscera Pits East",
+      "Old Crossroads North",
       "Entrance to Kander"
     ]
   },
@@ -8320,16 +8320,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Corkus Statue",
-      "Corkus Countryside",
-      "Bloody Beach"
+      "Bloody Beach",
+      "Corkus Countryside"
     ]
   },
   "Guild Hall": {
@@ -8344,11 +8344,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Cinfras"
@@ -8366,17 +8366,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Nether Gate",
       "Elkurn",
-      "Nether Plains Upper",
-      "Detlas Far Suburbs"
+      "Nether Gate",
+      "Detlas Far Suburbs",
+      "Nether Plains Upper"
     ]
   },
   "Efilim South Plains": {
@@ -8391,16 +8391,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Light Forest North Entrance",
       "Efilim Village",
-      "Efilim South East Plains",
-      "Light Forest North Entrance"
+      "Efilim South East Plains"
     ]
   },
   "Path to Ahmsord Upper": {
@@ -8438,11 +8438,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Cliffside Passage",
@@ -8462,10 +8462,10 @@
     },
     "stored": {
       "emeralds": "225/3000",
-      "ore": " 76/500",
-      "crops": " 20/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "ore": " 66/500",
+      "crops": " 22/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Krolton's Cave",
@@ -8473,29 +8473,29 @@
     ]
   },
   "Nesaak Village": {
-    "guild": "HackForums",
-    "prefix": "Hax",
-    "hq": false,
+    "guild": "Sapphire",
+    "prefix": "Sapp",
+    "hq": true,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "3600"
+      "wood": "9600"
     },
     "stored": {
-      "emeralds": "250/3000",
-      "ore": "0",
-      "crops": "0",
-      "fish": "0",
-      "wood": " 100/500"
+      "emeralds": "772725/4863000",
+      "ore": " 500/500",
+      "crops": " 500/500",
+      "fish": " 482/500",
+      "wood": " 297/500"
     },
     "Trading Routes": [
-      "Nesaak Plains North East",
-      "Nesaak Plains South East",
       "Nesaak Plains Lower North West",
+      "Bob's Tomb",
       "Nesaak Plains South West",
-      "Bob's Tomb"
+      "Nesaak Plains South East",
+      "Nesaak Plains North East"
     ]
   },
   "Herb Cave": {
@@ -8510,7 +8510,7 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
@@ -8532,11 +8532,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Efilim South East Plains",
@@ -8563,8 +8563,8 @@
     },
     "Trading Routes": [
       "Air Temple Upper",
-      "Cliffside Valley",
-      "Krolton's Cave"
+      "Krolton's Cave",
+      "Cliffside Valley"
     ]
   },
   "Sky Island Ascent": {
@@ -8583,13 +8583,13 @@
       "ore": " 494/500",
       "crops": " 1/500",
       "fish": " 1/500",
-      "wood": " 15/500"
+      "wood": " 17/500"
     },
     "Trading Routes": [
-      "Jofash Tunnel",
-      "Raider's Base Upper",
+      "Sky Falls",
       "Central Islands",
-      "Sky Falls"
+      "Raider's Base Upper",
+      "Jofash Tunnel"
     ]
   },
   "Eltom": {
@@ -8604,15 +8604,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Ranol's Farm",
-      "Entrance to Rodoroc"
+      "Entrance to Rodoroc",
+      "Ranol's Farm"
     ]
   },
   "Fallen Village": {
@@ -8627,17 +8627,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Dark Forest Cinfras Transition",
-      "Gylia Lake North West",
       "Fungal Grove",
-      "Mushroom Hill"
+      "Dark Forest Cinfras Transition",
+      "Mushroom Hill",
+      "Gylia Lake North West"
     ]
   },
   "Molten Reach": {
@@ -8646,14 +8646,14 @@
     "hq": false,
     "resources": {
       "emeralds": "9000",
-      "ore": "5400",
+      "ore": "7200",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
-      "ore": " 150/500",
+      "emeralds": "341/3000",
+      "ore": " 42/500",
       "crops": "0",
       "fish": "0",
       "wood": "0"
@@ -8675,18 +8675,18 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
-      "Light Forest Canyon",
-      "Light Forest East Lower",
-      "Aldorei Valley West Entrance",
+      "Aldorei Valley Lower",
       "Light Forest South Exit",
-      "Aldorei Valley Lower"
+      "Aldorei Valley West Entrance",
+      "Light Forest Canyon",
+      "Light Forest East Lower"
     ]
   },
   "Quartz Mines South East": {
@@ -8701,15 +8701,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Quartz Mines South West",
-      "Quartz Mines North East"
+      "Quartz Mines North East",
+      "Quartz Mines South West"
     ]
   },
   "Dragonling Nests": {
@@ -8721,10 +8721,10 @@
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "72000"
+      "wood": "18000"
     },
     "stored": {
-      "emeralds": "3/3000",
+      "emeralds": "7/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
@@ -8747,16 +8747,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 116/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
       "Corkus Countryside",
-      "Corkus Docks",
-      "Corkus Forest North"
+      "Corkus Forest North",
+      "Corkus Docks"
     ]
   },
   "Nivla Woods Edge": {
@@ -8779,9 +8779,9 @@
     },
     "Trading Routes": [
       "Road to Elkurn",
+      "Nivla Woods Exit",
       "North Nivla Woods",
-      "Detlas Far Suburbs",
-      "Nivla Woods Exit"
+      "Detlas Far Suburbs"
     ]
   },
   "Dead Island North East": {
@@ -8796,10 +8796,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "309/3000",
+      "emeralds": "2999/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 158/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -8820,16 +8820,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Pre-Light Forest Transition",
+      "Orc Battlegrounds",
       "Road To Light Forest",
-      "Orc Battlegrounds"
+      "Pre-Light Forest Transition"
     ]
   },
   "Nesaak Transition": {
@@ -8839,22 +8839,22 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "7200",
+      "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "6/3000",
+      "emeralds": "4/3000",
       "ore": " 1/500",
-      "crops": " 498/500",
+      "crops": " 496/500",
       "fish": " 1/500",
-      "wood": " 3/500"
+      "wood": " 2/500"
     },
     "Trading Routes": [
-      "Nesaak Plains North East",
       "Elkurn",
+      "Nether Plains Lower",
       "Desolate Valley",
-      "Nether Plains Lower"
+      "Nesaak Plains North East"
     ]
   },
   "Light Realm East Mid": {
@@ -8876,9 +8876,9 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Orphion's Seal Upper",
       "Light Realm East Lower",
-      "Light Realm East Mid-Upper"
+      "Light Realm East Mid-Upper",
+      "Orphion's Seal Upper"
     ]
   },
   "Entrance to Kander": {
@@ -8893,17 +8893,17 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 22/1000",
+      "emeralds": "285/3000",
+      "ore": " 24/1000",
       "crops": "0",
-      "fish": " 16/1000",
-      "wood": " 116/1000"
+      "fish": " 18/1000",
+      "wood": " 102/1000"
     },
     "Trading Routes": [
-      "Viscera Pits West",
-      "Path to Talor",
       "Abandoned Manor",
-      "Gelibord"
+      "Gelibord",
+      "Viscera Pits West",
+      "Path to Talor"
     ]
   },
   "Swamp Mountain Base": {
@@ -8918,16 +8918,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Swamp East Mid",
-      "Swamp Lower",
       "Swamp Plains Basin",
+      "Swamp Lower",
       "Sunspark Camp"
     ]
   },
@@ -8943,17 +8943,17 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Orc Road",
+      "Sablestone Camp",
       "Llevigar Farm",
-      "Quartz Mines North West",
-      "Sablestone Camp"
+      "Quartz Mines North West"
     ]
   },
   "Desert Upper": {
@@ -8968,16 +8968,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "396/3000",
+      "emeralds": "373/3000",
       "ore": "0",
-      "crops": " 116/45500",
+      "crops": " 102/45500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
       "Desert Mid-Upper",
-      "Desert West Upper",
-      "Mummy's Tomb"
+      "Mummy's Tomb",
+      "Desert West Upper"
     ]
   },
   "Aldorei Valley Upper": {
@@ -8992,15 +8992,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Aldorei Valley Mid",
-      "Aldorei's Waterfall"
+      "Aldorei's Waterfall",
+      "Aldorei Valley Mid"
     ]
   },
   "Jitak's Farm": {
@@ -9015,16 +9015,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
+      "Mushroom Hill",
       "Gylia Lake North West",
-      "Gert Camp",
-      "Mushroom Hill"
+      "Gert Camp"
     ]
   },
   "Abandoned Farm": {
@@ -9039,33 +9039,33 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Pigmen Ravines",
-      "Time Valley"
+      "Time Valley",
+      "Pigmen Ravines"
     ]
   },
   "Twain Lake": {
-    "guild": "HackForums",
-    "prefix": "Hax",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
-      "emeralds": "12150",
+      "emeralds": "9000",
       "ore": "0",
       "crops": "0",
-      "fish": "9600",
+      "fish": "5400",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "513/3000",
-      "ore": " 20/500",
+      "emeralds": "275/3000",
+      "ore": "0",
       "crops": "0",
-      "fish": " 72/500",
+      "fish": " 135/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -9085,15 +9085,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Mage Island",
-      "Durum Isles Center"
+      "Durum Isles Center",
+      "Mage Island"
     ]
   },
   "Thanos Exit": {
@@ -9161,11 +9161,11 @@
     },
     "Trading Routes": [
       "Nemract Plains East",
-      "Ancient Nemract",
-      "Nemract Cathedral",
       "Nemract Plains West",
+      "Nemract Quarry",
       "Nemract Town",
-      "Nemract Quarry"
+      "Nemract Cathedral",
+      "Ancient Nemract"
     ]
   },
   "Pre-Light Forest Transition": {
@@ -9180,16 +9180,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Quartz Mines North East",
-      "Leadin Fortress",
       "Goblin Plains East",
+      "Leadin Fortress",
+      "Quartz Mines North East",
       "Llevigar Farm"
     ]
   },
@@ -9205,15 +9205,15 @@
       "wood": "9600"
     },
     "stored": {
-      "emeralds": "425/3000",
+      "emeralds": "405/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 72/500"
+      "wood": " 56/500"
     },
     "Trading Routes": [
-      "Molten Reach",
-      "Ahmsord Outskirts"
+      "Ahmsord Outskirts",
+      "Molten Reach"
     ]
   },
   "Aldorei's River": {
@@ -9228,11 +9228,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "334/3000",
-      "ore": " 35/500",
+      "emeralds": "280/3000",
+      "ore": " 39/500",
       "crops": "0",
-      "fish": " 47/500",
-      "wood": " 147/500"
+      "fish": " 52/500",
+      "wood": " 136/500"
     },
     "Trading Routes": [
       "Cinfras",
@@ -9258,8 +9258,8 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "City of Troms",
-      "Jungle Lake"
+      "Jungle Lake",
+      "City of Troms"
     ]
   },
   "Lion Lair": {
@@ -9274,7 +9274,7 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "7/3000",
+      "emeralds": "1/3000",
       "ore": "0",
       "crops": " 499/500",
       "fish": "0",
@@ -9303,8 +9303,8 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Orphion's Seal Upper",
       "Light Realm Corruption",
+      "Orphion's Seal Upper",
       "Light Realm Entrance Upper",
       "Spiraling Trees"
     ]
@@ -9321,11 +9321,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Efilim South Plains",
@@ -9345,16 +9345,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "459/6000",
-      "ore": " 74/1000",
+      "emeralds": "418/6000",
+      "ore": " 64/1000",
       "crops": "0",
-      "fish": " 2/1000",
-      "wood": " 10/1000"
+      "fish": " 3/1000",
+      "wood": " 11/1000"
     },
     "Trading Routes": [
+      "Swamp East Upper",
       "Olux",
-      "Swamp Mountain Transition Mid-Upper",
-      "Swamp East Upper"
+      "Swamp Mountain Transition Mid-Upper"
     ]
   },
   "Rymek West Lower": {
@@ -9363,15 +9363,15 @@
     "hq": false,
     "resources": {
       "emeralds": "16200",
-      "ore": "3600",
+      "ore": "7200",
       "crops": "0",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "108/3000",
-      "ore": " 120/500",
-      "crops": " 20/500",
+      "emeralds": "225/3000",
+      "ore": " 64/500",
+      "crops": " 22/500",
       "fish": "0",
       "wood": "0"
     },
@@ -9387,14 +9387,14 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "10800",
+      "crops": "3600",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "1/3000",
+      "emeralds": "5/3000",
       "ore": "0",
-      "crops": " 1999/2000",
+      "crops": " 1998/2000",
       "fish": "0",
       "wood": "0"
     },
@@ -9423,9 +9423,9 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Nivla Woods Entrance",
       "Maltic Plains",
-      "Ragni Main Entrance"
+      "Ragni Main Entrance",
+      "Nivla Woods Entrance"
     ]
   },
   "South Pigmen Ravines": {
@@ -9441,7 +9441,7 @@
     },
     "stored": {
       "emeralds": "2995/3000",
-      "ore": " 499/500",
+      "ore": " 497/500",
       "crops": " 1/500",
       "fish": " 500/500",
       "wood": " 1/500"
@@ -9463,10 +9463,10 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
@@ -9486,39 +9486,39 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "3000/3000",
       "ore": "0",
       "crops": "0",
-      "fish": " 108/500",
+      "fish": " 500/500",
       "wood": "0"
     },
     "Trading Routes": [
-      "Factory Entrance",
+      "Fallen Factory",
       "Corkus Sea Port",
-      "Fallen Factory"
+      "Factory Entrance"
     ]
   },
   "Nesaak Plains Mid North West": {
-    "guild": "Wholesome Keanu Chungus",
-    "prefix": "COOM",
+    "guild": "Sapphire",
+    "prefix": "Sapp",
     "hq": false,
     "resources": {
       "emeralds": "9000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": "3600"
+      "wood": "5400"
     },
     "stored": {
-      "emeralds": "3000/3000",
+      "emeralds": "275/3000",
       "ore": "0",
       "crops": "0",
-      "fish": "0",
-      "wood": " 500/500"
+      "fish": " 3/500",
+      "wood": " 126/500"
     },
     "Trading Routes": [
-      "Nesaak Plains Lower North West",
-      "Nesaak Plains Upper North West"
+      "Nesaak Plains Upper North West",
+      "Nesaak Plains Lower North West"
     ]
   },
   "Nemract Cathedral": {
@@ -9541,9 +9541,9 @@
     },
     "Trading Routes": [
       "Nemract Road",
-      "Ancient Nemract",
+      "Nemract Town",
       "Cathedral Harbour",
-      "Nemract Town"
+      "Ancient Nemract"
     ]
   },
   "Dead Island South West": {
@@ -9558,16 +9558,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "317/3000",
-      "ore": " 18/2000",
+      "emeralds": "2999/3000",
+      "ore": " 1/2000",
       "crops": "0",
-      "fish": " 213/2000",
-      "wood": " 8/2000"
+      "fish": " 1999/2000",
+      "wood": " 1/2000"
     },
     "Trading Routes": [
+      "Dead Island South East",
       "Skiens Island",
       "Dujgon Nation",
-      "Dead Island South East",
       "Dead Island North West"
     ]
   },
@@ -9583,16 +9583,16 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "250/3000",
+      "emeralds": "210/3000",
       "ore": "0",
-      "crops": " 100/500",
+      "crops": " 84/500",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
+      "Rymek West Upper",
       "Desert West Lower",
-      "Desert Mid-Lower",
-      "Rymek West Upper"
+      "Desert Mid-Lower"
     ]
   },
   "Aldorei's North Exit": {
@@ -9607,16 +9607,16 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 108/500"
+      "fish": " 3/500",
+      "wood": " 93/500"
     },
     "Trading Routes": [
+      "Cinfras County Lower",
       "Aldorei Valley South Entrance",
-      "Path To The Arch",
-      "Cinfras County Lower"
+      "Path To The Arch"
     ]
   },
   "Light Forest South Entrance": {
@@ -9631,11 +9631,11 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
       "Light Forest West Lower",
@@ -9649,22 +9649,22 @@
     "resources": {
       "emeralds": "12000",
       "ore": "0",
-      "crops": "7200",
+      "crops": "5400",
       "fish": "0",
       "wood": "0"
     },
     "stored": {
-      "emeralds": "8/3000",
+      "emeralds": "2/3000",
       "ore": "0",
-      "crops": " 1995/2000",
+      "crops": " 1997/2000",
       "fish": "0",
       "wood": "0"
     },
     "Trading Routes": [
-      "Ragni North Suburbs",
-      "Maltic",
+      "Coastal Trail",
       "Ragni East Suburbs",
-      "Coastal Trail"
+      "Ragni North Suburbs",
+      "Maltic"
     ]
   },
   "Military Base": {
@@ -9679,11 +9679,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 74/500",
+      "emeralds": "414/3000",
+      "ore": " 64/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Military Base Upper",
@@ -9709,8 +9709,8 @@
       "wood": "0"
     },
     "Trading Routes": [
-      "Zhight Island",
-      "Rooster Island"
+      "Rooster Island",
+      "Zhight Island"
     ]
   },
   "Old Crossroads South": {
@@ -9725,18 +9725,18 @@
       "wood": "3600"
     },
     "stored": {
-      "emeralds": "338/3000",
-      "ore": " 20/500",
+      "emeralds": "284/3000",
+      "ore": " 22/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 102/500"
+      "fish": " 3/500",
+      "wood": " 87/500"
     },
     "Trading Routes": [
+      "Dark Forest Village",
+      "Fungal Grove",
       "Path to Talor",
       "Cinfras Outskirts",
-      "Dark Forest Village",
-      "Old Crossroads North",
-      "Fungal Grove"
+      "Old Crossroads North"
     ]
   },
   "Canyon Path South West": {
@@ -9751,15 +9751,15 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "455/3000",
-      "ore": " 76/500",
+      "emeralds": "414/3000",
+      "ore": " 66/500",
       "crops": "0",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
-      "Canyon Path North West",
-      "Canyon Lower South East"
+      "Canyon Lower South East",
+      "Canyon Path North West"
     ]
   },
   "Canyon Path North West": {
@@ -9774,11 +9774,11 @@
       "wood": "0"
     },
     "stored": {
-      "emeralds": "239/3000",
-      "ore": " 20/500",
-      "crops": " 41/500",
-      "fish": " 2/500",
-      "wood": " 2/500"
+      "emeralds": "225/3000",
+      "ore": " 22/500",
+      "crops": " 31/500",
+      "fish": " 3/500",
+      "wood": " 3/500"
     },
     "Trading Routes": [
       "Canyon Entrance Waterfall",
@@ -9804,8 +9804,8 @@
       "wood": " 500/500"
     },
     "Trading Routes": [
-      "Time Valley",
-      "South Pigmen Ravines"
+      "South Pigmen Ravines",
+      "Time Valley"
     ]
   },
   "Central Islands": {
@@ -9820,18 +9820,18 @@
       "wood": "9600"
     },
     "stored": {
-      "emeralds": "425/3000",
+      "emeralds": "405/3000",
       "ore": "0",
       "crops": "0",
       "fish": "0",
-      "wood": " 72/500"
+      "wood": " 56/500"
     },
     "Trading Routes": [
       "Ahmsord Outskirts",
       "Temple Island",
-      "Wybel Island",
       "Ahmsord",
-      "Sky Island Ascent"
+      "Sky Island Ascent",
+      "Wybel Island"
     ]
   },
   "Canyon Of The Lost": {
@@ -9854,9 +9854,9 @@
     },
     "Trading Routes": [
       "Cliffside Lake",
+      "Cliff Side of the Lost",
       "Valley of the Lost",
-      "Kandon-Beda",
-      "Cliff Side of the Lost"
+      "Kandon-Beda"
     ]
   }
 }
