@@ -2505,7 +2505,7 @@
     "spawnLocation": "1069,87,-7012"
   },
   {
-    "name": "Light Realm East",
+    "name": "Nexus of Light",
     "start": "-240,-6855",
     "end": "-45,-6984",
     "level": 70,
@@ -2513,7 +2513,7 @@
     "xp": 2530
   },
   {
-    "name": "Light Realm East Lower",
+    "name": "Azure Frontier",
     "start": "-243,-6858",
     "end": "-542,-6984",
     "level": 70,
@@ -2545,7 +2545,7 @@
     "xp": 2530
   },
   {
-    "name": "Light Realm Entrance",
+    "name": "Primal Fen",
     "start": "-1079,-6635",
     "end": "-1343,-6848",
     "level": 70,
@@ -2553,7 +2553,7 @@
     "xp": 2530
   },
   {
-    "name": "Light Realm Entrance Upper",
+    "name": "Field of Life",
     "start": "-1076,-6848",
     "end": "-836,-6634",
     "level": 70,
@@ -2561,7 +2561,7 @@
     "xp": 2530
   },
   {
-    "name": "Orphion's Seal",
+    "name": "Otherwordly Monolith",
     "start": "-249,-6854",
     "end": "-539,-6633",
     "level": 70,
@@ -2569,7 +2569,7 @@
     "xp": 2530
   },
   {
-    "name": "Orphion's Seal Upper",
+    "name": "Path to Light",
     "start": "-542,-6854",
     "end": "-826,-6633",
     "level": 70,
@@ -2585,7 +2585,7 @@
     "xp": 2530
   },
   {
-    "name": "Light Realm Corruption",
+    "name": "Heavenly Ingress",
     "start": "-545,-6462",
     "end": "-762,-6630",
     "level": 70,
@@ -2601,7 +2601,7 @@
     "xp": 2530
   },
   {
-    "name": "Spiraling Trees",
+    "name": "Luminous Plateau",
     "start": "-1079,-6630",
     "end": "-1345,-6461",
     "level": 70,
