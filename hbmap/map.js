@@ -155,7 +155,7 @@ async function run() {
   //calling wynn API every refresh seconds to check territory ownership
   function update() {
     counter = refresh;
-    fetch("./territory_data.json")
+    fetch("http://avicia.ga/territorydata/")
       .then(response => response.json())
       .then(territories => {
         guildTerritories = territories;
