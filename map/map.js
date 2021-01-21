@@ -242,9 +242,11 @@ async function run() {
       console.log('error');
     }
     res = []
-    for (guild of obj.data) {
-      res[guild.name] = guild
-    }
+    try {
+      for (guild of obj.data) {
+        res[guild.name] = guild
+      }
+    } catch (e) { }
     callback(res)
     return res
   }
