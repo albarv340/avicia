@@ -353,10 +353,16 @@ async function run() {
 				0px 0px 5px ${colors[guild]},
         0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
         guilds[guild]["prefix"] + "</div>" + `
-        <div>${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
+        <div>
+        ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
+        ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
+        ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
+        ${terrAllData[territory]['resources'].wood > 3600 ? "🪓" : ""}
+        ${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
         ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
         ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
-        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}</div>`;
+        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
+       </div>`;
     } catch (e) {
       if (guildNames) tooltip +=
         `<div style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
@@ -367,10 +373,16 @@ async function run() {
 				0px 0px 5px ${colors[guild]},
         0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
         guild + "</div>" + `
-        <div>${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
+        <div>
+        ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
+        ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
+        ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
+        ${terrAllData[territory]['resources'].wood > 3600 ? "🪓" : ""}
+        ${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
         ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
         ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
-        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}</div>`;
+        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
+        </div>`;
       setContent(guild, territory)
     }
 
@@ -462,14 +474,28 @@ async function run() {
         cdRectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
         <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
-        <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+        <hr>
+        <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
+        <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
+        <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
+        <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
+        <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
+        <br>
+        <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
         <div>Held for ${str}.</div>
 			</div>`);
       } catch (e) {
         cdRectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
-			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+      <hr>
+      <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
+      <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
+      <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
+      <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
+      <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
+      <br>
+      <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
       }
@@ -478,14 +504,28 @@ async function run() {
         rectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
         <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
-        <div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+        <hr>
+        <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
+        <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
+        <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
+        <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
+        <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
+        <br>
+        <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
         <div>Held for ${str}.</div>
 			</div>`);
       } catch (e) {
         rectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
-			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
+      <hr>
+      <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
+      <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
+      <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
+      <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
+      <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
+      <br>
+      <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
       }
