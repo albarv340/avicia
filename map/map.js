@@ -194,13 +194,16 @@ async function run() {
       .then(response => response.json())
       .then(json => json["territories"])
       .then(territories => {
-        render();
-        Object.assign(guildTerritories, territories);
-        for (let territory of Object.keys(rectangles)) {
-          setContent(guildTerritories[territory]["guild"], territory);
-        }
-        clearTimeout(updateTimout)
-        updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
+        try {
+
+          render();
+          Object.assign(guildTerritories, territories);
+          for (let territory of Object.keys(rectangles)) {
+            setContent(guildTerritories[territory]["guild"], territory);
+          }
+          clearTimeout(updateTimout)
+          updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
+        } catch (e) { }
       })
   }
 
@@ -297,7 +300,9 @@ async function run() {
   map.on('zoomend', _ => {
     if ((map.getZoom() >= 7 && prevZoom <= 7) || (map.getZoom() <= 7 && prevZoom >= 7)) {
       for (let territory of Object.keys(rectangles)) {
-        setContent(guildTerritories[territory]["guild"], territory);
+        try {
+          setContent(guildTerritories[territory]["guild"], territory);
+        } catch (e) { }
       }
     }
 
