@@ -197,7 +197,9 @@ async function run() {
             tradingRoutes[rectangle] ? tradingRoutes[rectangle].push(polyline) : tradingRoutes[rectangle] = [polyline]
             polyline.addTo(map)
           }
-        } catch (e) { }
+        } catch (e) {
+          console.error(e)
+        }
       }
       update();
     });
