@@ -145,12 +145,7 @@ async function run() {
     this.checked ? showTradeRoutes() : hideTradeRoutes()
   }
 
-  fetch("./terralldata.json")
-    .then(response =>
-      response.json())
-    .then(json => {
-      terrAllData = json;
-    })
+
 
   //setting up territories
   fetch("./territories.json")
@@ -190,17 +185,23 @@ async function run() {
       }
 
     }).then(_ => {
-      for (rectangle in rectangles) {
-        try {
-          for (route of terrAllData[rectangle]['Trading Routes']) {
-            let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)' })
-            tradingRoutes[rectangle] ? tradingRoutes[rectangle].push(polyline) : tradingRoutes[rectangle] = [polyline]
-            polyline.addTo(map)
+      fetch("./terralldata.json")
+        .then(response =>
+          response.json())
+        .then(json => {
+          terrAllData = json;
+          for (rectangle in rectangles) {
+            try {
+              for (route of terrAllData[rectangle]['Trading Routes']) {
+                let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)' })
+                tradingRoutes[rectangle] ? tradingRoutes[rectangle].push(polyline) : tradingRoutes[rectangle] = [polyline]
+                polyline.addTo(map)
+              }
+            } catch (e) {
+              console.error(e)
+            }
           }
-        } catch (e) {
-          console.error(e)
-        }
-      }
+        })
       update();
     });
 
