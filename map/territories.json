@@ -2497,14 +2497,6 @@
     "xp": 6810
   },
   {
-    "name": "Qira's Battle Room",
-    "start": "1037,-7046",
-    "end": "1102,-6981",
-    "level": 90,
-    "xp": 6810,
-    "spawnLocation": "1069,87,-7012"
-  },
-  {
     "name": "Nexus of Light",
     "start": "-240,-6855",
     "end": "-45,-6984",
@@ -2518,30 +2510,6 @@
     "end": "-542,-6984",
     "level": 70,
     "spawnLocation": "-414,58,-6920",
-    "xp": 2530
-  },
-  {
-    "name": "Light Realm East Mid",
-    "start": "-566,-6985",
-    "end": "-860,-6857",
-    "level": 70,
-    "spawnLocation": "-739,52,-6888",
-    "xp": 2530
-  },
-  {
-    "name": "Light Realm East Mid-Upper",
-    "start": "-871,-6986",
-    "end": "-1076,-6855",
-    "level": 70,
-    "spawnLocation": "-1013,58,-6878",
-    "xp": 2530
-  },
-  {
-    "name": "Light Realm East Upper",
-    "start": "-1079,-6855",
-    "end": "-1305,-6986",
-    "level": 70,
-    "spawnLocation": "-1180,60,-6923",
     "xp": 2530
   },
   {
@@ -2577,27 +2545,11 @@
     "xp": 2530
   },
   {
-    "name": "Light Realm Mushrooms",
-    "start": "-249,-6630",
-    "end": "-539,-6462",
-    "level": 70,
-    "spawnLocation": "-428,57,-6588",
-    "xp": 2530
-  },
-  {
     "name": "Heavenly Ingress",
     "start": "-545,-6462",
     "end": "-762,-6630",
     "level": 70,
     "spawnLocation": "-703,54,-6570",
-    "xp": 2530
-  },
-  {
-    "name": "Road to Corruption",
-    "start": "-1077,-6462",
-    "end": "-764,-6630",
-    "level": 70,
-    "spawnLocation": "-851,57,-6562",
     "xp": 2530
   },
   {
