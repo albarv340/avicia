@@ -354,6 +354,7 @@ async function run() {
         0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
         guilds[guild]["prefix"] + "</div>" + `
         <div>
+        ${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
         ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
         ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
         ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
@@ -374,6 +375,7 @@ async function run() {
         0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
         guild + "</div>" + `
         <div>
+        ${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
         ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
         ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
         ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
