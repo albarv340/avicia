@@ -215,15 +215,18 @@ async function run() {
 
           render();
           Object.assign(guildTerritories, territories);
+          if (Object.keys(territoryCount).length > 0) {
+            territoryCount = []
+          }
           for (let territory of Object.keys(rectangles)) {
             setContent(guildTerritories[territory]["guild"], territory);
             territoryCount[guildTerritories[territory]["guild"]] ? territoryCount[guildTerritories[territory]["guild"]]++ : territoryCount[guildTerritories[territory]["guild"]] = 1;
           }
         } catch (e) { }
+        updateLeaderboard()
         clearTimeout(updateTimout)
         updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
       })
-    updateLeaderboard()
   }
 
 
@@ -291,7 +294,6 @@ async function run() {
         }
 
       });
-      updateLeaderboard();
     })
 
   }
@@ -509,11 +511,13 @@ async function run() {
       let a = document.createElement("a");
       a.appendChild(document.createTextNode(" " + guild))
       a.href = `https://www.wynndata.tk/stats/guild/${guild}`
+      a.target = "_blank"
       p.appendChild(a);
 
       p.appendChild(document.createTextNode(" [" + territoryCount[guild] + "]"))
       leaderDiv.appendChild(p);
     }
+
   }
 
   function hideTradeRoutes() {
@@ -536,9 +540,7 @@ async function run() {
     }
   }
 
-
-  setTimeout(_ => {
-    updateLeaderboard()
-  }, (2000));
-
+  setTimeout(() => {
+    update()
+  }, 2000);
 }
