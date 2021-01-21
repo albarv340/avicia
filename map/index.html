@@ -16,7 +16,7 @@
 
     <script src="./map.js"></script>
 </head>
-<body onload="run()" onkeyup="toggle()">
+<body onload="run()">
 		<div id="info">
 			<span class="info-text menu-text menu-title guild-name">Press any key for Menu & Leaderboards</span>
 		</div>
@@ -36,9 +36,10 @@
 				</div>
 				<br>
 				<div>
-					<span class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-toggle"> Territories</span> <br>
-					<span class="menu-text guild-name"><input type="checkbox" id="territory-names"> Territory Names</span> <br>
-					<span class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-guilds"> Guild Names</span> <br>
+					<label for="territory-toggle" class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-toggle"> Territories</label> <br>
+					<label for="territory-names" class="menu-text guild-name"><input type="checkbox" id="territory-names"> Territory Names</label> <br>
+					<label for="territory-guilds" class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-guilds"> Guild Names</label> <br>
+					<label for="trading-routes" class="menu-text guild-name"><input type="checkbox" checked="true" id="trading-routes"> Trading Routes</label> <br>
 				</div>
 				
 

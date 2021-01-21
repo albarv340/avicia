@@ -1,11 +1,3 @@
-function toggle() {
-  if (document.getElementById("menu").style.display === "block") {
-    document.getElementById("menu").style.display = "none";
-  } else {
-    document.getElementById("menu").style.display = "block";
-  }
-}
-
 function stringToColor(str) {
   var crc32 = function (r) { for (var a, o = [], c = 0; c < 256; c++) { a = c; for (var f = 0; f < 8; f++)a = 1 & a ? 3988292384 ^ a >>> 1 : a >>> 1; o[c] = a } for (var n = -1, t = 0; t < r.length; t++)n = n >>> 8 ^ o[255 & (n ^ r.charCodeAt(t))]; return (-1 ^ n) >>> 0 };
   return "#" + crc32(str).toString(16).substr(2, 8)
@@ -64,8 +56,11 @@ async function run() {
   let rectangles = [];
   let cdRectangles = [];
   let guilds = [];
+  let territoryCount = []
   let leaderboard = [];
-  let terrCds = []
+  let terrCds = [];
+  let tradingRoutes = []
+  let terrAllData = [];
   let prevZoom = 7;
   let refresh = 30;
   let colors = {
@@ -110,6 +105,7 @@ async function run() {
   let checkboxTerritory = document.getElementById("territory-toggle");
   let checkboxNames = document.getElementById("territory-names");
   let checkboxGuilds = document.getElementById("territory-guilds");
+  let checkboxTradingRoutes = document.getElementById("trading-routes");
 
   let territoryToggle = true;
   let territoryNames = false;
@@ -144,6 +140,17 @@ async function run() {
     guildNames = this.checked
     render();
   }
+
+  checkboxTradingRoutes.oninput = function () {
+    this.checked ? showTradeRoutes() : hideTradeRoutes()
+  }
+
+  fetch("./terralldata.json")
+    .then(response =>
+      response.json())
+    .then(json => {
+      terrAllData = json;
+    })
 
   //setting up territories
   fetch("./territories.json")
@@ -181,7 +188,17 @@ async function run() {
         rectangles[territory["name"]] = rectangle;
         rectangle.addTo(map);
       }
+
     }).then(_ => {
+      for (rectangle in rectangles) {
+        try {
+          for (route of terrAllData[rectangle]['Trading Routes']) {
+            let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)' })
+            tradingRoutes[rectangle] ? tradingRoutes[rectangle].push(polyline) : tradingRoutes[rectangle] = [polyline]
+            polyline.addTo(map)
+          }
+        } catch (e) { }
+      }
       update();
     });
 
@@ -200,11 +217,13 @@ async function run() {
           Object.assign(guildTerritories, territories);
           for (let territory of Object.keys(rectangles)) {
             setContent(guildTerritories[territory]["guild"], territory);
+            territoryCount[guildTerritories[territory]["guild"]] ? territoryCount[guildTerritories[territory]["guild"]]++ : territoryCount[guildTerritories[territory]["guild"]] = 1;
           }
-          clearTimeout(updateTimout)
-          updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
         } catch (e) { }
+        clearTimeout(updateTimout)
+        updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
       })
+    updateLeaderboard()
   }
 
 
@@ -305,7 +324,13 @@ async function run() {
         } catch (e) { }
       }
     }
-
+    if (map.getZoom() <= 7) {
+      hideTradeRoutes()
+    } else if (map.getZoom() >= 7) {
+      if (checkboxTradingRoutes.checked) {
+        showTradeRoutes()
+      }
+    }
     prevZoom = map.getZoom();
   })
 
@@ -321,7 +346,11 @@ async function run() {
 				0px 0px 4px ${colors[guild]},
 				0px 0px 5px ${colors[guild]},
         0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
-        guilds[guild]["prefix"] + "</div>";
+        guilds[guild]["prefix"] + "</div>" + `
+        <div>${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
+        ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
+        ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
+        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}</div>`;
     } catch (e) {
       if (guildNames) tooltip +=
         `<div style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
@@ -331,7 +360,12 @@ async function run() {
 				0px 0px 4px ${colors[guild]},
 				0px 0px 5px ${colors[guild]},
         0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
-        guild + "</div>";
+        guild + "</div>" + `
+        <div>${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
+        ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
+        ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
+        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}</div>`;
+      setContent(guild, territory)
     }
 
     if (territoryNames) tooltip += "<div class='territory'>"
@@ -453,7 +487,7 @@ async function run() {
   }
 
   function updateLeaderboard() {
-    let guildsSorted = (Object.keys(guilds).filter(guild => guilds[guild]["territories"] > 0)).sort((a, b) => (guilds[b]["territories"] - guilds[a]["territories"]));
+    let guildsSorted = Object.keys(territoryCount).sort(function (a, b) { return territoryCount[b] - territoryCount[a] })
     for (let key of guildsSorted) {
       leaderboard[key] = guilds[key];
     }
@@ -477,16 +511,34 @@ async function run() {
       a.href = `https://www.wynndata.tk/stats/guild/${guild}`
       p.appendChild(a);
 
-      p.appendChild(document.createTextNode(" [" + leaderboard[guild]["territories"] + "]"))
+      p.appendChild(document.createTextNode(" [" + territoryCount[guild] + "]"))
       leaderDiv.appendChild(p);
     }
   }
 
-  document.getElementById("info").style.opacity = 0;
+  function hideTradeRoutes() {
+    for (territory in tradingRoutes) {
+      for (route in tradingRoutes[territory]) {
+        tradingRoutes[territory][route].setStyle({
+          color: 'rgba(0,0,0,0)'
+        })
+      }
+    }
+  }
+
+  function showTradeRoutes() {
+    for (territory in tradingRoutes) {
+      for (route in tradingRoutes[territory]) {
+        tradingRoutes[territory][route].setStyle({
+          color: 'white'
+        })
+      }
+    }
+  }
+
 
   setTimeout(_ => {
     updateLeaderboard()
-    document.getElementById("info").style.display = "none";
   }, (2000));
 
 }
