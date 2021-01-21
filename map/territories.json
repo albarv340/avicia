@@ -2498,64 +2498,64 @@
   },
   {
     "name": "Nexus of Light",
-    "start": "-240,-6855",
-    "end": "-45,-6984",
+    "start": "-790,-6563",
+    "end": "-673,-6406",
     "level": 70,
     "spawnLocation": "-165,63,-6902",
     "xp": 2530
   },
   {
     "name": "Azure Frontier",
-    "start": "-243,-6858",
-    "end": "-542,-6984",
+    "start": "-827,-6248",
+    "end": "-709,-6100",
     "level": 70,
     "spawnLocation": "-414,58,-6920",
     "xp": 2530
   },
   {
     "name": "Primal Fen",
-    "start": "-1079,-6635",
-    "end": "-1343,-6848",
+    "start": "-974,-6208",
+    "end": "-849,-6100",
     "level": 70,
     "spawnLocation": "-1186,58,-6758",
     "xp": 2530
   },
   {
     "name": "Field of Life",
-    "start": "-1076,-6848",
-    "end": "-836,-6634",
+    "start": "-877,-6086",
+    "end": "-809,-5976",
     "level": 70,
     "spawnLocation": "-916,55,-6776",
     "xp": 2530
   },
   {
     "name": "Otherwordly Monolith",
-    "start": "-249,-6854",
-    "end": "-539,-6633",
+    "start": "-723,-6086",
+    "end": "-668,-6028",
     "level": 70,
     "spawnLocation": "-421,46,-6728",
     "xp": 2530
   },
   {
     "name": "Path to Light",
-    "start": "-542,-6854",
-    "end": "-826,-6633",
+    "start": "-802,-6084",
+    "end": "-738,-5980",
     "level": 70,
     "spawnLocation": "-666,59,-6718",
     "xp": 2530
   },
   {
     "name": "Heavenly Ingress",
-    "start": "-545,-6462",
-    "end": "-762,-6630",
+    "start": "-875,-5892",
+    "end": "-782,-5813",
     "level": 70,
     "spawnLocation": "-703,54,-6570",
     "xp": 2530
   },
   {
     "name": "Luminous Plateau",
-    "start": "-1079,-6630",
-    "end": "-1345,-6461",
+    "start": "-958,-6056",
+    "end": "-882,-5953",
     "level": 70,
     "xp": 2530,
     "spawnLocation": "-1108,56,-6595"

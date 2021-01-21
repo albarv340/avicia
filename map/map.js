@@ -37,13 +37,11 @@ async function run() {
   }
   bounds.push([[6, -2], [8, 0]])
   bounds.push([[-2, 0], [0, 2]])
-  bounds.push([[6, 0], [8, 2]])
+  // bounds.push([[6, 0], [8, 2]])
 
   for (let bound of bounds) {
     images.push(L.imageOverlay(`./public/tiles/${bound[0][1]}/${bound[0][0]}.png`,
-      bound, {
-      attribution: "<a href='https://wynndata.tk/map'>WYNNDATA</a>"
-    }
+      bound, {}
     ));
   }
 
@@ -496,6 +494,7 @@ async function run() {
 
   function updateLeaderboard() {
     let guildsSorted = Object.keys(territoryCount).sort(function (a, b) { return territoryCount[b] - territoryCount[a] })
+    leaderboard = []
     for (let key of guildsSorted) {
       leaderboard[key] = guilds[key];
     }
