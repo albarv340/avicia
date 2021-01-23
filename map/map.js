@@ -10,6 +10,23 @@ function secondsSince(date) {
   return (utc - new Date(date)) / 1000;
 }
 
+function copyToClipboard(str) {
+  const el = document.createElement('textarea');
+  el.value = str;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+}
+
+function alertMessage(message) {
+  document.getElementById("alert-message").innerHTML = message
+  document.getElementById("alert-message-container").style.display = "flex"
+  setTimeout(() => {
+    document.getElementById("alert-message-container").style.display = "none"
+  }, 1500);
+}
+
 async function run() {
 
   // initializing map
@@ -67,6 +84,8 @@ async function run() {
   let refresh = 30;
   let initialLoad = true;
   let areTooltipsVisible = false;
+  let mouseX = 0;
+  let mouseZ = 0;
   let colors = {
     "Blacklisted": "#333333",
     "Titans Valor": "#e6d8e7",
@@ -358,7 +377,7 @@ async function run() {
     let prefix = guilds[guild]["prefix"] ? guilds[guild]["prefix"] : guild
     if (previousOwner[territory] != prefix) {
       if (!initialLoad) {
-        console.log(territory + ": " + previousOwner[territory] + " -> " + prefix)
+        console.log(new Date().toLocaleTimeString() + " " + territory + ": " + previousOwner[territory] + " -> " + prefix)
       }
       previousOwner[territory] = prefix
       try {
@@ -586,6 +605,24 @@ async function run() {
       obj.style.visibility = "visible"
     });
   }
+  let mouseMoveCooldown;
+  map.on("mousemove", function (event) {
+    if (mouseMoveCooldown) clearTimeout(mouseMoveCooldown);
+    mouseMoveCooldown = setTimeout(function () {
+      let coordBox = document.getElementById("coord-box")
+      mouseX = Math.round(event.latlng.lng * 1000)
+      mouseZ = Math.round(event.latlng.lat * -1000)
+      coordBox.innerHTML = "<strong>X</strong>: " + mouseX + " <strong>Z</strong>: " + mouseZ
+    }, 1);
+  });
+
+  $("#map").on('auxclick', function (e) {
+    if (e.which == 2) {
+      e.preventDefault();
+      copyToClipboard(`/compass ${mouseX} ${mouseZ}`)
+      alertMessage(`Copied /compass ${mouseX} ${mouseZ} to clipboard!`)
+    }
+  });
 
   setTimeout(() => {
     update()
