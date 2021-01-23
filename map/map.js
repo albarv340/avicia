@@ -232,7 +232,8 @@ async function run() {
           }
         } catch (e) { }
         setTimeout(() => {
-          showTooltips()
+          if (map.getZoom() >= 8)
+            showTooltips()
           updateLeaderboard()
         }, 1000);
         clearTimeout(updateTimout)
