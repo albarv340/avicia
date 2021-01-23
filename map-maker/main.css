@@ -154,7 +154,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(119, 204, 255, .1);
+  background-color: rgb(119, 204, 255, .5);
   /* White background with opacity */
   z-index: 2;
   cursor: pointer;
