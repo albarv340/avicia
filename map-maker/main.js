@@ -717,7 +717,7 @@ function render() {
 
 function getProductionIconsHTML(territory) {
     return `
-    <div class="production-icons" style="visibility:hidden !important">${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
+    <div class="production-icons" style=${map.getZoom() <= 8 ? "visibility:hidden !important" : ""}>${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
     ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
     ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
     ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
