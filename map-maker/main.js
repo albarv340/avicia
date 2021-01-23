@@ -9,6 +9,12 @@ var rectangleselect = false;
 var visible = true;
 let tradingRoutes = []
 let terrAllData = []
+const defaultGuilds = {
+    "AVO": "#1010FE",
+    "IBT": "#99AAB5",
+    "Shy": "#db10f6",
+    "TNL": "#133a17"
+}
 const colors = {
     "Blacklisted": "#333333",
     "Titans Valor": "#e6d8e7",
@@ -76,6 +82,10 @@ $(document).ready(function () {
     });
     actual_JSON = getData();
     run();
+
+    for (guild in defaultGuilds) {
+        Guilds.push(new Guild(guild, defaultGuilds[guild]))
+    }
 });
 
 class Guild {
@@ -98,6 +108,9 @@ class Guild {
 }
 
 function removeselections() {
+    for (territory of selectedTerritory) {
+        rectangles[territory].setStyle({ dashArray: [0] })
+    }
     selectedTerritory = [];
     reloadMenu();
 }
@@ -214,12 +227,14 @@ function onclickevent(e) {
             let bounds = rectangles[territory]._bounds;
             let current = [[bounds._southWest.lat, bounds._southWest.lng], [bounds._northEast.lat, bounds._northEast.lng]];
             let overlap = checkRectOverlap(rect, current);
-            if (overlap)
+            if (overlap) {
                 selectedTerritory.push(territory);
+                rectangles[territory].setStyle({ dashArray: [7] })
+            }
         });
         reloadMenu();
     }
-    console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+    // console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
 }
 
 function toggleMenu() {
@@ -338,9 +353,12 @@ function run() {
                 rectangle.on('click', function () {
                     if (selectedTerritory.includes(territory.name)) {
                         selectedTerritory = selectedTerritory.filter(index => index != territory.name);
+                        rectangles[territory.name].setStyle({ dashArray: [0] })
                     }
-                    else
+                    else {
                         selectedTerritory.push(territory.name);
+                        rectangles[territory.name].setStyle({ dashArray: [7] })
+                    }
                     console.log('Selected ' + selectedTerritory);
                     reloadMenu();
                 });
@@ -412,7 +430,6 @@ function reloadLegend() {
     });
     // Add data to legend
     data.sort((a, b) => b[2] - a[2]);
-    console.log(data);
     let ffas = territories.length - ownedterrs;
     $('#guild-list').append(`
       <div>
@@ -446,7 +463,7 @@ function reloadLegend() {
                 <span class="menu-text guild-name">${d[0]} - ${d[2]}</span>
             </a>
             <div>
-            <small style="color:lightgray">Emeralds: ${d[3].emeralds}<br>Crops: ${d[3].crops}<br>Fish: ${d[3].fish}<br>Wood: ${d[3].wood}<br>Ore: ${d[3].ore}</small>
+            <small style="color:lightgray">Emeralds: ${numberWithCommas(d[3].emeralds)}<br>Crops: ${numberWithCommas(d[3].crops)}<br>Fish: ${numberWithCommas(d[3].fish)}<br>Wood: ${numberWithCommas(d[3].wood)}<br>Ore: ${numberWithCommas(d[3].ore)}</small>
             </div>
           </div>
           <div class="collapse" id="${d[0]}-terrs">
@@ -745,4 +762,10 @@ function showProductionIcons() {
         // obj.setAttribute("style", "display: flex !important;   text-align: center;")
         obj.setAttribute("style", "visibility: visible !important;")
     });
+}
+
+function numberWithCommas(x) {
+    if (typeof (x) == "undefined")
+        return "0"
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
