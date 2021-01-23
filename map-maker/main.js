@@ -280,7 +280,10 @@ function run() {
         minZoom: 6,
         maxZoom: 10,
         zoomControl: false,
-        zoom: 8
+        zoom: 8,
+        preferCanvas: true,
+        markerZoomAnimation: false,
+        inertia: false
     });
 
     map.on('click', onclickevent);
