@@ -21,7 +21,10 @@ async function run() {
     minZoom: 6,
     maxZoom: 10,
     zoomControl: false,
-    zoom: 8
+    zoom: 8,
+    preferCanvas: true,
+    markerZoomAnimation: false,
+    inertia: false
   });
 
   L.control.zoom({
@@ -52,6 +55,7 @@ async function run() {
   //initializing variables
   let guildTerritories = [];
   let rectangles = [];
+  let previousOwner = []
   let cdRectangles = [];
   let guilds = [];
   let territoryCount = []
@@ -61,6 +65,8 @@ async function run() {
   let terrAllData = [];
   let prevZoom = 7;
   let refresh = 30;
+  let initialLoad = true;
+  let areTooltipsVisible = false;
   let colors = {
     "Blacklisted": "#333333",
     "Titans Valor": "#e6d8e7",
@@ -225,7 +231,10 @@ async function run() {
             territoryCount[guildTerritories[territory]["guild"]] ? territoryCount[guildTerritories[territory]["guild"]]++ : territoryCount[guildTerritories[territory]["guild"]] = 1;
           }
         } catch (e) { }
-        updateLeaderboard()
+        setTimeout(() => {
+          showTooltips()
+          updateLeaderboard()
+        }, 1000);
         clearTimeout(updateTimout)
         updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
       })
@@ -323,19 +332,21 @@ async function run() {
 
   //on zoom end, update map based on zoom
   map.on('zoomend', _ => {
-    if ((map.getZoom() >= 7 && prevZoom <= 7) || (map.getZoom() <= 7 && prevZoom >= 7)) {
-      for (let territory of Object.keys(rectangles)) {
-        try {
-          setContent(guildTerritories[territory]["guild"], territory);
-        } catch (e) { }
-      }
-    }
-    if (map.getZoom() <= 7) {
+    if (map.getZoom() <= 8) {
       hideTradeRoutes()
-    } else if (map.getZoom() >= 7) {
+      if (areTooltipsVisible && map.getZoom() != 8)
+        hideTooltips()
+      hideProductionIcons()
+    } else if (map.getZoom() >= 8) {
+      showTooltips()
+      showProductionIcons()
       if (checkboxTradingRoutes.checked) {
         showTradeRoutes()
       }
+    }
+    if (map.getZoom() == 8) {
+      showTooltips()
+      hideProductionIcons()
     }
     prevZoom = map.getZoom();
   })
@@ -343,17 +354,23 @@ async function run() {
   //sets tooltip and popup content
   function setContent(guild, territory) {
     let tooltip = "<div>"
-    try {
-      if (guildNames) tooltip +=
-        `<div style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+    let prefix = guilds[guild]["prefix"] ? guilds[guild]["prefix"] : guild
+    if (previousOwner[territory] != prefix) {
+      if (!initialLoad) {
+        console.log(territory + ": " + previousOwner[territory] + " -> " + prefix)
+      }
+      previousOwner[territory] = prefix
+      try {
+        if (guildNames) tooltip +=
+          `<div class="territory-tooltip" style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
 				0px 0px 1px ${colors[guild]},
 				0px 0px 2px ${colors[guild]},
 				0px 0px 3px ${colors[guild]},
 				0px 0px 4px ${colors[guild]},
 				0px 0px 5px ${colors[guild]},
-        0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
-        guilds[guild]["prefix"] + "</div>" + `
-        <div>
+        0px 0px 6px ${colors[guild]} !important;  ${initialLoad ? "visibility:hidden" : ""}'><div class='identifier'>` +
+          prefix + "</div>" + `
+        <div class="production-icon">
         ${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
         ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
         ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
@@ -364,44 +381,18 @@ async function run() {
         ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
         ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
        </div>`;
-    } catch (e) {
-      if (guildNames) tooltip +=
-        `<div style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
-				0px 0px 1px ${colors[guild]},
-				0px 0px 2px ${colors[guild]},
-				0px 0px 3px ${colors[guild]},
-				0px 0px 4px ${colors[guild]},
-				0px 0px 5px ${colors[guild]},
-        0px 0px 6px ${colors[guild]} !important;'><div class='identifier'>` +
-        guild + "</div>" + `
-        <div>
-        ${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
-        ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
-        ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
-        ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
-        ${terrAllData[territory]['resources'].wood > 3600 ? "🪓" : ""}
-        ${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
-        ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
-        ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
-        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
-        </div>`;
-      setContent(guild, territory)
-    }
+      } catch (e) { }
 
-    if (territoryNames) tooltip += "<div class='territory'>"
-      + territory
-      + "</div>";
+      if (territoryNames) tooltip += "<div class='territory'>"
+        + territory
+        + "</div>";
 
-    tooltip += "</div>";
+      tooltip += "</div>";
 
-    if (map.getZoom() > 7) {
+      // console.log(guildTerritories[territory].guild)
+      // console.log(guild)
       rectangles[territory].setTooltipContent(tooltip);
-    } else if (Object.keys(cdRectangles).includes(territory)) {
-      rectangles[territory].setTooltipContent(tooltip);
-    } else {
-      rectangles[territory].setTooltipContent(" ");
     }
-
 
     var now = new Date();
     var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
@@ -413,7 +404,7 @@ async function run() {
       let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
         color: "#FF000",
         weight: 5,
-        dashArray: 7
+        dashArray: [7]
       })
       cdRectangle.bindPopup("Loading...")
       cdRectangle.setStyle({
@@ -422,6 +413,7 @@ async function run() {
       cdRectangle.on("popupopen", function (ev) {
         setPopupContent(guild, territory)
       });
+      cdRectangle.setTooltipContent(tooltip);
 
       cdRectangles[territory] = cdRectangle;
       cdRectangle.addTo(map);
@@ -430,10 +422,8 @@ async function run() {
       console.log("REMOVING " + territory)
       cdRectangles[territory].remove();
       delete cdRectangles[territory];
-      if (map.getZoom() <= 7) {
-        rectangles[territory].bindTooltip(" ")
-      }
     }
+
   }
 
   function setPopupContent(guild, territory) {
@@ -471,18 +461,19 @@ async function run() {
         }
       }
     }
+    const productionHTML = `<hr>
+    <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
+    <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
+    <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
+    <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
+    <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
+    <br>`
     if (cdRectangles[territory]) {
       try {
         cdRectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
         <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
-        <hr>
-        <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
-        <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
-        <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
-        <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
-        <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
-        <br>
+        ${productionHTML}
         <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
         <div>Held for ${str}.</div>
 			</div>`);
@@ -490,13 +481,7 @@ async function run() {
         cdRectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
-      <hr>
-      <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
-      <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
-      <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
-      <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
-      <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
-      <br>
+      ${productionHTML}
       <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
@@ -506,13 +491,7 @@ async function run() {
         rectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
         <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
-        <hr>
-        <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
-        <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
-        <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
-        <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
-        <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
-        <br>
+        ${productionHTML}
         <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
         <div>Held for ${str}.</div>
 			</div>`);
@@ -520,13 +499,7 @@ async function run() {
         rectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
-      <hr>
-      <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
-      <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
-      <div>${terrAllData[territory]['resources'].crops > 0 ? "+" + terrAllData[territory]['resources'].crops + " Crops" : ""}</div>
-      <div>${terrAllData[territory]['resources'].fish > 0 ? "+" + terrAllData[territory]['resources'].fish + " Fish" : ""}</div>
-      <div>${terrAllData[territory]['resources'].wood > 0 ? "+" + terrAllData[territory]['resources'].wood + " Wood" : ""}</div>
-      <br>
+      ${productionHTML}
       <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
@@ -587,7 +560,36 @@ async function run() {
     }
   }
 
+  function hideTooltips() {
+    areTooltipsVisible = false;
+    $('.territory-tooltip').each(function (i, obj) {
+      obj.style.visibility = "hidden"
+    });
+  }
+
+  function showTooltips() {
+    areTooltipsVisible = true;
+    $('.territory-tooltip').each(function (i, obj) {
+      obj.style.visibility = "visible"
+    });
+  }
+
+  function hideProductionIcons() {
+    $('.production-icon').each(function (i, obj) {
+      obj.style.visibility = "hidden"
+    });
+  }
+
+  function showProductionIcons() {
+    $('.production-icon').each(function (i, obj) {
+      obj.style.visibility = "visible"
+    });
+  }
+
   setTimeout(() => {
     update()
   }, 2000);
+  setTimeout(() => {
+    initialLoad = false;
+  }, 9000);
 }
