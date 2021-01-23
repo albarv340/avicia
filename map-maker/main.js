@@ -118,6 +118,10 @@ function removeselections() {
 function addguild() {
     let name = document.getElementById("name");
     let color = document.getElementById("color");
+    if (!Guilds.every(g => { return g.name != name.value })) {
+        alert("Guild already added!");
+        return;
+    }
     if (name.value === "") {
         alert("No guild name specified!");
         return;
