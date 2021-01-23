@@ -369,12 +369,12 @@ function run() {
 
     //on zoom end, update map based on zoom
     map.on('zoomend', () => {
-        if (map.getZoom() <= 7) {
+        if (map.getZoom() <= 8) {
             hideTradeRoutes()
-            // hideProductionIcons()
-        } else if (map.getZoom() >= 7) {
+            hideProductionIcons()
+        } else if (map.getZoom() >= 8) {
             showTradeRoutes()
-            // showProductionIcons()
+            showProductionIcons()
         }
         prevZoom = map.getZoom();
     });
@@ -693,7 +693,7 @@ function render() {
 
 function getProductionIconsHTML(territory) {
     return `
-    <div class="production-icons" style="height:0px !important">${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
+    <div class="production-icons" style="visibility:hidden !important">${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
     ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
     ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
     ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
@@ -730,14 +730,16 @@ function showTradeRoutes() {
     }
 }
 
-// function hideProductionIcons() {
-//     $('.production-icons').each(function (i, obj) {
-//         obj.setAttribute("style", "display: none !important")
-//     });
-// }
+function hideProductionIcons() {
+    $('.production-icons').each(function (i, obj) {
+        // obj.setAttribute("style", "display: none !important;    text-align: center;")
+        obj.setAttribute("style", "visibility: hidden !important;")
+    });
+}
 
-// function showProductionIcons() {
-//     $('.production-icons').each(function (i, obj) {
-//         obj.setAttribute("style", "display: inline-block !important")
-//     });
-// }
+function showProductionIcons() {
+    $('.production-icons').each(function (i, obj) {
+        // obj.setAttribute("style", "display: flex !important;   text-align: center;")
+        obj.setAttribute("style", "visibility: visible !important;")
+    });
+}

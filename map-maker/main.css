@@ -8,6 +8,8 @@ html, body {
   padding: 0;
   border-radius: 0;
   display: block;
+  /* justify-content: center;
+  align-items: center; */
   border: 0;
   margin: 0;
   padding: 0;
@@ -303,6 +305,7 @@ p a {
 }
 
 .production-icons {
+  display: block !important;
   color: white;
   text-align: center;
   width: 4em !important;
