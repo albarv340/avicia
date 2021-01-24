@@ -1,4 +1,4 @@
-var Territories = {};
+var Territories = [];
 var Guilds = [];
 let rectangles = [];
 var selectedTerritory = [];
@@ -9,6 +9,8 @@ var rectangleselect = false;
 var visible = true;
 let tradingRoutes = []
 let terrAllData = []
+let undoTerritoryBackup = []
+let redoTerritoryBackup = []
 const defaultGuilds = {
     "AVO": "#1010FE",
     "IBT": "#99AAB5",
@@ -75,10 +77,30 @@ $(document).ready(function () {
     // Initialize map
     var realButton = document.getElementById('file-button');
     var importButton = document.getElementById('import-button');
+    let undoButton = document.getElementById('undo-button');
+    let redoButton = document.getElementById('redo-button');
 
     importButton.addEventListener('click', function () {
         realButton.click();
         realButton.addEventListener('change', importMap, false);
+    });
+    undoButton.addEventListener('click', function () {
+        if (undoTerritoryBackup.length > 0) {
+            redoTerritoryBackup.push($.extend(true, [], Territories))
+            Territories = $.extend(true, [], undoTerritoryBackup.pop())
+            render()
+        } else {
+            alert("Nothing to undo!")
+        }
+    });
+    redoButton.addEventListener('click', function () {
+        if (redoTerritoryBackup.length > 0) {
+            undoTerritoryBackup.push($.extend(true, [], Territories))
+            Territories = $.extend(true, [], redoTerritoryBackup.pop())
+            render()
+        } else {
+            alert("Nothing to redo!")
+        }
     });
     actual_JSON = getData();
     run();
@@ -262,6 +284,7 @@ function run() {
     // Initializing events
     var guildSelect = document.getElementById('guilds');
     guildSelect.addEventListener('change', function () {
+        undoTerritoryBackup.push($.extend(true, [], Territories))
         if (guildSelect.selectedIndex === 0) {
             Object.values(selectedTerritory).forEach(territory => {
                 Territories[territory] = "-";
