@@ -270,16 +270,16 @@
   },
   {
     "name": "North Farmers Valley",
-    "start": "-474,-1884",
-    "end": "-332,-1915",
+    "start": "-347,-2059",
+    "end": "-253,-1953",
     "level": 5,
     "spawnLocation": "-430,58,-1883",
     "xp": 50
   },
   {
     "name": "South Farmers Valley",
-    "start": "-474,-1915",
-    "end": "-332,-1945",
+    "start": "-471,-1943",
+    "end": "-254,-1886",
     "level": 5,
     "spawnLocation": "-430,58,-1883",
     "xp": 50
@@ -667,8 +667,8 @@
   },
   {
     "name": "Arachnid Route",
-    "start": "-250,-1960",
-    "end": "-100,-1810",
+    "start": "-260,-1880",
+    "end": "-109,-1807",
     "level": 15,
     "spawnLocation": "-29,68,-1907",
     "xp": 120
@@ -1062,8 +1062,8 @@
   },
   {
     "name": "Swamp East Lower",
-    "start": "-2045,-5003",
-    "end": "-2134,-5075",
+    "start": "-1956,-5003",
+    "end": "-2028,-5074",
     "level": 45,
     "xp": 700,
     "spawnLocation": "-2088,56,-5042"
@@ -2497,113 +2497,65 @@
     "xp": 6810
   },
   {
-    "name": "Qira's Battle Room",
-    "start": "1037,-7046",
-    "end": "1102,-6981",
-    "level": 90,
-    "xp": 6810,
-    "spawnLocation": "1069,87,-7012"
-  },
-  {
     "name": "Nexus of Light",
-    "start": "-240,-6855",
-    "end": "-45,-6984",
+    "start": "-790,-6563",
+    "end": "-673,-6406",
     "level": 70,
     "spawnLocation": "-165,63,-6902",
     "xp": 2530
   },
   {
     "name": "Azure Frontier",
-    "start": "-243,-6858",
-    "end": "-542,-6984",
+    "start": "-827,-6248",
+    "end": "-709,-6100",
     "level": 70,
     "spawnLocation": "-414,58,-6920",
     "xp": 2530
   },
   {
-    "name": "Light Realm East Mid",
-    "start": "-566,-6985",
-    "end": "-860,-6857",
-    "level": 70,
-    "spawnLocation": "-739,52,-6888",
-    "xp": 2530
-  },
-  {
-    "name": "Light Realm East Mid-Upper",
-    "start": "-871,-6986",
-    "end": "-1076,-6855",
-    "level": 70,
-    "spawnLocation": "-1013,58,-6878",
-    "xp": 2530
-  },
-  {
-    "name": "Light Realm East Upper",
-    "start": "-1079,-6855",
-    "end": "-1305,-6986",
-    "level": 70,
-    "spawnLocation": "-1180,60,-6923",
-    "xp": 2530
-  },
-  {
     "name": "Primal Fen",
-    "start": "-1079,-6635",
-    "end": "-1343,-6848",
+    "start": "-974,-6208",
+    "end": "-849,-6100",
     "level": 70,
     "spawnLocation": "-1186,58,-6758",
     "xp": 2530
   },
   {
     "name": "Field of Life",
-    "start": "-1076,-6848",
-    "end": "-836,-6634",
+    "start": "-877,-6086",
+    "end": "-809,-5976",
     "level": 70,
     "spawnLocation": "-916,55,-6776",
     "xp": 2530
   },
   {
     "name": "Otherwordly Monolith",
-    "start": "-249,-6854",
-    "end": "-539,-6633",
+    "start": "-723,-6086",
+    "end": "-668,-6028",
     "level": 70,
     "spawnLocation": "-421,46,-6728",
     "xp": 2530
   },
   {
     "name": "Path to Light",
-    "start": "-542,-6854",
-    "end": "-826,-6633",
+    "start": "-802,-6084",
+    "end": "-738,-5980",
     "level": 70,
     "spawnLocation": "-666,59,-6718",
     "xp": 2530
   },
   {
-    "name": "Light Realm Mushrooms",
-    "start": "-249,-6630",
-    "end": "-539,-6462",
-    "level": 70,
-    "spawnLocation": "-428,57,-6588",
-    "xp": 2530
-  },
-  {
     "name": "Heavenly Ingress",
-    "start": "-545,-6462",
-    "end": "-762,-6630",
+    "start": "-875,-5892",
+    "end": "-782,-5813",
     "level": 70,
     "spawnLocation": "-703,54,-6570",
     "xp": 2530
   },
   {
-    "name": "Road to Corruption",
-    "start": "-1077,-6462",
-    "end": "-764,-6630",
-    "level": 70,
-    "spawnLocation": "-851,57,-6562",
-    "xp": 2530
-  },
-  {
     "name": "Luminous Plateau",
-    "start": "-1079,-6630",
-    "end": "-1345,-6461",
+    "start": "-958,-6056",
+    "end": "-882,-5953",
     "level": 70,
     "xp": 2530,
     "spawnLocation": "-1108,56,-6595"
