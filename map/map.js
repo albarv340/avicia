@@ -118,7 +118,8 @@ async function run() {
     "TheNoLifes": "#133a17",
     "Eden": "#00ff4a",
     "Phantom Hearts": "#E74C3C",
-    "ShadowFall": "#db10f6"
+    "ShadowFall": "#db10f6",
+    "Aequitas": "#DDDD00"
   }
   //grabbing options elements
   let slider = document.getElementById("rate-option");
@@ -175,18 +176,9 @@ async function run() {
     .then(response =>
       response.json())
     .then(json => {
-      for (let territory of json) {
-        let bounds = [territory["start"].split(","), territory["end"].split(",")];
-        for (let i in bounds) {
-          bounds[i][0] *= .001
-          bounds[i][1] *= .001
-        }
-
-        bounds[0].reverse();
-        bounds[1].reverse();
-
-        bounds[0][0] *= -1;
-        bounds[1][0] *= -1;
+      for (let territory in json['territories']) {
+        let location = json['territories'][territory].location
+        let bounds = [[location.startY * -.001, location.startX * .001], [location.endY * -.001, location.endX * .001]]
         let rectangle = L.rectangle(bounds,
           { color: "rgb(0, 0, 0, 0)", weight: 2 })
 
@@ -198,12 +190,12 @@ async function run() {
 
         rectangle.bindPopup("Loading...")
         rectangle.on("popupopen", function (ev) {
-          setPopupContent(guildTerritories[territory['name']]['guild'], territory['name'])
+          setPopupContent(guildTerritories[territory]['guild'], territory)
         });
 
 
 
-        rectangles[territory["name"]] = rectangle;
+        rectangles[territory] = rectangle;
         rectangle.addTo(map);
       }
 
@@ -213,6 +205,7 @@ async function run() {
           response.json())
         .then(json => {
           terrAllData = json;
+          console.log(rectangles)
           for (rectangle in rectangles) {
             try {
               for (route of terrAllData[rectangle]['Trading Routes']) {

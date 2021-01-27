@@ -206,17 +206,15 @@ function removeguild() {
 }
 
 function initTerrs() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            territories = JSON.parse(this.responseText);
-            for (let i in territories) {
-                Territories[territories[i].name] = null;
+    fetch("./territories.json")
+        .then(response =>
+            response.json())
+        .then(json => {
+            territories = json['territories']
+            for (let territory in territories) {
+                Territories[territory] = null;
             }
-        }
-    };
-    xhttp.open("GET", "./territories.json", true);
-    xhttp.send();
+        })
 }
 
 
@@ -362,29 +360,31 @@ function run() {
         .then(response =>
             response.json())
         .then(json => {
-            for (let territory of json) {
-                let bounds = [territory["start"].split(","), territory["end"].split(",")];
-                for (let i in bounds) {
-                    bounds[i][0] *= .001
-                    bounds[i][1] *= .001
-                }
+            for (let territory in json['territories']) {
+                // let bounds = [territory["start"].split(","), territory["end"].split(",")];
+                // for (let i in bounds) {
+                //     bounds[i][0] *= .001
+                //     bounds[i][1] *= .001
+                // }
 
-                bounds[0].reverse();
-                bounds[1].reverse();
+                // bounds[0].reverse();
+                // bounds[1].reverse();
 
-                bounds[0][0] *= -1;
-                bounds[1][0] *= -1;
+                // bounds[0][0] *= -1;
+                // bounds[1][0] *= -1;
+                let location = json['territories'][territory].location
+                let bounds = [[location.startY * -.001, location.startX * .001], [location.endY * -.001, location.endX * .001]]
                 let rectangle = L.rectangle(bounds,
                     { color: "rgb(0, 0, 0, 0)", weight: 2 })
-                rectangles[territory["name"]] = rectangle;
+                rectangles[territory] = rectangle;
                 rectangle.on('click', function () {
-                    if (selectedTerritory.includes(territory.name)) {
-                        selectedTerritory = selectedTerritory.filter(index => index != territory.name);
-                        rectangles[territory.name].setStyle({ dashArray: [0] })
+                    if (selectedTerritory.includes(territory)) {
+                        selectedTerritory = selectedTerritory.filter(index => index != territory);
+                        rectangles[territory].setStyle({ dashArray: [0] })
                     }
                     else {
-                        selectedTerritory.push(territory.name);
-                        rectangles[territory.name].setStyle({ dashArray: [7] })
+                        selectedTerritory.push(territory);
+                        rectangles[territory].setStyle({ dashArray: [7] })
                     }
                     console.log('Selected ' + selectedTerritory);
                     reloadMenu();
