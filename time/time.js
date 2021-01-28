@@ -19,6 +19,6 @@ if (typeof (queryDict.ms) == "undefined" || !/^\d\d\%3A\d\d/.test(queryDict.ms))
     const timeString = new Date(new Date().setHours(hour, minute - new Date().getTimezoneOffset(), 0)).toTimeString()
     const time = timeString.substr(0, 8)
     const timeZone = timeString.substr(9, timeString.length)
-    document.querySelector('meta[name="title"]').setAttribute("content", UTCTime + time + " in " + timeZone);
+    document.querySelector('meta[name="description"]').setAttribute("content", UTCTime + time + " in " + timeZone);
     contentHTML.innerHTML = `<p>${UTCTime}</p><h1>${time}</h1><p>in ${timeZone}</p>`
 }

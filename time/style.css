@@ -13,7 +13,7 @@ body {
 }
 
 #content {
-    zoom: 3;
+    transform: scale(3);
 }
 
 h1 {
