@@ -14,7 +14,7 @@ let redoTerritoryBackup = []
 const defaultGuilds = {
     "AVO": "#1010FE",
     "IBT": "#99AAB5",
-    "Shy": "#db10f6",
+    "Shy": "#67178a",
     "TNL": "#133a17"
 }
 const colors = {
@@ -49,7 +49,7 @@ const colors = {
     "TheNoLifes": "#133a17",
     "Eden": "#00ff4a",
     "Phantom Hearts": "#E74C3C",
-    "ShadowFall": "#db10f6"
+    "ShadowFall": "#67178a"
 }
 
 $(document).ready(function () {

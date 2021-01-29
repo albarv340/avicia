@@ -118,8 +118,8 @@ async function run() {
     "TheNoLifes": "#133a17",
     "Eden": "#00ff4a",
     "Phantom Hearts": "#E74C3C",
-    "ShadowFall": "#db10f6",
-    "Aequitas": "#DDDD00"
+    "ShadowFall": "#67178a",
+    "Aequitas": "#ffd700"
   }
   //grabbing options elements
   let slider = document.getElementById("rate-option");
@@ -205,7 +205,6 @@ async function run() {
           response.json())
         .then(json => {
           terrAllData = json;
-          console.log(rectangles)
           for (rectangle in rectangles) {
             try {
               for (route of terrAllData[rectangle]['Trading Routes']) {
