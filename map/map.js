@@ -367,7 +367,10 @@ async function run() {
   //sets tooltip and popup content
   function setContent(guild, territory) {
     let tooltip = "<div>"
-    let prefix = guilds[guild]["prefix"] ? guilds[guild]["prefix"] : guild
+    let prefix = ""
+    try {
+      prefix = guilds[guild]["prefix"] ? guilds[guild]["prefix"] : guild
+    } catch (e) { }
     if (previousOwner[territory] != prefix) {
       if (!initialLoad) {
         console.log(new Date().toLocaleTimeString() + " " + territory + ": " + previousOwner[territory] + " -> " + prefix)
