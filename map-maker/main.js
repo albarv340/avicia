@@ -1,4 +1,4 @@
-var Territories = [];
+var Territories = {};
 var Guilds = [];
 let rectangles = [];
 var selectedTerritory = [];
@@ -587,7 +587,7 @@ function importMap(evt) {
         var data = JSON.parse(file.target.result);
         console.log(data);
         // Check if file is valid
-        if (!data.territories || !data.guilds) return alert('Error: Invalid map save file provided')
+        if (data.territories.length == 0 || !data.territories || !data.guilds) return alert('Error: Invalid map save file provided')
         // Change data in the html
         Territories = data.territories;
         // Change html
@@ -823,7 +823,6 @@ function updateSelects() {
 function toggleRectangleSelect() {
     rectangleselect = !rectangleselect;
     if (rectangleselect) {
-        console.log("engabled")
         $("#toggle-rectangle-select").removeClass("btn-primary")
         $("#toggle-rectangle-select").addClass("btn-success")
     } else {
