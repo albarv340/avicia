@@ -73,13 +73,11 @@
 					<p id="currentTerritory" class="menu-text menu-title guild-name">Select 1 or more territory to edit
 					</p>
 					<div>
-						<span style="visibility: hidden;" id="enable-button" class="menu-text guild-name"> (W.I.P.)
-							Enabled: <input type="checkbox" checked="true" id="territory-toggle"></span><br>
 						<span style="visibility: hidden;" id="terr-select" class="menu-text guild-name">Territory Owner:
 							<select id="guilds">
 								<option value="null">None</option>
 							</select></span> <br>
-						<button class="btn btn-primary" onclick="rectangleselect = !rectangleselect">Toggle rectangle
+						<button id="toggle-rectangle-select" class="btn btn-primary" onclick="toggleRectangleSelect()">Toggle rectangle
 							selection tool</button><br>
 						<button class="btn btn-primary" onclick="removeselectionmarkers()">Remove all selection
 							markers</button><br>

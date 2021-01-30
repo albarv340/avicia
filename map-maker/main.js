@@ -222,6 +222,7 @@ function removeselectionmarkers() {
     markers.forEach(element => {
         map.removeLayer(element);
     });
+    markers = []
 }
 
 function onclickevent(e) {
@@ -815,5 +816,18 @@ function updateSelects() {
             option.text = Guilds[guild].name
             select.add(option)
         }
+    }
+}
+
+
+function toggleRectangleSelect() {
+    rectangleselect = !rectangleselect;
+    if (rectangleselect) {
+        console.log("engabled")
+        $("#toggle-rectangle-select").removeClass("btn-primary")
+        $("#toggle-rectangle-select").addClass("btn-success")
+    } else {
+        $("#toggle-rectangle-select").removeClass("btn-success")
+        $("#toggle-rectangle-select").addClass("btn-primary")
     }
 }
