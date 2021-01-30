@@ -54,6 +54,10 @@ const colors = {
 
 $(document).ready(function () {
     // Help popup
+    $("#guilds").select2()
+    $("#changeguild").select2()
+    $("#removeguild").select2()
+
     $(function () {
         $('#help').popover({
             trigger: 'focus'
@@ -102,26 +106,21 @@ $(document).ready(function () {
             alert("Nothing to redo!")
         }
     });
+
     actual_JSON = getData();
     run();
 
     for (guild in defaultGuilds) {
         Guilds.push(new Guild(guild, defaultGuilds[guild]))
     }
+    updateSelects()
+
 });
 
 class Guild {
     constructor(name, color) {
         this.name = name;
         this.mapcolor = color;
-        let option1 = document.createElement("option");
-        let option2 = document.createElement("option");
-        var select1 = document.getElementById("changeguild");
-        var select2 = document.getElementById("removeguild");
-        option1.text = name;
-        option2.text = name;
-        select1.add(option1);
-        select2.add(option2);
         console.log(`New guild with the name ${name} and color ${color}`);
     }
     changecolor(ncolor) {
@@ -149,6 +148,7 @@ function addguild() {
         return;
     }
     Guilds.push(new Guild(name.value, color.value));
+    updateSelects()
     name.value = "";
     color.value = "#000000";
     reloadLegend();
@@ -200,7 +200,7 @@ function removeguild() {
             Territories[territory] = null;
         }
     });
-    select.remove(select.selectedIndex);
+    updateSelects()
     reloadLegend()
     alert("Successfully removed the guild!");
 }
@@ -281,7 +281,8 @@ function run() {
     initTerrs();
     // Initializing events
     var guildSelect = document.getElementById('guilds');
-    guildSelect.addEventListener('change', function () {
+    // guildSelect.addEventListener('change', function () {
+    $("#guilds").change(function () {
         undoTerritoryBackup.push($.extend(true, [], Territories))
         if (guildSelect.selectedIndex === 0) {
             Object.values(selectedTerritory).forEach(territory => {
@@ -457,7 +458,7 @@ function reloadLegend() {
     });
     // Add data to legend
     data.sort((a, b) => b[2] - a[2]);
-    let ffas = territories.length - ownedterrs;
+    let ffas = Object.keys(territories).length - ownedterrs;
     $('#guild-list').append(`
       <div>
       <a href="javascript:void(0)" data-target="#FFA-terrs" data-toggle="collapse" aria-expanded="false" aria-controls="FFA-terrs">
@@ -520,17 +521,13 @@ function reloadMenu() {
     }
     if (selectedTerritory.length === 0) {
         terr.innerText = "Select 1 or more territory to edit";
-        var enableButton = document.getElementById('enable-button');
         var terrSelector = document.getElementById('terr-select');
-        enableButton.style.visibility = 'hidden'
         terrSelector.style.visibility = 'hidden'
         return;
     }
 
     // Show options
-    var enableButton = document.getElementById('enable-button');
     var terrSelector = document.getElementById('terr-select');
-    enableButton.style.visibility = 'visible'
     terrSelector.style.visibility = 'visible'
 
     // Show correct options
@@ -595,8 +592,13 @@ function importMap(evt) {
         // Change html
         let repeat = false;
         for (let i in data.guilds) {
-            if (Guilds.filter(g => g.name === data.guilds[i].name)[0]) repeat = true
-            else Guilds.push(new Guild(data.guilds[i].name, data.guilds[i].mapcolor))
+            if (Guilds.filter(g => g.name === data.guilds[i].name)[0]) {
+                repeat = true
+            }
+            else {
+                Guilds.push(new Guild(data.guilds[i].name, data.guilds[i].mapcolor))
+                updateSelects()
+            }
         }
         if (repeat) alert("There are errors in your map file! We have attempted to fix them, but please make sure to check if anything went wrong.")
         render();
@@ -666,6 +668,7 @@ function pullApi() {
                 guilds.forEach(g => {
                     Guilds.push(new Guild(g, colors[guildFromPrefixe[g]] ? colors[guildFromPrefixe[g]] : stringToColor(guildFromPrefixe[g])));
                 });
+                updateSelects()
                 apiLoading.innerText = 'Loaded!';
                 setTimeout(render, 2000);
                 alert('Wynn API has finished loading. Feel free to change around colors and territories.')
@@ -795,4 +798,22 @@ function numberWithCommas(x) {
     if (typeof (x) == "undefined")
         return "0"
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function updateSelects() {
+    let selects = []
+    selects.push(document.getElementById("changeguild"))
+    selects.push(document.getElementById("removeguild"))
+    selects.push(document.getElementById("guilds"))
+    for (select of selects) {
+        select.options.length = 0;
+        let option = document.createElement("option");
+        option.text = "--"
+        select.add(option)
+        for (guild in Guilds) {
+            let option = document.createElement("option");
+            option.text = Guilds[guild].name
+            select.add(option)
+        }
+    }
 }
