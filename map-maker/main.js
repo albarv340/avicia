@@ -129,7 +129,7 @@ class Guild {
 }
 
 function removeselections() {
-    for (territory in Territories) {
+    for (territory of selectedTerritory) {
         rectangles[territory].setStyle({ dashArray: [0] })
     }
     selectedTerritory = [];
@@ -246,7 +246,7 @@ function onclickevent(e) {
         let first = markers[0].getLatLng();
         let second = markers[1].getLatLng();
         let rect = [[first.lat, first.lng], [second.lat, second.lng]];
-        selectedTerritory = [];
+        removeselections()
         Object.keys(rectangles).forEach(territory => {
             let bounds = rectangles[territory]._bounds;
             let current = [[bounds._southWest.lat, bounds._southWest.lng], [bounds._northEast.lat, bounds._northEast.lng]];
