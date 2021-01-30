@@ -129,7 +129,7 @@ class Guild {
 }
 
 function removeselections() {
-    for (territory of selectedTerritory) {
+    for (territory in Territories) {
         rectangles[territory].setStyle({ dashArray: [0] })
     }
     selectedTerritory = [];
