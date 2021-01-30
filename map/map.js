@@ -307,9 +307,13 @@ async function run() {
 
         } else {
           if (territoryToggle) {
-            rectangles[territory].setStyle({
-              color: colors[guild],
-            })
+            try {
+              rectangles[territory].setStyle({
+                color: colors[guild],
+              })
+            } catch (e) {
+              console.log(territory)
+            }
           } else {
             rectangles[territory].setStyle({
               color: 'rgba(0,0,0,0)'

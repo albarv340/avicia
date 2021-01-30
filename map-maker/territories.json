@@ -3644,6 +3644,15 @@
         "endX": 199,
         "endY": -5169
       }
+    },
+    "Light Peninsula": {
+      "territory": "Light Peninsula",
+      "location": {
+        "startX": -950,
+        "startY": -4420,
+        "endX": -801,
+        "endY": -4107
+      }
     }
   },
   "request": {

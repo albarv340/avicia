@@ -1753,6 +1753,7 @@
             "wood": " 140/500"
         },
         "Trading Routes": [
+            "Light Peninsula",
             "Lost Atoll",
             "Volcano Upper"
         ]
@@ -3172,7 +3173,8 @@
             "Tree Island",
             "Lost Atoll",
             "Volcano Lower",
-            "Pirate Town"
+            "Pirate Town",
+            "Light Peninsula"
         ]
     },
     "Entrance to Olux": {
@@ -4556,6 +4558,7 @@
             "wood": "0"
         },
         "Trading Routes": [
+            "Light Peninsula",
             "Light Forest West Lower",
             "Light Forest East Lower",
             "Aldorei Valley West Entrance"
@@ -6213,6 +6216,7 @@
             "wood": "0"
         },
         "Trading Routes": [
+            "Light Peninsula",
             "Bloody Beach",
             "Volcano Upper",
             "Llevigar Entrance"
@@ -7295,6 +7299,31 @@
             "Nivla Woods Entrance",
             "Nivla Woods",
             "South Nivla Woods"
+        ]
+    },
+    "Light Peninsula": {
+        "guild": "No Owner",
+        "prefix": "None",
+        "hq": false,
+        "resources": {
+            "emeralds": "9000",
+            "ore": "3600",
+            "crops": "0",
+            "fish": "0",
+            "wood": "0"
+        },
+        "stored": {
+            "emeralds": "350/10000",
+            "ore": " 140/500",
+            "crops": "0",
+            "fish": "0",
+            "wood": "0"
+        },
+        "Trading Routes": [
+            "Tree Island",
+            "Volcano Lower",
+            "Hobbit River",
+            "Volcano Upper"
         ]
     },
     "Swamp Mountain Base": {
