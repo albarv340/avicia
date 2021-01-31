@@ -89,9 +89,10 @@ $(document).ready(function () {
         realButton.addEventListener('change', importMap, false);
     });
     undoButton.addEventListener('click', function () {
+        console.log(undoTerritoryBackup)
         if (undoTerritoryBackup.length > 0) {
-            redoTerritoryBackup.push($.extend(true, [], Territories))
-            Territories = $.extend(true, [], undoTerritoryBackup.pop())
+            redoTerritoryBackup.push(JSON.parse(JSON.stringify(Territories)))
+            Territories = JSON.parse(JSON.stringify(undoTerritoryBackup.pop()))
             render()
         } else {
             alert("Nothing to undo!")
@@ -99,8 +100,8 @@ $(document).ready(function () {
     });
     redoButton.addEventListener('click', function () {
         if (redoTerritoryBackup.length > 0) {
-            undoTerritoryBackup.push($.extend(true, [], Territories))
-            Territories = $.extend(true, [], redoTerritoryBackup.pop())
+            undoTerritoryBackup.push(JSON.parse(JSON.stringify(Territories)))
+            Territories = JSON.parse(JSON.stringify(redoTerritoryBackup.pop()))
             render()
         } else {
             alert("Nothing to redo!")
@@ -284,7 +285,8 @@ function run() {
     var guildSelect = document.getElementById('guilds');
     // guildSelect.addEventListener('change', function () {
     $("#guilds").change(function () {
-        undoTerritoryBackup.push($.extend(true, [], Territories))
+        undoTerritoryBackup.push(JSON.parse(JSON.stringify(Territories)))
+
         if (guildSelect.selectedIndex === 0) {
             Object.values(selectedTerritory).forEach(territory => {
                 Territories[territory] = "-";
@@ -582,7 +584,7 @@ function importMap(evt) {
     reader.onload = function (file) {
         // Reset values
         Guilds = [];
-        Territories = [];
+        Territories = {};
         // Get data
         var data = JSON.parse(file.target.result);
         console.log(data);
