@@ -7,6 +7,8 @@ var markers = [];
 var map;
 var rectangleselect = false;
 var visible = true;
+var areRoutesShown = true;
+var areProductionIconsShown = true;
 let tradingRoutes = []
 let terrAllData = []
 let undoTerritoryBackup = []
@@ -66,6 +68,7 @@ $(document).ready(function () {
     // Inittialize controls
     $('body').bind('keypress', function (e) {
         if (e.target.id === "name") return;
+        // if (typeof (e.target.attributes.role) != "undefined") return;
         if (e.which == 32) {
             toggleMenu();
         }
@@ -75,6 +78,14 @@ $(document).ready(function () {
             else changeVisibility();
         } else if (e.key == "l") {
             toggleLegend();
+        } else if (e.key == "p") {
+            areProductionIconsShown = !areProductionIconsShown;
+            if (areProductionIconsShown) showProductionIcons();
+            else hideProductionIcons();
+        } else if (e.key == "t") {
+            areRoutesShown = !areRoutesShown;
+            if (areRoutesShown) showTradeRoutes();
+            else hideTradeRoutes();
         }
 
     })
@@ -403,7 +414,7 @@ function run() {
                 let location = json['territories'][territory].location
                 let bounds = [[location.startY * -.001, location.startX * .001], [location.endY * -.001, location.endX * .001]]
                 let rectangle = L.rectangle(bounds,
-                    { color: "rgb(0, 0, 0, 0)", weight: 2 })
+                    { color: "rgb(0, 0, 0, 0)", weight: 2, pane: "markerPane" })
                 rectangles[territory] = rectangle;
                 rectangle.on('click', function () {
                     if (selectedTerritory.includes(territory)) {
@@ -428,7 +439,7 @@ function run() {
                     for (rectangle in rectangles) {
                         try {
                             for (route of terrAllData[rectangle]['Trading Routes']) {
-                                let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)' })
+                                let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)', pane: "overlayPane" })
                                 tradingRoutes[rectangle] ? tradingRoutes[rectangle].push(polyline) : tradingRoutes[rectangle] = [polyline]
                                 polyline.addTo(map)
                             }
@@ -449,8 +460,12 @@ function run() {
             hideTradeRoutes()
             hideProductionIcons()
         } else if (map.getZoom() >= 8) {
-            showTradeRoutes()
-            showProductionIcons()
+            if (areRoutesShown) {
+                showTradeRoutes()
+            }
+            if (areProductionIconsShown) {
+                showProductionIcons()
+            }
         }
         prevZoom = map.getZoom();
     });
