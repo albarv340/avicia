@@ -318,7 +318,28 @@ function run() {
     // initializing map
     let bounds = [];
     let images = [];
+    // L.Map.ScrollWheelPan = L.Map.ScrollWheelZoom.extend({
+    //     _performZoom: function () {
+    //         var map = this._map,
+    //             delta = this._delta;
 
+    //         map.stop(); // stop panning and fly animations if any
+
+    //         delta = delta > 0 ? Math.ceil(delta) : Math.floor(delta);
+    //         delta = Math.max(Math.min(delta, 4), -4);
+
+    //         this._delta = 0;
+    //         this._startTime = null;
+
+    //         if (!delta) {
+    //             return;
+    //         }
+
+    //         map.panBy([0, -delta * 40]); // Adjust 40 to your feeling.
+    //     }
+    // });
+
+    // L.Map.addInitHook('addHandler', 'scrollWheelPan', L.Map.ScrollWheelPan);
     map = L.map("map", {
         crs: L.CRS.Simple,
         minZoom: 6,
@@ -328,6 +349,9 @@ function run() {
         preferCanvas: true,
         markerZoomAnimation: false,
         inertia: false
+        // ,
+        // scrollWheelZoom: false,
+        // scrollWheelPan: true
     });
 
     map.on('click', onclickevent);
