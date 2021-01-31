@@ -180,7 +180,9 @@ async function run() {
         let location = json['territories'][territory].location
         let bounds = [[location.startY * -.001, location.startX * .001], [location.endY * -.001, location.endX * .001]]
         let rectangle = L.rectangle(bounds,
-          { color: "rgb(0, 0, 0, 0)", weight: 2 })
+          {
+            color: "rgb(0, 0, 0, 0)", weight: 2, pane: "markerPane"
+          })
 
         rectangle.bindTooltip("", {
           className: "guild-name",
@@ -208,7 +210,7 @@ async function run() {
           for (rectangle in rectangles) {
             try {
               for (route of terrAllData[rectangle]['Trading Routes']) {
-                let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)' })
+                let polyline = L.polyline([rectangles[rectangle].getCenter(), rectangles[route].getCenter()], { color: 'rgba(0,0,0,0)', pane: "overlayPane" })
                 tradingRoutes[rectangle] ? tradingRoutes[rectangle].push(polyline) : tradingRoutes[rectangle] = [polyline]
                 polyline.addTo(map)
               }
@@ -423,7 +425,8 @@ async function run() {
       let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
         color: "#FF000",
         weight: 5,
-        dashArray: [7]
+        dashArray: [7],
+        pane: "markerPane"
       })
       cdRectangle.bindPopup("Loading...")
       cdRectangle.setStyle({
