@@ -447,7 +447,12 @@ function run() {
                             console.error(e)
                             console.log(rectangle)
                         }
-                    }
+                    } try {
+                        const urlData = JSON.parse(atob(location.hash.substr(1)))
+                        Territories = deCompressTerrData(urlData)
+                        Guilds = generateGuildsFromCompressedTerrData(urlData)
+                        updateSelects()
+                    } catch (e) { }
                     render();
                     reloadLegend();
                 })
@@ -609,6 +614,7 @@ function exportMap() {
     }
     console.log(json)
     var data = JSON.stringify(json);
+    console.log(window.location.origin + window.location.pathname + "#" + btoa(JSON.stringify(getCompressedTerrData())))
     var a = document.createElement("a");
     var file = new Blob([data], { type: 'application/json' });
     a.href = URL.createObjectURL(file);
@@ -650,7 +656,7 @@ function importMap(evt) {
 
 function stringToColor(str) {
     var crc32 = function (r) { for (var a, o = [], c = 0; c < 256; c++) { a = c; for (var f = 0; f < 8; f++)a = 1 & a ? 3988292384 ^ a >>> 1 : a >>> 1; o[c] = a } for (var n = -1, t = 0; t < r.length; t++)n = n >>> 8 ^ o[255 & (n ^ r.charCodeAt(t))]; return (-1 ^ n) >>> 0 };
-    return "#" + crc32(str).toString(16).substr(2, 8)
+    return "#" + (crc32(str).toString(16).substr(2, 8).length == 6 ? crc32(str).toString(16).substr(2, 8) : crc32(str).toString(16).substr(1, 7))
 }
 
 function pullApi() {
@@ -870,4 +876,44 @@ function toggleRectangleSelect() {
         $("#toggle-rectangle-select").removeClass("btn-success")
         $("#toggle-rectangle-select").addClass("btn-primary")
     }
+}
+
+const territoriesForCompression = ["Ragni", "Emerald Trail", "Ragni North Entrance", "Ragni North Suburbs", "Ragni Plains", "Maltic Coast", "Maltic Plains", "Pigmen Ravines Entrance", "South Pigmen Ravines", "Time Valley", "Sanctuary Bridge", "Elkurn Fields", "Nivla Woods", "South Nivla Woods", "Elkurn", "Corrupted Road", "Detlas Far Suburbs", "Detlas Close Suburbs", "South Farmers Valley", "Arachnid Route", "Tower of Ascension", "Mage Island", "Twain Mansion", "Nesaak Plains South East", "Nesaak Plains North East", "Nesaak Plains Upper North West", "Nesaak Bridge Transition", "Great Bridge Nesaak", "Jungle Lower", "Jungle Upper", "Temple of Legends", "Rymek East Lower", "Rymek East Upper", "Rymek West Mid", "Desert East Upper", "Desert East Lower", "Desert Mid-Upper", "Desert Lower", "Mummy's Tomb", "Desert West Lower", "Savannah East Upper", "Savannah West Upper", "Lion Lair", "Plains Coast", "Nemract Plains West", "Ancient Nemract", "Cathedral Harbour", "Rooster Island", "Selchar", "Durum Isles Upper", "Durum Isles Lower", "Skiens Island", "Nodguj Nation", "Dead Island South East", "Dead Island South West", "Volcano Upper", "Tree Island", "Ternaves Plains Upper", "Mining Base Upper", "Nesaak Transition", "Nether Plains Lower", "Mine Base Plains", "Nether Plains Upper", "Detlas Trail West Plains", "Llevigar Gate East", "Llevigar Farm Plains East", "Hive", "Llevigar Plains East Lower", "Llevigar Plains West Upper", "Swamp West Lower", "Swamp East Mid", "Swamp West Mid-Upper", "Swamp West Upper", "Swamp Dark Forest Transition Lower", "Swamp Dark Forest Transition Upper", "Entrance to Olux", "Swamp Mountain Base", "Swamp Mountain Transition Lower", "Swamp Mountain Transition Mid-Upper", "Quartz Mines South West", "Quartz Mines North West", "Sunspark Camp", "Orc Road", "Sablestone Camp", "Iron Road", "Llevigar Farm", "Goblin Plains East", "Leadin Fortress", "Efilim Village", "Efilim East Plains", "Light Forest North Entrance", "Light Forest South Entrance", "Light Forest South Exit", "Light Forest West Lower", "Light Forest West Upper", "Light Forest East Mid", "Hobbit River", "Light Forest Canyon", "Lone Farmstead", "Gelibord Corrupted Farm", "Taproot Descent", "Fortress South", "Twisted Housing", "Viscera Pits West", "Abandoned Manor", "Kander Mines", "Viscera Pits East", "Old Crossroads South", "Lexdale", "Decayed Basin", "Cinfras Entrance", "Fallen Village", "Guild Hall", "Cinfras's Small Farm", "Cinfras County Mid-Lower", "Cinfras County Upper", "Gylia Lake South West", "Gylia Lake North East", "Jitak's Farm", "Aldorei Valley Mid", "Aldorei's River", "Aldorei's North Exit", "Path To The Arch", "Burning Farm", "Cinfras Thanos Transition", "Path To Thanos", "Military Base", "Military Base Lower", "Path To Ozoth's Spire Mid", "Bandit Cave Lower", "Canyon Entrance Waterfall", "Canyon Path South East", "Canyon Upper North West", "Canyon Path South West", "Bandit Camp Exit", "Thanos Valley West", "Canyon Walk Way", "Canyon Mountain South", "Canyon Fortress", "Canyon Dropoff", "Bandits Toll", "Mountain Path", "Cliff Side of the Lost", "Temple of the Lost East", "Hive South", "Cliffside Waterfall", "Air Temple Lower", "Cliffside Lake", "Kandon-Beda", "Cliffside Passage", "Entrance to Thesead North", "Chained House", "Ranol's Farm", "Thesead", "Eltom", "Lava Lake", "Crater Descent", "Volcanic Slope", "Temple Island", "Dernel Jungle Lower", "Dernel Jungle Upper", "Corkus Castle", "Fallen Factory", "Corkus City Mine", "Factory Entrance", "Corkus Forest North", "Avos Workshop", "Corkus Countryside", "Ruined Houses", "Avos Temple", "Corkus Outskirts", "Sky Castle", "Path to Ahmsord Upper", "Old Coal Mine", "Astraulus' Tower", "Ahmsord Outskirts", "Angel Refuge", "Central Islands", "Sky Falls", "Raider's Base Lower", "Jofash Docks", "Lusuco", "Phinas Farm", "Cinfras Outskirts", "Llevigar", "Herb Cave", "Icy Island", "Fleris Trail", "Abandoned Pass", "Southern Outpost", "Corkus Sea Cove", "The Broken Road", "Grey Ruins", "Forest of Eyes", "Lutho", "Toxic Drip", "Gateway to Nothing", "Final Step", "The Gate", "Luminous Plateau", "Primal Fen", "Otherwordly Monolith", "Nexus of Light", "Ragni Main Entrance", "Katoa Ranch", "Coastal Trail", "Plains", "Little Wood", "Road to Time Valley", "Nivla Woods Exit", "Road to Elkurn", "Detlas Suburbs", "North Farmers Valley", "Half Moon Island", "Bob's Tomb", "Nesaak Plains Lower North West", "Nesaak Plains Mid North West", "Jungle Mid", "City of Troms", "Rymek West Lower", "Desert East Mid", "Desert Mid-Lower", "Desert West Upper", "Savannah West Lower", "Nemract Town", "Nemract Plains East", "The Bear Zoo", "Durum Isles Center", "Pirate Town", "Dead Island North East", "Maro Peaks", "Ternaves", "Mining Base Lower", "Plains Lake", "Detlas Trail East Plains", "Llevigar Gate West", "Cinfras", "Llevigar Plains East Upper", "Swamp West Mid", "Swamp East Upper", "Swamp Lower", "Swamp Plains Basin", "Swamp Mountain Transition Upper", "Quartz Mines North East", "Meteor Crater", "Goblin Plains West", "Pre-Light Forest Transition", "Efilim South Plains", "Light Forest Entrance", "Light Forest North Exit", "Light Forest East Upper", "Mantis Nest", "Gelibord", "Fortress North", "Lexdales Prison", "Mesquis Tower", "Dark Forest Village", "Fungal Grove", "Mushroom Hill", "Aldorei Valley South Entrance", "Cinfras County Mid-Upper", "Gylia Lake North West", "Aldorei Valley Lower", "Aldorei's Waterfall", "Ghostly Path", "Thanos", "Military Base Upper", "Path To Ozoth's Spire Upper", "Canyon Path North West", "Canyon Lower South East", "Canyon Valley South", "Canyon Mountain East", "Canyon Survivor", "Wizard Tower North", "Valley of the Lost", "Canyon High Path", "Air Temple Upper", "Kandon Farm", "Entrance to Thesead South", "Thesead Suburbs", "Molten Heights Portal", "Active Volcano", "Snail Island", "Corkus City", "Road To Mine", "Corkus Forest South", "Corkus Docks", "Corkus Statue", "Frozen Fort", "Kandon Ridge", "Molten Reach", "Wybel Island", "Raider's Base Upper", "Santa's Hideout", "Aldorei Lowlands", "Regular Island", "Royal Gate", "Lost Atoll", "The Silent Road", "Forgotten Town", "Paths of Sludge", "Void Valley", "Heavenly Ingress", "Azure Frontier", "Nivla Woods Entrance", "Maltic", "Abandoned Farm", "North Nivla Woods", "Detlas", "Twain Lake", "Nesaak Village", "Jungle Lake", "Rymek West Upper", "Almuj City", "Bremminglar", "Nemract Cathedral", "Durum Isles East", "Dead Island North West", "Ternaves Plains Lower", "Detlas Savannah Transition", "Llevigar Farm Plains West", "Swamp East Lower", "Swamp Dark Forest Transition Mid", "Swamp Mountain Transition Mid", "Orc Lake", "Forgotten Path", "Efilim South East Plains", "Light Forest West Mid", "Path to Cinfras", "Mansion of Insanity", "Path to Talor", "Heart of Decay", "Cinfras County Lower", "Gert Camp", "Aldorei's Arch", "Path To Military Base", "Bandit Cave Upper", "Canyon Path North Mid", "Canyon Waterfall Mid North", "Mountain Edge", "Cliffside Valley", "Cliffside Passage North", "Entrance to Rodoroc", "Ahmsord", "Corkus City South", "Corkus Mountain", "Bloody Beach", "Dragonling Nests", "Sky Island Ascent", "Icy Descent", "Twisted Ridge", "Lighthouse Plateau", "Sinister Forest", "Bizarre Passage", "Path to Light", "Ragni East Suburbs", "Nemract Quarry", "Nivla Woods Edge", "Great Bridge Jungle", "Desert Upper", "Nemract Road", "Dujgon Nation", "Desolate Valley", "Llevigar Plains West Lower", "Olux", "Loamsprout Camp", "Aldorei Valley West Entrance", "Gelibord Castle", "Old Crossroads North", "Gylia Lake South East", "Burning Airship", "Canyon Waterfall North", "Thanos Exit Upper", "Canyon Of The Lost", "Lava Lake Bridge", "Legendary Island", "Path to Ahmsord Lower", "Jofash Tunnel", "Orc Battlegrounds", "Toxic Caves", "Pigmen Ravines", "Nesaak Plains South West", "Savannah East Lower", "Volcano Lower", "Swamp East Mid-Upper", "Road To Light Forest", "Entrance to Kander", "Aldorei Valley Upper", "Thanos Exit", "Cherry Blossom Forest", "Corkus Sea Port", "Rodoroc", "Field of Life", "Nether Gate", "Zhight Island", "Quartz Mines South East", "Dark Forest Cinfras Transition", "Krolton's Cave", "Swamp Island", "Rymek East Mid", "Light Forest East Lower", "Dernel Jungle Mid", "Llevigar Entrance", "Worm Tunnel", "Path To Ozoth's Spire Lower", "Light Peninsula"]
+
+function getCompressedTerrData() {
+    let tmpObj = {}
+    for (terr in Territories) {
+        if (typeof (tmpObj[Territories[terr]]) == "undefined") {
+            tmpObj[Territories[terr]] = [territoriesForCompression.indexOf(terr)]
+        } else {
+            tmpObj[Territories[terr]].push(territoriesForCompression.indexOf(terr))
+        }
+    }
+    for (guild of Guilds) {
+        if (typeof (tmpObj[guild.name]) != "undefined") {
+            tmpObj[guild.name].push(guild.mapcolor)
+        }
+    }
+    return tmpObj
+}
+
+function deCompressTerrData(compressed) {
+    let unCompressedTerrs = {}
+    for (guild in compressed) {
+        for (terr of compressed[guild]) {
+            if (typeof (terr) != "string") {
+                unCompressedTerrs[territoriesForCompression[terr]] = guild
+            }
+        }
+    }
+    return unCompressedTerrs
+}
+
+function generateGuildsFromCompressedTerrData(compressed) {
+    let unCompressedGuilds = []
+    for (guild in compressed) {
+        if (guild != "null" && guild != "--")
+            unCompressedGuilds.push({ "name": guild, "mapcolor": (typeof (compressed[guild].slice(-1)[0])) == "string" ? compressed[guild].slice(-1)[0] : stringToColor(guild) })
+    }
+    return unCompressedGuilds
 }
