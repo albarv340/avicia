@@ -991,7 +991,7 @@ function copyMapLink() {
     fetch(keyValueUrl, {
         method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'text/plain'
         },
         body: getCompressedString()
     }).then(response => {
