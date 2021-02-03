@@ -461,7 +461,7 @@ function run() {
                     } try {
                         if (location.hash.length > 1) {
                             const urlData = deCompressTerritoryString(location.hash.substr(1))
-                            if (location.hash.length < 100) {
+                            if (location.hash.length < 20) {
                                 fetch(keyValueUrl + "?key=" + location.hash.substr(1)).then(response => {
                                     if (response.ok) {
                                         return response.json()
