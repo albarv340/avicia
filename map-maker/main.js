@@ -53,6 +53,7 @@ const colors = {
     "Phantom Hearts": "#E74C3C",
     "ShadowFall": "#67178a"
 }
+const keyValueUrl = "https://script.google.com/macros/s/AKfycbwZIgGTJe_y-GBui-45XaJuNa5eH1_B60wnOkN-6k99uDMLV-C5/exec"
 
 $(document).ready(function () {
     // Help popup
@@ -458,16 +459,37 @@ function run() {
                             console.log(rectangle)
                         }
                     } try {
-                        // console.log(location.hash)
                         if (location.hash.length > 1) {
                             const urlData = deCompressTerritoryString(location.hash.substr(1))
-                            if (Object.keys(urlData.territories).length == Object.keys(terrAllData).length) {
-                                Territories = urlData.territories
-                                Guilds = urlData.guilds
-                                updateSelects()
+                            if (location.hash.length < 10) {
+                                fetch(keyValueUrl + "?key=" + location.hash.substr(1)).then(response => {
+                                    if (response.ok) {
+                                        return response.json()
+                                    } else {
+                                        alert("Something went wrong when loading map")
+                                    }
+                                }).then(data => {
+                                    if (data != null) {
+                                        updateMapFromHash(deCompressTerritoryString(data))
+                                    } else {
+                                        alert("Invalid map url")
+                                        window.location.hash = ""
+                                    }
+                                })
                             } else {
-                                alert("Invalid map url")
-                                window.location.hash = ""
+                                updateMapFromHash(urlData)
+                            }
+
+                            function updateMapFromHash(urlData) {
+                                if (Object.keys(urlData.territories).length == Object.keys(terrAllData).length) {
+                                    Territories = urlData.territories
+                                    Guilds = urlData.guilds
+                                    updateSelects()
+                                    render();
+                                } else {
+                                    alert("Invalid map url")
+                                    window.location.hash = ""
+                                }
                             }
                         }
                     } catch (e) {
@@ -966,5 +988,22 @@ function copyToClipboard(str) {
 }
 
 function copyMapLink() {
-    copyToClipboard(window.location.origin + window.location.pathname + "#" + getCompressedString())
+    fetch(keyValueUrl, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: getCompressedString()
+    }).then(response => {
+        if (response.ok) {
+            return response.json()
+        } else {
+            alert("Something went wrong getting short link")
+        }
+    }).then(data => {
+        copyToClipboard(window.location.origin + window.location.pathname + "#" + data)
+        alert("Copied link to clipboard!")
+    })
+
+
 }
