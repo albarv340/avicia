@@ -14,7 +14,7 @@ body {
     width: 100%;
 }
 
-#total-content, #weekly-content {
+#total-content, #weekly-content, #xp-score-content {
     width: 100%;
     display: flex;
     align-items: center;
