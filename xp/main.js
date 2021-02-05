@@ -13,6 +13,9 @@ thirdPlaceDiv.weekly = document.getElementById("weekly-div-3rd")
 firstPlaceDiv.xpScore = document.getElementById("xp-score-div-1st")
 secondPlaceDiv.xpScore = document.getElementById("xp-score-div-2nd")
 thirdPlaceDiv.xpScore = document.getElementById("xp-score-div-3rd")
+let sumOfXpTotal = 0
+let sumOfXpWeekly = 0
+let sumOfXpScore = 0
 
 
 async function getDataFromSheet() {
@@ -36,6 +39,9 @@ async function getDataFromSheet() {
     xpTotalData = Object.fromEntries(Object.entries(readableXpTotal).sort(([, a], [, b]) => b - a));
     xpWeeklyData = Object.fromEntries(Object.entries(readableXpWeekly).sort(([, a], [, b]) => b - a));
     xpScoreData = Object.fromEntries(Object.entries(readableXpScore).sort(([, a], [, b]) => b - a));
+    sumOfXpTotal = getColumnValue(obj.feed.entry[0], "sumoftotal")
+    sumOfXpWeekly = getColumnValue(obj.feed.entry[0], "sumofweekly")
+    sumOfXpScore = getColumnValue(obj.feed.entry[0], "sumofxpscore")
     updateLeaderboard()
 }
 
@@ -50,12 +56,12 @@ function tick() {
 }
 
 function updateLeaderboard() {
-    document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "total")
-    document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "weekly")
-    document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "xpScore")
+    document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "total", sumOfXpTotal)
+    document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "weekly", sumOfXpWeekly)
+    document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "xpScore", sumOfXpScore)
 }
 
-function generateLeaderboardHTML(data, unit, lb) {
+function generateLeaderboardHTML(data, unit, lb, sum) {
     let html = ""
     placement = 1;
     for (player in data) {
@@ -66,7 +72,8 @@ function generateLeaderboardHTML(data, unit, lb) {
                 <div class="first-place-text">
                 <h1>#${placement}</h1>
                 <h4>${player}</h4>
-                <h5>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}</h5>
+                <h5>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100).toFixed(2) || 0}%</h5>
+                
                 </div>`
                 break;
             case 2:
@@ -75,7 +82,7 @@ function generateLeaderboardHTML(data, unit, lb) {
                 <div class="second-place-text">
                 <h3>#${placement}</h3>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}</p>
+                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100).toFixed(2) || 0}%</p>
                 </div>
                 `
                 break;
@@ -85,15 +92,16 @@ function generateLeaderboardHTML(data, unit, lb) {
                 <div class="third-place-text">
                 <h5>#${placement}</h5>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}</p>
+                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100).toFixed(2) || 0}%</p>
                 </div>
                 `
                 break;
             default:
                 html += `<tr>
                 <th scope="row">#${placement}</th>
-                <td><img class="total-player-face" src="https://www.mc-heads.net/avatar/${player}/100"> ${player}</td>
+                <td><img class="player-face" src="https://www.mc-heads.net/avatar/${player}/100"> ${player}</td>
                 <td>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}</td>
+                <td title="% of total">${((data[player] / sum) * 100).toFixed(2) || 0}%</td>
                 </tr>`
         }
         placement++;
