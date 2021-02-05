@@ -82,7 +82,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 <div class="first-place-text">
                 <h1>#${placement}</h1>
                 <h4>${player}</h4>
-                <h5>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100).toFixed(2) || 0}%</h5>
+                <h5>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</h5>
                 
                 </div>`
                 break;
@@ -92,7 +92,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 <div class="second-place-text">
                 <h3>#${placement}</h3>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100).toFixed(2) || 0}%</p>
+                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -102,7 +102,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 <div class="third-place-text">
                 <h5>#${placement}</h5>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100).toFixed(2) || 0}%</p>
+                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -111,7 +111,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 <th scope="row">#${placement}</th>
                 <td><img class="player-face" src="https://www.mc-heads.net/avatar/${player}/100"> ${player}</td>
                 <td>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}</td>
-                <td title="% of total">${((data[player] / sum) * 100).toFixed(2) || 0}%</td>
+                <td title="% of total">${((data[player] / sum) * 100 || 0).toFixed(2)}%</td>
                 </tr>`
         }
         placement++;
