@@ -61,7 +61,7 @@ tick()
 
 function tick() {
     getDataFromSheet()
-    setTimeout(() => { tick() }, 60 * 1000);
+    setTimeout(() => { tick() }, 10 * 1000);
 }
 
 function updateLeaderboard() {
