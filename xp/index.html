@@ -35,6 +35,10 @@
                     aria-selected="false">Daily</a>
             </li>
             <li class="nav-item" role="presentation">
+                <a class="nav-link" id="daily-wins-tab" data-bs-toggle="tab" href="#daily-wins" role="tab"
+                    aria-controls="daily-wins" aria-selected="false">Daily Wins</a>
+            </li>
+            <li class="nav-item" role="presentation">
                 <a class="nav-link" id="xp-score-tab" data-bs-toggle="tab" href="#xp-score" role="tab"
                     aria-controls="xp-score" aria-selected="false">XP Score</a>
             </li>
@@ -47,7 +51,8 @@
                         <div id="total-div-1st" class="top3-display div-1st"></div>
                         <div id="total-div-3rd" class="top3-display div-3rd"></div>
                     </div>
-                    <div id="total-leaderboard-div" class="leaderboard-div">
+                    <p>The total xp given to the guild by each player. Never resets.</p>
+                    <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="total-leaderboard"></tbody>
                         </table>
@@ -61,7 +66,8 @@
                         <div id="weekly-div-1st" class="top3-display div-1st"></div>
                         <div id="weekly-div-3rd" class="top3-display div-3rd"></div>
                     </div>
-                    <div id="total-leaderboard-div" class="leaderboard-div">
+                    <p>The xp given to the guild by each player this week. Resets each Friday.</p>
+                    <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="weekly-leaderboard"></tbody>
                         </table>
@@ -75,9 +81,25 @@
                         <div id="daily-div-1st" class="top3-display div-1st"></div>
                         <div id="daily-div-3rd" class="top3-display div-3rd"></div>
                     </div>
-                    <div id="total-leaderboard-div" class="leaderboard-div">
+                    <p>The xp given to the guild by each player this day. Resets every day.</p>
+                    <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="daily-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="daily-wins" role="tabpanel" aria-labelledby="daily-wins-tab">
+                <div id="daily-wins-content">
+                    <div class="top3-div">
+                        <div id="daily-wins-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="daily-wins-div-1st" class="top3-display div-1st"></div>
+                        <div id="daily-wins-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The amount of times each player has given the most daily XP to the guild. Never resets.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="daily-wins-leaderboard"></tbody>
                         </table>
                     </div>
                 </div>
@@ -89,7 +111,9 @@
                         <div id="xp-score-div-1st" class="top3-display div-1st"></div>
                         <div id="xp-score-div-3rd" class="top3-display div-3rd"></div>
                     </div>
-                    <div id="total-leaderboard-div" class="leaderboard-div">
+                    <p>You get 1 XP Score for every billion total xp and the top 3 players on the weekly XP leaderboard
+                        get 1, 2 and 3 XP Score</p>
+                    <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="xp-score-leaderboard"></tbody>
                         </table>

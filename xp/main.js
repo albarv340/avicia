@@ -1,6 +1,7 @@
 let xpTotalData = {}
 let xpWeeklyData = {}
 let xpDailyData = {}
+let DailyWinsData = {}
 let xpScoreData = {}
 let firstPlaceDiv = {}
 let secondPlaceDiv = {}
@@ -14,12 +15,16 @@ thirdPlaceDiv.weekly = document.getElementById("weekly-div-3rd")
 firstPlaceDiv.daily = document.getElementById("daily-div-1st")
 secondPlaceDiv.daily = document.getElementById("daily-div-2nd")
 thirdPlaceDiv.daily = document.getElementById("daily-div-3rd")
+firstPlaceDiv.dailyWins = document.getElementById("daily-wins-div-1st")
+secondPlaceDiv.dailyWins = document.getElementById("daily-wins-div-2nd")
+thirdPlaceDiv.dailyWins = document.getElementById("daily-wins-div-3rd")
 firstPlaceDiv.xpScore = document.getElementById("xp-score-div-1st")
 secondPlaceDiv.xpScore = document.getElementById("xp-score-div-2nd")
 thirdPlaceDiv.xpScore = document.getElementById("xp-score-div-3rd")
 let sumOfXpTotal = 0
 let sumOfXpWeekly = 0
 let sumOfXpDaily = 0
+let sumOfDailyWins = 0
 let sumOfXpScore = 0
 
 
@@ -36,20 +41,24 @@ async function getDataFromSheet() {
     let readableXpTotal = {}
     let readableXpWeekly = {}
     let readableXpDaily = {}
+    let readableDailyWins = {}
     let readableXpScore = {}
     for (player of obj.feed.entry) {
         readableXpTotal[getColumnValue(player, "name")] = getColumnValue(player, "xptotal")
         readableXpWeekly[getColumnValue(player, "name")] = getColumnValue(player, "xpweekly")
         readableXpDaily[getColumnValue(player, "name")] = getColumnValue(player, "xpdaily")
+        readableDailyWins[getColumnValue(player, "name")] = getColumnValue(player, "dailywins")
         readableXpScore[getColumnValue(player, "name")] = getColumnValue(player, "xpscoretotal")
     }
     xpTotalData = Object.fromEntries(Object.entries(readableXpTotal).sort(([, a], [, b]) => b - a));
     xpWeeklyData = Object.fromEntries(Object.entries(readableXpWeekly).sort(([, a], [, b]) => b - a));
     xpDailyData = Object.fromEntries(Object.entries(readableXpDaily).sort(([, a], [, b]) => b - a));
+    DailyWinsData = Object.fromEntries(Object.entries(readableDailyWins).sort(([, a], [, b]) => b - a));
     xpScoreData = Object.fromEntries(Object.entries(readableXpScore).sort(([, a], [, b]) => b - a));
     sumOfXpTotal = getColumnValue(obj.feed.entry[0], "sumoftotal")
     sumOfXpWeekly = getColumnValue(obj.feed.entry[0], "sumofweekly")
     sumOfXpDaily = getColumnValue(obj.feed.entry[0], "sumofdaily")
+    sumOfDailyWins = getColumnValue(obj.feed.entry[0], "sumofdailywins")
     sumOfXpScore = getColumnValue(obj.feed.entry[0], "sumofxpscore")
     updateLeaderboard()
 }
@@ -68,6 +77,7 @@ function updateLeaderboard() {
     document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "total", sumOfXpTotal)
     document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "weekly", sumOfXpWeekly)
     document.getElementById("daily-leaderboard").innerHTML = generateLeaderboardHTML(xpDailyData, "XP", "daily", sumOfXpDaily)
+    document.getElementById("daily-wins-leaderboard").innerHTML = generateLeaderboardHTML(DailyWinsData, "Wins", "dailyWins", sumOfDailyWins)
     document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "xpScore", sumOfXpScore)
 }
 
