@@ -117,7 +117,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 `
                 break;
             default:
-                html += `<tr>
+                html += `<tr title=" Sum of all players: ${String(sum).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}">
                 <th scope="row">#${placement}</th>
                 <td><img class="player-face" src="https://www.mc-heads.net/avatar/${player}/100"> ${player}</td>
                 <td>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}</td>
