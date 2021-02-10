@@ -74,14 +74,14 @@ function tick() {
 }
 
 function updateLeaderboard() {
-    document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "total", sumOfXpTotal)
-    document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "weekly", sumOfXpWeekly)
-    document.getElementById("daily-leaderboard").innerHTML = generateLeaderboardHTML(xpDailyData, "XP", "daily", sumOfXpDaily)
-    document.getElementById("daily-wins-leaderboard").innerHTML = generateLeaderboardHTML(DailyWinsData, "Wins", "dailyWins", sumOfDailyWins)
-    document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "xpScore", sumOfXpScore)
+    document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "XP", "total", sumOfXpTotal)
+    document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "XP", "weekly", sumOfXpWeekly)
+    document.getElementById("daily-leaderboard").innerHTML = generateLeaderboardHTML(xpDailyData, "XP", "XP", "daily", sumOfXpDaily)
+    document.getElementById("daily-wins-leaderboard").innerHTML = generateLeaderboardHTML(DailyWinsData, "Wins", "Win", "dailyWins", sumOfDailyWins)
+    document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "Point", "xpScore", sumOfXpScore)
 }
 
-function generateLeaderboardHTML(data, unit, lb, sum) {
+function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
     let html = ""
     placement = 1;
     for (player in data) {
@@ -92,7 +92,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 <div class="first-place-text">
                 <h1>#${placement}</h1>
                 <h4>${player}</h4>
-                <h5>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</h5>
+                <h5>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</h5>
                 
                 </div>`
                 break;
@@ -102,7 +102,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 <div class="second-place-text">
                 <h3>#${placement}</h3>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
+                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -112,7 +112,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 <div class="third-place-text">
                 <h5>#${placement}</h5>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
+                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -120,7 +120,7 @@ function generateLeaderboardHTML(data, unit, lb, sum) {
                 html += `<tr>
                 <th scope="row">#${placement}</th>
                 <td><img class="player-face" src="https://www.mc-heads.net/avatar/${player}/100"> ${player}</td>
-                <td>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${unit}</td>
+                <td>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}</td>
                 <td title="% of total">${((data[player] / sum) * 100 || 0).toFixed(2)}%</td>
                 </tr>`
         }
