@@ -86,6 +86,7 @@ async function run() {
   let areTooltipsVisible = false;
   let mouseX = 0;
   let mouseZ = 0;
+  const cooldownTimer = 600;
   let colors = {
     "Blacklisted": "#333333",
     "Titans Valor": "#e6d8e7",
@@ -421,7 +422,7 @@ async function run() {
     let diff = (utc - new Date(guildTerritories[territory]["acquired"]));
 
 
-    if (((diff / 1000) < 180) && (!Object.keys(cdRectangles).includes(territory))) {
+    if (((diff / 1000) < cooldownTimer) && (!Object.keys(cdRectangles).includes(territory))) {
       let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
         color: "#FF000",
         weight: 5,
@@ -440,7 +441,7 @@ async function run() {
       cdRectangles[territory] = cdRectangle;
       cdRectangle.addTo(map);
       console.log("ADDING " + territory)
-    } else if (((diff / 1000) > 180) && Object.keys(cdRectangles).includes(territory)) {
+    } else if (((diff / 1000) > cooldownTimer) && Object.keys(cdRectangles).includes(territory)) {
       console.log("REMOVING " + territory)
       cdRectangles[territory].remove();
       delete cdRectangles[territory];
