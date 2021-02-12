@@ -107,7 +107,7 @@ async function run() {
     "Imperial": "#990033",
     "The Hive": "#A550F3",
     "Audux": "#005FE8",
-    "Emorians": "#005FE8",
+    "Emorians": "#6666ff",
     "IceBlue Team": "#99AAB5",
     "DiamondDeities": "#42A8C7",
     "Fantasy": "#21C8EC",
