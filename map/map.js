@@ -422,25 +422,33 @@ async function run() {
     let diff = (utc - new Date(guildTerritories[territory]["acquired"]));
 
 
-    if (((diff / 1000) < cooldownTimer) && (!Object.keys(cdRectangles).includes(territory))) {
-      let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
-        color: "#FF000",
-        weight: 5,
-        dashArray: [7],
-        pane: "markerPane"
-      })
-      cdRectangle.bindPopup("Loading...")
-      cdRectangle.setStyle({
-        color: "#FF0000",
-      })
-      cdRectangle.on("popupopen", function (ev) {
-        setPopupContent(guild, territory)
-      });
-      cdRectangle.setTooltipContent(tooltip);
+    if (((diff / 1000) < cooldownTimer)) {
+      if (!Object.keys(cdRectangles).includes(territory)) {
 
-      cdRectangles[territory] = cdRectangle;
-      cdRectangle.addTo(map);
-      console.log("ADDING " + territory)
+        let cdRectangle = L.rectangle(rectangles[territory].getBounds(), {
+          color: "#FF000",
+          weight: 5,
+          dashArray: [7],
+          pane: "markerPane"
+        })
+        cdRectangle.bindPopup("Loading...")
+        cdRectangle.setStyle({
+          color: "#FF0000",
+        })
+        cdRectangle.on("popupopen", function (ev) {
+          setPopupContent(guild, territory)
+        });
+        cdRectangle.setTooltipContent(tooltip);
+
+        cdRectangles[territory] = cdRectangle;
+        cdRectangle.addTo(map);
+        console.log("ADDING " + territory)
+      } else {
+        const colorCDModifier = cooldownTimer / 255;
+        cdRectangles[territory].setStyle({
+          color: `rgb(${(cooldownTimer / colorCDModifier) - (Math.round(diff / (colorCDModifier * 1000)) % 255)}, ${(Math.round(diff / (colorCDModifier * 1000)) % 255)}, 0)`,
+        })
+      }
     } else if (((diff / 1000) > cooldownTimer) && Object.keys(cdRectangles).includes(territory)) {
       console.log("REMOVING " + territory)
       cdRectangles[territory].remove();
