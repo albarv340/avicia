@@ -49,7 +49,7 @@ function updateGuildColor(guildName) {
     color = stringToColor(guildName)
   }
   if (guildName == "") {
-    guildName = "Enter a guild in the url for example <a href='?guild=Avicia'>avicia.tk/guildcolor?guild=Avicia</a>"
+    guildName = "Enter a guild in the url for example <a href='?guild=Avicia'>avicia.tk/guildcolor?guild=Avicia</a> <strong>Use %20 instead of spaces</strong>"
   }
   document.body.style.backgroundColor = color
   const title = document.getElementById("title")

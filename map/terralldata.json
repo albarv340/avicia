@@ -976,14 +976,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -1163,14 +1163,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -2099,14 +2099,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -2170,14 +2170,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -2506,14 +2506,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -2530,14 +2530,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -2693,14 +2693,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -3349,14 +3349,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -3541,14 +3541,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -3977,14 +3977,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -4341,14 +4341,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -5816,14 +5816,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -6849,14 +6849,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -7206,14 +7206,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -7406,14 +7406,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -7901,14 +7901,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -7972,14 +7972,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -7996,14 +7996,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -9335,14 +9335,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
@@ -9476,14 +9476,14 @@
         "prefix": "None",
         "hq": false,
         "resources": {
-            "emeralds": "0",
+            "emeralds": "1800",
             "ore": "900",
             "crops": "900",
             "fish": "900",
             "wood": "900"
         },
         "stored": {
-            "emeralds": "0",
+            "emeralds": "350/10000",
             "ore": " 35/500",
             "crops": " 35/500",
             "fish": " 35/500",
