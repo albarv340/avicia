@@ -1,3 +1,7 @@
-.select2-selection {
-    width: 200px !important;
+.select2-dropdown {
+    background-color: #222222;
+}
+
+.select2-search__field {
+    filter: invert(0.8);
 }
