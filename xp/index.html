@@ -35,6 +35,10 @@
                     aria-selected="false">Daily</a>
             </li>
             <li class="nav-item" role="presentation">
+                <a class="nav-link" id="minute-xp-tab" data-bs-toggle="tab" href="#minute-xp" role="tab"
+                    aria-controls="minute-xp" aria-selected="false">Avg XP/min</a>
+            </li>
+            <li class="nav-item" role="presentation">
                 <a class="nav-link" id="daily-wins-tab" data-bs-toggle="tab" href="#daily-wins" role="tab"
                     aria-controls="daily-wins" aria-selected="false">Daily Wins</a>
             </li>
@@ -87,6 +91,21 @@
                     <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="daily-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="minute-xp" role="tabpanel" aria-labelledby="daily-tab">
+                <div id="minute-xp-content">
+                    <div class="top3-div">
+                        <div id="minute-xp-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="minute-xp-div-1st" class="top3-display div-1st"></div>
+                        <div id="minute-xp-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The average XP per minute given by each player in the past 5 minutes.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="minute-xp-leaderboard"></tbody>
                         </table>
                     </div>
                 </div>

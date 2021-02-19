@@ -14,7 +14,7 @@ body {
     width: 100%;
 }
 
-#total-content, #weekly-content, #xp-score-content, #daily-content, #daily-wins-content {
+#total-content, #weekly-content, #xp-score-content, #daily-content, #daily-wins-content, #minute-xp-content {
     width: 100%;
     display: flex;
     align-items: center;
