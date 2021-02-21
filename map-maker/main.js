@@ -102,7 +102,6 @@ $(document).ready(function () {
         realButton.addEventListener('change', importMap, false);
     });
     undoButton.addEventListener('click', function () {
-        console.log(undoTerritoryBackup)
         if (undoTerritoryBackup.length > 0) {
             redoTerritoryBackup.push(JSON.parse(JSON.stringify(Territories)))
             Territories = JSON.parse(JSON.stringify(undoTerritoryBackup.pop()))
@@ -930,15 +929,23 @@ const territoryIdForCompression = ["ao", "ap", "aq", "ar", "as", "at", "au", "av
 function getCompressedTerrData() {
     let tmpObj = {}
     for (terr in Territories) {
-        if (typeof (tmpObj[Territories[terr]]) == "undefined") {
-            tmpObj[Territories[terr]] = [territoriesForCompression.indexOf(terr)]
+        let guildName = Territories[terr];
+        if (guildName == "-" || guildName == "--") {
+            guildName = "null";
+        }
+        if (typeof (tmpObj[guildName]) == "undefined") {
+            tmpObj[guildName] = [territoriesForCompression.indexOf(terr)]
         } else {
-            tmpObj[Territories[terr]].push(territoriesForCompression.indexOf(terr))
+            tmpObj[guildName].push(territoriesForCompression.indexOf(terr))
         }
     }
     for (guild of Guilds) {
-        if (typeof (tmpObj[guild.name]) != "undefined") {
-            tmpObj[guild.name].push(guild.mapcolor)
+        let guildName = guild.name;
+        if (guildName == "-" || guildName == "--") {
+            guildName = "null";
+        }
+        if (typeof (tmpObj[guildName]) != "undefined") {
+            tmpObj[guildName].push(guild.mapcolor)
         }
     }
     return tmpObj
@@ -961,7 +968,6 @@ function deCompressTerritoryString(compressedString) {
     let guildsData = []
     let territoryData = {}
     try {
-
         for (rawGuildString of compressedString.split("+").filter(s => { return s != "" })) {
             let guildName = rawGuildString.split("-")[0]
             let guildColor = "#" + rawGuildString.split("-")[1].split("=")[0]
@@ -973,6 +979,7 @@ function deCompressTerritoryString(compressedString) {
             }
         }
     } catch (e) {
+        console.error(e)
         return { "territories": {}, "guilds": [] }
     }
     return { "territories": territoryData, "guilds": guildsData }
