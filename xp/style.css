@@ -92,3 +92,21 @@ img {
 .third-place-text h5 {
     color: #995a1c;
 }
+
+.goal-container {
+    width: 60%;
+    height: 24px;
+    border: 1px solid gray;
+    margin: 5px;
+    border-radius: 2px;
+}
+
+#weekly-goal, #daily-goal {
+    height: 100%;
+    background: greenyellow;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: fit-content;
+}

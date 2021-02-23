@@ -30,6 +30,8 @@ let sumOfXpDaily = 0
 let sumOfMinuteXp = 0
 let sumOfDailyWins = 0
 let sumOfXpScore = 0
+const dailyGoal = 4000000000;
+const weeklyGoal = 25000000000;
 
 
 async function getDataFromSheet() {
@@ -82,6 +84,14 @@ function tick() {
 }
 
 function updateLeaderboard() {
+    // const weeklyGoalHTML = document.getElementById("weekly-goal")
+    // weeklyGoalHTML.style.width = Math.round((sumOfXpWeekly / weeklyGoal) * 100) + "%";
+    // weeklyGoalHTML.parentElement.title = "Weekly Goal Progress: " + makeNumberReadable(sumOfXpWeekly) + " XP / " + makeNumberReadable(weeklyGoal) + " XP"
+    // weeklyGoalHTML.innerHTML = ((sumOfXpWeekly / weeklyGoal) * 100).toFixed(2) + "%"
+    // const dailyGoalHTML = document.getElementById("daily-goal")
+    // dailyGoalHTML.style.width = Math.round((sumOfXpDaily / dailyGoal) * 100) + "%";
+    // dailyGoalHTML.parentElement.title = "Daily Goal Progress: " + makeNumberReadable(sumOfXpDaily) + " XP / " + makeNumberReadable(dailyGoal) + " XP"
+    // dailyGoalHTML.innerHTML = ((sumOfXpDaily / dailyGoal) * 100).toFixed(2) + "%"
     document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "XP", "total", sumOfXpTotal)
     document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "XP", "weekly", sumOfXpWeekly)
     document.getElementById("daily-leaderboard").innerHTML = generateLeaderboardHTML(xpDailyData, "XP", "XP", "daily", sumOfXpDaily)
@@ -101,7 +111,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 <div class="first-place-text">
                 <h1>#${placement}</h1>
                 <h4>${player}</h4>
-                <h5>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</h5>
+                <h5>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</h5>
                 
                 </div>`
                 break;
@@ -111,7 +121,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 <div class="second-place-text">
                 <h3>#${placement}</h3>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
+                <p>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -121,7 +131,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 <div class="third-place-text">
                 <h5>#${placement}</h5>
                 <h6>${player}</h6>
-                <p>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
+                <p>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -129,7 +139,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 html += `<tr title=" Sum of all players: ${String(sum).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}">
                 <th scope="row">#${placement}</th>
                 <td><img class="player-face" src="https://www.mc-heads.net/avatar/${player}/100"> ${player}</td>
-                <td>${String(data[player]).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}</td>
+                <td>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}</td>
                 <td title="% of total">${((data[player] / sum) * 100 || 0).toFixed(2)}%</td>
                 </tr>`
         }
@@ -137,4 +147,8 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
         // <td title="${String(data[user].exacttotal)}%">${String(data[user].total).replace(/(.)(?=(\d{3})+$)/g, '$1,')}%</td>
     }
     return html
+}
+
+function makeNumberReadable(number) {
+    return String(number).replace(/(.)(?=(\d{3})+$)/g, '$1,')
 }
