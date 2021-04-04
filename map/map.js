@@ -347,7 +347,7 @@ async function run() {
     Object.keys(cdRectangles).forEach(territory => {
       setContent(guildTerritories[territory]["guild"], territory)
       try {
-        if (cdRectangles[territory].isPopupOpen()) {
+        if (cdRectangles[territory] ? cdRectangles[territory].isPopupOpen() : false) {
           setPopupContent(guildTerritories[territory]["guild"], territory)
         }
       } catch (e) {
