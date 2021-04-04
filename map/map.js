@@ -244,7 +244,9 @@ async function run() {
             setContent(guildTerritories[territory]["guild"], territory);
             territoryCount[guildTerritories[territory]["guild"]] ? territoryCount[guildTerritories[territory]["guild"]]++ : territoryCount[guildTerritories[territory]["guild"]] = 1;
           }
-        } catch (e) { }
+        } catch (e) {
+          console.error(e)
+        }
         setTimeout(() => {
           if (map.getZoom() >= 8)
             showTooltips()
@@ -263,14 +265,16 @@ async function run() {
     try {
       obj = await (await fetch(url)).json();
     } catch (e) {
-      console.log('error');
+      console.error(e);
     }
     res = []
     try {
       for (guild of obj.data) {
         res[guild.name] = guild
       }
-    } catch (e) { }
+    } catch (e) {
+      console.error(e)
+    }
     callback(res)
     return res
   }
@@ -316,6 +320,7 @@ async function run() {
               })
             } catch (e) {
               console.log(territory)
+              console.error(e)
             }
           } else {
             rectangles[territory].setStyle({
@@ -345,7 +350,9 @@ async function run() {
         if (cdRectangles[territory].isPopupOpen()) {
           setPopupContent(guildTerritories[territory]["guild"], territory)
         }
-      } catch (e) { }
+      } catch (e) {
+        console.error(e)
+      }
     })
   }
 
@@ -375,8 +382,10 @@ async function run() {
     let tooltip = "<div>"
     let prefix = ""
     try {
-      prefix = guilds[guild]["prefix"] ? guilds[guild]["prefix"] : guild
-    } catch (e) { }
+      prefix = guilds[guild] ? guilds[guild]["prefix"] : guild
+    } catch (e) {
+      console.error(e)
+    }
     if (previousOwner[territory] != prefix) {
       if (!initialLoad) {
         console.log(new Date().toLocaleTimeString() + " " + territory + ": " + previousOwner[territory] + " -> " + prefix)
@@ -403,7 +412,9 @@ async function run() {
         ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
         ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
        </div>`;
-      } catch (e) { }
+      } catch (e) {
+        console.error(e)
+      }
 
       if (territoryNames) tooltip += "<div class='territory'>"
         + territory
@@ -509,6 +520,7 @@ async function run() {
         <div>Held for ${str}.</div>
 			</div>`);
       } catch (e) {
+        console.error(e)
         cdRectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
@@ -527,6 +539,7 @@ async function run() {
         <div>Held for ${str}.</div>
 			</div>`);
       } catch (e) {
+        console.error(e)
         rectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
