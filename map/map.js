@@ -120,7 +120,8 @@ async function run() {
     "Eden": "#00ff4a",
     "Phantom Hearts": "#E74C3C",
     "ShadowFall": "#67178a",
-    "Aequitas": "#ffd700"
+    "Aequitas": "#ffd700",
+    "the Avos": "#1010FF"
   }
   //grabbing options elements
   let slider = document.getElementById("rate-option");
