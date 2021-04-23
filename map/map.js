@@ -122,7 +122,8 @@ async function run() {
     "ShadowFall": "#67178a",
     "Aequitas": "#ffd700",
     "the Avos": "#1010FF",
-    "Upsilon": "#321e3b"
+    "Upsilon": "#321e3b",
+    "infilak": "#2dd6a6"
   }
   //grabbing options elements
   let slider = document.getElementById("rate-option");
