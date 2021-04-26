@@ -123,7 +123,8 @@ async function run() {
     "Aequitas": "#ffd700",
     "the Avos": "#1010FF",
     "Upsilon": "#321e3b",
-    "infilak": "#2dd6a6"
+    "infilak": "#2dd6a6",
+    "Doki Doki Literature Club": "#c2b039"
   }
   //grabbing options elements
   let slider = document.getElementById("rate-option");
