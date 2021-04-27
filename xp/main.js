@@ -2,36 +2,26 @@ let xpTotalData = {}
 let xpWeeklyData = {}
 let xpDailyData = {}
 let DailyWinsData = {}
+let weeklyTimeData = {}
 let xpScoreData = {}
 let firstPlaceDiv = {}
 let secondPlaceDiv = {}
 let thirdPlaceDiv = {}
-firstPlaceDiv.total = document.getElementById("total-div-1st")
-secondPlaceDiv.total = document.getElementById("total-div-2nd")
-thirdPlaceDiv.total = document.getElementById("total-div-3rd")
-firstPlaceDiv.weekly = document.getElementById("weekly-div-1st")
-secondPlaceDiv.weekly = document.getElementById("weekly-div-2nd")
-thirdPlaceDiv.weekly = document.getElementById("weekly-div-3rd")
-firstPlaceDiv.daily = document.getElementById("daily-div-1st")
-secondPlaceDiv.daily = document.getElementById("daily-div-2nd")
-thirdPlaceDiv.daily = document.getElementById("daily-div-3rd")
-firstPlaceDiv.minuteXp = document.getElementById("minute-xp-div-1st")
-secondPlaceDiv.minuteXp = document.getElementById("minute-xp-div-2nd")
-thirdPlaceDiv.minuteXp = document.getElementById("minute-xp-div-3rd")
-firstPlaceDiv.dailyWins = document.getElementById("daily-wins-div-1st")
-secondPlaceDiv.dailyWins = document.getElementById("daily-wins-div-2nd")
-thirdPlaceDiv.dailyWins = document.getElementById("daily-wins-div-3rd")
-firstPlaceDiv.xpScore = document.getElementById("xp-score-div-1st")
-secondPlaceDiv.xpScore = document.getElementById("xp-score-div-2nd")
-thirdPlaceDiv.xpScore = document.getElementById("xp-score-div-3rd")
+const leaderboards = ["total", "weekly", "daily", "minute-xp", "daily-wins", "weekly-time", "xp-score"]
+for (lb of leaderboards) {
+    firstPlaceDiv[lb] = document.getElementById(lb + "-div-1st")
+    secondPlaceDiv[lb] = document.getElementById(lb + "-div-2nd")
+    thirdPlaceDiv[lb] = document.getElementById(lb + "-div-3rd")
+}
 let sumOfXpTotal = 0
 let sumOfXpWeekly = 0
 let sumOfXpDaily = 0
 let sumOfMinuteXp = 0
 let sumOfDailyWins = 0
+let sumOfWeeklyTime = 0
 let sumOfXpScore = 0
-const dailyGoal = 4000000000;
-const weeklyGoal = 25000000000;
+const dailyGoal = 5000000000;
+const weeklyGoal = 40000000000;
 
 
 async function getDataFromSheet() {
@@ -49,6 +39,7 @@ async function getDataFromSheet() {
     let readableXpDaily = {}
     let readableMinuteXp = {}
     let readableDailyWins = {}
+    let readableWeeklyTime = {}
     let readableXpScore = {}
     for (player of obj.feed.entry) {
         readableXpTotal[getColumnValue(player, "name")] = getColumnValue(player, "xptotal")
@@ -56,6 +47,7 @@ async function getDataFromSheet() {
         readableXpDaily[getColumnValue(player, "name")] = getColumnValue(player, "xpdaily")
         readableMinuteXp[getColumnValue(player, "name")] = getColumnValue(player, "xpmin")
         readableDailyWins[getColumnValue(player, "name")] = getColumnValue(player, "dailywins")
+        readableWeeklyTime[getColumnValue(player, "name")] = getColumnValue(player, "weeklytime")
         readableXpScore[getColumnValue(player, "name")] = getColumnValue(player, "xpscoretotal")
     }
     xpTotalData = Object.fromEntries(Object.entries(readableXpTotal).sort(([, a], [, b]) => b - a));
@@ -63,12 +55,14 @@ async function getDataFromSheet() {
     xpDailyData = Object.fromEntries(Object.entries(readableXpDaily).sort(([, a], [, b]) => b - a));
     minuteXpData = Object.fromEntries(Object.entries(readableMinuteXp).sort(([, a], [, b]) => b - a));
     DailyWinsData = Object.fromEntries(Object.entries(readableDailyWins).sort(([, a], [, b]) => b - a));
+    weeklyTimeData = Object.fromEntries(Object.entries(readableWeeklyTime).sort(([, a], [, b]) => b - a));
     xpScoreData = Object.fromEntries(Object.entries(readableXpScore).sort(([, a], [, b]) => b - a));
     sumOfXpTotal = getColumnValue(obj.feed.entry[0], "sumoftotal")
     sumOfXpWeekly = getColumnValue(obj.feed.entry[0], "sumofweekly")
     sumOfXpDaily = getColumnValue(obj.feed.entry[0], "sumofdaily")
     sumOfMinuteXp = getColumnValue(obj.feed.entry[0], "sumoflastminute")
     sumOfDailyWins = getColumnValue(obj.feed.entry[0], "sumofdailywins")
+    sumOfWeeklyTime = getColumnValue(obj.feed.entry[0], "sumofweeklytime")
     sumOfXpScore = getColumnValue(obj.feed.entry[0], "sumofxpscore")
     updateLeaderboard()
 }
@@ -84,20 +78,21 @@ function tick() {
 }
 
 function updateLeaderboard() {
-    // const weeklyGoalHTML = document.getElementById("weekly-goal")
-    // weeklyGoalHTML.style.width = Math.round((sumOfXpWeekly / weeklyGoal) * 100) + "%";
-    // weeklyGoalHTML.parentElement.title = "Weekly Goal Progress: " + makeNumberReadable(sumOfXpWeekly) + " XP / " + makeNumberReadable(weeklyGoal) + " XP"
-    // weeklyGoalHTML.innerHTML = ((sumOfXpWeekly / weeklyGoal) * 100).toFixed(2) + "%"
-    // const dailyGoalHTML = document.getElementById("daily-goal")
-    // dailyGoalHTML.style.width = Math.round((sumOfXpDaily / dailyGoal) * 100) + "%";
-    // dailyGoalHTML.parentElement.title = "Daily Goal Progress: " + makeNumberReadable(sumOfXpDaily) + " XP / " + makeNumberReadable(dailyGoal) + " XP"
-    // dailyGoalHTML.innerHTML = ((sumOfXpDaily / dailyGoal) * 100).toFixed(2) + "%"
+    const weeklyGoalHTML = document.getElementById("weekly-goal")
+    weeklyGoalHTML.style.width = Math.round((sumOfXpWeekly / weeklyGoal) * 100) + "%";
+    weeklyGoalHTML.parentElement.title = "Weekly Goal Progress: " + makeNumberReadable(sumOfXpWeekly) + " XP / " + makeNumberReadable(weeklyGoal) + " XP"
+    weeklyGoalHTML.innerHTML = ((sumOfXpWeekly / weeklyGoal) * 100).toFixed(2) + "%"
+    const dailyGoalHTML = document.getElementById("daily-goal")
+    dailyGoalHTML.style.width = Math.round((sumOfXpDaily / dailyGoal) * 100) + "%";
+    dailyGoalHTML.parentElement.title = "Daily Goal Progress: " + makeNumberReadable(sumOfXpDaily) + " XP / " + makeNumberReadable(dailyGoal) + " XP"
+    dailyGoalHTML.innerHTML = ((sumOfXpDaily / dailyGoal) * 100).toFixed(2) + "%"
     document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "XP", "total", sumOfXpTotal)
     document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "XP", "weekly", sumOfXpWeekly)
     document.getElementById("daily-leaderboard").innerHTML = generateLeaderboardHTML(xpDailyData, "XP", "XP", "daily", sumOfXpDaily)
-    document.getElementById("minute-xp-leaderboard").innerHTML = generateLeaderboardHTML(minuteXpData, "XP/min", "XP/min", "minuteXp", sumOfMinuteXp)
-    document.getElementById("daily-wins-leaderboard").innerHTML = generateLeaderboardHTML(DailyWinsData, "Wins", "Win", "dailyWins", sumOfDailyWins)
-    document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "Point", "xpScore", sumOfXpScore)
+    document.getElementById("minute-xp-leaderboard").innerHTML = generateLeaderboardHTML(minuteXpData, "XP/min", "XP/min", "minute-xp", sumOfMinuteXp)
+    document.getElementById("daily-wins-leaderboard").innerHTML = generateLeaderboardHTML(DailyWinsData, "Wins", "Win", "daily-wins", sumOfDailyWins)
+    document.getElementById("weekly-time-leaderboard").innerHTML = generateLeaderboardHTML(weeklyTimeData, "Minutes", "Minute", "weekly-time", sumOfWeeklyTime)
+    document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "Point", "xp-score", sumOfXpScore)
 }
 
 function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {

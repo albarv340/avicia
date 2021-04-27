@@ -43,6 +43,10 @@
                     aria-controls="daily-wins" aria-selected="false">Daily Wins</a>
             </li>
             <li class="nav-item" role="presentation">
+                <a class="nav-link" id="weekly-time-tab" data-bs-toggle="tab" href="#weekly-time" role="tab"
+                    aria-controls="weekly-time" aria-selected="false">Weekly Time</a>
+            </li>
+            <li class="nav-item" role="presentation">
                 <a class="nav-link" id="xp-score-tab" data-bs-toggle="tab" href="#xp-score" role="tab"
                     aria-controls="xp-score" aria-selected="false">XP Score</a>
             </li>
@@ -65,16 +69,16 @@
             </div>
             <div class="tab-pane fade" id="weekly" role="tabpanel" aria-labelledby="weekly-tab">
                 <div id="weekly-content">
-                    <!-- <div class="goal-container">
+                    <div class="goal-container">
                         <div id="weekly-goal"></div>
-                    </div> -->
+                    </div>
                     <div class="top3-div">
                         <div id="weekly-div-2nd" class="top3-display div-2nd"></div>
                         <div id="weekly-div-1st" class="top3-display div-1st"></div>
                         <div id="weekly-div-3rd" class="top3-display div-3rd"></div>
                     </div>
                     <p>The xp given to the guild by each player this week. Resets each Friday at around <a
-                            href="https://www.avicia.tk/time/?ms=19%3A00" target="_blank">19:00 UTC</a>.</p>
+                            href="https://www.avicia.tk/time/?ms=19%3A00" target="_blank">18:00 UTC</a>.</p>
                     <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="weekly-leaderboard"></tbody>
@@ -84,16 +88,16 @@
             </div>
             <div class="tab-pane fade" id="daily" role="tabpanel" aria-labelledby="daily-tab">
                 <div id="daily-content">
-                    <!-- <div class="goal-container">
+                    <div class="goal-container">
                         <div id="daily-goal"></div>
-                    </div> -->
+                    </div>
                     <div class="top3-div">
                         <div id="daily-div-2nd" class="top3-display div-2nd"></div>
                         <div id="daily-div-1st" class="top3-display div-1st"></div>
                         <div id="daily-div-3rd" class="top3-display div-3rd"></div>
                     </div>
                     <p>The xp given to the guild by each player today. Resets every day at around <a
-                            href="https://www.avicia.tk/time/?ms=19%3A00" target="_blank">19:00 UTC</a>.</p>
+                            href="https://www.avicia.tk/time/?ms=19%3A00" target="_blank">18:00 UTC</a>.</p>
                     <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="daily-leaderboard"></tbody>
@@ -127,6 +131,22 @@
                     <div class="leaderboard-div">
                         <table class="table table-striped table-dark leaderboards">
                             <tbody id="daily-wins-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="weekly-time" role="tabpanel" aria-labelledby="weekly-time-tab">
+                <div id="weekly-time-content">
+                    <div class="top3-div">
+                        <div id="weekly-time-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="weekly-time-div-1st" class="top3-display div-1st"></div>
+                        <div id="weekly-time-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The time a player has spent grinding over 4 million xp/min. Resets each Friday at around <a
+                            href="https://www.avicia.tk/time/?ms=19%3A00" target="_blank">18:00 UTC</a>.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="weekly-time-leaderboard"></tbody>
                         </table>
                     </div>
                 </div>
