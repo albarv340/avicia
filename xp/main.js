@@ -20,8 +20,8 @@ let sumOfMinuteXp = 0
 let sumOfDailyWins = 0
 let sumOfWeeklyTime = 0
 let sumOfXpScore = 0
-const dailyGoal = 5000000000;
-const weeklyGoal = 40000000000;
+const dailyGoal = 1000000000;
+const weeklyGoal = 10000000000;
 
 
 async function getDataFromSheet() {
