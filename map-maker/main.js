@@ -972,7 +972,7 @@ function deCompressTerritoryString(compressedString) {
             let guildName = rawGuildString.split("-")[0]
             let guildColor = "#" + rawGuildString.split("-")[1].split("=")[0]
             if (guildName != "null" && guildName != "--") {
-                guildsData.push({ "name": guildName, "mapcolor": guildColor })
+                guildsData.push(new Guild(guildName, guildColor))
             }
             for (terrId of rawGuildString.split("-")[1].split("=")[1].match(/.{1,2}/g)) {
                 territoryData[territoriesForCompression[territoryIdForCompression.indexOf(terrId)]] = (guildName == "null" ? null : guildName)
