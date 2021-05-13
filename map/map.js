@@ -125,7 +125,8 @@ async function run() {
     "the Avos": "#1010FF",
     "Upsilon": "#321e3b",
     "infilak": "#2dd6a6",
-    "Doki Doki Literature Club": "#c2b039"
+    "Doki Doki Literature Club": "#c2b039",
+    "Nefarious Ravens": "#990000"
   }
   //grabbing options elements
   let slider = document.getElementById("rate-option");
