@@ -22,7 +22,7 @@ let sumOfWeeklyTime = 0
 let sumOfXpScore = 0
 const dailyGoal = 3000000000;
 const weeklyGoal = 30000000000;
-
+const hundredGoal = 136152150806;
 
 async function getDataFromSheet() {
     let url = 'https://spreadsheets.google.com/feeds/list/1IEhwvAdHA0aApOCVkJcIHODgiN_jO_z2xjw36Jr1V28/od6/public/values?alt=json';
@@ -86,16 +86,21 @@ function updateLeaderboard() {
     dailyGoalHTML.style.width = Math.round((sumOfXpDaily / dailyGoal) * 100) + "%";
     dailyGoalHTML.parentElement.title = "Daily Goal Progress: " + makeNumberReadable(sumOfXpDaily) + " XP / " + makeNumberReadable(dailyGoal) + " XP"
     dailyGoalHTML.innerHTML = ((sumOfXpDaily / dailyGoal) * 100).toFixed(2) + "%"
+    const hundredGoalHTML = document.getElementById("hundred-goal")
+    const totBefore99 = 965254571418;
+    hundredGoalHTML.style.width = Math.round(((sumOfXpTotal - totBefore99) / hundredGoal) * 100) + "%";
+    hundredGoalHTML.parentElement.title = "Level 99-100 Progress ≈ " + makeNumberReadable(sumOfXpTotal - totBefore99) + " XP / " + makeNumberReadable(hundredGoal) + " XP"
+    hundredGoalHTML.innerHTML = (((sumOfXpTotal - totBefore99) / hundredGoal) * 100).toFixed(2) + "%"
     document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "XP", "total", sumOfXpTotal)
     document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "XP", "weekly", sumOfXpWeekly)
     document.getElementById("daily-leaderboard").innerHTML = generateLeaderboardHTML(xpDailyData, "XP", "XP", "daily", sumOfXpDaily)
     document.getElementById("minute-xp-leaderboard").innerHTML = generateLeaderboardHTML(minuteXpData, "XP/min", "XP/min", "minute-xp", sumOfMinuteXp)
     document.getElementById("daily-wins-leaderboard").innerHTML = generateLeaderboardHTML(DailyWinsData, "Wins", "Win", "daily-wins", sumOfDailyWins)
-    document.getElementById("weekly-time-leaderboard").innerHTML = generateLeaderboardHTML(weeklyTimeData, "Minutes", "Minute", "weekly-time", sumOfWeeklyTime)
+    document.getElementById("weekly-time-leaderboard").innerHTML = generateLeaderboardHTML(weeklyTimeData, "", "", "weekly-time", sumOfWeeklyTime, minutesToReadableTime)
     document.getElementById("xp-score-leaderboard").innerHTML = generateLeaderboardHTML(xpScoreData, "Points", "Point", "xp-score", sumOfXpScore)
 }
 
-function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
+function generateLeaderboardHTML(data, unit, singleUnit, lb, sum, formatFunction = makeNumberReadable) {
     let html = ""
     placement = 1;
     for (player in data) {
@@ -106,7 +111,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 <div class="first-place-text">
                 <h1>#${placement}</h1>
                 <h4>${player}</h4>
-                <h5>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</h5>
+                <h5>${formatFunction(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</h5>
                 
                 </div>`
                 break;
@@ -116,7 +121,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 <div class="second-place-text">
                 <h3>#${placement}</h3>
                 <h6>${player}</h6>
-                <p>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
+                <p>${formatFunction(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -126,7 +131,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 <div class="third-place-text">
                 <h5>#${placement}</h5>
                 <h6>${player}</h6>
-                <p>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
+                <p>${formatFunction(data[player])} ${data[player] == 1 ? singleUnit : unit}<br> ${((data[player] / sum) * 100 || 0).toFixed(2)}%</p>
                 </div>
                 `
                 break;
@@ -134,7 +139,7 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
                 html += `<tr title=" Sum of all players: ${String(sum).replace(/(.)(?=(\d{3})+$)/g, '$1,')} ${data[player] == 1 ? singleUnit : unit}">
                 <th scope="row">#${placement}</th>
                 <td><img class="player-face" src="https://www.mc-heads.net/avatar/${player}/100"> ${player}</td>
-                <td>${makeNumberReadable(data[player])} ${data[player] == 1 ? singleUnit : unit}</td>
+                <td>${formatFunction(data[player])} ${data[player] == 1 ? singleUnit : unit}</td>
                 <td title="% of total">${((data[player] / sum) * 100 || 0).toFixed(2)}%</td>
                 </tr>`
         }
@@ -146,4 +151,8 @@ function generateLeaderboardHTML(data, unit, singleUnit, lb, sum) {
 
 function makeNumberReadable(number) {
     return String(number).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+}
+
+function minutesToReadableTime(minutes) {
+    return ((minutes >= 60) ? (Math.floor(minutes / 60) + "h ") : "") + (minutes % 60) + "m"
 }

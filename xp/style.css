@@ -101,7 +101,7 @@ img {
     border-radius: 2px;
 }
 
-#weekly-goal, #daily-goal {
+#weekly-goal, #daily-goal, #hundred-goal {
     height: 100%;
     max-width: 100%;
     background: greenyellow;
