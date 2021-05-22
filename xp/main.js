@@ -87,7 +87,7 @@ function updateLeaderboard() {
     dailyGoalHTML.parentElement.title = "Daily Goal Progress: " + makeNumberReadable(sumOfXpDaily) + " XP / " + makeNumberReadable(dailyGoal) + " XP"
     dailyGoalHTML.innerHTML = ((sumOfXpDaily / dailyGoal) * 100).toFixed(2) + "%"
     const hundredGoalHTML = document.getElementById("hundred-goal")
-    const totBefore99 = 965254571418;
+    const totBefore99 = 964654571418;
     hundredGoalHTML.style.width = Math.round(((sumOfXpTotal - totBefore99) / hundredGoal) * 100) + "%";
     hundredGoalHTML.parentElement.title = "Level 99-100 Progress ≈ " + makeNumberReadable(sumOfXpTotal - totBefore99) + " XP / " + makeNumberReadable(hundredGoal) + " XP"
     hundredGoalHTML.innerHTML = (((sumOfXpTotal - totBefore99) / hundredGoal) * 100).toFixed(2) + "%"
