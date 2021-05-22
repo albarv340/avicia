@@ -1,8 +1,8 @@
+const guildName = window.location.search.split("=").pop().replace(/%20/g, ' ');
 previousObj = {}
 requestTimer = null;
 
 async function getGuildData() {
-    const guildName = window.location.search.split("=").pop().replace(/%20/g, ' ');
     document.getElementById("title").innerText = "Wynncraft Guild XP - " + guildName
     let url = 'https://api.wynncraft.com/public_api.php?action=guildStats&command=' + guildName;
 
@@ -14,7 +14,7 @@ async function getGuildData() {
         console.log('error');
     }
     if (obj.error) {
-        document.getElementById("content").innerHTML = "Invalid guild name you need ?guild={Guild name} for example avicia.tk/guildxp/?guild=<a href='?guild=Avicia'>Avicia</a>"
+        document.getElementById("title").innerHTML = "Invalid guild name. Example: <a href='?guild=Avicia'>Avicia</a>"
     } else {
         updateChangeLeaderboard(obj)
         previousObj = obj
@@ -73,6 +73,11 @@ function makeNumberReadable(number) {
     return String(number).replace(/(.)(?=(\d{3})+$)/g, '$1,')
 }
 
+document.getElementById("guild-name-btn").onclick = e => {
+    const newGuild = document.getElementById("guild-name").value
+    window.location.href = "?guild=" + newGuild
+}
+
 // document.getElementById("change-interval").onclick = e => {
 //     const interval = document.getElementById("interval").value
 //     if (interval < 60) {
@@ -85,6 +90,7 @@ function makeNumberReadable(number) {
 // }
 
 function init() {
+    document.getElementById("guild-name").value = guildName
     getGuildData()
     startRequestTimer(60 * 1000)
 }

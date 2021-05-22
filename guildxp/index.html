@@ -21,6 +21,11 @@
     <div class="wrapper">
         <div class="header">
             <h1 id="title">Wynncraft Guild XP</h1>
+            <div>
+                <label for="guild-name">Guild Name</label>
+                <input type="text" name="guild-name" id="guild-name">
+                <input type="button" value="Change" id="guild-name-btn">
+            </div>
             <!-- <div>
                 <label for="interval">Interval: </label>
                 <input type="number" name="interval" id="interval" placeholder="Interval in seconds" value=60>
@@ -30,7 +35,7 @@
         <div class="content" id="content">
             <table class="table table-striped table-dark leaderboards">
                 <tr>
-                    <th>Pos</th>
+                    <th>#</th>
                     <th>Player</th>
                     <th>Total</th>
                 </tr>
@@ -38,7 +43,7 @@
             </table>
             <table class="table table-striped table-dark leaderboards">
                 <tr>
-                    <th>Pos</th>
+                    <th>#</th>
                     <th>Player</th>
                     <th>Change</th>
                 </tr>
