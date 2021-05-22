@@ -73,7 +73,8 @@ function makeNumberReadable(number) {
     return String(number).replace(/(.)(?=(\d{3})+$)/g, '$1,')
 }
 
-document.getElementById("guild-name-btn").onclick = e => {
+document.getElementById("guild-change").onsubmit = e => {
+    e.preventDefault()
     const newGuild = document.getElementById("guild-name").value
     window.location.href = "?guild=" + newGuild
 }
