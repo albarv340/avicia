@@ -111,3 +111,7 @@ img {
     align-items: center;
     min-width: fit-content;
 }
+
+#xp-rate {
+    padding: 4px;
+}

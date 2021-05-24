@@ -1,3 +1,4 @@
+let guildLevel = 0;
 let xpTotalData = {}
 let xpWeeklyData = {}
 let xpDailyData = {}
@@ -34,6 +35,7 @@ async function getDataFromSheet() {
     } catch (e) {
         console.log('error');
     }
+    guildLevel = getColumnValue(obj.feed.entry[0], "guildlevel")
     let readableXpTotal = {}
     let readableXpWeekly = {}
     let readableXpDaily = {}
@@ -91,6 +93,10 @@ function updateLeaderboard() {
     hundredGoalHTML.style.width = Math.round(((sumOfXpTotal - totBefore99) / hundredGoal) * 100) + "%";
     hundredGoalHTML.parentElement.title = "Level 99-100 Progress ≈ " + makeNumberReadable(sumOfXpTotal - totBefore99) + " XP / " + makeNumberReadable(hundredGoal) + " XP"
     hundredGoalHTML.innerHTML = (((sumOfXpTotal - totBefore99) / hundredGoal) * 100).toFixed(2) + "%"
+    const timeForPercentHTML = document.getElementById("time-for-percent")
+    timeForPercentHTML.innerHTML = `<span id="xp-rate">Current XP rate: ${minutesToReadableTime(Math.round((estimateXpRequirement(guildLevel) / 100) / sumOfMinuteXp))} per %</span>`
+    timeForPercentHTML.title = `${makeNumberReadable(sumOfMinuteXp)} XP/min & ~${makeNumberReadable(Math.round(estimateXpRequirement(guildLevel) / 100))} XP/%`
+
     document.getElementById("total-leaderboard").innerHTML = generateLeaderboardHTML(xpTotalData, "XP", "XP", "total", sumOfXpTotal)
     document.getElementById("weekly-leaderboard").innerHTML = generateLeaderboardHTML(xpWeeklyData, "XP", "XP", "weekly", sumOfXpWeekly)
     document.getElementById("daily-leaderboard").innerHTML = generateLeaderboardHTML(xpDailyData, "XP", "XP", "daily", sumOfXpDaily)
@@ -154,5 +160,10 @@ function makeNumberReadable(number) {
 }
 
 function minutesToReadableTime(minutes) {
-    return ((minutes >= 60) ? (Math.floor(minutes / 60) + "h ") : "") + (minutes % 60) + "m"
+    if (!isFinite(minutes)) return "∞m"
+    return ((minutes >= 60) ? (makeNumberReadable(Math.floor(minutes / 60)) + "h ") : "") + (minutes % 60) + "m"
+}
+
+function estimateXpRequirement(level) {
+    return 2364629339 * Math.pow(1.15, level - 70)
 }
