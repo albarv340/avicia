@@ -160,8 +160,8 @@ function makeNumberReadable(number) {
 }
 
 function minutesToReadableTime(minutes) {
-    if (!isFinite(minutes)) return "∞m"
-    return ((minutes >= 60) ? (makeNumberReadable(Math.floor(minutes / 60)) + "h ") : "") + (minutes % 60) + "m"
+    if (!isFinite(minutes)) return "∞min"
+    return ((minutes >= 60) ? (makeNumberReadable(Math.floor(minutes / 60)) + "h ") : "") + (minutes % 60) + "min"
 }
 
 function estimateXpRequirement(level) {
