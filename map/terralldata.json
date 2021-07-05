@@ -505,7 +505,6 @@
             "wood": "0"
         },
         "Trading Routes": [
-            "South Farmers Valley",
             "Maltic",
             "Plains",
             "Emerald Trail",
@@ -544,9 +543,9 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "3600",
+            "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -1670,9 +1669,9 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "0",
+            "crops": "3600",
             "fish": "0",
-            "wood": "3600"
+            "wood": "0"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -2557,8 +2556,8 @@
             "emeralds": "9000",
             "ore": "0",
             "crops": "0",
-            "fish": "3600",
-            "wood": "0"
+            "fish": "0",
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -2915,8 +2914,8 @@
         "hq": false,
         "resources": {
             "emeralds": "9000",
-            "ore": "0",
-            "crops": "3600",
+            "ore": "3600",
+            "crops": "0",
             "fish": "0",
             "wood": "0"
         },
@@ -2940,9 +2939,9 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "3600",
+            "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -2967,9 +2966,9 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "3600",
+            "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -3363,7 +3362,8 @@
             "wood": " 35/500"
         },
         "Trading Routes": [
-            "Jungle Mid"
+            "Jungle Mid",
+            "Dernel Jungle Mid"
         ]
     },
     "Dead Island South East": {
@@ -3374,8 +3374,8 @@
             "emeralds": "9000",
             "ore": "0",
             "crops": "0",
-            "fish": "3600",
-            "wood": "0"
+            "fish": "0",
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -4005,8 +4005,8 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "0",
-            "fish": "3600",
+            "crops": "3600",
+            "fish": "0",
             "wood": "0"
         },
         "stored": {
@@ -5051,8 +5051,8 @@
             "emeralds": "9000",
             "ore": "0",
             "crops": "0",
-            "fish": "0",
-            "wood": "3600"
+            "fish": "3600",
+            "wood": "0"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -5064,7 +5064,8 @@
         "Trading Routes": [
             "Jungle Mid",
             "Temple of Legends",
-            "City of Troms"
+            "City of Troms",
+            "Herb Cave"
         ]
     },
     "Great Bridge Jungle": {
@@ -5671,10 +5672,10 @@
         "hq": false,
         "resources": {
             "emeralds": "9000",
-            "ore": "3600",
+            "ore": "0",
             "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -5891,9 +5892,9 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "3600",
+            "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -6278,9 +6279,9 @@
         "hq": false,
         "resources": {
             "emeralds": "9000",
-            "ore": "0",
+            "ore": "3600",
             "crops": "0",
-            "fish": "3600",
+            "fish": "0",
             "wood": "0"
         },
         "stored": {
@@ -6418,9 +6419,9 @@
         "hq": false,
         "resources": {
             "emeralds": "9000",
-            "ore": "3600",
+            "ore": "0",
             "crops": "0",
-            "fish": "0",
+            "fish": "3600",
             "wood": "0"
         },
         "stored": {
@@ -6605,10 +6606,10 @@
         "hq": false,
         "resources": {
             "emeralds": "9000",
-            "ore": "3600",
+            "ore": "0",
             "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -6875,9 +6876,9 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "3600",
+            "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -7222,7 +7223,6 @@
         "Trading Routes": [
             "Avos Temple",
             "Volcano Lower",
-            "Corkus Countryside",
             "Pirate Town",
             "Corkus Outskirts"
         ]
@@ -7307,10 +7307,10 @@
         "hq": false,
         "resources": {
             "emeralds": "9000",
-            "ore": "3600",
+            "ore": "0",
             "crops": "0",
             "fish": "0",
-            "wood": "0"
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",
@@ -7655,15 +7655,15 @@
         ]
     },
     "Nesaak Village": {
-        "guild": "Wheres The Finish",
-        "prefix": "WFN",
+        "guild": "No owner",
+        "prefix": "None",
         "hq": false,
         "resources": {
             "emeralds": "18000",
             "ore": "0",
             "crops": "0",
-            "fish": "0",
-            "wood": "3600"
+            "fish": "3600",
+            "wood": "0"
         },
         "stored": {
             "emeralds": "700/10000",
@@ -7772,7 +7772,6 @@
             "wood": "0"
         },
         "Trading Routes": [
-            "Maltic Plains",
             "South Farmers Valley",
             "Maltic Coast"
         ]
@@ -8928,8 +8927,8 @@
             "emeralds": "9000",
             "ore": "0",
             "crops": "0",
-            "fish": "3600",
-            "wood": "0"
+            "fish": "0",
+            "wood": "3600"
         },
         "stored": {
             "emeralds": "350/10000",

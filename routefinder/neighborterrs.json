@@ -54,8 +54,7 @@
         "South Farmers Valley",
         "Maltic",
         "Emerald Trail",
-        "Ragni East Suburbs",
-        "North Farmers Valley"
+        "Ragni East Suburbs"
     ],
     "Path To Thanos": [
         "Thanos",
@@ -663,7 +662,6 @@
         "Corkus City",
         "Corkus Outskirts",
         "Corkus Mountain",
-        "Bloody Beach",
         "Avos Temple"
     ],
     "Canyon Path North Mid": [
@@ -702,7 +700,8 @@
     "Jungle Lake": [
         "City of Troms",
         "Jungle Mid",
-        "Temple of Legends"
+        "Temple of Legends",
+        "Herb Cave"
     ],
     "South Pigmen Ravines": [
         "City of Troms",
@@ -1159,7 +1158,8 @@
     ],
     "Dernel Jungle Mid": [
         "Dernel Jungle Upper",
-        "Dernel Jungle Lower"
+        "Dernel Jungle Lower",
+        "Jungle Upper"
     ],
     "Dernel Jungle Upper": [
         "Dernel Jungle Mid"
@@ -1266,8 +1266,7 @@
     "North Farmers Valley": [
         "South Farmers Valley",
         "Plains Coast",
-        "Maltic Coast",
-        "Maltic Plains"
+        "Maltic Coast"
     ],
     "Katoa Ranch": [
         "Ragni North Entrance",
@@ -1503,8 +1502,7 @@
     ],
     "Avos Temple": [
         "Avos Workshop",
-        "Bloody Beach",
-        "Corkus Countryside"
+        "Bloody Beach"
     ],
     "Crater Descent": [
         "Molten Heights Portal",
@@ -1786,7 +1784,8 @@
         "Light Forest Canyon"
     ],
     "Jungle Upper": [
-        "Jungle Mid"
+        "Jungle Mid",
+        "Dernel Jungle Mid"
     ],
     "Jungle Mid": [
         "Jungle Upper",
@@ -2005,7 +2004,8 @@
         "Jungle Mid"
     ],
     "Herb Cave": [
-        "Great Bridge Jungle"
+        "Great Bridge Jungle",
+        "Jungle Lake"
     ],
     "Canyon Path North West": [
         "Canyon Entrance Waterfall",
