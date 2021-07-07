@@ -294,6 +294,7 @@ async function run() {
       Object.keys(guildTerritories).forEach(territory => {
         let guild = guildTerritories[territory]["guild"];
         // console.log(guild)
+        if (guild == null) guild = "None";
         if (!(Object.keys(colors).includes(guild))) {
           colors[guild] = stringToColor(guild)
         }
@@ -389,6 +390,7 @@ async function run() {
     let prefix = ""
     try {
       prefix = guilds[guild] ? guilds[guild]["prefix"] : guild
+      if (prefix == null) prefix = "None"
     } catch (e) {
       console.error(e)
     }
@@ -546,6 +548,7 @@ async function run() {
 			</div>`);
       } catch (e) {
         console.error(e)
+        if (guild == null) guild = "None";
         rectangles[territory].setPopupContent(`<div id="info-popup">
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
