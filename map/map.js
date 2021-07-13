@@ -154,21 +154,18 @@ async function run() {
   checkboxTerritory.oninput = function () {
     territoryToggle = this.checked;
 
-    checkboxNames.checked = this.checked;
-    checkboxGuilds.checked = this.checked;
-    territoryNames = this.checked;
-    guildNames = this.checked;
-
     render();
   }
 
   checkboxNames.oninput = function () {
     territoryNames = this.checked
+    update(true);
     render();
   }
 
   checkboxGuilds.oninput = function () {
     guildNames = this.checked
+    update(true);
     render();
   }
 
@@ -233,7 +230,7 @@ async function run() {
 
   //calling wynn API every refresh seconds to check territory ownership
   let updateTimout = null
-  function update() {
+  function update(hardUpdate = false) {
     counter = refresh;
     fetch("https://api.wynncraft.com/public_api.php?action=territoryList")
       .then(response => response.json())
@@ -247,7 +244,7 @@ async function run() {
             territoryCount = []
           }
           for (let territory of Object.keys(rectangles)) {
-            setContent(guildTerritories[territory]["guild"], territory);
+            setContent(guildTerritories[territory]["guild"], territory, hardUpdate);
             territoryCount[guildTerritories[territory]["guild"]] ? territoryCount[guildTerritories[territory]["guild"]]++ : territoryCount[guildTerritories[territory]["guild"]] = 1;
           }
         } catch (e) {
@@ -385,7 +382,7 @@ async function run() {
   })
 
   //sets tooltip and popup content
-  function setContent(guild, territory) {
+  function setContent(guild, territory, hardUpdate = false) {
     let tooltip = "<div>"
     let prefix = ""
     try {
@@ -394,8 +391,8 @@ async function run() {
     } catch (e) {
       console.error(e)
     }
-    if (previousOwner[territory] != prefix) {
-      if (!initialLoad) {
+    if (previousOwner[territory] != prefix || hardUpdate) {
+      if (!initialLoad && !hardUpdate) {
         console.log(new Date().toLocaleTimeString() + " " + territory + ": " + previousOwner[territory] + " -> " + prefix)
       }
       previousOwner[territory] = prefix
@@ -451,9 +448,11 @@ async function run() {
           pane: "markerPane"
         })
         cdRectangle.bindPopup("Loading...")
+
         cdRectangle.setStyle({
           color: "#FF0000",
         })
+
         cdRectangle.on("popupopen", function (ev) {
           setPopupContent(guild, territory)
         });
@@ -464,9 +463,17 @@ async function run() {
         console.log("ADDING " + territory)
       } else {
         const colorCDModifier = cooldownTimer / 255;
-        cdRectangles[territory].setStyle({
-          color: `rgb(${(cooldownTimer / colorCDModifier) - (Math.round(diff / (colorCDModifier * 1000)) % 255)}, ${(Math.round(diff / (colorCDModifier * 1000)) % 255)}, 0)`,
-        })
+        if (territoryToggle) {
+
+          cdRectangles[territory].setStyle({
+            color: `rgb(${(cooldownTimer / colorCDModifier) - (Math.round(diff / (colorCDModifier * 1000)) % 255)}, ${(Math.round(diff / (colorCDModifier * 1000)) % 255)}, 0)`,
+          })
+        } else {
+          cdRectangles[territory].setStyle({
+            color: "rgba(0,0,0,0)",
+          })
+
+        }
       }
     } else if (((diff / 1000) > cooldownTimer) && Object.keys(cdRectangles).includes(territory)) {
       console.log("REMOVING " + territory)
