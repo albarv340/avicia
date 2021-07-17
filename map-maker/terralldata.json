@@ -3210,8 +3210,8 @@
         "resources": {
             "emeralds": "9000",
             "ore": "0",
-            "crops": "0",
-            "fish": "3600",
+            "crops": "3600",
+            "fish": "0",
             "wood": "0"
         },
         "stored": {
