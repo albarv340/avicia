@@ -45,8 +45,6 @@ function updateChangeLeaderboard(data) {
     let xpDifferences = {}
     for (player of data.members) {
         try {
-            console.log(previousUpdateTime)
-            console.log(new Date() - previousUpdateTime)
             prevValue = previousObj.members.filter(p => p.name == player.name)
             if (prevValue.length == 1) {
                 if (previousUpdateTime == null) {
@@ -55,7 +53,6 @@ function updateChangeLeaderboard(data) {
                     // Compensate for if it takes longer or shorter than 60 seconds between updates, so it doesn't show misleadingly high numbers
                     xpDifferences[player.name] = Math.round((player.contributed - prevValue[0].contributed) / (((new Date() - previousUpdateTime) / 1000) / refreshRate))
                 }
-                console.log(player.contributed - prevValue[0].contributed, Math.round((player.contributed - prevValue[0].contributed) / (((new Date() - previousUpdateTime) / 1000) / refreshRate)))
             }
         } catch (e) {
             xpDifferences[player.name] = 0
