@@ -1,4 +1,6 @@
 const guildName = window.location.search.split("=").pop().replace(/%20/g, ' ');
+const refreshRate = 60;
+let previousUpdateTime = null;
 previousObj = {}
 requestTimer = null;
 
@@ -43,16 +45,23 @@ function updateChangeLeaderboard(data) {
     let xpDifferences = {}
     for (player of data.members) {
         try {
-
+            console.log(previousUpdateTime)
+            console.log(new Date() - previousUpdateTime)
             prevValue = previousObj.members.filter(p => p.name == player.name)
-            console.log(prevValue)
             if (prevValue.length == 1) {
-                xpDifferences[player.name] = player.contributed - prevValue[0].contributed
+                if (previousUpdateTime == null) {
+                    xpDifferences[player.name] = player.contributed - prevValue[0].contributed
+                } else {
+                    // Compensate for if it takes longer or shorter than 60 seconds between updates, so it doesn't show misleadingly high numbers
+                    xpDifferences[player.name] = Math.round((player.contributed - prevValue[0].contributed) / (((new Date() - previousUpdateTime) / 1000) / refreshRate))
+                }
+                console.log(player.contributed - prevValue[0].contributed, Math.round((player.contributed - prevValue[0].contributed) / (((new Date() - previousUpdateTime) / 1000) / refreshRate)))
             }
         } catch (e) {
             xpDifferences[player.name] = 0
         }
     }
+    previousUpdateTime = new Date();
     let html = ""
     placement = 1;
     // console.log(xpDifferences)
@@ -93,7 +102,7 @@ document.getElementById("guild-change").onsubmit = e => {
 function init() {
     document.getElementById("guild-name").value = guildName
     getGuildData()
-    startRequestTimer(60 * 1000)
+    startRequestTimer(refreshRate * 1000)
 }
 
 function startRequestTimer(milliseconds) {
@@ -101,7 +110,7 @@ function startRequestTimer(milliseconds) {
     timer = milliseconds / 1000
     requestTimer = setInterval(() => {
         timer -= 1;
-        timerHTML.innerHTML = `${Math.floor(timer / 60)}m ${timer % 60}s`
+        timerHTML.innerHTML = `${Math.floor(timer / refreshRate)}m ${timer % refreshRate}s`
         if (timer == 0) {
             getGuildData()
             clearInterval(requestTimer)
