@@ -6,33 +6,43 @@ requestTimer = null;
 
 async function getGuildData() {
     document.getElementById("title").innerText = "Wynncraft Guild XP - " + guildName
-    let url = 'https://api.wynncraft.com/public_api.php?action=guildStats&command=' + guildName;
+    let res = {};
+    for (guild of guildName.split(",").map(g => g.trim())) {
+        let url = 'https://api.wynncraft.com/public_api.php?action=guildStats&command=' + guild;
+        let obj = null;
 
-    let obj = null;
+        try {
+            obj = await (await fetch(url)).json();
+            res[obj.prefix] = obj
+        } catch (e) {
+            console.log('error');
+        }
+        if (obj.error) {
+            document.getElementById("title").innerHTML = "Invalid guild name. Example: <a href='?guild=Avicia'>Avicia</a>"
+        }
+    }
+    updateChangeLeaderboard(res)
+    previousObj = res
+    updateTotalLeaderboard(res)
 
-    try {
-        obj = await (await fetch(url)).json();
-    } catch (e) {
-        console.log('error');
-    }
-    if (obj.error) {
-        document.getElementById("title").innerHTML = "Invalid guild name. Example: <a href='?guild=Avicia'>Avicia</a>"
-    } else {
-        updateChangeLeaderboard(obj)
-        previousObj = obj
-        updateTotalLeaderboard(obj)
-    }
 }
 
 function updateTotalLeaderboard(data) {
     let html = ""
     placement = 1;
     // console.log(data)
-    for (player of data.members.sort((a, b) => b.contributed - a.contributed)) {
+    let members = [];
+    for (guild in data) {
+        for (player of data[guild].members) {
+            player.guild = guild
+            members.push(player)
+        }
+    }
+    for (player of members.sort((a, b) => b.contributed - a.contributed)) {
         // console.log(guild.level, estimateXpRequirement(guild.level))
         html += `
                     <tr><th scope="row">#${placement}</th>
-                    <td><a href="//wynndata.tk/stats/player/${player.name}" target="_blank">${player.name}</a> </td>
+                    <td><a href="//wynncraft.com/stats/player/${player.name}" target="_blank">${player.name}</a> [${player.guild}]</td>
                     <td>${makeNumberReadable(player.contributed)} XP</td>
                     </tr>`
         placement++;
@@ -43,19 +53,23 @@ function updateTotalLeaderboard(data) {
 
 function updateChangeLeaderboard(data) {
     let xpDifferences = {}
-    for (player of data.members) {
-        try {
-            prevValue = previousObj.members.filter(p => p.name == player.name)
-            if (prevValue.length == 1) {
-                if (previousUpdateTime == null) {
-                    xpDifferences[player.name] = player.contributed - prevValue[0].contributed
-                } else {
-                    // Compensate for if it takes longer or shorter than 60 seconds between updates, so it doesn't show misleadingly high numbers
-                    xpDifferences[player.name] = Math.round((player.contributed - prevValue[0].contributed) / (((new Date() - previousUpdateTime) / 1000) / refreshRate))
+    let guildTagForPlayer = {}
+    for (guild in data) {
+        for (player of data[guild].members) {
+            try {
+                guildTagForPlayer[player.name] = guild
+                prevValue = previousObj[guild].members.filter(p => p.name == player.name)
+                if (prevValue.length == 1) {
+                    if (previousUpdateTime == null) {
+                        xpDifferences[player.name] = player.contributed - prevValue[0].contributed
+                    } else {
+                        // Compensate for if it takes longer or shorter than 60 seconds between updates, so it doesn't show misleadingly high numbers
+                        xpDifferences[player.name] = Math.round((player.contributed - prevValue[0].contributed) / (((new Date() - previousUpdateTime) / 1000) / refreshRate))
+                    }
                 }
+            } catch (e) {
+                xpDifferences[player.name] = 0
             }
-        } catch (e) {
-            xpDifferences[player.name] = 0
         }
     }
     previousUpdateTime = new Date();
@@ -65,7 +79,7 @@ function updateChangeLeaderboard(data) {
     for (username in Object.fromEntries(Object.entries(xpDifferences).sort(([, a], [, b]) => b - a))) {
         html += `
         <tr><th scope="row">#${placement}</th>
-        <td><a href="//wynndata.tk/stats/player/${username}" target="_blank">${username}</a> </td>
+        <td><a href="//wynndata.tk/stats/player/${username}" target="_blank">${username}</a> [${guildTagForPlayer[username]}]</td>
         <td>${makeNumberReadable(xpDifferences[username])} XP</td>
         </tr>`
         placement++;
