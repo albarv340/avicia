@@ -76,7 +76,8 @@ function updateChangeLeaderboard(data) {
     let html = ""
     placement = 1;
     // console.log(xpDifferences)
-    for (username in Object.fromEntries(Object.entries(xpDifferences).sort(([, a], [, b]) => b - a))) {
+    let sortedXpDiff = Object.keys(xpDifferences).sort(function (a, b) { return xpDifferences[b] - xpDifferences[a] })
+    for (username of sortedXpDiff) {
         html += `
         <tr><th scope="row">#${placement}</th>
         <td><a href="//wynndata.tk/stats/player/${username}" target="_blank">${username}</a> [${guildTagForPlayer[username]}]</td>
