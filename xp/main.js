@@ -26,7 +26,7 @@ const weeklyGoal = 30000000000;
 const hundredGoal = 136152150806;
 
 async function getDataFromSheet() {
-    let url = 'https://spreadsheets.google.com/feeds/list/1IEhwvAdHA0aApOCVkJcIHODgiN_jO_z2xjw36Jr1V28/od6/public/values?alt=json';
+    let url = 'https://script.google.com/macros/s/AKfycbwVzLLsw1rawpxNr4HAqP1C5FLvOJYG7LT7kMo2ghXErR44uBrEvzSBEeUejT4pBhVqVw/exec';
 
     let obj = null;
 
@@ -35,7 +35,7 @@ async function getDataFromSheet() {
     } catch (e) {
         console.log('error');
     }
-    guildLevel = getColumnValue(obj.feed.entry[0], "guildlevel")
+    guildLevel = getColumnValue(obj, 0, "guildlevel")
     let readableXpTotal = {}
     let readableXpWeekly = {}
     let readableXpDaily = {}
@@ -43,14 +43,14 @@ async function getDataFromSheet() {
     let readableDailyWins = {}
     let readableWeeklyTime = {}
     let readableXpScore = {}
-    for (player of obj.feed.entry) {
-        readableXpTotal[getColumnValue(player, "name")] = getColumnValue(player, "xptotal")
-        readableXpWeekly[getColumnValue(player, "name")] = getColumnValue(player, "xpweekly")
-        readableXpDaily[getColumnValue(player, "name")] = getColumnValue(player, "xpdaily")
-        readableMinuteXp[getColumnValue(player, "name")] = getColumnValue(player, "xpmin")
-        readableDailyWins[getColumnValue(player, "name")] = getColumnValue(player, "dailywins")
-        readableWeeklyTime[getColumnValue(player, "name")] = getColumnValue(player, "weeklytime")
-        readableXpScore[getColumnValue(player, "name")] = getColumnValue(player, "xpscoretotal")
+    for (player in obj.name) {
+        readableXpTotal[getColumnValue(obj, player, "name")] = getColumnValue(obj, player, "xptotal")
+        readableXpWeekly[getColumnValue(obj, player, "name")] = getColumnValue(obj, player, "xpweekly")
+        readableXpDaily[getColumnValue(obj, player, "name")] = getColumnValue(obj, player, "xpdaily")
+        readableMinuteXp[getColumnValue(obj, player, "name")] = getColumnValue(obj, player, "xpmin")
+        readableDailyWins[getColumnValue(obj, player, "name")] = getColumnValue(obj, player, "dailywins")
+        readableWeeklyTime[getColumnValue(obj, player, "name")] = getColumnValue(obj, player, "weeklytime")
+        readableXpScore[getColumnValue(obj, player, "name")] = getColumnValue(obj, player, "xpscoretotal")
     }
     xpTotalData = Object.fromEntries(Object.entries(readableXpTotal).sort(([, a], [, b]) => b - a));
     xpWeeklyData = Object.fromEntries(Object.entries(readableXpWeekly).sort(([, a], [, b]) => b - a));
@@ -59,18 +59,18 @@ async function getDataFromSheet() {
     DailyWinsData = Object.fromEntries(Object.entries(readableDailyWins).sort(([, a], [, b]) => b - a));
     weeklyTimeData = Object.fromEntries(Object.entries(readableWeeklyTime).sort(([, a], [, b]) => b - a));
     xpScoreData = Object.fromEntries(Object.entries(readableXpScore).sort(([, a], [, b]) => b - a));
-    sumOfXpTotal = getColumnValue(obj.feed.entry[0], "sumoftotal")
-    sumOfXpWeekly = getColumnValue(obj.feed.entry[0], "sumofweekly")
-    sumOfXpDaily = getColumnValue(obj.feed.entry[0], "sumofdaily")
-    sumOfMinuteXp = getColumnValue(obj.feed.entry[0], "sumoflastminute")
-    sumOfDailyWins = getColumnValue(obj.feed.entry[0], "sumofdailywins")
-    sumOfWeeklyTime = getColumnValue(obj.feed.entry[0], "sumofweeklytime")
-    sumOfXpScore = getColumnValue(obj.feed.entry[0], "sumofxpscore")
+    sumOfXpTotal = getColumnValue(obj, 0, "sumoftotal")
+    sumOfXpWeekly = getColumnValue(obj, 0, "sumofweekly")
+    sumOfXpDaily = getColumnValue(obj, 0, "sumofdaily")
+    sumOfMinuteXp = getColumnValue(obj, 0, "sumoflastminute")
+    sumOfDailyWins = getColumnValue(obj, 0, "sumofdailywins")
+    sumOfWeeklyTime = getColumnValue(obj, 0, "sumofweeklytime")
+    sumOfXpScore = getColumnValue(obj, 0, "sumofxpscore")
     updateLeaderboard()
 }
 
-function getColumnValue(row, col) {
-    return row["gsx$" + col].$t
+function getColumnValue(data, row, col) {
+    return data[col][row]
 }
 tick()
 
