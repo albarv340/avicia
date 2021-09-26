@@ -30,6 +30,10 @@ function getStatEditingHtml(itemName) {
             minRoll = Math.round(statValue * 1.3);
             maxRoll = Math.round(statValue * .7);
         }
+        if (statValue == 1) {
+            minRoll = 1;
+            maxRoll = 1;
+        }
         html += `<div class="itemStat">${stat}: ${minRoll} - ${maxRoll} <input type="range" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}Range" name="${stat}" onchange="updateTextField('${stat}')"></input>`;
         html += `<input type="number" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}TextField" onchange="updateRange('${stat}')"></input><br></div>`;
         goodItemData[itemName][stat] = {}
