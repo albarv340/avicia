@@ -9,6 +9,7 @@ fetch("./itemList.json").then(response =>
     .then(json => {
         allItemData = json
         setUpNewItem("Discoverer")
+        autocomplete(document.getElementById("ItemName"), json.items.map(e => e.displayName));
     })
 
 function getEncodedCharacterForNumber(number) {
@@ -29,12 +30,13 @@ function getStatEditingHtml(itemName) {
             minRoll = Math.round(statValue * 1.3);
             maxRoll = Math.round(statValue * .7);
         }
-        html += `${stat}: ${minRoll} - ${maxRoll} <input type="${document.getElementById('inputTypes').value}" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}" name="${stat}"></input><br>`;
+        html += `<div class="itemStat">${stat}: ${minRoll} - ${maxRoll} <input type="range" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}Range" name="${stat}" onchange="updateTextField('${stat}')"></input>`;
+        html += `<input type="number" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}TextField" onchange="updateRange('${stat}')"></input><br></div>`;
         goodItemData[itemName][stat] = {}
         goodItemData[itemName][stat].min = minRoll;
         goodItemData[itemName][stat].max = maxRoll;
     }
-    html += `Rerolls: <input type="number" min="0" value=6 id="rerolls">`
+    html += `Rerolls: <input type="number" min="0" value=6 id="rerolls"><br><br>`
     html += `<input type="submit"/></form>`
     return html;
 }
@@ -43,27 +45,19 @@ function setUpNewItem(itemName) {
     document.getElementById('editor').innerHTML = getStatEditingHtml(itemName)
     document.getElementById("statsForm").addEventListener("submit", e => {
         e.preventDefault();
-        let itemName = document.getElementById("editor").children[0].innerHTML;
         let resultText = "󵿰" + itemName + "󵿲"; // Start + Name + Separator
         let data = new FormData(document.getElementById("statsForm"));
         for (const [name, value] of data) {
             let wynntilsRepresentation = (value - goodItemData[itemName][name].min) * 4;
-            if (goodItemData[itemName][name].max - goodItemData[itemName][name].min > 100) {
-                if (value < 0) {
-                    wynntilsRepresentation = Math.round(((value - goodItemData[itemName][name].min) / (goodItemData[itemName][name].max - goodItemData[itemName][name].min)) * 100) * -2.4 + 400
-                } else {
-                    wynntilsRepresentation = Math.round(((value - goodItemData[itemName][name].min) / (goodItemData[itemName][name].max - goodItemData[itemName][name].min)) * 100) * 4
-                }
-                if (wynntilsRepresentation % 1 != 0) {
-                    alert("invalid value of " + name)
-                }
+            item = allItemData['items'].filter(e => e.displayName == itemName)[0]
+            if (Math.abs(item.statuses[name].baseValue) > 100) {
+                wynntilsRepresentation = Math.round((value * 100.0 / item.statuses[name].baseValue) - 30) * 4; // Calculates the % roll
             }
             resultText += getEncodedCharacterForNumber(wynntilsRepresentation);
         }
         resultText += "󵿲󵀀" + getEncodedCharacterForNumber(document.getElementById('rerolls').value) + "󵿱"; // Rerolls and powders
-        resultElement.innerHTML = resultText;
         copyToClipboard(resultText)
-        alert("copied " + resultText + " to clipboard")
+        resultElement.innerHTML = `Copied <code style='color:lightblue;padding:3px;cursor:pointer' onclick="copyToClipboard('${resultText}')"> ${resultText} </code> to clipboard`;
     })
 }
 
@@ -74,6 +68,14 @@ function copyToClipboard(str) {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+}
+
+function updateRange(range) {
+    document.getElementById(range + 'Range').value = document.getElementById(range + 'TextField').value
+}
+
+function updateTextField(textField) {
+    document.getElementById(textField + 'TextField').value = document.getElementById(textField + 'Range').value
 }
 
 document.getElementById('changeItemButton').addEventListener('click', e => {
