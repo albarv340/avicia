@@ -1,6 +1,6 @@
 const resultElement = document.getElementById('result');
 let goodItemData = {};
-
+let currentItem = "";
 
 
 let allItemData = {}
@@ -20,7 +20,7 @@ function getEncodedCharacterForNumber(number) {
 function getStatEditingHtml(itemName) {
     let item = allItemData['items'].filter(e => e.displayName == itemName)[0]
     goodItemData[itemName] = {}
-    let html = `<h3>${itemName}</h3><form id="statsForm">`;
+    let html = `<h3>${itemName} <span id="totalPercent"></span></h3><form id="statsForm">`;
     let orderedStats = Object.keys(item.statuses).sort((a, b) => (allItemData['identificationOrder']['order'][a] || -1) - (allItemData['identificationOrder']['order'][b] || -1)).filter(e => !item.statuses[e].isFixed)
     for (stat of orderedStats) {
         let statValue = item.statuses[stat].baseValue;
@@ -35,7 +35,7 @@ function getStatEditingHtml(itemName) {
             maxRoll = 1;
         }
         html += `<div class="itemStat">${stat}: ${minRoll} - ${maxRoll} <input type="range" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}Range" name="${stat}" onchange="updateTextField('${stat}')"></input>`;
-        html += `<input type="number" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}TextField" onchange="updateRange('${stat}')"></input><br></div>`;
+        html += `<input type="number" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}TextField" onchange="updateRange('${stat}')"></input><div id="${stat}Percentage"></div><br></div>`;
         goodItemData[itemName][stat] = {}
         goodItemData[itemName][stat].min = minRoll;
         goodItemData[itemName][stat].max = maxRoll;
@@ -46,6 +46,7 @@ function getStatEditingHtml(itemName) {
 }
 
 function setUpNewItem(itemName) {
+    currentItem = itemName;
     document.getElementById('editor').innerHTML = getStatEditingHtml(itemName)
     document.getElementById("statsForm").addEventListener("submit", e => {
         e.preventDefault();
@@ -63,6 +64,28 @@ function setUpNewItem(itemName) {
         copyToClipboard(resultText)
         resultElement.innerHTML = `Copied <code style='color:lightblue;padding:3px;cursor:pointer' onclick="copyToClipboard('${resultText}')"> ${resultText} </code> to clipboard`;
     })
+    updatePercentages();
+}
+
+function updatePercentages() {
+    let data = new FormData(document.getElementById("statsForm"));
+    let percentageSum = 0;
+    let amountOfStats = 0;
+    for (const [name, value] of data) {
+        let item = allItemData['items'].filter(e => e.displayName == currentItem)[0]
+        let rollLimits = goodItemData[currentItem][name];
+        let percentage = Math.floor((value - rollLimits.min) / (rollLimits.max - rollLimits.min) * 100); // Calculates the % roll
+        if (allItemData['identificationOrder']['inverted'].includes(name)) {
+            percentage = 100 - percentage;
+        }
+        if (!isNaN(percentage)) {
+            document.getElementById(name + "Percentage").innerHTML = percentage + "%";
+            percentageSum += percentage;
+            amountOfStats++;
+        }
+        console.log(percentage)
+    }
+    document.getElementById("totalPercent").innerHTML = Math.floor(percentageSum / amountOfStats) + "%"
 }
 
 function copyToClipboard(str) {
@@ -76,10 +99,12 @@ function copyToClipboard(str) {
 
 function updateRange(range) {
     document.getElementById(range + 'Range').value = document.getElementById(range + 'TextField').value
+    updatePercentages();
 }
 
 function updateTextField(textField) {
     document.getElementById(textField + 'TextField').value = document.getElementById(textField + 'Range').value
+    updatePercentages()
 }
 
 document.getElementById('changeItemButton').addEventListener('click', e => {
