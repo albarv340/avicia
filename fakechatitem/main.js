@@ -83,7 +83,6 @@ function updatePercentages() {
             percentageSum += percentage;
             amountOfStats++;
         }
-        console.log(percentage)
     }
     document.getElementById("totalPercent").innerHTML = Math.floor(percentageSum / amountOfStats) + "%"
 }
