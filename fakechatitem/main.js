@@ -35,7 +35,7 @@ function getStatEditingHtml(itemName) {
             maxRoll = 1;
         }
         html += `<div class="itemStat">${stat}: ${minRoll} - ${maxRoll} <input type="range" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}Range" name="${stat}" onchange="updateTextField('${stat}')"></input>`;
-        html += `<input type="number" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}TextField" onchange="updateRange('${stat}')"></input><div id="${stat}Percentage"></div><br></div>`;
+        html += `<input type="number" min="${minRoll}" max="${maxRoll}" value="${statValue}" id="${stat}TextField" onchange="updateRange('${stat}')"></input><div id="${stat}Percentage"></div>uncap<input onchange="uncap('${stat}')" id="${stat}Uncap" type="checkbox"></input><br></div>`;
         goodItemData[itemName][stat] = {}
         goodItemData[itemName][stat].min = minRoll;
         goodItemData[itemName][stat].max = maxRoll;
@@ -104,6 +104,21 @@ function updateRange(range) {
 function updateTextField(textField) {
     document.getElementById(textField + 'TextField').value = document.getElementById(textField + 'Range').value
     updatePercentages()
+}
+
+function uncap(id) {
+    let range = document.getElementById(id + "Range");
+    let textField = document.getElementById(id + "TextField");
+    let uncapButton = document.getElementById(id + "Uncap");
+    const uncapIncrease = 20000;
+    if (uncapButton.checked) {
+        range.max = range.max - -uncapIncrease;
+        textField.max = textField.max - -uncapIncrease;
+    } else {
+        range.max = range.max - uncapIncrease;
+        textField.max = textField.max - uncapIncrease;
+    }
+
 }
 
 document.getElementById('changeItemButton').addEventListener('click', e => {
