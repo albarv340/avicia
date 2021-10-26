@@ -297,7 +297,7 @@ async function run() {
           colors[guild] = stringToColor(guild)
         }
         if (!(Object.keys(guilds).includes(guild))) {
-          fetch(`https://api-legacy.wynncraft.com/public_api.php?action=guildStats&command=${guild}`)
+          fetch(`https://api-legacy.wynncraft.com/public_api.php?action=guildStats&command=${guild.replaceAll(/ /g, "%20")}`)
             .then(response => response.json())
             .then(json => {
               guilds[guild] = json;
@@ -388,7 +388,9 @@ async function run() {
     let prefix = ""
     try {
       prefix = guilds[guild] ? guilds[guild]["prefix"] : guild
-      if (prefix == null) prefix = "None"
+      if (prefix == null) {
+        prefix = "None"
+      }
     } catch (e) {
       console.error(e)
     }
