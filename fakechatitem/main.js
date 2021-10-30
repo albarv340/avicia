@@ -4,7 +4,7 @@ let currentItem = "";
 
 
 let allItemData = {}
-fetch("./itemList.json").then(response =>
+fetch("./itemList.json").then(response => // https://athena.wynntils.com/cache/get/itemList
     response.json())
     .then(json => {
         allItemData = json
