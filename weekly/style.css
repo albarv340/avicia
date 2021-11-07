@@ -38,3 +38,10 @@ img {
     align-items: center;
     height: 100px;
 }
+
+.table-header {
+    position: sticky !important;
+    top: 0;
+    outline: 1px solid white;
+    outline-offset: -1px;
+}

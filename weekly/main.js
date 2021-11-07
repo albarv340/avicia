@@ -48,7 +48,7 @@ ${player[stat] >= threshold ? nf.format(perTicketAfterThreshold - ((player[stat]
 
 function tableHeader(orderBy) {
     const headers = ['Player', 'Tickets', 'ΔXP', 'ΔChests', 'ΔMobs', 'ΔRaids', 'ΔWars']
-    return `<tr><th>#</th>${headers.map((e) => { return `<td class="header" onclick="updateLeaderboard('${e}')">${e + (orderBy == e ? ' ↓' : '')}</td>!` }).toString().replaceAll(/!,|!|\[|\]/g, '')}</tr>`;
+    return `<thead class="table-header"><th>#</th>${headers.map((e) => { return `<td class="header" onclick="updateLeaderboard('${e}')">${e + (orderBy == e ? ' ↓' : '')}</td>!` }).toString().replaceAll(/!,|!|\[|\]/g, '')}</thead>`;
     // The elaborate map function turns the array into an array of html elements then turns it into a string and replaces the placeholder character ! and also the commas and the square brackets that get added between every element of the list and at the start and end, so that the html code doesn't have a bunch of extra commas in it
 }
 
