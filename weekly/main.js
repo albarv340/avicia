@@ -60,7 +60,6 @@ function updateLeaderboard(orderBy) {
     for (const player in leaderboard) {
         html += tableRow(allData[leaderboard[player]], player - - 1);
     }
-    console.log(html)
     table.innerHTML = html;
 }
 getAllData()
