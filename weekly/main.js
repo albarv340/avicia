@@ -41,8 +41,8 @@ function tdTitle(stat, player) {
     const perTicketAfterThreshold = scoringSystem[stat]['perTicketAfterThreshold'];
     return `
 ${nf.format(player[stat])} / ${nf.format(threshold)} ${stat}
-${player[stat] > threshold ? Math.floor((threshold / perTicket + (player[stat] - threshold) / perTicketAfterThreshold)) : Math.floor(player[stat] / perTicket)} Earned tickets
-${player[stat] > threshold ? nf.format(perTicketAfterThreshold - ((player[stat] - threshold) % perTicketAfterThreshold)) : nf.format(perTicket - (player[stat] % perTicket))} ${stat} Until next ticket
+${player[stat] >= threshold ? Math.floor((threshold / perTicket + (player[stat] - threshold) / perTicketAfterThreshold)) : Math.floor(player[stat] / perTicket)} Earned tickets
+${player[stat] >= threshold ? nf.format(perTicketAfterThreshold - ((player[stat] - threshold) % perTicketAfterThreshold)) : nf.format(perTicket - (player[stat] % perTicket))} ${stat} Until next ticket
 `;
 }
 
