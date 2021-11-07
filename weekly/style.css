@@ -1,0 +1,40 @@
+body {
+    background-color: #1c1c1c;
+    color: white;
+    font-size: 1vw !important;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.player-face {
+    height: 25px !important;
+}
+
+.header {
+    cursor: pointer;
+}
+
+.position1 {
+    outline: 2px solid gold;
+    outline-offset: -2px;
+}
+
+.position2 {
+    outline: 2px solid silver;
+    outline-offset: -2px;
+}
+
+.position3 {
+    outline: 2px solid #995a1c;
+    outline-offset: -2px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
