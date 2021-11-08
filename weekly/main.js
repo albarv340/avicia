@@ -1,5 +1,6 @@
 const nf = Intl.NumberFormat();
 
+let initialLoad = true;
 let allData = {};
 const scoringSystem = {
     'ΔXP': { 'threshold': 1000000000, 'perTicket': 50000000, 'perTicketAfterThreshold': 250000000 },
@@ -60,11 +61,13 @@ function updateLeaderboard(orderBy) {
     for (const player in leaderboard) {
         html += tableRow(allData[leaderboard[player]], player - - 1);
     }
-    document.getElementById("loading-div").remove();
+    if (initialLoad) {
+        document.getElementById("loading-div").remove();
+        initialLoad = false;
+    }
     table.innerHTML = html;
 }
 getAllData()
 setInterval(() => {
-    console.log('hi')
     getAllData();
 }, 60 * 1000);
