@@ -258,6 +258,10 @@ async function run() {
         }, 1000);
         clearTimeout(updateTimout)
         updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
+      }).catch(error => {
+        console.error(error)
+        clearTimeout(updateTimout)
+        updateTimout = setTimeout(_ => { console.log("Updating..."); update(); }, (refresh * 1000));
       })
   }
 
