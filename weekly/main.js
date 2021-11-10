@@ -29,7 +29,7 @@ function tableRow(player, position) {
     const stats = ['Tickets', 'ΔXP', 'ΔChests', 'ΔMobs', 'ΔRaids', 'ΔWars']
     return `<tr ${order == 'Tickets' ? `class="position${position}` : ''}">
     <th scope="row">#${position}</th>
-    <td><img class="player-face" src="https://www.mc-heads.net/avatar/${player.UUID}/100"> ${player.Name}</td>
+    <td><img class="player-face" src="https://visage.surgeplay.com/face/25/${player.UUID}"> ${player.Name}</td>
     ${stats.map((e) => { return `<td title="${tdTitle(e, player)}">${nf.format(player[e])}</td>!` }).toString().replaceAll(/!,|!|\[|\]/g, '')}
     </tr>`
     // The elaborate map function turns the array into an array of html elements then turns it into a string and replaces the placeholder character ! and also the commas and the square brackets that get added between every element of the list and at the start and end, so that the html code doesn't have a bunch of extra commas in it
