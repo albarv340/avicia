@@ -5,3 +5,42 @@
 .select2-search__field {
     filter: invert(0.8);
 }
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    height: 10%;
+}
+
+#map {
+    height: 90%;
+    background: #222222;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.guild-name, p a {
+    background: transparent !important;
+    border: transparent !important;
+    color: white !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    width: 75px;
+}
+
+.identifier {
+    font-weight: bold !important;
+    margin: 0 0 0 0 !important;
+}
+
+.leaflet-tooltip-left.guild-name::before {
+    border-left-color: transparent !important;
+}
+
+.leaflet-tooltip-right.guild-name::before {
+    border-right-color: transparent !important;
+}
