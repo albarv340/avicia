@@ -169,10 +169,10 @@ function doMap() {
                 map.removeLayer(line);
             }
             routeLine = [];
-            for (let i = 0; i < shortestRoute[goalTerritory].length - 1; i++) {
+            let route = [startTerritory].concat(shortestRoute[goalTerritory]);
+            for (let i = 0; i < route.length - 1; i++) {
                 // tradingRoutes[terr].color = "rgb(0,255,0)";
-                rectangles[shortestRoute[goalTerritory][i]]
-                let polyline = L.polyline([rectangles[shortestRoute[goalTerritory][i]].getCenter(), rectangles[shortestRoute[goalTerritory][i + 1]].getCenter()], { color: 'rgb(0,255,0)', weight: 7, pane: "overlayPane" })
+                let polyline = L.polyline([rectangles[route[i]].getCenter(), rectangles[route[i + 1]].getCenter()], { color: 'rgb(0,255,0)', weight: 7, pane: "overlayPane" })
                 routeLine.push(polyline)
                 polyline.addTo(map)
             }
