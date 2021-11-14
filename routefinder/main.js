@@ -46,7 +46,7 @@ function doMap() {
                     permanent: true,
                     direction: "center"
                 }).openTooltip();
-                rectangle.bindPopup(territory)
+                rectangle.bindPopup(`<div><p>${territory}</p><button class="btn btn-primary" onclick="setStartTerr('${territory}')">Set as start territory</button><br><button class="btn btn-warning" onclick="setEndTerr('${territory}')">Set as end territory</button></div>`)
 
                 rectangles[territory] = rectangle;
                 rectangle.addTo(map);
@@ -186,6 +186,7 @@ function doMap() {
 
     $("#start-terr").change(function () {
         startTerritory = $("#start-terr").val()
+        console.log(startTerritory)
     })
 
     $("#end-terr").change(function () {
@@ -199,4 +200,13 @@ function doMap() {
 }
 
 
+function setStartTerr(terr) {
+    $("#start-terr").val(terr);
+    $("#start-terr").trigger('change')
+}
+
+function setEndTerr(terr) {
+    $("#end-terr").val(terr);
+    $("#end-terr").trigger('change')
+}
 doMap();
