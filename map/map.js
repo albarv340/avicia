@@ -81,6 +81,7 @@ async function run() {
   let terrCds = [];
   let tradingRoutes = []
   let terrAllData = [];
+  let prefixes = localStorage.getItem("prefixes") ? JSON.parse(localStorage.getItem("prefixes")) : { "None": null };
   let prevZoom = 7;
   let refresh = 30;
   let initialLoad = true;
@@ -226,6 +227,14 @@ async function run() {
           }
         })
       update();
+      let storedColors = localStorage.getItem("colors")
+      if (storedColors == null) {
+        localStorage.setItem("colors", JSON.stringify(colors));
+      }
+      else {
+        colors = JSON.parse(storedColors);
+      }
+      getColors();
     });
 
 
@@ -243,6 +252,11 @@ async function run() {
           Object.assign(guildTerritories, territories);
           if (Object.keys(territoryCount).length > 0) {
             territoryCount = []
+          }
+          if (typeof (terrAllData["Ragni"]) == "undefined") {
+            setTimeout(() => {
+              update(true);
+            }, 200);
           }
           for (let territory of Object.keys(rectangles)) {
             setContent(guildTerritories[territory]["guild"], territory, hardUpdate);
@@ -267,7 +281,7 @@ async function run() {
 
 
   async function getGuilds(callback) {
-    let url = 'https://api.wynncraft.com/public_api.php?action=statsLeaderboard&type=guild&timeframe=d';
+    let url = 'https://api.wynncraft.com/public_api.php?action=statsLeaderboard&type=guild&timeframe=all';
     let obj = null;
 
     try {
@@ -279,12 +293,29 @@ async function run() {
     try {
       for (guild of obj.data) {
         res[guild.name] = guild
+        prefixes[guild.name] = guild.prefix;
       }
+      localStorage.setItem("prefixes", JSON.stringify(prefixes))
     } catch (e) {
       console.error(e)
     }
     callback(res)
     return res
+  }
+
+  async function getColors() {
+    let url = "https://script.googleusercontent.com/macros/echo?user_content_key=1pn89A-6PcqCU0XbVSbtW3K2Dvdg5w613yopuRKugfw7NEIWmxeeZ_3QBaoHZ-AYNtHv2yQvMA_72B9rSRzEKVZyMiywn0pkm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMl-QtOriP-1pEgb03w7kqa_7bKx4e_UGi8MDjl3NoU1XeM0XHfmOSfpysJqWYby8qKKesUYD1MSFb_502AQXJrnRfqXRCrqsA&lib=MrEX5pRl-n6fGBE1Px8iVhCMNGS6H3WL4";
+
+    let obj = null;
+
+    try {
+      obj = await (await fetch(url)).json();
+      colors = obj;
+    } catch (e) {
+      console.log('error');
+    }
+    localStorage.setItem("colors", JSON.stringify(colors));
+    update();
   }
 
   //rendering territories based on territory location, ownership, and settings. also updates leaderboard div
@@ -391,7 +422,8 @@ async function run() {
     let tooltip = "<div>"
     let prefix = ""
     try {
-      prefix = guilds[guild] ? guilds[guild]["prefix"] : guild
+      prefix = prefixes[guild] ? prefixes[guild] : guild
+
       if (prefix == null) {
         prefix = "None"
       }
@@ -412,19 +444,26 @@ async function run() {
 				0px 0px 4px ${colors[guild]},
 				0px 0px 5px ${colors[guild]},
         0px 0px 6px ${colors[guild]} !important;  ${initialLoad ? "visibility:hidden" : ""}'><div class='identifier'>` +
-          prefix + "</div>" + `
-        <div class="production-icon">
-        ${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
-        ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
-        ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
-        ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
-        ${terrAllData[territory]['resources'].wood > 3600 ? "🪓" : ""}
-        ${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
-        ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
-        ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
-        ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
-       </div>`;
+          prefix + "</div>";
+        if (typeof (terrAllData[territory]) != "undefined") {
+          tooltip +=
+            `<div class="production-icon">
+              ${terrAllData[territory]['resources'].emeralds > 9000 ? "💸" : ""}
+              ${terrAllData[territory]['resources'].ore > 3600 ? "⛏" : ""}
+              ${terrAllData[territory]['resources'].crops > 3600 ? "🌿" : ""}
+              ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
+              ${terrAllData[territory]['resources'].wood > 3600 ? "🪓" : ""}
+              ${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
+              ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
+              ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
+              ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
+              </div></div>`;
+        }
+        else {
+          tooltip += "</div>"
+        }
       } catch (e) {
+        console.log(terrAllData)
         console.error(e)
       }
 
@@ -467,7 +506,7 @@ async function run() {
 
         cdRectangles[territory] = cdRectangle;
         cdRectangle.addTo(map);
-        console.log("ADDING " + territory)
+        console.log("ADDING " + territory + " to cooldowns")
       } else {
         const colorCDModifier = cooldownTimer / 255;
         if (territoryToggle) {
