@@ -189,7 +189,7 @@ function changecolor() {
                 let guild = Territories[territory];
                 if (guild === select.value) {
                     rectangles[territory].unbindTooltip();
-                    rectangles[territory].bindTooltip('<span class="territoryGuildName" style="color: ' + Guilds[i].mapcolor + '">' + Guilds[i].name + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
+                    rectangles[territory].bindTooltip('<span class="territoryGuildName"' + getToolTipStyle(Guilds[i].mapcolor) + '><span class="identifier">' + Guilds[i].name + "</span>" + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
                     rectangles[territory].setStyle({
                         color: Guilds[i].mapcolor,
                     });
@@ -214,7 +214,7 @@ function removeguild() {
         let guild = Territories[territory];
         if (guild === select.value) {
             rectangles[territory].unbindTooltip();
-            rectangles[territory].bindTooltip('<span class="territoryGuildName" style="color: #FFFFFF">FFA' + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
+            rectangles[territory].bindTooltip('<span class="territoryGuildName" ' + getToolTipStyle("#FFFFFF") + '><span class="identifier">FFA</span>' + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
             rectangles[territory].setStyle({
                 color: 'rgba(255,255,255,1)'
             });
@@ -311,7 +311,7 @@ function run() {
             Object.values(selectedTerritory).forEach(territory => {
                 Territories[territory] = "-";
                 rectangles[territory].unbindTooltip();
-                rectangles[territory].bindTooltip('<span class="territoryGuildName" style="color: #FFFFFF">FFA' +
+                rectangles[territory].bindTooltip('<span class="territoryGuildName" ' + getToolTipStyle("#FFFFFF") + '><span class="identifier">FFA</span>' +
                     getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
                 rectangles[territory].setStyle({
                     color: 'rgba(255,255,255,1)'
@@ -324,7 +324,7 @@ function run() {
                     Object.values(selectedTerritory).forEach(territory => {
                         Territories[territory] = guildSelect.value;
                         rectangles[territory].unbindTooltip();
-                        rectangles[territory].bindTooltip('<span class="territoryGuildName" style="color: ' + Guilds[i].mapcolor + '">' + Guilds[i].name + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
+                        rectangles[territory].bindTooltip('<span class="territoryGuildName" ' + getToolTipStyle(Guilds[i].mapcolor) + '><span class="identifier">' + Guilds[i].name + "</span>" + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
                         rectangles[territory].setStyle({
                             color: Guilds[i].mapcolor,
                         });
@@ -809,7 +809,7 @@ function render() {
         if (!guild || guild === "-") {
             rectangles[territory].unbindTooltip();
             try {
-                rectangles[territory].bindTooltip('<span class="territoryGuildName" style="color: #FFFFFF">FFA' + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
+                rectangles[territory].bindTooltip('<span class="territoryGuildName" ' + getToolTipStyle("#FFFFFF") + '><span class="identifier">FFA</span>' + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
             } catch (e) {
                 console.error(e)
                 console.log(territory)
@@ -821,7 +821,7 @@ function render() {
             for (let i in Guilds) {
                 if (Guilds[i].name === guild) {
                     rectangles[territory].unbindTooltip();
-                    rectangles[territory].bindTooltip('<span class="territoryGuildName" style="color: ' + Guilds[i].mapcolor + '">' + Guilds[i].name + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
+                    rectangles[territory].bindTooltip('<span class="territoryGuildName" ' + getToolTipStyle(Guilds[i].mapcolor) + '><span class="identifier">' + Guilds[i].name + "</span>" + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
                     rectangles[territory].setStyle({
                         color: Guilds[i].mapcolor,
                     });
@@ -842,7 +842,7 @@ function getProductionIconsHTML(territory) {
     ${terrAllData[territory]['resources'].fish > 3600 ? "🐟" : ""}
     ${terrAllData[territory]['resources'].wood > 3600 ? "🪓" : ""}
     ${terrAllData[territory]['resources'].ore > 0 ? "⛏" : ""}
-    ${terrAllData[territory]['resources'].crops > 0 ? "🌿" : ""}
+    ${terrAllData[territory]['resources'].crops > 0 ? "🌿<br>" : ""}
     ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""} 
     ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}</div>`
 }
@@ -1013,4 +1013,14 @@ function copyMapLink() {
     })
 
 
+}
+
+function getToolTipStyle(color) {
+    return `style='text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+    0px 0px 1px ${color},
+    0px 0px 2px ${color},
+    0px 0px 3px ${color},
+    0px 0px 4px ${color},
+    0px 0px 5px ${color},
+    0px 0px 6px ${color} !important;'`;
 }
