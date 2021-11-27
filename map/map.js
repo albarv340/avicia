@@ -331,11 +331,13 @@ async function run() {
         if (!(Object.keys(colors).includes(guild))) {
           colors[guild] = stringToColor(guild)
         }
-        if (!(Object.keys(guilds).includes(guild))) {
+        if (!(Object.keys(prefixes).includes(guild))) {
           fetch(`https://api-legacy.wynncraft.com/public_api.php?action=guildStats&command=${guild.replaceAll(/ /g, "%20")}`)
             .then(response => response.json())
             .then(json => {
               guilds[guild] = json;
+              prefixes[guild] = json.prefix;
+              localStorage.setItem("prefixes", JSON.stringify(prefixes))
             })
             .then(_ => {
               setContent(guild, territory);
