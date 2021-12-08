@@ -4,6 +4,10 @@ html, body {
   height: 100%;
 }
 
+.title {
+  display: none;
+}
+
 body {
   background: black;
   margin: 0;

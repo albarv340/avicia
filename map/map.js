@@ -61,7 +61,7 @@ async function run() {
   // bounds.push([[6, 0], [8, 2]])
 
   for (let bound of bounds) {
-    images.push(L.imageOverlay(`./public/tiles/${bound[0][1]}/${bound[0][0]}.png`,
+    images.push(L.imageOverlay(`./public/tiles/${bound[0][1]}/${bound[0][0]}.webp`,
       bound, {}
     ));
   }

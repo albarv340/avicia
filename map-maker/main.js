@@ -383,14 +383,15 @@ function run() {
 
     map.fitBounds([[0, -4], [6, 2]]);
 
-    for (let a = 0; a < 4; a++) {
+    for (let a = 0; a < 3; a++) {
         for (let b = 0; b < 3; b++) {
             bounds.push([[a * 2, (2 * b) - 4], [(a + 1) * 2, (2 * (b + 1)) - 4]])
         }
     }
-
+    bounds.push([[6, -2], [8, 0]])
+    bounds.push([[-2, 0], [0, 2]])
     for (let bound of bounds) {
-        images.push(L.imageOverlay(`./tiles/${bound[0][1]}/${bound[0][0]}.png`,
+        images.push(L.imageOverlay(`./tiles/${bound[0][1]}/${bound[0][0]}.webp`,
             bound, {
             attribution: "<a href='https://wynndata.tk/map'>WYNNDATA</a>"
         }
@@ -549,10 +550,8 @@ function reloadLegend() {
     let ffas = Object.keys(territories).length - ownedterrs;
     $('#guild-list').append(`
       <div>
-      <a href="javascript:void(0)" data-target="#FFA-terrs" data-toggle="collapse" aria-expanded="false" aria-controls="FFA-terrs">
             <span class="guild-color" style="background-color: #FFFFFF"></span>
             <span class="menu-text guild-name">FFA - ${ffas}</span>
-        </a>
       </div>
       <div class="collapse" id="FFA-terrs">
           <ul id="FFA-terr-list">
@@ -574,10 +573,8 @@ function reloadLegend() {
     data.forEach(d => {
         $('#guild-list').append(`
           <div>
-            <a href="javascript:void(0)" data-target="#${d[0]}-terrs" data-toggle="collapse" aria-expanded="false" aria-controls="${d[0]}-terrs">
                 <span class="guild-color" style="background-color: ${d[1]}"></span>
                 <span class="menu-text guild-name">${d[0]} - ${d[2]}</span>
-            </a>
             <div>
             <small style="color:lightgray">Emeralds: ${numberWithCommas(d[3].emeralds)}<br>Crops: ${numberWithCommas(d[3].crops)}<br>Fish: ${numberWithCommas(d[3].fish)}<br>Wood: ${numberWithCommas(d[3].wood)}<br>Ore: ${numberWithCommas(d[3].ore)}</small>
             </div>
