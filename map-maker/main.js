@@ -68,7 +68,7 @@ $(document).ready(function () {
     })
     // Inittialize controls
     $('body').bind('keypress', function (e) {
-        if (e.target.id === "name") return;
+        if (e.target.id === "name" || e.target.type === "search") return;
         // if (typeof (e.target.attributes.role) != "undefined") return;
         if (e.which == 32) {
             toggleMenu();
@@ -294,8 +294,12 @@ function toggleMenu() {
 function toggleLegend() {
     if (document.getElementById("legend").style.display !== "none") {
         document.getElementById("legend").style.display = "none";
+        $('.leaflet-top').css('cssText', "right: 0 !important");
+        $('.leaflet-bottom').css('cssText', "right: 0 !important");
     } else {
         document.getElementById("legend").style.display = "block";
+        $('.leaflet-top').css('cssText', "right: 12% !important");
+        $('.leaflet-bottom').css('cssText', "right:12% !important");
     }
 }
 
@@ -392,9 +396,7 @@ function run() {
     bounds.push([[-2, 0], [0, 2]])
     for (let bound of bounds) {
         images.push(L.imageOverlay(`./tiles/${bound[0][1]}/${bound[0][0]}.webp`,
-            bound, {
-            attribution: "<a href='https://wynndata.tk/map'>WYNNDATA</a>"
-        }
+            bound
         ));
     }
 

@@ -40,7 +40,7 @@ body {
   height: 100%;
   background: black;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Tooltip styling */
@@ -132,7 +132,7 @@ body {
   right: 0;
   background-color: rgb(0, 0, 0, 0.0);
   /* White background with opacity */
-  z-index: 3;
+  z-index: 30;
   transition: opacity 5s;
   opacity: 1;
   text-align: center;
@@ -141,6 +141,7 @@ body {
 #info span {
   margin: 0 auto;
 }
+
 
 /* -------------- Menu overlay styling  -------------- */
 
@@ -163,8 +164,9 @@ body {
   bottom: 0;
   background-color: rgb(119, 204, 255, .5);
   /* White background with opacity */
-  z-index: 2;
+  z-index: 20;
   cursor: pointer;
+  overflow-x: hidden !important;
   /* Add a pointer on hover */
 }
 
@@ -173,18 +175,30 @@ body {
   /* Sit on top of the page content */
   display: block;
   /* UwU */
-  width: 20%;
+  width: 12%;
   /* Full width (cover the whole page) */
   height: 100%;
   /* Full height (cover the whole page) */
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(119, 204, 255, .1);
+  background-color: rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, 0 0 2px #000;
   /* White background with opacity */
-  z-index: 2;
+  z-index: 20;
   cursor: pointer;
+  overflow-x: hidden !important;
+
   /* Add a pointer on hover */
+}
+
+#legend:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* width: 18%; */
+}
+
+.leaflet-top, .leaflet-bottom {
+  right: 12% !important;
 }
 
 .menu-text, p a {
