@@ -46,7 +46,7 @@ function doMap() {
                     permanent: true,
                     direction: "center"
                 }).openTooltip();
-                rectangle.bindPopup(`<div><p>${territory}</p><button class="btn btn-primary" onclick="setStartTerr('${territory}')">Set as start territory</button><br><button class="btn btn-warning" onclick="setEndTerr('${territory}')">Set as end territory</button></div>`)
+                rectangle.bindPopup(`<div><p>${territory}</p><button class="btn btn-primary" onclick="setStartTerr(\`${territory}\`)">Set as start territory</button><br><button class="btn btn-warning" onclick="setEndTerr(\`${territory}\`)">Set as end territory</button></div>`)
 
                 rectangles[territory] = rectangle;
                 rectangle.addTo(map);
@@ -143,6 +143,7 @@ function doMap() {
 
     function getShortestRoute() {
         try {
+            let visited = [];
             let queue = [startTerritory]
             let shortestRoute = {}
             shortestRoute[startTerritory] = []
@@ -153,10 +154,11 @@ function doMap() {
             shortestDistance[startTerritory] = 0
 
             while (queue.length > 0) {
-                const currentTerr = queue.pop()
+                const currentTerr = queue.shift()
                 for (neighbor of terrData[currentTerr]) {
-                    if (shortestDistance[currentTerr] + 1 < shortestDistance[neighbor]) {
+                    if (!visited.includes(neighbor) && shortestDistance[currentTerr] + 1 < shortestDistance[neighbor]) {
                         queue.push(neighbor)
+                        visited.push(neighbor);
                         shortestDistance[neighbor] = shortestDistance[currentTerr] + 1
                         shortestRoute[neighbor] = shortestRoute[currentTerr].concat([neighbor])
                     }
