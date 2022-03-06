@@ -482,7 +482,8 @@ async function run() {
               ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
               ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
               </div></div>`;
-          tooltip += (showTimeHeld ? `<div class="time-held"> ${getFancyTimeSince(new Date(guildTerritories[territory]["acquired"]), 2)}</div>` : "");
+          let treasuryColor = getTreasuryColor(new Date(guildTerritories[territory]["acquired"]));
+          tooltip += (showTimeHeld ? `<div class="time-held" style='color:#${treasuryColor}; font-weight:bold; text-shadow: 0.05em 0 black, 0 0.05em black,-0.05em 0 black,0 -0.05em black,-0.05em -0.05em black,-0.05em 0.05em black,0.05em -0.05em black,0.05em 0.05em black;'> ${getFancyTimeSince(new Date(guildTerritories[territory]["acquired"]), 2)}</div>` : "");
           tooltip += "</div>";
         }
         else {
@@ -586,6 +587,29 @@ async function run() {
       }
     }
     return str;
+  }
+
+  function getTreasuryColor(timestamp) {
+    var now = new Date();
+    var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+
+    let diff = (utc - timestamp);
+
+    let day, hour, minute, seconds;
+    seconds = Math.floor(diff / 1000);
+    minute = Math.floor(seconds / 60);
+    seconds = seconds % 60;
+    hour = Math.floor(minute / 60);
+    minute = minute % 60;
+    day = Math.floor(hour / 24);
+    hour = hour % 24;
+    if (day >= 4) {
+      return "55ff55"; // High / Very High
+    }
+    if (day >= 1 || hour >= 4) {
+      return "ffff55"; // Medium
+    }
+    return "ff5555"; // Low / Very Low
   }
 
   function setPopupContent(guild, territory) {
@@ -751,8 +775,20 @@ async function run() {
     }
   });
 
+  function slowHardUpdater(i) {
+    // Used to update the timers without freezing the entire webpage 
+    setTimeout(() => {
+      if (map.getZoom() >= 9 && showTimeHeld) { // Timers only show when the zoom level is at least 9
+        setContent(guildTerritories[Object.keys(rectangles)[i]]["guild"], Object.keys(rectangles)[i], true);
+      }
+      if (i == Object.keys(rectangles).length - 1) slowHardUpdater(0);
+      slowHardUpdater(i + 1);
+    }, 1);
+  }
+
   setTimeout(() => {
     update()
+    slowHardUpdater(0);
   }, 2000);
   setTimeout(() => {
     initialLoad = false;
