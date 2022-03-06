@@ -139,10 +139,18 @@ async function run() {
   let checkboxNames = document.getElementById("territory-names");
   let checkboxGuilds = document.getElementById("territory-guilds");
   let checkboxTradingRoutes = document.getElementById("trading-routes");
+  let checkboxTimeHeld = document.getElementById("time-held");
 
-  let territoryToggle = true;
-  let territoryNames = false;
-  let guildNames = true;
+
+  let territoryToggle = localStorage.getItem("checkboxTerritory") ? localStorage.getItem("checkboxTerritory") === 'true' : true;
+  let territoryNames = localStorage.getItem("checkboxNames") ? localStorage.getItem("checkboxNames") === 'true' : false;
+  let guildNames = localStorage.getItem("checkboxGuilds") ? localStorage.getItem("checkboxGuilds") === 'true' : true;
+  let showTimeHeld = localStorage.getItem("checkboxTimeHeld") ? localStorage.getItem("checkboxTimeHeld") === 'true' : false;
+
+  checkboxTerritory.checked = territoryToggle;
+  checkboxNames.checked = territoryNames;
+  checkboxGuilds.checked = guildNames;
+  checkboxTimeHeld.checked = showTimeHeld;
 
   let counter = refresh
   document.getElementById("countdown").innerHTML = counter;
@@ -155,24 +163,34 @@ async function run() {
 
   checkboxTerritory.oninput = function () {
     territoryToggle = this.checked;
-
+    localStorage.setItem("checkboxTerritory", this.checked + "");
     render();
   }
 
   checkboxNames.oninput = function () {
     territoryNames = this.checked
+    localStorage.setItem("checkboxNames", this.checked + "");
     update(true);
     render();
   }
 
   checkboxGuilds.oninput = function () {
     guildNames = this.checked
+    localStorage.setItem("checkboxGuilds", this.checked + "");
     update(true);
     render();
   }
 
   checkboxTradingRoutes.oninput = function () {
+    localStorage.setItem("checkboxTradingRoutes", this.checked + "");
     this.checked ? showTradeRoutes() : hideTradeRoutes()
+  }
+
+  checkboxTimeHeld.oninput = function () {
+    showTimeHeld = this.checked
+    localStorage.setItem("checkboxTimeHeld", this.checked + "");
+    update(true);
+    render();
   }
 
 
@@ -199,6 +217,7 @@ async function run() {
         rectangle.bindPopup("Loading...")
         rectangle.on("popupopen", function (ev) {
           setPopupContent(guildTerritories[territory]['guild'], territory)
+          if (showTimeHeld) setContent(guildTerritories[territory]['guild'], territory, true);
         });
 
 
@@ -387,7 +406,7 @@ async function run() {
     counter -= 1;
     document.getElementById("countdown").innerHTML = counter;
     Object.keys(cdRectangles).forEach(territory => {
-      setContent(guildTerritories[territory]["guild"], territory)
+      setContent(guildTerritories[territory]["guild"], territory, showTimeHeld)
       try {
         if (cdRectangles[territory] ? cdRectangles[territory].isPopupOpen() : false) {
           setPopupContent(guildTerritories[territory]["guild"], territory)
@@ -400,13 +419,16 @@ async function run() {
 
   //on zoom end, update map based on zoom
   map.on('zoomend', _ => {
+    console.log(map.getZoom())
     if (map.getZoom() <= 8) {
       hideTradeRoutes()
       if (areTooltipsVisible && map.getZoom() != 8)
         hideTooltips()
       hideProductionIcons()
+      hideTimeHelds()
     } else if (map.getZoom() >= 8) {
       showTooltips()
+      showTimeHelds()
       showProductionIcons()
       if (checkboxTradingRoutes.checked) {
         showTradeRoutes()
@@ -445,7 +467,7 @@ async function run() {
 				0px 0px 3px ${colors[guild]},
 				0px 0px 4px ${colors[guild]},
 				0px 0px 5px ${colors[guild]},
-        0px 0px 6px ${colors[guild]} !important;  ${initialLoad ? "visibility:hidden" : ""}'><div class='identifier'>` +
+        0px 0px 6px ${colors[guild]} !important;  ${initialLoad ? "visibility:hidden;" : ""}'><div class="name-res-holder${showTimeHeld ? "" : " flex-column"}"><div class='identifier'>` +
           prefix + "</div>";
         if (typeof (terrAllData[territory]) != "undefined") {
           tooltip +=
@@ -460,6 +482,8 @@ async function run() {
               ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
               ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
               </div></div>`;
+          tooltip += (showTimeHeld ? `<div class="time-held"> ${getFancyTimeSince(new Date(guildTerritories[territory]["acquired"]), 2)}</div>` : "");
+          tooltip += "</div>";
         }
         else {
           tooltip += "</div>"
@@ -504,6 +528,7 @@ async function run() {
         cdRectangle.on("popupopen", function (ev) {
           setPopupContent(guild, territory)
         });
+
         cdRectangle.setTooltipContent(tooltip);
 
         cdRectangles[territory] = cdRectangle;
@@ -531,11 +556,11 @@ async function run() {
 
   }
 
-  function setPopupContent(guild, territory) {
+  function getFancyTimeSince(timestamp, maxElems) {
     var now = new Date();
     var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 
-    let diff = (utc - new Date(guildTerritories[territory]["acquired"]));
+    let diff = (utc - timestamp);
 
     let day, hour, minute, seconds;
     seconds = Math.floor(diff / 1000);
@@ -546,26 +571,27 @@ async function run() {
     day = Math.floor(hour / 24);
     hour = hour % 24;
 
-    time = { "day": day, "hour": hour, "minute": minute, "second": seconds }
+    time = { "d": day, "h": hour, "m": minute, "s": seconds }
 
     str = ""
+    let counter = 0;
 
     for (let unit of Object.keys(time)) {
-      if (time[unit] > 0 || unit === "second") {
-        if (unit === "second" && ((Object.values(time)).filter((_, i) => i != 4)).filter(v => v > 0).length) {
-          str += " and "
-        }
-
-        str += time[unit] + " " + unit;
-
-        if (time[unit] !== 1) {
-          str += "s"
-        }
-        if (unit !== "second" && ((Object.values(time)).filter(v => v > 0).length > 2)) {
+      if (time[unit] > 0 || unit === "s") {
+        str += time[unit] + unit;
+        if (++counter == maxElems) break;
+        if (unit !== "s" && ((Object.values(time)).filter(v => v > 0).length > 2)) {
           str += ", "
         }
       }
     }
+    return str;
+  }
+
+  function setPopupContent(guild, territory) {
+
+    let str = getFancyTimeSince(new Date(guildTerritories[territory]["acquired"]));
+
     const productionHTML = `<hr>
     <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
     <div>${terrAllData[territory]['resources'].ore > 0 ? "+" + terrAllData[territory]['resources'].ore + " Ore" : ""}</div>
@@ -684,15 +710,28 @@ async function run() {
 
   function hideProductionIcons() {
     $('.production-icon').each(function (i, obj) {
-      obj.style.visibility = "hidden"
+      obj.hidden = true
     });
   }
 
   function showProductionIcons() {
     $('.production-icon').each(function (i, obj) {
-      obj.style.visibility = "visible"
+      obj.hidden = false
     });
   }
+
+  function hideTimeHelds() {
+    $('.time-held').each(function (i, obj) {
+      obj.hidden = true
+    });
+  }
+
+  function showTimeHelds() {
+    $('.time-held').each(function (i, obj) {
+      obj.hidden = false
+    });
+  }
+
   let mouseMoveCooldown;
   map.on("mousemove", function (event) {
     if (mouseMoveCooldown) clearTimeout(mouseMoveCooldown);

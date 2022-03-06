@@ -35,6 +35,22 @@ body {
   width: 75px;
 }
 
+.territory-tooltip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-res-holder {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .identifier {
   font-weight: bold !important;
   margin: 0 0 0 0 !important;
