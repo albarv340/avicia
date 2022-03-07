@@ -217,7 +217,6 @@ async function run() {
         rectangle.bindPopup("Loading...")
         rectangle.on("popupopen", function (ev) {
           setPopupContent(guildTerritories[territory]['guild'], territory)
-          if (showTimeHeld) setContent(guildTerritories[territory]['guild'], territory, true);
         });
 
 
@@ -406,7 +405,6 @@ async function run() {
     counter -= 1;
     document.getElementById("countdown").innerHTML = counter;
     Object.keys(cdRectangles).forEach(territory => {
-      setContent(guildTerritories[territory]["guild"], territory, showTimeHeld)
       try {
         if (cdRectangles[territory] ? cdRectangles[territory].isPopupOpen() : false) {
           setPopupContent(guildTerritories[territory]["guild"], territory)
@@ -419,7 +417,6 @@ async function run() {
 
   //on zoom end, update map based on zoom
   map.on('zoomend', _ => {
-    console.log(map.getZoom())
     if (map.getZoom() <= 8) {
       hideTradeRoutes()
       if (areTooltipsVisible && map.getZoom() != 8)
@@ -482,8 +479,8 @@ async function run() {
               ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
               ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
               </div></div>`;
-          let treasuryColor = getTreasuryColor(new Date(guildTerritories[territory]["acquired"]));
-          tooltip += (showTimeHeld ? `<div class="time-held" style='color:#${treasuryColor}; font-weight:bold; text-shadow: 0.05em 0 black, 0 0.05em black,-0.05em 0 black,0 -0.05em black,-0.05em -0.05em black,-0.05em 0.05em black,0.05em -0.05em black,0.05em 0.05em black;'> ${getFancyTimeSince(new Date(guildTerritories[territory]["acquired"]), 2)}</div>` : "");
+          let treasuryColor = getTreasuryColor(new Date(guildTerritories[territory]["acquired"].replace(/\s/, 'T')));
+          tooltip += (showTimeHeld ? `<div class="time-held" style='color:#${treasuryColor}; font-weight:bold; text-shadow: 0.05em 0 black, 0 0.05em black,-0.05em 0 black,0 -0.05em black,-0.05em -0.05em black,-0.05em 0.05em black,0.05em -0.05em black,0.05em 0.05em black;'> ${getFancyTimeSince(new Date(guildTerritories[territory]["acquired"].replace(/\s/, 'T')), 2)}</div>` : "");
           tooltip += "</div>";
         }
         else {
@@ -777,20 +774,29 @@ async function run() {
 
   function slowHardUpdater(i) {
     // Used to update the timers without freezing the entire webpage 
+    const terrsPerUpdate = 5;
     setTimeout(() => {
       if (map.getZoom() >= 9 && showTimeHeld) { // Timers only show when the zoom level is at least 9
-        setContent(guildTerritories[Object.keys(rectangles)[i]]["guild"], Object.keys(rectangles)[i], true);
+        for (let j = 0; j < terrsPerUpdate; j++) {
+          if (i + j == Object.keys(rectangles).length) {
+            slowHardUpdater(0);
+            return;
+          }
+          setContent(guildTerritories[Object.keys(rectangles)[i + j]]["guild"], Object.keys(rectangles)[i + j], true);
+        }
+        slowHardUpdater(i + terrsPerUpdate);
       }
-      if (i == Object.keys(rectangles).length - 1) slowHardUpdater(0);
-      slowHardUpdater(i + 1);
-    }, 1);
+      else {
+        slowHardUpdater(i);
+      }
+    }, 4);
   }
 
   setTimeout(() => {
     update()
-    slowHardUpdater(0);
   }, 2000);
   setTimeout(() => {
+    slowHardUpdater(0);
     initialLoad = false;
   }, 9000);
 }
