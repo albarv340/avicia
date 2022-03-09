@@ -578,7 +578,7 @@ async function run() {
       if (time[unit] > 0 || unit === "s") {
         str += time[unit] + unit;
         if (++counter == maxElems) break;
-        if (unit !== "s" && ((Object.values(time)).filter(v => v > 0).length > 2)) {
+        if (unit !== "s") {
           str += ", "
         }
       }
