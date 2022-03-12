@@ -405,6 +405,8 @@ async function run() {
     counter -= 1;
     document.getElementById("countdown").innerHTML = counter;
     Object.keys(cdRectangles).forEach(territory => {
+      if (!initialLoad)
+        setContent(guildTerritories[territory]["guild"], territory, true);
       try {
         if (cdRectangles[territory] ? cdRectangles[territory].isPopupOpen() : false) {
           setPopupContent(guildTerritories[territory]["guild"], territory)
