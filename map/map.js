@@ -602,13 +602,19 @@ async function run() {
     minute = minute % 60;
     day = Math.floor(hour / 24);
     hour = hour % 24;
-    if (day >= 4) {
-      return "55ff55"; // High / Very High
+    if (day >= 11) {
+      return "55ffff"; // Very High
     }
-    if (day >= 1 || hour >= 4) {
+    if (day >= 4) {
+      return "55ff55"; // High
+    }
+    if (day >= 1) {
       return "ffff55"; // Medium
     }
-    return "ff5555"; // Low / Very Low
+    if (hour >= 1) {
+      return "ffaa00"; // Low
+    }
+    return "ff5555"; // Very Low
   }
 
   function setPopupContent(guild, territory) {
