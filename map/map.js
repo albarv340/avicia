@@ -602,7 +602,7 @@ async function run() {
     minute = minute % 60;
     day = Math.floor(hour / 24);
     hour = hour % 24;
-    if (day >= 11) {
+    if (day >= 12) {
       return "55ffff"; // Very High
     }
     if (day >= 4) {
