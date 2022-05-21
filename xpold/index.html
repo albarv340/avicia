@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Avician XP Leaderboard" property="og:title">
+    <meta name="description" property="og:description" content="Guild XP leaderboard for Avicia's guild members">
+    <title>Avician XP leaderboards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Avician XP Leaderboard</h1>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="total-tab" data-bs-toggle="tab" href="#total" role="tab"
+                    aria-controls="total" aria-selected="true">Total</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="weekly-tab" data-bs-toggle="tab" href="#weekly" role="tab"
+                    aria-controls="weekly" aria-selected="false">Weekly</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="daily-tab" data-bs-toggle="tab" href="#daily" role="tab" aria-controls="daily"
+                    aria-selected="false">Daily</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="minute-xp-tab" data-bs-toggle="tab" href="#minute-xp" role="tab"
+                    aria-controls="minute-xp" aria-selected="false">Avg XP/min</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="daily-wins-tab" data-bs-toggle="tab" href="#daily-wins" role="tab"
+                    aria-controls="daily-wins" aria-selected="false">Daily Wins</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="weekly-time-tab" data-bs-toggle="tab" href="#weekly-time" role="tab"
+                    aria-controls="weekly-time" aria-selected="false">Weekly Time</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="xp-score-tab" data-bs-toggle="tab" href="#xp-score" role="tab"
+                    aria-controls="xp-score" aria-selected="false">XP Score</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="tab-content">
+            <div class="tab-pane fade show active" id="total" role="tabpanel" aria-labelledby="total-tab">
+                <div id="total-content">
+                    <div class="goal-container">
+                        <div id="hundred-goal"></div>
+                    </div>
+                    <div class="top3-div">
+                        <div id="total-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="total-div-1st" class="top3-display div-1st"></div>
+                        <div id="total-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The total xp given to the guild by each player. Never resets.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="total-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="weekly" role="tabpanel" aria-labelledby="weekly-tab">
+                <div id="weekly-content">
+                    <div class="goal-container">
+                        <div id="weekly-goal"></div>
+                    </div>
+                    <div class="top3-div">
+                        <div id="weekly-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="weekly-div-1st" class="top3-display div-1st"></div>
+                        <div id="weekly-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The xp given to the guild by each player this week. Resets each Friday at around <a
+                            href="https://www.avicia.ml/time/?ms=18%3A00" target="_blank">18:00 UTC</a>.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="weekly-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="daily" role="tabpanel" aria-labelledby="daily-tab">
+                <div id="daily-content">
+                    <div class="goal-container">
+                        <div id="daily-goal"></div>
+                    </div>
+                    <div class="top3-div">
+                        <div id="daily-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="daily-div-1st" class="top3-display div-1st"></div>
+                        <div id="daily-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The xp given to the guild by each player today. Resets every day at around <a
+                            href="https://www.avicia.ml/time/?ms=18%3A00" target="_blank">18:00 UTC</a>.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="daily-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="minute-xp" role="tabpanel" aria-labelledby="daily-tab">
+                <div id="minute-xp-content">
+                    <div id="time-for-percent"></div>
+                    <div class="top3-div">
+                        <div id="minute-xp-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="minute-xp-div-1st" class="top3-display div-1st"></div>
+                        <div id="minute-xp-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The average XP per minute given by each player in the past 5 minutes.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="minute-xp-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="daily-wins" role="tabpanel" aria-labelledby="daily-wins-tab">
+                <div id="daily-wins-content">
+                    <div class="top3-div">
+                        <div id="daily-wins-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="daily-wins-div-1st" class="top3-display div-1st"></div>
+                        <div id="daily-wins-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The amount of times each player has given the most daily XP to the guild. Never resets.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="daily-wins-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="weekly-time" role="tabpanel" aria-labelledby="weekly-time-tab">
+                <div id="weekly-time-content">
+                    <div class="top3-div">
+                        <div id="weekly-time-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="weekly-time-div-1st" class="top3-display div-1st"></div>
+                        <div id="weekly-time-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>The time a player has spent grinding over 2 million xp/min. Resets each Friday at around <a
+                            href="https://www.avicia.ml/time/?ms=18%3A00" target="_blank">18:00 UTC</a>.</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="weekly-time-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="xp-score" role="tabpanel" aria-labelledby="xp-score-tab">
+                <div id="xp-score-content">
+                    <div class="top3-div">
+                        <div id="xp-score-div-2nd" class="top3-display div-2nd"></div>
+                        <div id="xp-score-div-1st" class="top3-display div-1st"></div>
+                        <div id="xp-score-div-3rd" class="top3-display div-3rd"></div>
+                    </div>
+                    <p>You get 1 XP Score for every billion total xp and the top 3 players on the weekly XP leaderboard
+                        get 1, 2 and 3 XP Score</p>
+                    <div class="leaderboard-div">
+                        <table class="table table-striped table-dark leaderboards">
+                            <tbody id="xp-score-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
