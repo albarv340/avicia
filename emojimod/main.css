@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f2f2f;
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.header h1 {
+    padding: 40px;
+}
+
+.download {
+    padding: 20px;
+}
