@@ -59,6 +59,7 @@ $(document).ready(function () {
     // Help popup
     $("#guilds").select2()
     $("#changeguild").select2()
+    $("#changename").select2()
     $("#removeguild").select2()
 
     $(function () {
@@ -147,6 +148,9 @@ class Guild {
     changecolor(ncolor) {
         this.mapcolor = ncolor;
     }
+    changename(newName) {
+        this.name = newName;
+    }
 }
 
 function removeselections() {
@@ -202,6 +206,39 @@ function changecolor() {
     alert(`Successfully changed ${select.value}'s color to ${color.value}`);
     select.selectedIndex = 0;
     color.value = '#000000';
+}
+function changename() {
+    let select = document.getElementById('changename');
+    let name = document.getElementById("changeNewName");
+    if (select.selectedIndex === 0) {
+        alert("No guild selected!");
+        return;
+    }
+    if (!Guilds.every(g => { return g.name != name.value })) {
+        alert("Guild already added!");
+        return;
+    }
+    for (let i in Guilds) {
+        if (Guilds[i].name === select.value) {
+            Guilds[i].changename(name.value);
+            Object.keys(Territories).forEach(territory => {
+                let guild = Territories[territory];
+                if (guild === select.value) {
+                    Territories[territory] = name.value;
+                    rectangles[territory].unbindTooltip();
+                    rectangles[territory].bindTooltip('<span class="territoryGuildName"' + getToolTipStyle(Guilds[i].mapcolor) + '><span class="identifier">' + Guilds[i].name + "</span>" + getProductionIconsHTML(territory) + '</span>', { sticky: true, interactive: false, permanent: true, direction: 'center', className: 'territoryName', opacity: 1 })
+                    rectangles[territory].setStyle({
+                        color: Guilds[i].mapcolor,
+                    });
+                }
+            });
+            break;
+        }
+    }
+    reloadLegend();
+    alert(`Successfully changed ${select.value}'s name to ${name.value}`);
+    updateSelects();
+    name.value = '';
 }
 function removeguild() {
     let select = document.getElementById("removeguild");
@@ -710,6 +747,7 @@ function pullApi() {
     Territories = {};
     Guilds = [];
     $('#changeguild').empty().append('<option selected="selected" value="null">--</option>');
+    $('#changename').empty().append('<option selected="selected" value="null">--</option>');
     $('#removeguild').empty().append('<option selected="selected" value="null">--</option>');
 
     fetch('https://api.wynncraft.com/public_api.php?action=territoryList')
@@ -895,6 +933,7 @@ function numberWithCommas(x) {
 function updateSelects() {
     let selects = []
     selects.push(document.getElementById("changeguild"))
+    selects.push(document.getElementById("changename"))
     selects.push(document.getElementById("removeguild"))
     selects.push(document.getElementById("guilds"))
     for (select of selects) {
