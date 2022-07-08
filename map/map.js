@@ -605,7 +605,7 @@ async function run() {
     if (day >= 12) {
       return "55ffff"; // Very High
     }
-    if (day >= 4) {
+    if (day >= 5) {
       return "55ff55"; // High
     }
     if (day >= 1) {
