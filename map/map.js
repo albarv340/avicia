@@ -4,11 +4,10 @@ function stringToColor(str) {
   return "#" + (hexcode.length == 6 ? hexcode : hexcode.padEnd(6, "0"))
 }
 
-function secondsSince(date) {
-  var now = new Date();
-  var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
-
-  return (utc - new Date(date)) / 1000;
+function getTimeHeld(timestamp) {
+  if (!timestamp) return;
+  const now = new Date();
+  return now - new Date(timestamp.replace(/\s/, 'T') + 'Z');
 }
 
 function copyToClipboard(str) {
@@ -481,8 +480,8 @@ async function run() {
               ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
               ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
               </div></div>`;
-          let treasuryColor = getTreasuryColor(new Date(guildTerritories[territory]["acquired"].replace(/\s/, 'T')));
-          tooltip += (showTimeHeld ? `<div class="time-held" style='color:#${treasuryColor}; font-weight:bold; text-shadow: 0.05em 0 black, 0 0.05em black,-0.05em 0 black,0 -0.05em black,-0.05em -0.05em black,-0.05em 0.05em black,0.05em -0.05em black,0.05em 0.05em black;'> ${getFancyTimeSince(new Date(guildTerritories[territory]["acquired"].replace(/\s/, 'T')), 2)}</div>` : "");
+          let treasuryColor = getTreasuryColor(guildTerritories[territory]["acquired"]);
+          tooltip += (showTimeHeld ? `<div class="time-held" style='color:#${treasuryColor}; font-weight:bold; text-shadow: 0.05em 0 black, 0 0.05em black,-0.05em 0 black,0 -0.05em black,-0.05em -0.05em black,-0.05em 0.05em black,0.05em -0.05em black,0.05em 0.05em black;'> ${getFancyTimeSince(guildTerritories[territory]["acquired"], 2)}</div>` : "");
           tooltip += "</div>";
         }
         else {
@@ -504,10 +503,7 @@ async function run() {
       rectangles[territory].setTooltipContent(tooltip);
     }
 
-    var now = new Date();
-    var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
-
-    let diff = (utc - new Date(guildTerritories[territory]["acquired"]));
+    let diff = getTimeHeld(guildTerritories[territory]["acquired"]);
 
 
     if (((diff / 1000) < cooldownTimer)) {
@@ -557,10 +553,8 @@ async function run() {
   }
 
   function getFancyTimeSince(timestamp, maxElems) {
-    var now = new Date();
-    var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 
-    let diff = (utc - timestamp);
+    let diff = getTimeHeld(timestamp)
 
     let day, hour, minute, seconds;
     seconds = Math.floor(diff / 1000);
@@ -589,10 +583,8 @@ async function run() {
   }
 
   function getTreasuryColor(timestamp) {
-    var now = new Date();
-    var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 
-    let diff = (utc - timestamp);
+    let diff = getTimeHeld(timestamp)
 
     let day, hour, minute, seconds;
     seconds = Math.floor(diff / 1000);
@@ -619,7 +611,7 @@ async function run() {
 
   function setPopupContent(guild, territory) {
 
-    let str = getFancyTimeSince(new Date(guildTerritories[territory]["acquired"]));
+    let str = getFancyTimeSince(guildTerritories[territory]["acquired"]);
 
     const productionHTML = `<hr>
     <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
