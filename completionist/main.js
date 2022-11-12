@@ -33,18 +33,18 @@ async function getPlayerData() {
     levels['Discoveries'] = 0;
     levels['Unique Dungeons'] = 0;
     levels['Unique Raids'] = 0;
-    for (const clas of res.data[0].classes) {
-        console.log(clas)
-        for (const prof in clas.professions) {
-            typeof (levels[prof]) == 'undefined' ? levels[prof] = clas.professions[prof].level : levels[prof] += clas.professions[prof].level
-            levels['Total Level'] += clas.professions[prof].level;
+    for (const c in res.data[0].characters) {
+        const character = res.data[0].characters[c]
+        for (const prof in character.professions) {
+            typeof (levels[prof]) == 'undefined' ? levels[prof] = character.professions[prof].level : levels[prof] += character.professions[prof].level
+            levels['Total Level'] += character.professions[prof].level;
         }
-        levels['Main Quests'] += clas.quests.list.filter(a => !a.includes("Mini-Quest")).length;
-        levels['Slaying Mini-Quests'] += clas.quests.list.filter(a => a.includes("Mini-Quest - Slay")).length;
-        levels['Gathering Mini-Quests'] += clas.quests.list.filter(a => a.includes("Mini-Quest - Gather")).length;
-        levels['Discoveries'] += clas.discoveries;
-        levels['Unique Dungeons'] += clas.dungeons.list.length;
-        levels['Unique Raids'] += clas.raids.list.length;
+        levels['Main Quests'] += character.quests.list.filter(a => !a.includes("Mini-Quest")).length;
+        levels['Slaying Mini-Quests'] += character.quests.list.filter(a => a.includes("Mini-Quest - Slay")).length;
+        levels['Gathering Mini-Quests'] += character.quests.list.filter(a => a.includes("Mini-Quest - Gather")).length;
+        levels['Discoveries'] += character.discoveries;
+        levels['Unique Dungeons'] += character.dungeons.list.length;
+        levels['Unique Raids'] += character.raids.list.length;
     }
 
     let html = ""
