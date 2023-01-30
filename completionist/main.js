@@ -1,7 +1,7 @@
 const playerName = window.location.search.split("=").pop().replace(/%20/g, ' ');
 const maxValues = {
     "Total Level": 23660, "combat": 1484, "farming": 1848, "fishing": 1848, "mining": 1848, "woodcutting": 1848, "alchemism": 1848, "armouring": 1848, "cooking": 1848, "jeweling": 1848, "scribing": 1848, "tailoring": 1848, "weaponsmithing": 1848, "woodworking": 1848,
-    'Main Quests': 1918,
+    'Main Quests': 1666,
     'Slaying Mini-Quests': 406,
     'Gathering Mini-Quests': 1344,
     'Discoveries': 8320,
