@@ -204,7 +204,7 @@ async function run() {
         let bounds = [[location.startY * -.001, location.startX * .001], [location.endY * -.001, location.endX * .001]]
         let rectangle = L.rectangle(bounds,
           {
-            color: "rgb(0, 0, 0, 0)", weight: 2, pane: "markerPane"
+            color: "white", weight: 2, pane: "markerPane"
           })
 
         rectangle.bindTooltip("", {
@@ -215,7 +215,7 @@ async function run() {
 
         rectangle.bindPopup("Loading...")
         rectangle.on("popupopen", function (ev) {
-          setPopupContent(guildTerritories[territory]['guild'], territory)
+          setPopupContent(guildTerritories[territory]?.guild, territory)
         });
 
 
@@ -276,8 +276,8 @@ async function run() {
             }, 200);
           }
           for (let territory of Object.keys(rectangles)) {
-            setContent(guildTerritories[territory]["guild"], territory, hardUpdate);
-            territoryCount[guildTerritories[territory]["guild"]] ? territoryCount[guildTerritories[territory]["guild"]]++ : territoryCount[guildTerritories[territory]["guild"]] = 1;
+            setContent(guildTerritories[territory]?.guild, territory, hardUpdate);
+            territoryCount[guildTerritories[territory]?.guild] ? territoryCount[guildTerritories[territory]?.guild]++ : territoryCount[guildTerritories[territory]?.guild] = 1;
           }
         } catch (e) {
           console.error(e)
@@ -342,7 +342,7 @@ async function run() {
         guilds[g] = res[g]
       }
       Object.keys(guildTerritories).forEach(territory => {
-        let guild = guildTerritories[territory]["guild"];
+        let guild = guildTerritories[territory]?.guild;
         // console.log(guild)
         if (guild == null) guild = "None";
         if (!(Object.keys(colors).includes(guild))) {
@@ -405,10 +405,10 @@ async function run() {
     document.getElementById("countdown").innerHTML = counter;
     Object.keys(cdRectangles).forEach(territory => {
       if (!initialLoad)
-        setContent(guildTerritories[territory]["guild"], territory, true);
+        setContent(guildTerritories[territory]?.guild, territory, true);
       try {
         if (cdRectangles[territory] ? cdRectangles[territory].isPopupOpen() : false) {
-          setPopupContent(guildTerritories[territory]["guild"], territory)
+          setPopupContent(guildTerritories[territory]?.guild, territory)
         }
       } catch (e) {
         console.error(e)
@@ -480,8 +480,8 @@ async function run() {
               ${terrAllData[territory]['resources'].fish > 0 ? "🐟" : ""}
               ${terrAllData[territory]['resources'].wood > 0 ? "🪓" : ""}
               </div></div>`;
-          let treasuryColor = getTreasuryColor(guildTerritories[territory]["acquired"]);
-          tooltip += (showTimeHeld ? `<div class="time-held" style='color:#${treasuryColor}; font-weight:bold; text-shadow: 0.05em 0 black, 0 0.05em black,-0.05em 0 black,0 -0.05em black,-0.05em -0.05em black,-0.05em 0.05em black,0.05em -0.05em black,0.05em 0.05em black;'> ${getFancyTimeSince(guildTerritories[territory]["acquired"], 2)}</div>` : "");
+          let treasuryColor = getTreasuryColor(guildTerritories[territory]?.acquired);
+          tooltip += (showTimeHeld ? `<div class="time-held" style='color:#${treasuryColor}; font-weight:bold; text-shadow: 0.05em 0 black, 0 0.05em black,-0.05em 0 black,0 -0.05em black,-0.05em -0.05em black,-0.05em 0.05em black,0.05em -0.05em black,0.05em 0.05em black;'> ${getFancyTimeSince(guildTerritories[territory]?.acquired, 2)}</div>` : "");
           tooltip += "</div>";
         }
         else {
@@ -503,7 +503,7 @@ async function run() {
       rectangles[territory].setTooltipContent(tooltip);
     }
 
-    let diff = getTimeHeld(guildTerritories[territory]["acquired"]);
+    let diff = getTimeHeld(guildTerritories[territory]?.acquired);
 
 
     if (((diff / 1000) < cooldownTimer)) {
@@ -611,7 +611,7 @@ async function run() {
 
   function setPopupContent(guild, territory) {
 
-    let str = getFancyTimeSince(guildTerritories[territory]["acquired"]);
+    let str = getFancyTimeSince(guildTerritories[territory]?.acquired);
 
     const productionHTML = `<hr>
     <div>${terrAllData[territory]['resources'].emeralds > 0 ? "+" + terrAllData[territory]['resources'].emeralds + " Emeralds" : ""}</div>
@@ -624,9 +624,9 @@ async function run() {
       try {
         cdRectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
-        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]?.level}]</div>
         ${productionHTML}
-        <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
+        <div>Acquired on ${guildTerritories[territory]?.acquired}</div>
         <div>Held for ${str}.</div>
 			</div>`);
       } catch (e) {
@@ -635,7 +635,7 @@ async function run() {
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
       ${productionHTML}
-      <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
+      <div>Acquired on ${guildTerritories[territory]?.acquired}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
       }
@@ -643,9 +643,9 @@ async function run() {
       try {
         rectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
-        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]?.level}]</div>
         ${productionHTML}
-        <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
+        <div>Acquired on ${guildTerritories[territory]?.acquired}</div>
         <div>Held for ${str}.</div>
 			</div>`);
       } catch (e) {
@@ -655,7 +655,7 @@ async function run() {
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a></div>
       ${productionHTML}
-      <div>Acquired on ${guildTerritories[territory]["acquired"]}</div>
+      <div>Acquired on ${guildTerritories[territory]?.acquired}</div>
 			<div>Held for ${str}.</div>
 			</div>`);
       }
@@ -782,7 +782,7 @@ async function run() {
             slowHardUpdater(0);
             return;
           }
-          setContent(guildTerritories[Object.keys(rectangles)[i + j]]["guild"], Object.keys(rectangles)[i + j], true);
+          setContent(guildTerritories[Object.keys(rectangles)[i + j]]?.guild, Object.keys(rectangles)[i + j], true);
         }
         slowHardUpdater(i + terrsPerUpdate);
       }
