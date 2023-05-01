@@ -205,8 +205,12 @@ async function run() {
       }
     });
     localStorage.setItem("colors", JSON.stringify(storedColors));
+    colors = JSON.parse(localStorage.getItem("colors"));
     update(true);
     render();
+
+    inputGuildColor.value = "#000000";
+    inputGuildName.value = "";
   }
 
   //setting up territories
