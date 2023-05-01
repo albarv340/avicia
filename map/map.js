@@ -140,11 +140,16 @@ async function run() {
   let checkboxTradingRoutes = document.getElementById("trading-routes");
   let checkboxTimeHeld = document.getElementById("time-held");
 
+  let inputGuildName = document.getElementById("guild-name");
+  let inputGuildColor = document.getElementById("guild-color");
+
 
   let territoryToggle = localStorage.getItem("checkboxTerritory") ? localStorage.getItem("checkboxTerritory") === 'true' : true;
   let territoryNames = localStorage.getItem("checkboxNames") ? localStorage.getItem("checkboxNames") === 'true' : false;
   let guildNames = localStorage.getItem("checkboxGuilds") ? localStorage.getItem("checkboxGuilds") === 'true' : true;
   let showTimeHeld = localStorage.getItem("checkboxTimeHeld") ? localStorage.getItem("checkboxTimeHeld") === 'true' : false;
+
+  let buttonChangeGuildColor = document.getElementById("change-guild-color");
 
   checkboxTerritory.checked = territoryToggle;
   checkboxNames.checked = territoryNames;
@@ -192,7 +197,17 @@ async function run() {
     render();
   }
 
-
+  buttonChangeGuildColor.onclick = function () {
+    let storedColors = JSON.parse(localStorage.getItem("colors"));
+    Object.keys(storedColors).forEach((guild) => {
+      if(guild === inputGuildName.value){
+        storedColors[guild] = inputGuildColor.value;
+      }
+    });
+    localStorage.setItem("colors", JSON.stringify(storedColors));
+    update(true);
+    render();
+  }
 
   //setting up territories
   fetch("./territories.json")
