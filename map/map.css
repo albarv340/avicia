@@ -93,6 +93,7 @@ body {
   /* Full width (cover the whole page) */
   height: 100%;
   /* Full height (cover the whole page) */
+  overflow-y: auto;
   top: 0;
   left: 0;
   right: 0;
@@ -127,6 +128,10 @@ p a {
 
 .leaderboard-item {
   margin-bottom: 5px;
+}
+
+.guild-input {
+  width: 90%;
 }
 
 /* Slider styling */
