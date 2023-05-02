@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html>
 
 <head>
 
@@ -15,13 +13,14 @@
 		content="Wynncraft Avicia Map. Territories, Cooldowns, Territory Count, Trading Routes, Connections, War Map, Resource Productions">
 	<meta name="keywords" content="Wynncraft, Minecraft, MMORPG, Map, Territories, Avicia, War, Cooldowns">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</script>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
 		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 		crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
 		integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
 		crossorigin=""></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<script src="./map.js"></script>
 </head>
@@ -60,8 +59,22 @@
 				<label for="time-held" class="menu-text guild-name"><input type="checkbox" id="time-held"> Time
 					Held</label> <br>
 			</div>
-
-
+		</div>
+		<hr>
+		<div style="margin-left: 5%">
+			<p class="menu-text menu-title guild-name">Change guild color</p>
+			<div>
+				<label class="menu-text guild-name" for="guild-name">Guild Name:</label>
+				<input class="guild-input" type="text" id="guild-name" placeholder="Ex. Avicia or AVO">
+				<br>
+				<label class="menu-text guild-name" for="guild-color">Map color:</label>
+				<br>
+				<div class="button-group">
+					<input type="color" id="guild-color">
+					<button id="change-guild-color">Change</button>
+				</div>
+				<button id="reset-custom-colors">Reset to default</button>
+			</div>
 		</div>
 		<hr>
 		<div style="margin-left: 5%">
