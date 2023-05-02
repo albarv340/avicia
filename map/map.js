@@ -150,6 +150,7 @@ async function run() {
   let showTimeHeld = localStorage.getItem("checkboxTimeHeld") ? localStorage.getItem("checkboxTimeHeld") === 'true' : false;
 
   let buttonChangeGuildColor = document.getElementById("change-guild-color");
+  let buttonResetCustomColors = document.getElementById("reset-custom-colors");
 
   checkboxTerritory.checked = territoryToggle;
   checkboxNames.checked = territoryNames;
@@ -198,19 +199,30 @@ async function run() {
   }
 
   buttonChangeGuildColor.onclick = function () {
-    let storedColors = JSON.parse(localStorage.getItem("colors"));
-    Object.keys(storedColors).forEach((guild) => {
-      if(guild === inputGuildName.value){
-        storedColors[guild] = inputGuildColor.value;
-      }
-    });
-    localStorage.setItem("colors", JSON.stringify(storedColors));
-    colors = JSON.parse(localStorage.getItem("colors"));
-    update(true);
+    let guildName = inputGuildName.value;
+    if (!guildName) {
+      alert("No guild to change color of entered!")
+      return
+    }
+    if (Object.values(prefixes).includes(guildName)) {
+      // If this is a prefix, get the guild name
+      guildName = Object.keys(prefixes).find(item => prefixes[item] == guildName);
+    }
+    colors[guildName] = inputGuildColor.value;
+    update();
     render();
 
     inputGuildColor.value = "#000000";
     inputGuildName.value = "";
+  }
+
+  buttonResetCustomColors.onclick = function () {
+    buttonResetCustomColors.innerText = "Loading..."
+    buttonResetCustomColors.disabled = true;
+    getColors(() => {
+      buttonResetCustomColors.innerText = "Reset to default"
+      buttonResetCustomColors.disabled = false;
+    });
   }
 
   //setting up territories
@@ -339,7 +351,7 @@ async function run() {
     return res
   }
 
-  async function getColors() {
+  async function getColors(callback = null) {
     let url = "https://script.googleusercontent.com/macros/echo?user_content_key=1pn89A-6PcqCU0XbVSbtW3K2Dvdg5w613yopuRKugfw7NEIWmxeeZ_3QBaoHZ-AYNtHv2yQvMA_72B9rSRzEKVZyMiywn0pkm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMl-QtOriP-1pEgb03w7kqa_7bKx4e_UGi8MDjl3NoU1XeM0XHfmOSfpysJqWYby8qKKesUYD1MSFb_502AQXJrnRfqXRCrqsA&lib=MrEX5pRl-n6fGBE1Px8iVhCMNGS6H3WL4";
 
     let obj = null;
@@ -352,6 +364,9 @@ async function run() {
     }
     localStorage.setItem("colors", JSON.stringify(colors));
     update();
+    if (callback) {
+      callback();
+    }
   }
 
   //rendering territories based on territory location, ownership, and settings. also updates leaderboard div

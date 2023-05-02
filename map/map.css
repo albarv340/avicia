@@ -101,8 +101,6 @@ body {
   background-color: rgb(255, 255, 255, 0.1);
   /* White background with opacity */
   z-index: 2;
-  cursor: pointer;
-  /* Add a pointer on hover */
 }
 
 .menu-text, p a {
@@ -127,7 +125,8 @@ p a {
 }
 
 .leaderboard-item {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 
 .guild-input {
@@ -190,6 +189,29 @@ p a {
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
+}
+
+input[type=text], button, input[type=button] {
+  padding: 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  border-radius: 3px;
+  outline: none;
+}
+
+button, input[type=button], input[type=color] {
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+#reset-custom-colors {
+  background-color: #c55661;
+  color: #fbe6e8;
 }
 
 /* Scrollbar */
