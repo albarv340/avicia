@@ -5,7 +5,7 @@ const maxValues = {
     'Slaying Mini-Quests': 406,
     'Gathering Mini-Quests': 1344,
     'Discoveries': 8320,
-    'Unique Dungeons': 238,
+    'Unique Dungeons': 252,
     'Unique Raids': 56
 }
 
