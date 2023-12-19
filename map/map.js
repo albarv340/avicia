@@ -290,7 +290,7 @@ async function run() {
   let updateTimout = null
   function update(hardUpdate = false) {
     counter = refresh;
-    fetch("https://www.avicia.cf/api/territories")
+    fetch("https://api.wynncraft.com/v3/guild/list/territory")
       .then(response => response.json())
       .then(territories => {
         try {
