@@ -7,7 +7,7 @@ function stringToColor(str) {
 function getTimeHeld(timestamp) {
   if (!timestamp) return;
   const now = new Date();
-  return now - new Date(timestamp.replace(/\s/, 'T') + 'Z');
+  return now - new Date(timestamp);
 }
 
 function copyToClipboard(str) {
@@ -230,9 +230,9 @@ async function run() {
     .then(response =>
       response.json())
     .then(json => {
-      for (let territory in json['territories']) {
-        let location = json['territories'][territory].location
-        let bounds = [[location.startY * -.001, location.startX * .001], [location.endY * -.001, location.endX * .001]]
+      for (let territory in json) {
+        let location = json[territory].location
+        let bounds = [[location.start[1] * -.001, location.start[0] * .001], [location.end[1] * -.001, location.end[0] * .001]]
         let rectangle = L.rectangle(bounds,
           {
             color: "white", weight: 2, pane: "markerPane"
@@ -246,7 +246,7 @@ async function run() {
 
         rectangle.bindPopup("Loading...")
         rectangle.on("popupopen", function (ev) {
-          setPopupContent(guildTerritories[territory]?.guild, territory)
+          setPopupContent(guildTerritories[territory]?.guild.name, territory)
         });
 
 
@@ -290,9 +290,8 @@ async function run() {
   let updateTimout = null
   function update(hardUpdate = false) {
     counter = refresh;
-    fetch("https://api.wynncraft.com/public_api.php?action=territoryList")
+    fetch("https://www.avicia.cf/api/territories")
       .then(response => response.json())
-      .then(json => json["territories"])
       .then(territories => {
         try {
 
@@ -307,8 +306,9 @@ async function run() {
             }, 200);
           }
           for (let territory of Object.keys(rectangles)) {
-            setContent(guildTerritories[territory]?.guild, territory, hardUpdate);
-            territoryCount[guildTerritories[territory]?.guild] ? territoryCount[guildTerritories[territory]?.guild]++ : territoryCount[guildTerritories[territory]?.guild] = 1;
+            const guildName = guildTerritories[territory]?.guild.name;
+            setContent(guildName, territory, hardUpdate);
+            territoryCount[guildName] ? territoryCount[guildName]++ : territoryCount[guildName] = 1;
           }
         } catch (e) {
           console.error(e)
@@ -327,29 +327,6 @@ async function run() {
       })
   }
 
-
-  async function getGuilds(callback) {
-    let url = 'https://api.wynncraft.com/public_api.php?action=statsLeaderboard&type=guild&timeframe=all';
-    let obj = null;
-
-    try {
-      obj = await (await fetch(url)).json();
-    } catch (e) {
-      console.error(e);
-    }
-    res = []
-    try {
-      for (guild of obj.data) {
-        res[guild.name] = guild
-        prefixes[guild.name] = guild.prefix;
-      }
-      localStorage.setItem("prefixes", JSON.stringify(prefixes))
-    } catch (e) {
-      console.error(e)
-    }
-    callback(res)
-    return res
-  }
 
   async function getColors(callback = null) {
     let url = "https://script.googleusercontent.com/macros/echo?user_content_key=1pn89A-6PcqCU0XbVSbtW3K2Dvdg5w613yopuRKugfw7NEIWmxeeZ_3QBaoHZ-AYNtHv2yQvMA_72B9rSRzEKVZyMiywn0pkm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMl-QtOriP-1pEgb03w7kqa_7bKx4e_UGi8MDjl3NoU1XeM0XHfmOSfpysJqWYby8qKKesUYD1MSFb_502AQXJrnRfqXRCrqsA&lib=MrEX5pRl-n6fGBE1Px8iVhCMNGS6H3WL4";
@@ -371,61 +348,28 @@ async function run() {
 
   //rendering territories based on territory location, ownership, and settings. also updates leaderboard div
   async function render() {
-    await getGuilds(function (res) {
-      for (g in res) {
-        guilds[g] = res[g]
+    Object.keys(guildTerritories).forEach(territory => {
+      let guild = guildTerritories[territory]?.guild.name;
+      if (guild == null) guild = "None";
+      if (!(Object.keys(colors).includes(guild))) {
+        colors[guild] = stringToColor(guild)
       }
-      Object.keys(guildTerritories).forEach(territory => {
-        let guild = guildTerritories[territory]?.guild;
-        // console.log(guild)
-        if (guild == null) guild = "None";
-        if (!(Object.keys(colors).includes(guild))) {
-          colors[guild] = stringToColor(guild)
+      if (territoryToggle) {
+        try {
+          rectangles[territory].setStyle({
+            color: colors[guild],
+          })
+        } catch (e) {
+          console.log(territory)
+          console.error(e)
         }
-        if (!(Object.keys(prefixes).includes(guild))) {
-          fetch(`https://api-legacy.wynncraft.com/public_api.php?action=guildStats&command=${guild.replaceAll(/ /g, "%20")}`)
-            .then(response => response.json())
-            .then(json => {
-              guilds[guild] = json;
-              prefixes[guild] = json.prefix;
-              localStorage.setItem("prefixes", JSON.stringify(prefixes))
-            })
-            .then(_ => {
-              setContent(guild, territory);
-
-              if (territoryToggle) {
-                rectangles[territory].setStyle({
-                  color: colors[guild],
-                })
-              } else {
-                rectangles[territory].setStyle({
-                  color: 'rgba(0,0,0,0)'
-                })
-              }
-
-            });
-
-        } else {
-          if (territoryToggle) {
-            try {
-              rectangles[territory].setStyle({
-                color: colors[guild],
-              })
-            } catch (e) {
-              console.log(territory)
-              console.error(e)
-            }
-          } else {
-            rectangles[territory].setStyle({
-              color: 'rgba(0,0,0,0)'
-            })
-            setContent(guild, territory);
-          }
-        }
-
-      });
-    })
-
+      } else {
+        rectangles[territory].setStyle({
+          color: 'rgba(0,0,0,0)'
+        })
+        setContent(guild, territory);
+      }
+    });
   }
 
   tick()
@@ -439,10 +383,10 @@ async function run() {
     document.getElementById("countdown").innerHTML = counter;
     Object.keys(cdRectangles).forEach(territory => {
       if (!initialLoad)
-        setContent(guildTerritories[territory]?.guild, territory, true);
+        setContent(guildTerritories[territory]?.guild.name, territory, true);
       try {
         if (cdRectangles[territory] ? cdRectangles[territory].isPopupOpen() : false) {
-          setPopupContent(guildTerritories[territory]?.guild, territory)
+          setPopupContent(guildTerritories[territory]?.guild.name, territory)
         }
       } catch (e) {
         console.error(e)
@@ -476,16 +420,7 @@ async function run() {
   //sets tooltip and popup content
   function setContent(guild, territory, hardUpdate = false) {
     let tooltip = "<div>"
-    let prefix = ""
-    try {
-      prefix = prefixes[guild] ? prefixes[guild] : guild
-
-      if (prefix == null) {
-        prefix = "None"
-      }
-    } catch (e) {
-      console.error(e)
-    }
+    let prefix = guildTerritories[territory]?.guild.prefix;
     if (previousOwner[territory] != prefix || hardUpdate) {
       if (!initialLoad && !hardUpdate) {
         console.log(new Date().toLocaleTimeString() + " " + territory + ": " + previousOwner[territory] + " -> " + prefix)
@@ -658,7 +593,7 @@ async function run() {
       try {
         cdRectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
-        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]?.level}]</div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guildTerritories[territory]?.guild.prefix}]</div>
         ${productionHTML}
         <div>Acquired on ${guildTerritories[territory]?.acquired}</div>
         <div>Held for ${str}.</div>
@@ -677,7 +612,7 @@ async function run() {
       try {
         rectangles[territory].setPopupContent(`<div id="info-popup">
         <div><b>${territory}</b></div>
-        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]?.level}]</div>
+        <div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guildTerritories[territory]?.guild.prefix}]</div>
         ${productionHTML}
         <div>Acquired on ${guildTerritories[territory]?.acquired}</div>
         <div>Held for ${str}.</div>
@@ -816,7 +751,7 @@ async function run() {
             slowHardUpdater(0);
             return;
           }
-          setContent(guildTerritories[Object.keys(rectangles)[i + j]]?.guild, Object.keys(rectangles)[i + j], true);
+          setContent(guildTerritories[Object.keys(rectangles)[i + j]]?.guild.name, Object.keys(rectangles)[i + j], true);
         }
         slowHardUpdater(i + terrsPerUpdate);
       }
